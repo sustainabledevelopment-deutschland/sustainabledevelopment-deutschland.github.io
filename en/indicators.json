@@ -1,7 +1,7 @@
 [{
     "goal": {
       "id": "1",
-      "title": "",
+      "title": "End poverty in all its forms everywhere",
       "indicators": [{
           "id": "1-1-ab",
           "title": "Material deprivation and severe material deprivation",
@@ -14,7 +14,7 @@
   },{
     "goal": {
       "id": "2",
-      "title": "",
+      "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
           "id": "2-2-a",
           "title": "Unterstützung guter Regierungsführung bei der Erreichung einer angemessenen Ernährung weltweit",
@@ -41,7 +41,7 @@
   },{
     "goal": {
       "id": "3",
-      "title": "",
+      "title": "Ensure healthy lives and promote well-being for all at all ages",
       "indicators": [{
           "id": "3-1-ab",
           "title": "Vorzeitige Sterblichkeit (weiblich)",
@@ -89,7 +89,7 @@
   },{
     "goal": {
       "id": "4",
-      "title": "",
+      "title": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all",
       "indicators": [{
           "id": "4-1-b",
           "title": "30- bis 34-Jährige mit tertiärem oder postsekundarem nicht-tertiären Abschluss",
@@ -116,7 +116,7 @@
   },{
     "goal": {
       "id": "5",
-      "title": "",
+      "title": "Achieve gender equality and empower all women and girls",
       "indicators": [{
           "id": "5-1-c",
           "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche entwicklungspolitische Zusammenarbeit",
@@ -143,7 +143,7 @@
   },{
     "goal": {
       "id": "6",
-      "title": "",
+      "title": "Ensure availability and sustainable management of water and sanitation for all",
       "indicators": [{
           "id": "6-1-a",
           "title": "Phosphor in Fließgewässern",
@@ -170,7 +170,7 @@
   },{
     "goal": {
       "id": "7",
-      "title": "",
+      "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
           "id": "7-1-ab",
           "title": "Endenergieproduktivität und Primärenergieverbrauch",
@@ -197,7 +197,7 @@
   },{
     "goal": {
       "id": "8",
-      "title": "",
+      "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
           "id": "8-3-a",
           "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
@@ -252,7 +252,7 @@
   },{
     "goal": {
       "id": "9",
-      "title": "",
+      "title": "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation",
       "indicators": [{
           "id": "9-1-a",
           "title": "Private und Öffentliche Ausgaben für Forschung und Entwicklung",
@@ -265,7 +265,7 @@
   },{
     "goal": {
       "id": "10",
-      "title": "",
+      "title": "Reduce inequality within and among countries",
       "indicators": [{
           "id": "10-1-a",
           "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
@@ -285,7 +285,7 @@
   },{
     "goal": {
       "id": "11",
-      "title": "",
+      "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
       "indicators": [{
           "id": "11-3-a",
           "title": "Überlastung durch Wohnkosten",
@@ -340,7 +340,7 @@
   },{
     "goal": {
       "id": "12",
-      "title": "",
+      "title": "Ensure sustainable consumption and production patterns",
       "indicators": [{
           "id": "12-3-ab",
           "title": "Nachhaltige Beschaffung",
@@ -374,7 +374,7 @@
   },{
     "goal": {
       "id": "13",
-      "title": "",
+      "title": "Take urgent action to combat climate change and its impacts",
       "indicators": [{
           "id": "13-1-a",
           "title": "Treibhausgasemissionen",
@@ -394,7 +394,7 @@
   },{
     "goal": {
       "id": "14",
-      "title": "",
+      "title": "Conserve and sustainably use the oceans, seas and marine resources for sustainable development",
       "indicators": [{
           "id": "14-1-b",
           "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
@@ -414,7 +414,7 @@
   },{
     "goal": {
       "id": "15",
-      "title": "",
+      "title": "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss",
       "indicators": [{
           "id": "15-2-a",
           "title": "Eutrophierung der Ökosysteme",
@@ -441,7 +441,7 @@
   },{
     "goal": {
       "id": "16",
-      "title": "",
+      "title": "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels",
       "indicators": [{
           "id": "16-3-ab",
           "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit",
@@ -468,7 +468,7 @@
   },{
     "goal": {
       "id": "17",
-      "title": "",
+      "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
       "indicators": [{
           "id": "17-2-a",
           "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr",

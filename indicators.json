@@ -1,7 +1,7 @@
 [{
     "goal": {
       "id": "1",
-      "title": "",
+      "title": "Armut in allen ihren Formen und überall beenden",
       "indicators": [{
           "id": "1-1-ab",
           "title": "Materielle Deprivation sowie erhebliche materielle Deprivation",
@@ -14,7 +14,7 @@
   },{
     "goal": {
       "id": "2",
-      "title": "",
+      "title": "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern",
       "indicators": [{
           "id": "2-2-a",
           "title": "Unterstützung guter Regierungsführung bei der Erreichung einer angemessenen Ernährung weltweit",
@@ -41,7 +41,7 @@
   },{
     "goal": {
       "id": "3",
-      "title": "",
+      "title": "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern",
       "indicators": [{
           "id": "3-1-ab",
           "title": "Vorzeitige Sterblichkeit",
@@ -89,7 +89,7 @@
   },{
     "goal": {
       "id": "4",
-      "title": "",
+      "title": "Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern",
       "indicators": [{
           "id": "4-1-b",
           "title": "30- bis 34-Jährige mit tertiärem oder postsekundarem nicht-tertiären Abschluss",
@@ -116,7 +116,7 @@
   },{
     "goal": {
       "id": "5",
-      "title": "",
+      "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
       "indicators": [{
           "id": "5-1-c",
           "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche entwicklungspolitische Zusammenarbeit",
@@ -143,7 +143,7 @@
   },{
     "goal": {
       "id": "6",
-      "title": "",
+      "title": "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten",
       "indicators": [{
           "id": "6-1-a",
           "title": "Phosphor in Fließgewässern",
@@ -170,7 +170,7 @@
   },{
     "goal": {
       "id": "7",
-      "title": "",
+      "title": "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern",
       "indicators": [{
           "id": "7-1-ab",
           "title": "Endenergieproduktivität und Primärenergieverbrauch",
@@ -197,7 +197,7 @@
   },{
     "goal": {
       "id": "8",
-      "title": "",
+      "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
       "indicators": [{
           "id": "8-3-a",
           "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
@@ -252,7 +252,7 @@
   },{
     "goal": {
       "id": "9",
-      "title": "",
+      "title": "Eine widerstandsfähige Infrastruktur aufbauen, inklusive und nachhaltige Industrialisierung fördern und Innovationen unterstützen",
       "indicators": [{
           "id": "9-1-a",
           "title": "Private und öffentliche Ausgaben für Forschung und Entwicklung",
@@ -265,7 +265,7 @@
   },{
     "goal": {
       "id": "10",
-      "title": "",
+      "title": "Ungleichheit in und zwischen Ländern verringern",
       "indicators": [{
           "id": "10-1-a",
           "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
@@ -285,7 +285,7 @@
   },{
     "goal": {
       "id": "11",
-      "title": "",
+      "title": "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten",
       "indicators": [{
           "id": "11-3-a",
           "title": "Überlastung durch Wohnkosten",
@@ -340,7 +340,7 @@
   },{
     "goal": {
       "id": "12",
-      "title": "",
+      "title": "Nachhaltige Konsum- und Produktionsmuster sicherstellen",
       "indicators": [{
           "id": "12-3-ab",
           "title": "Nachhaltige Beschaffung",
@@ -374,7 +374,7 @@
   },{
     "goal": {
       "id": "13",
-      "title": "",
+      "title": "Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen ergreifen",
       "indicators": [{
           "id": "13-1-a",
           "title": "Treibhausgasemissionen",
@@ -394,7 +394,7 @@
   },{
     "goal": {
       "id": "14",
-      "title": "",
+      "title": "Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung erhalten und nachhaltig nutzen",
       "indicators": [{
           "id": "14-1-b",
           "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
@@ -414,7 +414,7 @@
   },{
     "goal": {
       "id": "15",
-      "title": "",
+      "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen",
       "indicators": [{
           "id": "15-2-a",
           "title": "Eutrophierung der Ökosysteme",
@@ -441,7 +441,7 @@
   },{
     "goal": {
       "id": "16",
-      "title": "",
+      "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
       "indicators": [{
           "id": "16-3-ab",
           "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit",
@@ -468,7 +468,7 @@
   },{
     "goal": {
       "id": "17",
-      "title": "",
+      "title": "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen",
       "indicators": [{
           "id": "17-2-a",
           "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr",
