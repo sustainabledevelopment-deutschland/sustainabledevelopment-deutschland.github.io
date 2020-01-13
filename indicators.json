@@ -1,0 +1,495 @@
+[{
+    "goal": {
+      "id": "1",
+      "title": "",
+      "indicators": [{
+          "id": "1-1-ab",
+          "title": "Materielle Deprivation sowie erhebliche materielle Deprivation",
+          "description": "",
+          "keywords": "",
+          "href": "/1-1-ab",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "2",
+      "title": "",
+      "indicators": [{
+          "id": "2-2-a",
+          "title": "Unterstützung guter Regierungsführung bei der Erreichung einer angemessenen Ernährung weltweit",
+          "description": "",
+          "keywords": "",
+          "href": "/2-2-a",
+          "status": "complete"
+        },{
+          "id": "2-1-a",
+          "title": "Stickstoffüberschuss der Landwirtschaft",
+          "description": "",
+          "keywords": "",
+          "href": "/2-1-a",
+          "status": "complete"
+        },{
+          "id": "2-1-b",
+          "title": "Ökologischer Landbau",
+          "description": "",
+          "keywords": "",
+          "href": "/2-1-b",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "3",
+      "title": "",
+      "indicators": [{
+          "id": "3-1-ab",
+          "title": "Vorzeitige Sterblichkeit",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-ab",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Adipositasquote von Jugendlichen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-e",
+          "status": "complete"
+        },{
+          "id": "3-2-b",
+          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Feinstaubexposition",
+          "description": "",
+          "keywords": "",
+          "href": "/3-2-b",
+          "status": "complete"
+        },{
+          "id": "3-2-a",
+          "title": "Emissionen von Luftschadstoffen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-2-a",
+          "status": "complete"
+        },{
+          "id": "3-1-cd",
+          "title": "Raucherquote von Jugendlichen und Erwachsenen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-cd",
+          "status": "complete"
+        },{
+          "id": "3-1-f",
+          "title": "Adipositasquote von Erwachsenen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-f",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "4",
+      "title": "",
+      "indicators": [{
+          "id": "4-1-b",
+          "title": "30- bis 34-Jährige mit tertiärem oder postsekundarem nicht-tertiären Abschluss",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-b",
+          "status": "complete"
+        },{
+          "id": "4-2-ab",
+          "title": "Ganztagsbetreuung für Kinder",
+          "description": "",
+          "keywords": "",
+          "href": "/4-2-ab",
+          "status": "complete"
+        },{
+          "id": "4-1-a",
+          "title": "Frühe Schulabgängerinnen und Schulabgänger",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "5",
+      "title": "",
+      "indicators": [{
+          "id": "5-1-c",
+          "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche entwicklungspolitische Zusammenarbeit",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-c",
+          "status": "complete"
+        },{
+          "id": "5-1-b",
+          "title": "Frauen in Führungspositionen in der Wirtschaft",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-b",
+          "status": "complete"
+        },{
+          "id": "5-1-a",
+          "title": "Verdienstabstand zwischen Frauen und Männern",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "6",
+      "title": "",
+      "indicators": [{
+          "id": "6-1-a",
+          "title": "Phosphor in Fließgewässern",
+          "description": "",
+          "keywords": "",
+          "href": "/6-1-a",
+          "status": "complete"
+        },{
+          "id": "6-2-a",
+          "title": "Entwicklungszusammenarbeit für Trinkwasser- und Sanitärversorgung",
+          "description": "",
+          "keywords": "",
+          "href": "/6-2-a",
+          "status": "complete"
+        },{
+          "id": "6-1-b",
+          "title": "Nitrat im Grundwasser",
+          "description": "",
+          "keywords": "",
+          "href": "/6-1-b",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "7",
+      "title": "",
+      "indicators": [{
+          "id": "7-1-ab",
+          "title": "Endenergieproduktivität und Primärenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-1-ab",
+          "status": "complete"
+        },{
+          "id": "7-2-a",
+          "title": "Anteil erneuerbarer Energien am Brutto-Endenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-2-a",
+          "status": "complete"
+        },{
+          "id": "7-2-b",
+          "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Bruttostromverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-2-b",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "8",
+      "title": "",
+      "indicators": [{
+          "id": "8-3-a",
+          "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
+          "description": "",
+          "keywords": "",
+          "href": "/8-3-a",
+          "status": "complete"
+        },{
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
+          "description": "",
+          "keywords": "",
+          "href": "/8-2-ab",
+          "status": "complete"
+        },{
+          "id": "8-4-a",
+          "title": "Bruttoinlandsprodukt je Einwohner",
+          "description": "",
+          "keywords": "",
+          "href": "/8-4-a",
+          "status": "complete"
+        },{
+          "id": "8-6-a",
+          "title": "Anzahl der Mitglieder des Textilbündnisses",
+          "description": "",
+          "keywords": "",
+          "href": "/8-6-a",
+          "status": "complete"
+        },{
+          "id": "8-1-a",
+          "title": "Gesamtrohstoffproduktivität",
+          "description": "",
+          "keywords": "",
+          "href": "/8-1-a",
+          "status": "complete"
+        },{
+          "id": "8-2-c",
+          "title": "Schuldenstand",
+          "description": "",
+          "keywords": "",
+          "href": "/8-2-c",
+          "status": "complete"
+        },{
+          "id": "8-5-ab",
+          "title": "Erwerbstätigenquote",
+          "description": "",
+          "keywords": "",
+          "href": "/8-5-ab",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "9",
+      "title": "",
+      "indicators": [{
+          "id": "9-1-a",
+          "title": "Private und öffentliche Ausgaben für Forschung und Entwicklung",
+          "description": "",
+          "keywords": "",
+          "href": "/9-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "10",
+      "title": "",
+      "indicators": [{
+          "id": "10-1-a",
+          "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
+          "description": "",
+          "keywords": "",
+          "href": "/10-1-a",
+          "status": "complete"
+        },{
+          "id": "10-2-a",
+          "title": "Gini-Koeffizient zur Einkommensverteilung",
+          "description": "",
+          "keywords": "",
+          "href": "/10-2-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "11",
+      "title": "",
+      "indicators": [{
+          "id": "11-3-a",
+          "title": "Überlastung durch Wohnkosten",
+          "description": "",
+          "keywords": "",
+          "href": "/11-3-a",
+          "status": "complete"
+        },{
+          "id": "11-2-c",
+          "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-c",
+          "status": "complete"
+        },{
+          "id": "11-2-b",
+          "title": "Endenergieverbrauch im Personenverkehr",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-b",
+          "status": "complete"
+        },{
+          "id": "11-1-b",
+          "title": "Freiraumverlust",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-b",
+          "status": "complete"
+        },{
+          "id": "11-1-c",
+          "title": "Siedlungsdichte",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-c",
+          "status": "complete"
+        },{
+          "id": "11-2-a",
+          "title": "Endenergieverbrauch im Güterverkehr",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-a",
+          "status": "complete"
+        },{
+          "id": "11-1-a",
+          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "12",
+      "title": "",
+      "indicators": [{
+          "id": "12-3-ab",
+          "title": "Nachhaltige Beschaffung",
+          "description": "",
+          "keywords": "",
+          "href": "/12-3-ab",
+          "status": "complete"
+        },{
+          "id": "12-1-b",
+          "title": "Energieverbrauch und CO<sub>2</sub>-Emissionen des Konsums",
+          "description": "",
+          "keywords": "",
+          "href": "/12-1-b",
+          "status": "complete"
+        },{
+          "id": "12-2-a",
+          "title": "Umweltmanagement EMAS",
+          "description": "",
+          "keywords": "",
+          "href": "/12-2-a",
+          "status": "complete"
+        },{
+          "id": "12-1-a",
+          "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
+          "description": "",
+          "keywords": "",
+          "href": "/12-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "13",
+      "title": "",
+      "indicators": [{
+          "id": "13-1-a",
+          "title": "Treibhausgasemissionen",
+          "description": "",
+          "keywords": "",
+          "href": "/13-1-a",
+          "status": "complete"
+        },{
+          "id": "13-1-b",
+          "title": "Internationale Klimafinanzierung zur Reduktion von Treibhausgasen und zur Anpassung an den Klimawandel",
+          "description": "",
+          "keywords": "",
+          "href": "/13-1-b",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "14",
+      "title": "",
+      "indicators": [{
+          "id": "14-1-b",
+          "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
+          "description": "",
+          "keywords": "",
+          "href": "/14-1-b",
+          "status": "complete"
+        },{
+          "id": "14-1-a",
+          "title": "Stickstoffeintrag über die Zuflüsse in Nord- und Ostsee",
+          "description": "",
+          "keywords": "",
+          "href": "/14-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "15",
+      "title": "",
+      "indicators": [{
+          "id": "15-2-a",
+          "title": "Eutrophierung der Ökosysteme",
+          "description": "",
+          "keywords": "",
+          "href": "/15-2-a",
+          "status": "complete"
+        },{
+          "id": "15-3-a",
+          "title": "Erhalt bzw. Wiederaufbau von Wäldern in Entwicklungsländern unter dem REDD+-Regelwerk",
+          "description": "",
+          "keywords": "",
+          "href": "/15-3-a",
+          "status": "complete"
+        },{
+          "id": "15-1-a",
+          "title": "Artenvielfalt und Landschaftsqualität",
+          "description": "",
+          "keywords": "",
+          "href": "/15-1-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "16",
+      "title": "",
+      "indicators": [{
+          "id": "16-3-ab",
+          "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit",
+          "description": "",
+          "keywords": "",
+          "href": "/16-3-ab",
+          "status": "complete"
+        },{
+          "id": "16-1-a",
+          "title": "Straftaten",
+          "description": "",
+          "keywords": "",
+          "href": "/16-1-a",
+          "status": "complete"
+        },{
+          "id": "16-2-a",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
+          "description": "",
+          "keywords": "",
+          "href": "/16-2-a",
+          "status": "complete"
+        }]
+    }
+  },{
+    "goal": {
+      "id": "17",
+      "title": "",
+      "indicators": [{
+          "id": "17-2-a",
+          "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr",
+          "description": "",
+          "keywords": "",
+          "href": "/17-2-a",
+          "status": "complete"
+        },{
+          "id": "17-3-a",
+          "title": "Einfuhren aus am wenigsten entwickelten Ländern",
+          "description": "",
+          "keywords": "",
+          "href": "/17-3-a",
+          "status": "complete"
+        },{
+          "id": "17-1-a",
+          "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen",
+          "description": "",
+          "keywords": "",
+          "href": "/17-1-a",
+          "status": "complete"
+        }]
+    }
+  }]

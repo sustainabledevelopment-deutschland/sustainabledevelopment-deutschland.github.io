@@ -1,0 +1,1988 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://sustainabledevelopment-deutschland.github.io/sdg-data-pub',
+
+  // A hook which can be replaced to modify the configuration for Chart.js.
+  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
+  // To see an example of replacing it, see binary.html.
+  chartConfigAlter: function(config) {
+    // Alterations go here.
+    return config;
+  },
+
+  // A hook which can be replaced to alter whether/how the values that are
+  // displayed on indicator tables/graphs get rounded.
+  dataRounding: function(value) {
+    // Alterations go here.
+    return value;
+  },
+};
+
+// For backwards compatibility, some of these might need to be global.
+// @TODO: Remove these eventually.
+var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+
+</script>
+
+        <script>
+// JavaScript container for translation data.
+var translations = {
+  //Javascript version of the "t" filter from jekyll-open-sdg-plugins.
+  t: function(key) {
+
+    if (!key || typeof key !== 'string') {
+      return '';
+    }
+
+    // The majority of uses of this function are to translate disaggregation
+    // data. To spare data providers of needing to enter "data." in front of
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data !== null && this.data[key]) {
+      return this.data[key];
+    }
+
+    var originalKey = key;
+    var drilled = this;
+    var levelsDrilled = 0;
+    var levels = key.split('.');
+
+    for (var level in levels) {
+      // If we have drilled down to soon, abort.
+      if (typeof drilled !== 'object') {
+        break;
+      }
+
+      if (levels[level] in drilled) {
+        drilled = drilled[levels[level]];
+        levelsDrilled += 1;
+      }
+    }
+
+    // If we didn't drill the right number of levels, return the original string.
+    if (levels.length != levelsDrilled) {
+      return originalKey;
+    }
+
+    // Otherwise we must have drilled all the way.
+    return drilled;
+  },
+};
+</script>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
+        ================================================== -->
+
+        <!---#15 setCorrectTitle---start-------------------->
+        <title>
+          
+            Indikator 13.1.b - Ziel 13
+          
+        </title>
+        <!---#15 setCorrectTitle---stop--------------------->
+
+        
+          <meta name="description" content= " 13.1.b - Internationale Klimafinanzierung zur Reduktion von Treibhausgasen und zur Anpassung an den Klimawandel" >
+        
+
+        <meta property="og:description" content="">
+        
+        <link rel="canonical" href="/">
+
+        
+
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+
+        <!-- Favicons ================================================== -->
+        <!-- 128x128 -->
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        -->
+
+        
+
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200113141402">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200113141402"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
+    </head>
+<body class="language-de layout-indicator">
+<!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium.Wir freuen uns über Ihre Kommentare.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<div id="disclaimer">
+  <div class="container">
+  <div class="alert alert-danger" role="alert">
+    <strong class="phase-tag">Alpha-Version</strong>
+    Diese Seite befindet sich im Entwicklungsstadium.Wir freuen uns über Ihre Kommentare.
+  </div>
+</div>
+
+</div>
+
+<header role="banner">
+  <div class="container">
+
+    <a class="navbar-brand" href="/" id="home">
+      <img src="/assets/img/dns_logo.png" alt=" - " />
+    </a>
+
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Deutsch</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/en/13-1-b/">English</a></li></ul>
+
+    </div></div>
+
+    <nav class="navbar navbar-default" id="main-nav">
+
+      <ul class="top-level">
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menü</span>
+        </li>
+        <li><span data-target="search">Suche</span></li>
+      </ul>
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
+              <li class="nav-link ">
+                <a href="/">Ziele</a>
+              </li>
+            
+              <li class="nav-link ">
+                <a href="/about/">Über uns</a>
+              </li>
+            
+              <li class="nav-link ">
+                <a href="/guidance">Technische Hinweise</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/status_summary">Status - menu.status_summary</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/status">Status - menu.status</a>
+              </li>
+            <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text"></span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <i class="status-toggle fa fa-chevron-up" style="display:none;"></i>
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/status_summary">menu.status_summary</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/status">menu.status</a>
+                  </li>
+                </ul>
+        </li><li>
+          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">Deutsch</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/en/13-1-b/">English</a></li></ul>
+
+        </li><!---#17 addLinkToOtherPage---start------------>
+        <li class="nav-link">
+          <a href="https://g205sdgs.github.io/sdg-indicators/">
+            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="" alt="Link SDG" style="width:24px;height:24px;"/>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
+          </a>
+        </li>
+        <!---#17 addLinkToOtherPage---stop------------->
+      </ul>
+
+      <div id="search" class="menu-target">
+  <input id="indicator_search" title="Indikatorensuche" placeholder="Indikatorensuche" data-url="/indicators.json" data-pageurl="/search/?q=" />
+  <label for="indicator_search">
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indikatorensuche></i></button><span>Suche:</span>
+  </label>
+</div>
+
+
+    </nav>
+  </div>
+
+</header>
+
+<script type="text/template" id="item_template">
+  <% _.each(series, function(seriesItem) { %>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0' aria-expanded='false'><h5><%=translations.t(seriesItem.field)%><i class="fa fa-chevron-down"></i></h5></button>
+      <div class="bar">
+        <div class="selected"></div>
+      </div>
+      <div class="variable-options">
+        <div>
+          <button data-type="select">Alle auswählen</button>
+          <button data-type="clear">Auswahl aufheben</button>
+        </div>
+        <% _.each(seriesItem.values, function(item) { %>
+          <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=translations.t(item.value)%></label>
+        <% }); %>
+      </div>
+
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %>
+        <div class="variable-hint">Verfügbar
+        </div>
+        <div class="no-data-hint">
+          Aufgrund der bereits getroffenen Auswahl sind keine weiteren Auswahlmöglichkeiten verfügbar.
+        </div>
+      <% }%>
+
+    </div>
+  <% }); %>
+</script>
+
+<script type="text/template" id="units_template">
+  <% if(units.length>1) { %>
+    <h5>Einheit</h5>
+    <% _.each(units, function(unitsItem, index) { %>
+      <% var checked = (selectedUnit) ? (selectedUnit==unitsItem) : (index==0); %>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
+    <% }); %>
+  <% } %>
+</script>
+
+<script>translations['indicator'] = {"chart":"Grafik","clear_all":"Auswahl aufheben","clear_selections":"Auswahl aufheben","dataset_size_warning":"Zu viele Zeitreihen ausgewählt um diese in einer Grafik darzustellen. Es können nicht alle Zeitreihen dargestellt werden","download_chart":"Grafik im CSV-Format speichern","download_csv":"im CSV-Format speichern","download_csv_title":"im CSV-Format speichern","download_headline":"Speichern der Headline im CSV-Format","download_headline_title":"Speichern der Headline im CSV-Format","download_source":"Daten im CSV-Format speichern","download_source_title":"Daten im CSV-Format speichern","download_table":"Tabelle im CSV-Format speichern","edit":"Bearbeiten","edit_data":"Daten bearbeiten","edit_metadata":"Metadaten bearbeiten","footnote":"Fußnote","geographical_area":"Geographische Abdeckung","global_metadata":"Globale Metadaten","global_metadata_blurb":"Diese Übersicht stellt Informationen zu den globalen Metadaten des jeweiligen SDG-Indikators bereit. Die <a href=\"\"https://unstats.un.org/sdgs/metadata/\"\">globalen Metadaten</a> werden durch die Statistische Division der Vereinten Nationen bereitgestellt.","legend_help":"Klicken Sie auf die Legende um Zeitreihen aus der Grafik zu entfernen.","loading_map":"Karte wird geladen","map":"Karte","national_metadata":"Nationale Metadaten","national_metadata_blurb":"Im Folgenden werden Metadaten zu den national verfügbaren Zeitreihen für %country_name zum jeweiligen globalen SDG-Indikator bereitgestellt. Die angegebene Datenreihe ist die vergleichbarste, national verfügbare Zeitreihe. Entspricht die angezeigte Datenreihe voll den globalen Metadaten, so ist dennoch auf diese nationalen Metadaten für methodische sowie weitere länderspezifische Informationen hinzuweisen.","no_data_hint":"Aufgrund der bereits getroffenen Auswahl sind keine weiteren Auswahlmöglichkeiten verfügbar.","select_all":"Alle auswählen","series_help":"Wählen Sie Disaggregationsdimensionen aus, damit die verfügbaren Disaggregationskategorien angezeigt werden. Manche werden erst angezeigt, sobald eine Überkategorie ausgewählt wird.","source":"Datenquelle","sources":"Datenquellen","sub_categories":"Disaggregationsdimensionen","table":"Tabelle","unit_of_measurement":"Einheit","units_type":"Einheit","variable_hint":"Verfügbar","view_indicator_list":"Zeigt die Indikatorenliste zum SDG-Ziel an."};</script>
+
+<script>translations['data'] = null;</script>
+
+
+
+
+<div class="heading indicator goal-13">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <a href="/13" title="Zeigt die Indikatorenliste zum SDG-Ziel an.">
+          <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/17/13.png" alt=" - Ziel 13" />
+        </a>
+      </div>
+      <div class="col-xs-8 col-md-9 col-lg-10">
+        <h1>
+          <a href="/13">
+            <span class="hidden-sm hidden-md hidden-lg">Ziel 13: </span>
+          </a>
+        </h1>
+        <h2>Indikator 13.1.b: Internationale Klimafinanzierung zur Reduktion von Treibhausgasen und zur Anpassung an den Klimawandel</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="main-content" class="container goal-13">
+  
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  
+      <li><a href="/13" title="">Ziel 13</a></li>
+      <li class="active">Indikator 13.1.b</li>
+      <!--
+
+      
+        <li class="btn">
+          <a href="https://g205sdgs.github.io/sdg-indicators/13-a-1/">
+             13.a.1
+          </a>
+        </li>
+      
+
+
+      <li class="pull-right">
+        <a href="/14-1-a" title="next indicator">
+          Indikator 14.1.a
+        </a>
+      </li>
+      <li class="pull-right">
+        <a href="/13-1-a" title="previous indicator">
+          Indikator 13.1.a
+        </a>
+      </li>
+      -->
+
+  
+
+</ol>
+
+  <!---#8 addNavigationButtons---start------------------------------------->
+
+
+<!---Indicator page-->
+
+  <!---3 Btns if there is a corresponding Indicator-->
+  
+    <div class="col-xs-3 col-md-3 col-lg-4">
+      <a href="/13-1-a" class="btn btn-primary btn-block G13-background" role="button">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i> <b><span class="hidden-sm hidden-xs"></span></b>
+      </a>
+    </div>
+
+    <div class="col-xs-6 col-md-6 col-lg-4">
+      <a href="https://g205sdgs.github.io/sdg-indicators//13-a-1/" class="btn btn-primary btn-block G13-background" title="" role="button">
+        <b><span class="hidden-sm hidden-xs"></span> SDG-13.a.1</b>
+      </a>
+    </div>
+
+    <div class="col-xs-3 col-md-3 col-lg-4">
+      <a href="/14-1-a" class="btn btn-primary btn-block G13-background" role="button">
+        <b><span class="hidden-sm hidden-xs"></span></b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  <!---2 Btns if there is no corresponding Indicator-->
+  
+
+<!---Goal page-->
+
+<!--#8 addNavigationButtons---stop-------------------------------------->
+
+
+  <div class="row" id="page-content-row">
+    <div class="col-xs-12">
+      
+
+      <div id="page-content">
+  <div>                           
+  <div class="my-header">                           
+    <a href="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/status/"><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Sonne" />                           
+    </a>                           
+  </div>
+  <div class="my-header-note">
+    <span>(Bewertung des Berichtsjahres 2017)</span>
+  </div>                           
+</div>
+
+</div>
+
+    </div>
+  </div>
+  <!--
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Deutsche Zahlungen vorrangig an Entwicklungs- und Schwellenländer zur Klimafinanzierung</h2>
+    </div>
+  </div>
+  -->
+  
+  
+
+  
+
+  <div class="row" id="indicatorData" data-indicatorid='indicator_13-1-b' data-id="13-1-b" data-country=""
+  data-charttitle="Deutsche Zahlungen vorrangig an Entwicklungs- und Schwellenländer zur Klimafinanzierung" data-measurementunit="Milliarden Euro" data-datasource="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ)" data-copyright="&copy; Statistisches Bundesamt (Destatis), 2019"
+  data-geographicalarea="" data-footnote="" data-showdata="true" data-graphtype="line"
+  data-geocoderegex="" data-showmap="" data-startvalues="">
+    
+    <div id="indicator-sidebar" class="col-md-3">
+      <div id="toolbar">
+        <span id="series-help">
+          <h4>Disaggregationsdimensionen</h4>
+          <p>Wählen Sie Disaggregationsdimensionen aus, damit die verfügbaren Disaggregationskategorien angezeigt werden. Manche werden erst angezeigt, sobald eine Überkategorie ausgewählt wird.</p>
+        </span>
+        <p>Klicken Sie auf die Legende um Zeitreihen aus der Grafik zu entfernen.</p>
+        <div id="fields">
+          <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        </div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div id="indicator-main" class="col-md-9">
+    
+
+      
+      
+
+
+<div id="headlineTable">
+
+  <div id="datatables">
+
+    <a href="https://sustainabledevelopment-deutschland.github.io/sdg-data-pub/headline/13-1-b.csv" class="btn btn-primary btn-download" download="indicator_13-1-b.csv" tabindex="0" role="button">Speichern der Headline im CSV-Format</a>
+
+    <a href="https://sustainabledevelopment-deutschland.github.io/sdg-data-pub/data/13-1-b.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_13-1-b.csv' tabindex='0' role='button'>Daten im CSV-Format speichern</a>
+
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption></caption>
+      <thead>
+        
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+
+  <div id="datatableFooter">
+    
+    
+    
+    
+  </div>
+
+</div>
+
+      
+
+      <section>
+
+        
+        <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        <div class="async-loaded" style="display:none">
+          <ul class="nav nav-tabs data-view" role="tablist">
+
+            <li role="presentation" class="nav-item active">
+              <!---#12 addIconsForTabs---start------------------------------------------->
+              <!--<a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+>Grafik</a>-->
+              <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Chart tab"
+> <i class="fa fa-line-chart" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Grafik</span> </a>
+              <!---#12 addIconsForTabs---stop-------------------------------------------->
+            </li>
+            <li role="presentation" class="nav-item">
+              <!---#12 addIconsForTabs---start------------------------------------------->
+              <!--<a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+>Tabelle</a>-->
+              <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Table tab"
+> <i class="fa fa-table" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Tabelle</span> </a>
+              <!---#12 addIconsForTabs---stop-------------------------------------------->
+            </li>
+            <li role="presentation" class="nav-item map" style="display:none">
+              <!---#12 addIconsForTabs---start------------------------------------------->
+              <!--<a data-no-disagg="true" class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+>Karte</a>-->
+              <a data-no-disagg="true" class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+><i class="fa fa-map" aria-hidden="true"></i> <span class="hidden-sm hidden-xs">Karte</span></a>
+              <!---#12 addIconsForTabs---stop-------------------------------------------->
+            </li></ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content data-view">
+            <div role="tabpanel" class="tab-pane active" id="chartview">
+              
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> Zu viele Zeitreihen ausgewählt um diese in einer Grafik darzustellen. Es können nicht alle Zeitreihen dargestellt werden
+    </div>
+
+    
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">Deutsche Zahlungen vorrangig an Entwicklungs- und Schwellenländer zur Klimafinanzierung</h3>
+        <div id="chart" class="plot-container">
+          
+<canvas></canvas>
+
+
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        
+      </button>
+    </div>
+    <div id="chartSelectionDownload"></div>
+
+
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tableview">
+              <div id="selectionsTable"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mapview" class="map">
+              <div id="map">
+                <img src="/assets/img/loading.gif" alt="Karte wird geladen" /> <!---->
+              </div>
+              <!---#16 showMapDataSources---start--------------------->
+              <div id="mapfooter" class="table-footer-text">
+
+                
+                
+                  
+                    <p>Datenquelle: Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ)</p>
+                  
+                
+              </div>
+              <!---#16 showMapDataSources---stop---------------------->
+            </div>
+            
+          </div>
+        </div>
+        
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to Metadata tab"
+></a>
+          </li>
+          <!---#5 addContentAndProgress---start------------------------------------------------------------------------------------------------------------------------------------->
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#content" aria-controls="content" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to Content tab"
+></a>
+          </li>
+          <!---#5 addContentAndProgress---stop-------------------------------------------------------------------------------------------------------------------------------------->
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#globalmetadata" aria-controls="globalmetadata" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to Global Metadata tab"
+></a>
+          </li>
+
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab" data-on="click"
+data-event-category="Tab change"
+data-event-action="Change metadata view"
+data-event-label="Change to Sources tab"
+>Datenquellen</a>
+          </li>
+          <!--
+          
+          -->
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <!-- National Metadata -->
+            <div > <!-- formerly class="collapsible expanded" -->
+              <!-- <h3 tabindex='0'>National Metadata</h3> -->
+              <article>
+                <p>
+                  
+                  
+                  
+                </p>
+                <table class="table table-hover">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      <tr>
+        
+          <th scope="row">Verfügbare Datenreihenbezeichnung </th>
+
+          <td colspan="4">
+            
+              <p>Deutsche Zahlungen vorrangig an Entwicklungs- und Schwellenländer zur Klimafinanzierung</p>
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Indicator definition </th>
+
+          <td colspan="4">
+            
+              <p>Der Indikator umfasst die Finanzierung von Maßnahmen zur Reduktion von Treibhausgasen zur Anpassung an den Klimawandel sowie klimarelevante Maßnahmen zum Erhalt der Biodiversität und zum Waldschutz/ REDD+ (Projekte zum Schutz, nachhaltiger Nutzung und Wiederaufforstung von Wald). Die Finanzierung erfolgt vorrangig in Entwicklungs- und Schwellenländern und aus deutschen Haushaltsmitteln, einschließlich der Schenkungselemente von Entwicklungskrediten, die Haushaltsmittel enthalten.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Geographische Abdeckung </th>
+
+          <td colspan="4">
+            
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Intention </th>
+
+          <td colspan="4">
+            
+              <p>Absicht der Bundesregierung ist es, ihre internationale Klimafinanzierung bis 2020 auf 4 Milliarden Euro aus Haushaltsmitteln und Schenkungselementen aus Entwicklungskrediten bezogen auf den Sollwert von zwei Milliarden Euro des Jahres 2014 zu verdoppeln. In den begleitenden Entscheidungen zum Klimaabkommen von Paris wurde die Zusage der Industrieländer aus 2009 bestätigt, ab 2020 gemeinsam 100 Milliarden US-Dollar aus öffentlichen und privaten Quellen für den Klimaschutz und die Anpassung an den Klimawandel in Entwicklungsländern bereitzustellen.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Daten zuletzt aktualisiert am </th>
+
+          <td colspan="4">
+            
+              
+              
+              
+              
+
+              
+                <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/0580e6d47be2374db4a27a07020e624c9d5a7627" target="_blank">
+                  2019-11-18: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Metadaten zuletzt aktualisiert am </th>
+
+          <td colspan="4">
+            
+              
+              
+              
+              
+
+              
+                <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/d15578548f73650c0c7525898358f505b18d95f6" target="_blank">
+                  2019-12-17: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                </a>
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+
+
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+              </article>
+            </div>
+          </div>
+          <!---#5 addContentAndProgress---start------------------------------------------------------------------------------------------------------------------------------------->
+          <div role="tabpanel" class="tab-pane" id="content">
+            <div>
+              <article>
+                
+<!---#5 addContentAndProgress---start------------------------------------------------------------------------------------------------------------------------------------->
+<p>
+  <table class="table table-hover">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      <tr>
+         <!-- case: content -->
+          <p> <p>Die Daten des Indikators sind der Berichterstattung an die EU-Verordnung über ein System für die Überwachung von Treibhausgasemissionen entnommen. Datenquelle der jährlich erhobenen Daten ist das Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ), das in diesem Kontext auch über die Klimafinanzierung anderer Bundesministerien berichtet. Dabei werden für bilaterale Klimafinanzierung im Allgemeinen die Zusagen, für multilaterale Klimafinanzierung sowie Beiträge zu Energie- und Klimafonds die tatsächlichen Auszahlungen zugrunde gelegt. Der Indikator beinhaltet auch die anteilig zuzurechnende Klimafinanzierung, die sich aus deren Beiträgen zu multilateralen Fonds bei Entwicklungsbanken ergibt. Sofern die Klimafinanzierung schwerpunktmäßig Entwicklungsländern zugutekommt, ist diese Teil der öffentlichen Entwicklungsausgaben (siehe Indikator 17.1).<br /><br />In 2017 wurden aus Haushaltsmitteln von Deutschland 3,6 Milliarden Euro für die internationale Klimafinanzierung zur Reduzierung von Treibhausgasen und zur Anpassung an den Klimawandel zugesagt bzw. bereitgestellt. Im Vergleich zum Vorjahr, in dem die Klimafinanzierung 3,4 Milliarden Euro betrug, ist eine Steigerung um 8,6 % zu verzeichnen. 43 % der Klimafinanzierungsmittel flossen 2017 in die Emissionsminderung und 25 % in die Anpassung an den Klimawandel. Mit den verbleibenden 32 % wurden bereichsübergreifende Projekte finanziert. Wie in den Jahren zuvor wurden 2017 insgesamt mehr Mittel für Minderungsvorhaben aufgewendet als für Anpassungsvorhaben.<br /><br />Über multilaterale Kanäle wurden 13 % (481 Millionen Euro) der Klimafinanzierung in 2017 bereitgestellt. Davon stellen 187 Millionen Euro die Deutschland anteilig zuzurechnende Klimafinanzierung dar, die sich aus Beiträgen zu multilateralen Fonds bei Entwicklungsbanken ergibt.<br /><br />Die rein monetäre Betrachtung der Klimafinanzierung erlaubt keine Schlüsse auf die Wirkung der finanzierten Projekte. Basierend auf seinen Mitteln der technischen und finanziellen Zusammenarbeit nimmt das BMZ eine Wirkungseinschätzung vor, wie viele Tonnen Kohlendioxidemissionen durch Minderungsvorhaben zukünftig eingespart werden. Die Wirkungseinschätzungen der finanziellen Zusammenarbeit basieren dabei auf Ex-ante-Schätzungen der Finanzierungszusagen eines Jahres, die der technischen Zusammenarbeit werden hingegen ex post berechnet.<br /><br />Mit Mitteln der finanziellen Zusammenarbeit wurden im Jahr 2017 direkte Einsparungen von 8,7 Millionen Tonnen CO<sub>2</sub>-Äquivalenten erreicht. Durch die technische Zusammenarbeit konnten zwischen 2015 und 2017 9,1 Millionen Tonnen CO<sub>2</sub>-Äquivalente direkt vermieden werden.<br /><br />Neben der öffentlichen Klimafinanzierung aus Haushaltsmitteln stellen die Kreditanstalt für Wiederaufbau und die Deutsche Investitions- und Entwicklungsgesellschaft auch klimabezogene Kredite aus Marktmitteln bereit. Diese stellen die „mobilisierte öffentliche Klimafinanzierung“ dar und sind nicht im Indikator enthalten. Im Jahr 2017 umfassten die so mobilisierten Ressourcen 3,1 Milliarden Euro im Vergleich zu 5,2 Milliarden Euro im Vorjahr. Auch hier wurden mehr Mittel für Minderungsvorhaben (83 %) als für Anpassungsvorhaben (9 %) aufgewendet.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+ </p>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+  
+  
+</p>
+<!---#5 addContentAndProgress---stop-------------------------------------------------------------------------------------------------------------------------------------->
+
+              </article>
+            </div>
+          </div>
+          <!---#5 addContentAndProgress---stop-------------------------------------------------------------------------------------------------------------------------------------->
+
+          <div role="tabpanel" class="tab-pane" id="globalmetadata">
+            <!-- Global Metadata -->
+            <div> <!-- formerly <div class="collapsible expanded"> -->
+              <!-- <h3 tabindex='0'>Global Metadata</h3> -->
+              <article>
+                <p></p>
+                <!-- Count the non-empty histories (up to 2) -->
+
+
+
+
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      
+      <table class="table table-hover">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      <tr>
+        
+          <th scope="row">Indicator </th>
+
+          <td colspan="4">
+            
+              <p>13.1.b - Internationale Klimafinanzierung zur Reduktion von Treibhausgasen und zur Anpassung an den Klimawandel</p>
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Target of indicator </th>
+
+          <td colspan="4">
+            
+              <p>Verdopplung der Finanzierung bis 2020 gegenüber 2014</p>
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+            
+              <tr>
+                <th scope="row">YearD </th>
+                  <td align="center">2014</td>
+                  <td align="center">2015</td>
+                  <td align="center">2016</td>
+                  <td align="center">2017</td>
+              </tr>
+            
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+          
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+            
+              <tr>
+                <th scope="row">Status year D </th>
+                  
+                  <td align="center"><a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Leicht bewölkt.png" alt="Status" class="responsiveWeather" title=""/></a></td>
+                  <td align="center"><a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Status" class="responsiveWeather" title=""/></a></td>
+                  <td align="center"><a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Status" class="responsiveWeather" title=""/></a></td>
+                  <td align="center"><a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Status" class="responsiveWeather" title=""/></a></td>
+                  
+              </tr>
+            
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+        
+
+
+      
+
+
+
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+  </div>
+
+
+              </article>
+            </div>
+          </div>
+
+          <div role="tabpanel" class="tab-pane" id="sources">
+            <!-- Count the non-empty sources (up to 5) -->
+
+
+
+
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      
+      <table class="table table-hover">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      <tr>
+        
+          <th scope="row"> </th>
+
+          <td colspan="4">
+            
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Organisation </th>
+
+          <td colspan="4">
+            
+              <p>Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung (BMZ)</p>
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row">Link zur Datenquelle </th>
+
+          <td colspan="4">
+            
+              
+              
+              
+              
+
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row"> </th>
+
+          <td colspan="4">
+            
+              
+              
+              
+              
+
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row"> </th>
+
+          <td colspan="4">
+            
+              
+              
+              
+              
+
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+
+
+    
+  
+      
+      <tr>
+        
+          <th scope="row"> </th>
+
+          <td colspan="4">
+            
+              
+              
+              
+              
+
+              
+
+            
+          </td>
+        
+      </tr>
+      
+
+
+      
+
+
+
+    
+  
+      
+
+
+      
+
+
+
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+  </div>
+
+
+          </div>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+        <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+      </div>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQ</a> | <a href="/imprint/"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20200113141402'></script><script>
+$(function() {
+    if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+      $('.async-loading').each(function(i, obj) {
+          $(obj).append($('<img />').attr('src', $(obj).data('img')));
+      });
+      $.ajax({
+        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
+        success: function(res) {
+          $('.async-loading').remove();
+          $('.async-loaded').show();
+          var model = new indicatorModel({
+            data: res.data,
+            edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
+            showMap: domData.showmap,
+            country: domData.country,
+            indicatorId: domData.indicatorid,
+            shortIndicatorId: domData.id,
+            chartTitle: domData.charttitle,
+            measurementUnit: domData.measurementunit,
+            copyright: domData.copyright,
+            dataSource: domData.datasource,
+            geographicalArea: domData.geographicalarea,
+            showData: domData.showdata,
+            footnote: domData.footnote,
+            graphType: domData.graphtype,
+            startValues: domData.startvalues
+          }),
+          view  = new indicatorView(model, {
+            rootElement: '#indicatorData',
+            legendElement: '#plotLegend',
+            maxChartHeight: 420,
+            tableColumnDefs: [
+              { maxCharCount: 25 }, // nowrap
+              { maxCharCount: 35, width: 200 },
+              { maxCharCount: Infinity, width: 250 }
+            ]
+          }),
+          controller = new indicatorController(model, view);
+          controller.initialise();
+        }
+      });
+    }
+    var switcher = new accessibilitySwitcher();
+});
+</script>
+
+
+
+
+</body>
+</html>
+
