@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://sustainabledevelopment-deutschland.github.io/sdg-data-pub',
+
+  // A hook which can be replaced to modify the configuration for Chart.js.
+  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
+  // To see an example of replacing it, see binary.html.
+  chartConfigAlter: function(config) {
+    // Alterations go here.
+    return config;
+  },
+
+  // A hook which can be replaced to alter whether/how the values that are
+  // displayed on indicator tables/graphs get rounded.
+  dataRounding: function(value) {
+    // Alterations go here.
+    return value;
+  },
+};
+
+// For backwards compatibility, some of these might need to be global.
+// @TODO: Remove these eventually.
+var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+
+</script>
+
+        <script>
+// JavaScript container for translation data.
+var translations = {
+  //Javascript version of the "t" filter from jekyll-open-sdg-plugins.
+  t: function(key) {
+
+    if (!key || typeof key !== 'string') {
+      return '';
+    }
+
+    // The majority of uses of this function are to translate disaggregation
+    // data. To spare data providers of needing to enter "data." in front of
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data !== null && this.data[key]) {
+      return this.data[key];
+    }
+
+    var originalKey = key;
+    var drilled = this;
+    var levelsDrilled = 0;
+    var levels = key.split('.');
+
+    for (var level in levels) {
+      // If we have drilled down to soon, abort.
+      if (typeof drilled !== 'object') {
+        break;
+      }
+
+      if (levels[level] in drilled) {
+        drilled = drilled[levels[level]];
+        levelsDrilled += 1;
+      }
+    }
+
+    // If we didn't drill the right number of levels, return the original string.
+    if (levels.length != levelsDrilled) {
+      return originalKey;
+    }
+
+    // Otherwise we must have drilled all the way.
+    return drilled;
+  },
+};
+</script>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
+        ================================================== -->
+
+        <!---#15 setCorrectTitle---start-------------------->
+        <title>
+          
+            Indicators on the German Sustainability Strategy
+          
+        </title>
+        <!---#15 setCorrectTitle---stop--------------------->
+
+        
+          <meta name="description" content= "Current status of the national indicators for the 17 Sustainable Development Goals (SDGs) in Germany with a publicly available data basis" >
+        
+
+        <meta property="og:description" content="">
+        
+        <link rel="canonical" href="/">
+
+        
+
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+
+        <!-- Favicons ================================================== -->
+        <!-- 128x128 -->
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        -->
+
+        
+
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200114094734">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200114094734"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
+    </head>
+<body class="language-en layout-page">
+<!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Alpha","disclaimer":"This is a development website. We welcome your <a href=\"mailto:DNS-Indikatoren@destatis.de\">feedback</a>.","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<div id="disclaimer">
+  <div class="container">
+  <div class="alert alert-danger" role="alert">
+    <strong class="phase-tag">Alpha</strong>
+    This is a development website. We welcome your <a href="mailto:DNS-Indikatoren@destatis.de">feedback</a>.
+  </div>
+</div>
+
+</div>
+
+<header role="banner">
+  <div class="container">
+
+    <a class="navbar-brand" href="/en/" id="home">
+      <img src="/assets/img/dns_logo.png" alt="Sustainable development in Germany - 17 Goals to Transform our World" />
+    </a>
+
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">English</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/status/">Deutsch</a></li></ul>
+
+    </div></div>
+
+    <nav class="navbar navbar-default" id="main-nav">
+
+      <ul class="top-level">
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
+        <li><span data-target="search">Search</span></li>
+      </ul>
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
+              <li class="nav-link ">
+                <a href="/en/">Goals</a>
+              </li>
+            
+              <li class="nav-link ">
+                <a href="/en/about/">About</a>
+              </li>
+            
+              <li class="nav-link ">
+                <a href="/en/guidance">Guidance</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/en/status_summary">Status - Summary</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/en/status">Status - Methodology</a>
+              </li>
+            <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Status</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <i class="status-toggle fa fa-chevron-up" style="display:none;"></i>
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/en/status_summary">Summary</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/en/status">Methodology</a>
+                  </li>
+                </ul>
+        </li><li>
+          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">English</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/status/">Deutsch</a></li></ul>
+
+        </li><!---#17 addLinkToOtherPage---start------------>
+        <li class="nav-link">
+          <a href="https://g205sdgs.github.io/sdg-indicators/">
+            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="To the page of the global indicators" alt="Link SDG" style="width:24px;height:24px;"/>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
+          </a>
+        </li>
+        <!---#17 addLinkToOtherPage---stop------------->
+      </ul>
+
+      <div id="search" class="menu-target">
+  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/en/indicators.json" data-pageurl="/en/search/?q=" />
+  <label for="indicator_search">
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
+  </label>
+</div>
+
+
+    </nav>
+  </div>
+
+</header>
+
+<div id="main-content" class="container" role="main">
+    <div>
+        <h1>Übersicht zum Status der Indikatoren</h1>
+        <p>En
+Um sich einen schnellen Überblick zum Status der einzelnen Indikatoren zu verschaffen, wird im Bericht bei jedem Indikator sofern möglich eines von vier möglichen „Wettersymbolen“ abgebildet. Diese Kennzeichnung ist keine politische Bewertung und auch keine Prognose. Stattdessen bieten die Symbole eine erste Einschätzung der Entwicklung, ersetzen aber nicht die erläuternden Texte sowie weitere Analysen und Hintergrundinformationen. Die Art und Weise, wie die Symbole den einzelnen Indikatoren zugeordnet werden, hängt von der Formulierung des jeweiligen Ziels ab.</p>
+
+<p>In den meisten Fällen soll ein Indikator einen konkreten absoluten oder relativen Zielwert in einem Zieljahr erreichen (zum Beispiel Indikator 3.1.a). Bei einer solchen Zielformulierung wird zunächst anhand der letzten sechs Datenpunkte der Durchschnitt der letzten fünf jährlichen Veränderungen ermittelt. Dieser Wert wird für die zukünftige jährliche Entwicklung bis zum Zieljahr unterstellt. Auf dieser Entwicklung aufbauend wird ein hypothetischer Zielwert ermittelt und mit dem vorgegebenen Zielwert des Indikators verglichen. Basierend auf der resultierenden Differenz der beiden Werte wird dem Indikator eines der folgenden Symbole zugewiesen:</p>
+
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Sonne" />    Bei Fortsetzung der Entwicklung beträgt die Abweichung vom Zielwert weniger als 5 % der Differenz zwischen Zielwert und aktuellem Wert;</p>
+
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Bedeckt.png" alt="Bedeckt" />    Bei Fortsetzung der Entwicklung würde das Ziel voraussichtlich um mindestens 5 %, aber maximal um 20 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt;</p>
+
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Wolke.png" alt="Wolke" />    Der Indikator entwickelt sich zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung würde das Ziel im Zieljahr aber um mehr als 20 % verfehlt;</p>
+
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Blitz.png" alt="Blitz" />    Der Indikator entwickelt sich nicht in die gewünschte Richtung und somit vergrößert sich der Abstand zum Ziel.</p>
+
+<p>Liegen nicht für jedes Jahr Daten vor, so werden nach Möglichkeit die letzten sechs Zeitpunkte, zu denen gesicherte Daten existieren, für die Berechnung der durchschnittlichen Veränderung verwendet. Wenn weniger als vier verwendbare Zeitpunkte zur Verfügung stehen, wird von einer Berechnung abgesehen.</p>
+
+<p>Falls kein exakter Zielwert, sondern ein Zielintervall vorgegeben ist (zum Beispiel Indikator 11.1.a), so wird zur Bestimmung des Status die schwächste Zielforderung angenommen, die sich aus dem Zielintervall ergibt. Falls für einen Indikator mehrere Zielwerte vorgegeben sind, die in unterschiedlichen Jahren erreicht werden sollen (zum Beispiel Indikator 4.2.b), so wird für die Bestimmung des Status jeweils das nächste zukünftige Zieljahr verwendet.</p>
+
+<p>Auf diese Systematik aufbauend werden zwei Sonderfälle behandelt. Soll ein Ziel- oder Grenz-wert nicht zukünftig erreicht sondern jedes Jahr eingehalten werden (zum Beispiel Indikator 6.2), so werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der zuletzt erreichte Wert sowie untergeordnet der Durchschnitt der letzten fünf Veränderungen. Wurde der Zielwert oder ein besserer Wert im letzten Jahr erreicht und deutet die durchschnittliche Veränderung nicht in Richtung einer Verschlechterung, so wird eine Sonne dargestellt. Wurde der Zielwert oder ein besserer Wert im letzten Jahr erreicht, aber die durchschnittliche Veränderung deutet in Richtung einer Verschlechterung, so führt der Indikator weiterhin eine Sonne jedoch leicht verdeckt durch eine Wolke. Falls der Zielwert nicht erreicht wurde, aber die durchschnittliche Entwicklung in Richtung des Ziels zeigt, wird nur eine Wolke dargestellt. Ist der Zielwert verfehlt und der Indikator hat sich im Durchschnitt der letzten Veränderungen nicht in Richtung des Ziels bewegt, wird das Symbol „Gewitter“ gezeigt. Dieses Verfahren wird auch dann angewandt, wenn ein Indikator zwar einen konkreten Zielwert für ein genaues Zieljahr erreichen soll, diesen aber bereits vorher erreicht hat, da für diese Fälle das Standardverfahren keine richtungssicheren Aussagen treffen kann.</p>
+
+<p>Wenn für einen Indikator nur eine Richtung vorgegeben ist, in die er sich entwickeln soll, aber kein konkreter Zielwert (zum Beispiel Indikator 1.1.a), dann werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der Durchschnitt der letzten fünf Veränderungen und untergeordnet die letzte jährliche Veränderung. Deuten sowohl der Durchschnittswert als auch die letzte jährliche Veränderung in die richtige Richtung, so wird eine Sonne dargestellt. Zielt die durchschnittliche Entwicklung in die richtige Richtung, im letzten Jahr ergab sich jedoch eine Entwicklung in die falsche Richtung oder gar keine Veränderung, so wird die Sonne um eine Wolke ergänzt. Zielt umgekehrt der Durchschnittswert in die falsche Richtung oder zeigt eine Stagnation an, im letzten Jahr zeigte sich jedoch eine Wende in die gewünschte Richtung, so wird eine Wolke gezeigt. Deuten weder Durchschnittswert noch die letzte Veränderung in die richtige Richtung, wird ein Gewitter dargestellt.</p>
+
+<p>Falls für einen einzelnen Indikator mehrere Ziele vorgegeben sind, die zugleich erfüllt werden sollen (zum Beispiel Indikator 10.1), so wird die Entwicklung für jedes der Ziele bewertet. Das Wettersymbol für den Indikator folgt dann der negativsten Einzelbewertung.</p>
+
+<p>In der Übersichtstabelle sind jeweils auch die Bewertungen eines Indikators nach Stand der vorhergehenden Jahre angegeben. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+
+    </div>
+</div>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+        <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+      </div>
+      <div class="col-xs-3 text-right">
+        <a href="/en/faq/">FAQ</a> | <a href="/en/imprint/">Legal Notice</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20200114094734'></script><script>
+$(function() {
+    if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+      $('.async-loading').each(function(i, obj) {
+          $(obj).append($('<img />').attr('src', $(obj).data('img')));
+      });
+      $.ajax({
+        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
+        success: function(res) {
+          $('.async-loading').remove();
+          $('.async-loaded').show();
+          var model = new indicatorModel({
+            data: res.data,
+            edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
+            showMap: domData.showmap,
+            country: domData.country,
+            indicatorId: domData.indicatorid,
+            shortIndicatorId: domData.id,
+            chartTitle: domData.charttitle,
+            measurementUnit: domData.measurementunit,
+            copyright: domData.copyright,
+            dataSource: domData.datasource,
+            geographicalArea: domData.geographicalarea,
+            showData: domData.showdata,
+            footnote: domData.footnote,
+            graphType: domData.graphtype,
+            startValues: domData.startvalues
+          }),
+          view  = new indicatorView(model, {
+            rootElement: '#indicatorData',
+            legendElement: '#plotLegend',
+            maxChartHeight: 420,
+            tableColumnDefs: [
+              { maxCharCount: 25 }, // nowrap
+              { maxCharCount: 35, width: 200 },
+              { maxCharCount: Infinity, width: 250 }
+            ]
+          }),
+          controller = new indicatorController(model, view);
+          controller.initialise();
+        }
+      });
+    }
+    var switcher = new accessibilitySwitcher();
+});
+</script>
+
+
+
+
+</body>
+</html>
