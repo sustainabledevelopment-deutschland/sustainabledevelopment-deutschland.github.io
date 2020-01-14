@@ -16,6 +16,13 @@
       "id": "2",
       "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
+          "id": "2-1-b",
+          "title": "Ökologischer Landbau",
+          "description": "",
+          "keywords": "",
+          "href": "/en/2-1-b",
+          "status": "complete"
+        },{
           "id": "2-2-a",
           "title": "Unterstützung guter Regierungsführung bei der Erreichung einer angemessenen Ernährung weltweit",
           "description": "",
@@ -29,13 +36,6 @@
           "keywords": "",
           "href": "/en/2-1-a",
           "status": "complete"
-        },{
-          "id": "2-1-b",
-          "title": "Ökologischer Landbau",
-          "description": "",
-          "keywords": "",
-          "href": "/en/2-1-b",
-          "status": "complete"
         }]
     }
   },{
@@ -43,25 +43,18 @@
       "id": "3",
       "title": "Ensure healthy lives and promote well-being for all at all ages",
       "indicators": [{
-          "id": "3-1-ab",
-          "title": "Vorzeitige Sterblichkeit (weiblich)",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-1-ab",
-          "status": "complete"
-        },{
-          "id": "3-1-e",
-          "title": "Adipositasquote von Jugendlichen",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-1-e",
-          "status": "complete"
-        },{
           "id": "3-2-b",
           "title": "Anteil der Bevölkerung mit erhöhter PM10-Feinstaubexposition",
           "description": "",
           "keywords": "",
           "href": "/en/3-2-b",
+          "status": "complete"
+        },{
+          "id": "3-1-f",
+          "title": "Adipositasquote von Erwachsenen",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-1-f",
           "status": "complete"
         },{
           "id": "3-2-a",
@@ -78,11 +71,18 @@
           "href": "/en/3-1-cd",
           "status": "complete"
         },{
-          "id": "3-1-f",
-          "title": "Adipositasquote von Erwachsenen",
+          "id": "3-1-ab",
+          "title": "Vorzeitige Sterblichkeit (weiblich)",
           "description": "",
           "keywords": "",
-          "href": "/en/3-1-f",
+          "href": "/en/3-1-ab",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Adipositasquote von Jugendlichen",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-1-e",
           "status": "complete"
         }]
     }
@@ -98,18 +98,18 @@
           "href": "/en/4-1-b",
           "status": "complete"
         },{
-          "id": "4-2-ab",
-          "title": "Ganztagsbetreuung für Kinder",
-          "description": "",
-          "keywords": "",
-          "href": "/en/4-2-ab",
-          "status": "complete"
-        },{
           "id": "4-1-a",
           "title": "Frühe Schulabgängerinnen und Schulabgänger",
           "description": "",
           "keywords": "",
           "href": "/en/4-1-a",
+          "status": "complete"
+        },{
+          "id": "4-2-ab",
+          "title": "Ganztagsbetreuung für Kinder",
+          "description": "",
+          "keywords": "",
+          "href": "/en/4-2-ab",
           "status": "complete"
         }]
     }
@@ -145,11 +145,11 @@
       "id": "6",
       "title": "Ensure availability and sustainable management of water and sanitation for all",
       "indicators": [{
-          "id": "6-1-a",
-          "title": "Phosphor in Fließgewässern",
+          "id": "6-1-b",
+          "title": "Nitrat im Grundwasser",
           "description": "",
           "keywords": "",
-          "href": "/en/6-1-a",
+          "href": "/en/6-1-b",
           "status": "complete"
         },{
           "id": "6-2-a",
@@ -159,11 +159,11 @@
           "href": "/en/6-2-a",
           "status": "complete"
         },{
-          "id": "6-1-b",
-          "title": "Nitrat im Grundwasser",
+          "id": "6-1-a",
+          "title": "Phosphor in Fließgewässern",
           "description": "",
           "keywords": "",
-          "href": "/en/6-1-b",
+          "href": "/en/6-1-a",
           "status": "complete"
         }]
     }
@@ -172,18 +172,18 @@
       "id": "7",
       "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
-          "id": "7-1-ab",
-          "title": "Endenergieproduktivität und Primärenergieverbrauch",
-          "description": "",
-          "keywords": "",
-          "href": "/en/7-1-ab",
-          "status": "complete"
-        },{
           "id": "7-2-a",
           "title": "Anteil erneuerbarer Energien am Brutto-Endenergieverbrauch",
           "description": "",
           "keywords": "",
           "href": "/en/7-2-a",
+          "status": "complete"
+        },{
+          "id": "7-1-ab",
+          "title": "Endenergieproduktivität und Primärenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/en/7-1-ab",
           "status": "complete"
         },{
           "id": "7-2-b",
@@ -199,20 +199,6 @@
       "id": "8",
       "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
-          "id": "8-3-a",
-          "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-3-a",
-          "status": "complete"
-        },{
-          "id": "8-2-ab",
-          "title": "Staatsdefizit und strukturelles Defizit",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-2-ab",
-          "status": "complete"
-        },{
           "id": "8-4-a",
           "title": "Bruttoinlandsprodukt je Einwohner",
           "description": "",
@@ -227,11 +213,11 @@
           "href": "/en/8-6-a",
           "status": "complete"
         },{
-          "id": "8-1-a",
-          "title": "Gesamtrohstoffproduktivität",
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
           "description": "",
           "keywords": "",
-          "href": "/en/8-1-a",
+          "href": "/en/8-2-ab",
           "status": "complete"
         },{
           "id": "8-2-c",
@@ -239,6 +225,20 @@
           "description": "",
           "keywords": "",
           "href": "/en/8-2-c",
+          "status": "complete"
+        },{
+          "id": "8-1-a",
+          "title": "Gesamtrohstoffproduktivität",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-1-a",
+          "status": "complete"
+        },{
+          "id": "8-3-a",
+          "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-3-a",
           "status": "complete"
         },{
           "id": "8-5-ab",
@@ -267,18 +267,18 @@
       "id": "10",
       "title": "Reduce inequality within and among countries",
       "indicators": [{
-          "id": "10-1-a",
-          "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
-          "description": "",
-          "keywords": "",
-          "href": "/en/10-1-a",
-          "status": "complete"
-        },{
           "id": "10-2-a",
           "title": "Gini-Koeffizient zur Einkommensverteilung",
           "description": "",
           "keywords": "",
           "href": "/en/10-2-a",
+          "status": "complete"
+        },{
+          "id": "10-1-a",
+          "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
+          "description": "",
+          "keywords": "",
+          "href": "/en/10-1-a",
           "status": "complete"
         }]
     }
@@ -287,11 +287,11 @@
       "id": "11",
       "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
       "indicators": [{
-          "id": "11-3-a",
-          "title": "Überlastung durch Wohnkosten",
+          "id": "11-2-a",
+          "title": "Endenergieverbrauch im Güterverkehr",
           "description": "",
           "keywords": "",
-          "href": "/en/11-3-a",
+          "href": "/en/11-2-a",
           "status": "complete"
         },{
           "id": "11-2-c",
@@ -301,32 +301,11 @@
           "href": "/en/11-2-c",
           "status": "complete"
         },{
-          "id": "11-2-b",
-          "title": "Endenergieverbrauch im Personenverkehr",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-2-b",
-          "status": "complete"
-        },{
-          "id": "11-1-b",
-          "title": "Freiraumverlust",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-1-b",
-          "status": "complete"
-        },{
           "id": "11-1-c",
           "title": "Siedlungsdichte",
           "description": "",
           "keywords": "",
           "href": "/en/11-1-c",
-          "status": "complete"
-        },{
-          "id": "11-2-a",
-          "title": "Endenergieverbrauch im Güterverkehr",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-2-a",
           "status": "complete"
         },{
           "id": "11-1-a",
@@ -335,6 +314,27 @@
           "keywords": "",
           "href": "/en/11-1-a",
           "status": "complete"
+        },{
+          "id": "11-2-b",
+          "title": "Endenergieverbrauch im Personenverkehr",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-2-b",
+          "status": "complete"
+        },{
+          "id": "11-3-a",
+          "title": "Überlastung durch Wohnkosten",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-3-a",
+          "status": "complete"
+        },{
+          "id": "11-1-b",
+          "title": "Freiraumverlust",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-1-b",
+          "status": "complete"
         }]
     }
   },{
@@ -342,13 +342,6 @@
       "id": "12",
       "title": "Ensure sustainable consumption and production patterns",
       "indicators": [{
-          "id": "12-3-ab",
-          "title": "Nachhaltige Beschaffung",
-          "description": "",
-          "keywords": "",
-          "href": "/en/12-3-ab",
-          "status": "complete"
-        },{
           "id": "12-1-b",
           "title": "Energieverbrauch und CO2-Emissionen des Konsum",
           "description": "",
@@ -356,18 +349,25 @@
           "href": "/en/12-1-b",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "Umweltmanagement EMAS",
-          "description": "",
-          "keywords": "",
-          "href": "/en/12-2-a",
-          "status": "complete"
-        },{
           "id": "12-1-a",
           "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
           "description": "",
           "keywords": "",
           "href": "/en/12-1-a",
+          "status": "complete"
+        },{
+          "id": "12-3-ab",
+          "title": "Nachhaltige Beschaffung",
+          "description": "",
+          "keywords": "",
+          "href": "/en/12-3-ab",
+          "status": "complete"
+        },{
+          "id": "12-2-a",
+          "title": "Umweltmanagement EMAS",
+          "description": "",
+          "keywords": "",
+          "href": "/en/12-2-a",
           "status": "complete"
         }]
     }
@@ -396,18 +396,18 @@
       "id": "14",
       "title": "Conserve and sustainably use the oceans, seas and marine resources for sustainable development",
       "indicators": [{
-          "id": "14-1-b",
-          "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
-          "description": "",
-          "keywords": "",
-          "href": "/en/14-1-b",
-          "status": "complete"
-        },{
           "id": "14-1-a",
           "title": "Stickstoffeintrag über die Zuflüsse in Ost- und Nordsee",
           "description": "",
           "keywords": "",
           "href": "/en/14-1-a",
+          "status": "complete"
+        },{
+          "id": "14-1-b",
+          "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
+          "description": "",
+          "keywords": "",
+          "href": "/en/14-1-b",
           "status": "complete"
         }]
     }
@@ -450,18 +450,18 @@
           "href": "/en/16-3-ab",
           "status": "complete"
         },{
-          "id": "16-1-a",
-          "title": "Straftaten",
-          "description": "",
-          "keywords": "",
-          "href": "/en/16-1-a",
-          "status": "complete"
-        },{
           "id": "16-2-a",
           "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
           "description": "",
           "keywords": "",
           "href": "/en/16-2-a",
+          "status": "complete"
+        },{
+          "id": "16-1-a",
+          "title": "Straftaten",
+          "description": "",
+          "keywords": "",
+          "href": "/en/16-1-a",
           "status": "complete"
         }]
     }
@@ -470,11 +470,11 @@
       "id": "17",
       "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
       "indicators": [{
-          "id": "17-2-a",
-          "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr",
+          "id": "17-1-a",
+          "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen",
           "description": "",
           "keywords": "",
-          "href": "/en/17-2-a",
+          "href": "/en/17-1-a",
           "status": "complete"
         },{
           "id": "17-3-a",
@@ -484,11 +484,11 @@
           "href": "/en/17-3-a",
           "status": "complete"
         },{
-          "id": "17-1-a",
-          "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen",
+          "id": "17-2-a",
+          "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie LDCs pro Jahr",
           "description": "",
           "keywords": "",
-          "href": "/en/17-1-a",
+          "href": "/en/17-2-a",
           "status": "complete"
         }]
     }
