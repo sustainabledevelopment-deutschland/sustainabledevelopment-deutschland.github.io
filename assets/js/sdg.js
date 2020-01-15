@@ -1678,6 +1678,7 @@ var indicatorView = function (model, options) {
   this._mapView = undefined;
   this._legendElement = options.legendElement;
 
+
   var chartHeight = screen.height < options.maxChartHeight ? screen.height : options.maxChartHeight;
 
   $('.plot-container', this._rootElement).css('height', chartHeight + 'px');
