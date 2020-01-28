@@ -86,11 +86,11 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.element = element;
     this.options = $.extend(true, {}, defaults, options.mapOptions);
     //---#20 changeAccessToken---start-----------------------------------------
-    var d = new Date();
-    if (d.getDate() > 15){
-      this.options.tileOptions.accessToken = 'pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2lma20wOXJiM25tcTc2ZHU4NjMzIn0.elmNTh89cjLmD2roD7Mcxw'
-    }
-    console.log("Options:",this.options.tileOptions.accessToken)
+    //var d = new Date();
+    //if (d.getDate() > 15){
+      //this.options.tileOptions.accessToken = 'pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2lma20wOXJiM25tcTc2ZHU4NjMzIn0.elmNTh89cjLmD2roD7Mcxw'
+    //}
+    //console.log("Options:",this.options.tileOptions.accessToken)
     //---#20 changeAccessToken---stop------------------------------------------
     this.mapLayers = [];
     this.geoData = options.geoData;
@@ -435,13 +435,13 @@ opensdg.autotrack = function(preset, category, action, label) {
       }));
 
       //---#7 addMapboxWordmark---start-----------------------------------------------------------------------------------------
-      var logo = L.control({position: 'bottomleft'});
-      logo.onAdd = function (map) {
-        var div = L.DomUtil.create('div', 'logo');
-        div.innerHTML = '<a href="https://mapbox.com"> <img src="https://g205sdgs.github.io/sdg-indicators/public/mapbox-logo-white.png"/ width=140 height=30> </a>'
-        return div;
-      };
-      logo.addTo(this.map);
+      //var logo = L.control({position: 'bottomleft'});
+      //logo.onAdd = function (map) {
+        //var div = L.DomUtil.create('div', 'logo');
+        //div.innerHTML = '<a href="https://mapbox.com"> <img src="https://g205sdgs.github.io/sdg-indicators/public/mapbox-logo-white.png"/ width=140 height=30> </a>'
+        //return div;
+      //};
+      //logo.addTo(this.map);
       //---#7 addMapboxWordmark---stop-----------------------------------------------------------------------------------------
 
       // Add the selection legend.
@@ -1294,7 +1294,7 @@ var indicatorDataStore = function(dataUrl) {
       //--#14 mixedCharts---start-------------------------------------------------------------------------------------------------------
       barCharts = [translations.t('a) time series')+", "+translations.t('calculated annual values'),
                   translations.t('a) time series')+", "+translations.t('air pollutants overall'),
-                  translations.t('b) target (max)')+", "+translations.t('air pollutants overall'),
+                  //translations.t('b) target (max)')+", "+translations.t('air pollutants overall'),
                   translations.t('a) time series')+", "+translations.t('funding balance (share of gross domestic product (at current prices) in %)'),
                   translations.t('a) time series')+", "+translations.t('structural funding balance (share of gross domestic product (at current prices) in %)'),
                   translations.t('a) time series')+", "+translations.t('proportion of msy examined in all managed stocks'),
@@ -1656,7 +1656,7 @@ var mapView = function () {
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      mapOptions: {"tileURL":"https://api.mapbox.com/styles/v1/mobosse/cjzmrn62k0ek11cmgea7a1i1h/tiles/256/{z}/{x}/{y}?&access_token={accessToken}","tileOptions":{"id":null,"accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1MGR4b3gwNWNzM2dzeGlkeWdkNmF5In0.7NmEzTzFKQVhdvc0Vvqv5w","attribution":"<a href=\"https://www.mapbox.com/about/maps\">&copy; Mapbox</a> |<br class=\"visible-xs\"> <a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2019</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2019</a> |<br class=\"visible-xs\"> <a href=\"https://www.mapbox.com/map-feedback/\"><b>Impove this map</b>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0"},
+      mapOptions: {"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":null,"accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1MGR4b3gwNWNzM2dzeGlkeWdkNmF5In0.7NmEzTzFKQVhdvc0Vvqv5w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2020</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2020</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0"},
       mapLayers: [{"min_zoom":5,"max_zoom":15,"serviceUrl":"https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":false}],
       //---#1 GoalDependendMapColor---start--------------------------------------
       goal: goal,
@@ -2093,12 +2093,29 @@ var indicatorView = function (model, options) {
             _.each(chart.data.datasets, function(dataset, datasetIndex) {
               temp.push({label: dataset.label, borderDash: dataset.borderDash, backgroundColor: dataset.backgroundColor, datasetIndex: datasetIndex, type: dataset.type});
             });
+            var replaceForOrder = [{old: 'Insgesamt', new:'AAA'},
+                                  {old: 'Total', new: 'AAA'},
+                                  {old: 'Deutschland', new: 'AAA'},
+                                  {old: 'Germany', new: 'AAA'},
+                                  {old: 'Straftaten (insgesamt)', new: 'AAA'},
+                                  {old: 'Criminal offences (total)', new: 'AAA'},
+                                  {old: 'Index (insgesamt)', new: 'AAA'},
+                                  {old: 'Index (overall)', new: 'AAA'}];
 
             var sorted = temp.sort(function(a, b) {
               var sub = a.label.substr(0,4);
               if (sub == 'Ziel' || sub == 'Targ' || sub == 'Zeit' || sub == 'Time'){
-                var subA = a.label.substr(a.label.indexOf(','), a.label.length).replace('Insgesamt', 'AAA').replace('Total','AAA').replace('Deutschland', 'AAA').replace('Germany','AAA');
-                var subB = b.label.substr(b.label.indexOf(','), b.label.length).replace('Insgesamt', 'AAA').replace('Total','AAA').replace('Deutschland', 'AAA').replace('Germany','AAA');
+                //var subA = a.label.substr(a.label.indexOf(','), a.label.length).replace('Insgesamt', 'AAA').replace('Total','AAA').replace('Deutschland', 'AAA').replace('Germany','AAA').replace('Straftaten (insgesamt)','AAA');
+                //var subB = b.label.substr(b.label.indexOf(','), b.label.length).replace('Insgesamt', 'AAA').replace('Total','AAA').replace('Deutschland', 'AAA').replace('Germany','AAA').replace('Straftaten (insgesamt)','AAA');
+                var subA = a.label.substr(a.label.indexOf(','), a.label.length)
+                var subB = b.label.substr(b.label.indexOf(','), b.label.length)
+                for (var i=0; i<replaceForOrder.length; i++){
+                  console.log('1:',subA);
+                  subA = subA.replace(replaceForOrder[i]['old'],replaceForOrder[i]['new']);
+                  subB = subB.replace(replaceForOrder[i]['old'],replaceForOrder[i]['new']);
+                  console.log('2:',subA)
+                }
+
               }
               else{
                 var subA = a.label.replace('Insgesamt', 'AAA').replace('Total','AAA').replace('Deutschland', 'AAA').replace('Germany','AAA');
@@ -2109,7 +2126,6 @@ var indicatorView = function (model, options) {
             });
 
             //^^^^ #18.1 ^^^^
-
             _.each(sorted, function(dataset) { //#18.2 use the sorted dataset instead of the original >>> _.each(chart.data.datasets, function(dataset, datasetIndex) {
 
               text.push('<li data-datasetindex="' + dataset.datasetIndex + '">'); //#18.2 >>> text.push('<li data-datasetindex="' + datasetIndex + '">');
@@ -2122,12 +2138,20 @@ var indicatorView = function (model, options) {
               var replace = [{old: '2,5', new: '2.5'},
                             {old: 'Gebäude-, Frei- & Betriebsfläche', new: 'Gebäude- Frei- & Betriebsfläche'},
                             {old: 'Konsum, Investitionen und Exporte', new: 'Konsum Investitionen und Exporte'},
-                            {old: 'Entwicklungszusammenarbeit, deren', new: 'Entwicklungszusammenarbeit, deren'}];
+                            {old: 'Entwicklungszusammenarbeit, deren', new: 'Entwicklungszusammenarbeit deren'},
+                            {old: 'Moving five-year average, referring to the middle year', new: 'Moving five-year average referring to the middle year'},
+                            {old: 'onsumption, investments', new: 'onsumption investments'},
+                            {old: 'area, c', new: 'area c'}];
+
               for (var i=0; i<replace.length; i++){
                 label = label.replace(replace[i]['old'], replace[i]['new']);
               };
               //-----------------------------------------------------------
-              for (var i=0; i<label.split(',').length; i++){
+              var exc = 0;
+              if (label.indexOf('Deutschland (insgesamt)') != -1 || label.indexOf('Germany (total)') != -1) {
+                exc = 1;
+              }
+              for (var i=0; i<label.split(',').length - exc; i++){
                 indent = indent.concat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
               };
               indent = indent.concat('</span>');
