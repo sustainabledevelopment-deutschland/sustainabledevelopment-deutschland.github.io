@@ -125,7 +125,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200128153218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200207124511">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,13 +133,13 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200128153218"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200207124511"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:DNS-Indikatoren@destatis.de\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
@@ -189,14 +189,6 @@ var translations = {
                 <a href="/">Ziele</a>
               </li>
             
-              <li class="nav-link ">
-                <a href="/about/">Über uns</a>
-              </li>
-            
-              <li class="nav-link active">
-                <a href="/guidance">Technische Hinweise</a>
-              </li>
-            
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/status_summary">Status - Übersicht</a>
               </li>
@@ -204,12 +196,24 @@ var translations = {
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/status">Status - Methodik</a>
               </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+            </li>
+            
+            <li class="nav-link active hidden-sm hidden-md hidden-lg">
+              <a href="/guidance">Technische&nbspHinweise</a>
+            </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/agenda">Agenda 2030</a>
+            </li>
             <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Status</span>
+            <span class="status-toggle-text">Bewertung</span>
             <i class="status-toggle fa fa-chevron-down"></i>
-            <i class="status-toggle fa fa-chevron-up" style="display:none;"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
@@ -218,6 +222,28 @@ var translations = {
                 
                   <li class="nav-link ">
                     <a href="/status">Methodik</a>
+                  </li>
+                </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Über uns</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                  </li>
+                
+                  <li class="nav-link active">
+                    <a href="/guidance">Technische&nbspHinweise</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/agenda">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li>
@@ -254,24 +280,61 @@ var translations = {
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Guidance</h1>
-        <p>This page shares information for people using this website and for countries or localities wishing to take a copy of it.</p>
+        <h1>Technische Hinweise</h1>
+        <h2 id="berichtsplattform-zu-den-indikatoren-der-deutschen-nachhaltigkeitsstrategie">Berichtsplattform zu den Indikatoren der Deutschen Nachhaltigkeitsstrategie</h2>
 
-<h2 id="the-platform">The platform</h2>
+<p>Die Nationale Berichtsplattform ist ein öffentlich zugängliches Instrument zur Darstellung und Verbreitung von Indikatoren der Nachhaltigkeitsstrategie für Deutschland.</p>
 
-<p>This site is built and hosted using an open-source platform with 100% free software and services. For detailed documentation on the underlying platform, including information for developers, data providers, and policy makers, see <a href="https://open-sdg.readthedocs.io">here</a>.</p>
+<p>Die Berichtsplattform</p>
+<ul>
+  <li>wird von den nationalen statistischen Ämtern verwaltet;</li>
+  <li>enthält offizielle Statistiken und Metadaten nach bewährter Standardmethodik;</li>
+  <li>ist öffentlich zugänglich;</li>
+  <li>ermöglicht Rückmeldungen von Datennutzern;</li>
+  <li>wird mit Open-Source (kostenlosen) Technologien betrieben.</li>
+</ul>
 
-<h2 id="using-this-website">Using this website</h2>
+<h3 id="quellen">Quellen</h3>
 
-<p>Answers to some specific questions about the website are included in our <a href="/faq/">Frequently Asked Questions</a> page.</p>
+<p>Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Berichtsplattformen, insbesondere als Open-Source Lösung. Vorreiter in diesem Bereich sind die USA und Großbritannien. Sie haben Plattformen entwickelt, um die Indikatoren für die SDGs (Sustainable Development Goals) der Vereinten Nationen darzustellen.</p>
 
-<p>The platform documentation includes information for people adding <a href="https://open-sdg.readthedocs.io/en/latest/data-format/">data</a> and <a href="https://open-sdg.readthedocs.io/en/latest/metadata-format/">metadata</a>.</p>
+<p>Eine universelle Version des von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Berichtsplattform für SDGs ist verfügbar. Auf diesem basiert die Berichtsplattform für die Indikatoren der Deutschen Nachhaltigkeitsstrategie. Wir empfehlen Ihnen, sich mit den SDG-Plattformen in den USA und in Großbritannien sowie mit der entsprechenden <a href="https://open-sdg.readthedocs.io/en/latest/">Open SDG-Projektdokumentation</a> vertraut zu machen. Diese enthält technische Anweisungen, wie eine Kopie der Open SDG-Plattform erstellt werden kann.</p>
 
-<h2 id="creating-a-copy-of-this-website">Creating a copy of this website</h2>
+<ul>
+  <li>
+    <p><a href="https://sdg.data.gov/">SDG-Berichtsplattform USA</a></p>
+  </li>
+  <li>
+    <p><a href="https://sustainabledevelopment-uk.github.io">SDG-Berichtsplattform GB</a></p>
+  </li>
+</ul>
 
-<p>Other countries or localities wishing to implement a version of this platform are welcome to do so for free.</p>
+<p>Der Projektcode für diese Plattform ist im folgenden <a href="https://github.com/sustainabledevelopment-deutschland/sustainabledevelopment-deutschland.github.io">GitHub Repository</a> öffentlich zugänglich.</p>
 
-<p>The platform documentation includes <a href="https://open-sdg.readthedocs.io/en/latest/quick-start/">technical information and instructions for developers</a>.</p>
+<p>Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an <a href="https://github.com/open-sdg/open-sdg/issues">Open SDG GitHub</a>.</p>
+
+<h3 id="genutzte-software">Genutzte Software</h3>
+
+<h4 id="back-end-it-anforderungen">Back-end IT-Anforderungen:</h4>
+<ul>
+  <li>GitHub: Hosting der Website, die für die Programmierung von Projekten mit dem Git-Versionskontrollsystem entwickelt wurde.</li>
+  <li>Jekyll: Generator für statische Seiten, die in Ruby geschrieben wurden.</li>
+</ul>
+
+<h4 id="front-end-it-anforderungen">Front-end IT-Anforderungen:</h4>
+<ul>
+  <li>XHTML, CSS, JavaScript</li>
+  <li>Chartist: JavaScript Bibliothek</li>
+  <li>Bootstrap: framework CSS</li>
+</ul>
+
+<h3 id="aktuelle-darstellung">Aktuelle Darstellung</h3>
+
+<p>Aufgrund von technischen Schwierigkeiten finden sich auf der aktuellen Version der Berichtsplattform einige mangelhafte Darstellungen, auf die an dieser Stelle hingewiesen wird:</p>
+<ul>
+  <li>Ganze Zahlen werden ohne Nachkommastelle dargestellt (auch in Zeitreihen, in denen andere Zahlenwerte mit Nachkommastelle vorhanden sind).</li>
+  <li>Sehr lange Zeitreihenbezeichnungen werden in den Achsenbeschriftungen der Grafiken nicht in mehrere Zeilen umgebrochen und z.T. abgeschnitten.</li>
+</ul>
 
     </div>
 </div>
@@ -297,6 +360,9 @@ var translations = {
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -308,7 +374,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200128153218'></script><script>
+<script src='/assets/js/sdg.js?v=20200207124511'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

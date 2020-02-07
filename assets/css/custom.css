@@ -103,6 +103,13 @@ header {
     margin-right: 18px;
     margin-left: 18px;
     border: 2.5px solid; }
+  #legend .swatchTgtBar {
+    display: inline-block;
+    width: 45px;
+    height: 15px;
+    margin-right: 3px;
+    margin-left: 0px;
+    border: 2.5px solid; }
   #legend .swatchLine {
     display: inline-block;
     width: 15px;
@@ -397,6 +404,7 @@ header {
     padding-left: 0; }
 
 .status-toggle-button {
+  margin-right: 0px;
   cursor: pointer; }
 
 .navbar ul.navbar-nav li a.status-toggle-button {
@@ -464,6 +472,8 @@ header {
   width: 100%;
   max-width: 60px;
   min-width: 15px;
+  padding-left: 0px;
+  padding-right: 0px;
   height: auto; }
 
 .responsiveText {
@@ -483,7 +493,7 @@ header {
 
 .my-header-note {
   display: inline-block;
-  font-size: 0.6em; }
+  font-size: 0.8em; }
 
 #main-content #map {
   height: 500px;
@@ -589,3 +599,17 @@ header {
   @media only screen and (max-width: 680px) {
     #main-content #map .selection-legend {
       width: 200px; } }
+
+.responsiveImg {
+  width: 75%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px; }
+
+.responsiveSubtitle {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }

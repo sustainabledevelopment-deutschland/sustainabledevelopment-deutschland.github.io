@@ -50,7 +50,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     maxZoom: 15,
     // Visual/choropleth considerations.
     colorRange: chroma.brewer.BuGn,
-    noValueColor: '#f0f0f0',
+    noValueColor: '#ffffff',
     styleNormal: {
       weight: 1,
       opacity: 1,
@@ -100,6 +100,12 @@ opensdg.autotrack = function(preset, category, action, label) {
     //---#1 GoalDependendMapColor---stop---------------------------------------
     //---#2.1 caseNoTimeSeriesInCsv---start------------------------------------
     this.title = options.title;
+
+    //---#2.2 footerUnitInMapLegend---start------------------------------------
+    this.unit1 = options.measurementUnit;
+    //---#2.2 footerUnitInMapLegend---stop-------------------------------------
+
+
     //---#2.1 caseNoTimeSeriesInCsv---stop-------------------------------------
 
     // Require at least one geoLayer.
@@ -128,16 +134,26 @@ opensdg.autotrack = function(preset, category, action, label) {
       //---#1 GoalDependendMapColor---stop-------------------------------------
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
-    this.currentYear = this.years[0];
-
+    this.currentYear = this.years.slice(-1)[0];//[0];
+    console.log("jq:",this.years.slice(-1)[0]);
     //---#2.1 caseNoTimeSeriesInCsv---start------------------------------------
-    this.title = translations.t(this.title)
+    this.title = translations.t(this.title);
     //---#2.1 caseNoTimeSeriesInCsv---stop------------------------------------
     //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
     this.timeSeries = _.pluck(this.geoData, 'timeseries');
     this.timeSeriesName = translations.t(this.timeSeries[this.timeSeries.length -1]);
-    this.unit = _.pluck(this.geoData, 'Units');
-    this.unitName = translations.t('unit') + ": " + translations.t(this.unit[this.unit.length -1]);
+
+    if (this.unit1){
+      this.unit = this.unit1;
+
+      this.unitName = translations.t('unit') + ": " + translations.t(this.unit);
+    }
+    else {
+      this.unit = _.pluck(this.geoData, 'Units');
+      this.unitName = translations.t('unit') + ": " + translations.t(this.unit[this.unit.length -1]);
+    }
+
+
     //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
     this.sex = _.pluck(this.geoData, 'sex');
     this.sexName = translations.t(this.sex[this.sex.length -1]);
@@ -431,7 +447,8 @@ opensdg.autotrack = function(preset, category, action, label) {
           plugin.updateColors();
           plugin.selectionLegend.update();
 
-        }
+        },
+        playReverseButton: true
       }));
 
       //---#7 addMapboxWordmark---start-----------------------------------------------------------------------------------------
@@ -1221,6 +1238,7 @@ var indicatorDataStore = function(dataUrl) {
   };
 
   this.getData = function(options) {
+
     // field: 'Grade'
     // values: ['A', 'B']
     var options = _.defaults(options || {}, {
@@ -1236,11 +1254,9 @@ var indicatorDataStore = function(dataUrl) {
       datasetIndex = 0,
 
       //---#4 sameColorForTargetAndTimeSeries---start-----------------
-      nameList = []
-      indexList = []
+      nameList = [],
+      indexList = [],
       //---#4 sameColorForTargetAndTimeSeries---stop------------------
-
-
 
       getCombinationDescription = function(combination) {
         return _.map(Object.keys(combination), function(key) {
@@ -1281,34 +1297,85 @@ var indicatorDataStore = function(dataUrl) {
 
       //---#13 noLineForTargets---start-------------------------------------------------------------------------------------------------
       //-Since showLines does not work we set the opacity to 0.0 if it is a target------------------------------------------------------
-      getLineStyle = function (combinationDescription, datasetIndexMod) {
+      getLineStyle = function (combinationDescription, datasetIndexMod, data) {
+
         if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
-          return 'rgba(0, 0, 0, 0.0)';
+          if (data.length == 1){
+            console.log('a',combinationDescription, datasetIndexMod)
+            return true;
+          }
+          else{
+            console.log('b',combinationDescription, datasetIndexMod)
+            return false;
+          }
+          //return true;//'rgba(0, 0, 0, 0.0)';
+        }
+        else{
+          console.log('c',combinationDescription, datasetIndexMod)
+          return true;//'#' + getColor(datasetIndexMod);
+        }
+      },
+      //---#13 noLineForTargets---stop--------------------------------------------------------------------------------------------------
+
+      //---#22 xxx---start-------------------------------------------------------------------------------------------------
+      //-Since showLines does not work we set the opacity to 0.0 if it is a target------------------------------------------------------
+
+      getBorderColor = function(combinationDescription,datasetIndexMod,indicatorId) {
+        if (getChartStyle(indicatorId) == 'bar'){
+          return '#' + getColor(datasetIndexMod);
+        }
+        else{
+          return getBackground(combinationDescription,datasetIndexMod)
+        }
+      }
+
+
+      getBackground = function (combinationDescription, datasetIndexMod) {
+        if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
+
+          return '#ffffff';
         }
         else{
           return '#' + getColor(datasetIndexMod);
         }
       },
-      //---#13 noLineForTargets---stop--------------------------------------------------------------------------------------------------
+      //---#22 xxx---stop--------------------------------------------------------------------------------------------------
 
       //--#14 mixedCharts---start-------------------------------------------------------------------------------------------------------
-      barCharts = [translations.t('a) time series')+", "+translations.t('calculated annual values'),
-                  translations.t('a) time series')+", "+translations.t('air pollutants overall'),
+      //barCharts = [//translations.t('a) time series')+", "+translations.t('calculated annual values'),
+                  //translations.t('a) time series')+", "+translations.t('air pollutants overall'),
                   //translations.t('b) target (max)')+", "+translations.t('air pollutants overall'),
-                  translations.t('a) time series')+", "+translations.t('funding balance (share of gross domestic product (at current prices) in %)'),
-                  translations.t('a) time series')+", "+translations.t('structural funding balance (share of gross domestic product (at current prices) in %)'),
-                  translations.t('a) time series')+", "+translations.t('proportion of msy examined in all managed stocks'),
-                  translations.t('a) time series')+", "+translations.t('index overall'),
-                  translations.t('b) target (min)')+", "+translations.t('index overall')]
-      getChartStyle = function (combinationDescription) {
-        if (barCharts.indexOf(String(combinationDescription)) != -1) {
+                  //translations.t('a) time series')+", "+translations.t('funding balance (share of gross domestic product (at current prices) in %)'),
+                  //translations.t('a) time series')+", "+translations.t('structural funding balance (share of gross domestic product (at current prices) in %)'),
+                  //translations.t('a) time series')+", "+translations.t('proportion of msy examined in all managed stocks'),
+                  //translations.t('a) time series')+", "+translations.t('index overall'),
+                  //translations.t('b) target (min)')+", "+translations.t('index overall')
+
+                //]
+      //getChartStyle = function (combinationDescription) {
+        //if (barCharts.indexOf(String(combinationDescription)) != -1) {
+          //return 'bar';
+        //}
+        //else {
+          //return 'line';
+        //}
+      //},
+      //--#14 mixedCharts---stop--------------------------------------------------------------------------------------------------------
+
+      //--#14.1 barsOnly---start--------------------------------------------------------------------------------------------------------
+      barCharts = ['indicator_2-2-a','indicator_3-1-e','indicator_5-1-b','indicator_5-1-c','indicator_6-2-a','indicator_8-2-c','indicator_8-3-a','indicator_8-4-a','indicator_8-6-a','indicator_11-1-a','indicator_11-1-b','indicator_11-2-c','indicator_12-1-a','indicator_12-1-b','indicator_13-1-b','indicator_15-2-a','indicator_16-1-a','indicator_16-2-a','indicator_17-1-a','indicator_17-2-a'];
+
+      getChartStyle = function (indicatorId) {
+
+        if (barCharts.indexOf(indicatorId) != -1) {
           return 'bar';
         }
         else {
           return 'line';
         }
       },
-      //--#14 mixedCharts---stop--------------------------------------------------------------------------------------------------------
+      //--#14.1 barsOnly---stop--------------------------------------------------------------------------------------------------------
+
 
       getBorderDash = function(datasetIndex) {
         // offset if there is no headline data:
@@ -1361,12 +1428,13 @@ var indicatorDataStore = function(dataUrl) {
 
             label: combinationDescription ? combinationDescription : that.country,
             //---#13 noLineForTargets---start-------------------------------
-            //borderColor: '#' + getColor(datasetIndex),
-            borderColor: getLineStyle(combinationDescription, datasetIndexMod),
+            borderColor: getBorderColor(combinationDescription,datasetIndexMod,that.indicatorId),//'#' + getColor(datasetIndexMod),
+            //borderColor: getLineStyle(combinationDescription, datasetIndexMod),
             //---#13 noLineForTargets---stop--------------------------------
             //---#4 sameColorForTargetAndTimeSeries---start-----------------
             //backgroundColor: '#' + getColor(datasetIndex),
-            backgroundColor: '#' + getColor(datasetIndexMod),
+            //backgroundColor: '#' + getColor(datasetIndexMod),
+            backgroundColor: getBackground(combinationDescription,datasetIndexMod),
             //---#4 sameColorForTargetAndTimeSeries---stop------------------
             //---#11 setTargetPointstyle---start---------------------------------------
             pointStyle: getPointStyle(combinationDescription),
@@ -1381,8 +1449,11 @@ var indicatorDataStore = function(dataUrl) {
               return found ? found.Value : null;
             }),
             //--#14 mixedCharts---start------------------------------------------------
-            type: getChartStyle(combinationDescription),
+            //type: getChartStyle(combinationDescription),
             //--#14 mixedCharts---stop-------------------------------------------------
+            //--#14.1 barsOnly---start------------------------------------------------
+            type: getChartStyle(that.indicatorId),
+            //--#14.1 barsOnly---stop-------------------------------------------------
             borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
 
@@ -1557,7 +1628,12 @@ var indicatorDataStore = function(dataUrl) {
         //---#2.1 caseNoTimeSeriesInCsv---start-----------------------------------
         title: this.chartTitle,
         //---#2.1 caseNoTimeSeriesInCsv---stop------------------------------------
+
+        //---#2.2 footerUnitInMapLegend---start-----------------------------------
+        measurementUnit: this.measurementUnit,
+        //---#2.2 footerUnitInMapLegend---stop------------------------------------
       });
+
 
 
     } else {
@@ -1578,14 +1654,23 @@ var indicatorDataStore = function(dataUrl) {
         // with disaggregation categories. The value, at this point, is a string
         // which we assume to be pipe-delimited.
         var valuesToLookFor = this.startValues.split('|');
+
         // Match up each field value with a field.
         _.each(this.fieldItemStates, function(fieldItem) {
+          //--#21 allowMultipleStartValues---start-----------------------------
+          minimumFieldSelections[fieldItem.field] = [];
+          //--#21 allowMultipleStartValues---stop------------------------------
           _.each(fieldItem.values, function(fieldValue) {
+            //console.log('C',fieldValue);
             if (_.contains(valuesToLookFor, fieldValue.value)) {
-              minimumFieldSelections[fieldItem.field] = fieldValue.value;
+              //--#21 allowMultipleStartValues---start-----------------------------
+              //minimumFieldSelections[fieldItem.field] = fieldValue.value;
+              minimumFieldSelections[fieldItem.field].push(fieldValue.value);
+              //--#21 allowMultipleStartValues---stop------------------------------
             }
           });
         });
+
       }
       if (_.size(minimumFieldSelections) == 0) {
         // If we did not have any pre-configured start values, we calculate them.
@@ -1650,7 +1735,7 @@ var mapView = function () {
   //this.initialise = function(geoData, geoCodeRegEx) {
   //this.initialise = function(geoData, geoCodeRegEx, goal) {
   //---#1 GoalDependendMapColor---stop---------------------------------------
-  this.initialise = function(geoData, geoCodeRegEx, goal, title) {
+  this.initialise = function(geoData, geoCodeRegEx, goal, title, measurementUnit) {
   //---#2.1 caseNoTimeSeriesInCsv---stop-------------------------------------
     $('.map').show();
     $('#map').sdgMap({
@@ -1661,6 +1746,11 @@ var mapView = function () {
       //---#1 GoalDependendMapColor---start--------------------------------------
       goal: goal,
       //---#1 GoalDependendMapColor---stop---------------------------------------
+
+      //---#2.2 footerUnitInMapLegend---start----------------------------------------------------------
+      measurementUnit: measurementUnit,
+      //---#2.2 footerUnitInMapLegend---stop-----------------------------------------------------------
+
       title: title
     });
   };
@@ -1764,9 +1854,23 @@ var indicatorView = function (model, options) {
             .click();
         }
       }
+
       for (var fieldToSelect in args.minimumFieldSelections) {
         var fieldValue = args.minimumFieldSelections[fieldToSelect];
-        setTimeout(getClickFunction(fieldToSelect, fieldValue), 500);
+        //--#21 allowMultipleStartValues---start------------------------------
+        //setTimeout(getClickFunction(fieldToSelect, fieldValue), 500);
+        if (typeof args.minimumFieldSelections[fieldToSelect] == 'object'){
+          console.log('M: ',args.minimumFieldSelections, args.minimumFieldSelections[fieldToSelect], typeof args.minimumFieldSelections[fieldToSelect]);
+          _.each(fieldValue, function(multiValue){
+            setTimeout(getClickFunction(fieldToSelect, multiValue), 500);
+          });
+        }
+        else {
+          console.log('S: ',args.minimumFieldSelections, args.minimumFieldSelections[fieldToSelect], typeof args.minimumFieldSelections[fieldToSelect]);
+          setTimeout(getClickFunction(fieldToSelect, fieldValue), 500);
+        }
+        //--#21 allowMultipleStartValues---stop------------------------------
+
       }
     }
     else {
@@ -1807,8 +1911,9 @@ var indicatorView = function (model, options) {
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
       //---#1 GoalDependendMapColor---stop---------------------------
-      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title);
+      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title, args.measurementUnit); //---#2.2 footerUnitInMapLegend
       //---#2 TimeSeriesNameDisplayedInMaps---stop------------------
+
     }
   });
 
@@ -2055,7 +2160,7 @@ var indicatorView = function (model, options) {
 
 
   this.createPlot = function (chartInfo) {
-
+    console.log("chartinfo",chartInfo);
     var that = this;
     var chartConfig = {
       type: this._model.graphType,
@@ -2091,7 +2196,7 @@ var indicatorView = function (model, options) {
             //vvv #18.1 vvvv sort the dataset by substring if it contains "target" or "timeseries"
             var temp = [];
             _.each(chart.data.datasets, function(dataset, datasetIndex) {
-              temp.push({label: dataset.label, borderDash: dataset.borderDash, backgroundColor: dataset.backgroundColor, datasetIndex: datasetIndex, type: dataset.type});
+              temp.push({label: dataset.label, borderDash: dataset.borderDash, backgroundColor: dataset.backgroundColor, borderColor: dataset.borderColor, pointBorderColor: dataset.pointBorderColor, datasetIndex: datasetIndex, type: dataset.type});
             });
             var replaceForOrder = [{old: 'Insgesamt', new:'AAA'},
                                   {old: 'Total', new: 'AAA'},
@@ -2110,10 +2215,10 @@ var indicatorView = function (model, options) {
                 var subA = a.label.substr(a.label.indexOf(','), a.label.length)
                 var subB = b.label.substr(b.label.indexOf(','), b.label.length)
                 for (var i=0; i<replaceForOrder.length; i++){
-                  console.log('1:',subA);
+                  //console.log('1:',subA);
                   subA = subA.replace(replaceForOrder[i]['old'],replaceForOrder[i]['new']);
                   subB = subB.replace(replaceForOrder[i]['old'],replaceForOrder[i]['new']);
-                  console.log('2:',subA)
+                  //console.log('2:',subA)
                 }
 
               }
@@ -2148,9 +2253,16 @@ var indicatorView = function (model, options) {
               };
               //-----------------------------------------------------------
               var exc = 0;
-              if (label.indexOf('Deutschland (insgesamt)') != -1 || label.indexOf('Germany (total)') != -1) {
+              var exceptions = ['Deutschland (insgesamt)', 'Germany (total)',
+                                'Insgesamt', 'Total',
+                                'Index insgesamt', 'Index overall'];
+              if (exceptions.includes(label)) {
                 exc = 1;
               }
+
+              //if (label.indexOf('Deutschland (insgesamt)') != -1 || label.indexOf('Germany (total)') != -1) {
+                //exc = 1;
+              //}
               for (var i=0; i<label.split(',').length - exc; i++){
                 indent = indent.concat('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
               };
@@ -2158,19 +2270,23 @@ var indicatorView = function (model, options) {
               text.push(indent);
               // ^^^^ #18.4 ^^^^----------------------------------------------------
 
-
               //---#3 targetDifferentInLegend---start----------------------------------------------------------------------------------------------------------------------------
               //text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
               if (dataset.label.substr(0,4) == 'Ziel' || dataset.label.substr(0,6) == 'Target'){
-                text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.backgroundColor + '"></span>');
+                if (dataset.type != 'bar'){
+                  text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                }
+                else{
+                  text.push('<span class="swatchTgtBar' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                }
               }
               else if (dataset.type != 'bar'){
-                text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' left" style="background-color: ' + dataset.backgroundColor + '"></span>');
-                text.push('<span class="swatchTsr' + (dataset.borderDash ? ' dashed' : '') + '" style="border-color: ' + dataset.backgroundColor + '"></span>');
-                text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' right" style="background-color: ' + dataset.backgroundColor + '"></span>');
+                text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' left" style="background-color: ' + dataset.pointBorderColor + '"></span>');
+                text.push('<span class="swatchTsr' + (dataset.borderDash ? ' dashed' : '') + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                text.push('<span class="swatchLine' + (dataset.borderDash ? ' dashed' : '') + ' right" style="background-color: ' + dataset.pointBorderColor + '"></span>');
               }
               else{
-                text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '"></span>');
+                text.push('<span class="swatchBar' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.pointBorderColor + '"></span>');
               }
               //---#3 targetDifferentInLegend---stop-----------------------------------------------------------------------------------------------------------------------------
 
@@ -2931,6 +3047,7 @@ $(function() {
     timeSliderDragUpdate: true,
     speedSlider: false,
     position: 'bottomleft',
+    timeSlider: false,
     // Player options.
     playerOptions: {
       transitionTime: 1000,
@@ -2958,8 +3075,9 @@ $(function() {
       // cause any problems. This converts the array of years into a comma-
       // delimited string of YYYY-MM-DD dates.
       times: options.years.join('-01-02,') + '-01-02',
-      currentTime: new Date(options.years[0] + '-01-02').getTime(),
+      currentTime: new Date(options.years.slice(-1)[0] + '-01-02').getTime(),
     });
+    console.log("ys:",options.years);
     // Create the player.
     options.player = new L.TimeDimension.Player(options.playerOptions, options.timeDimension);
     // Listen for time changes.

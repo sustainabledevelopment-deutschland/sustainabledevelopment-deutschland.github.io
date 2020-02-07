@@ -125,7 +125,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200128153218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200207124511">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,13 +133,13 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200128153218"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200207124511"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:DNS-Indikatoren@destatis.de\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
@@ -189,14 +189,6 @@ var translations = {
                 <a href="/">Ziele</a>
               </li>
             
-              <li class="nav-link ">
-                <a href="/about/">Über uns</a>
-              </li>
-            
-              <li class="nav-link ">
-                <a href="/guidance">Technische Hinweise</a>
-              </li>
-            
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/status_summary">Status - Übersicht</a>
               </li>
@@ -204,12 +196,24 @@ var translations = {
               <li class="nav-link active hidden-sm hidden-md hidden-lg">
                 <a href="/status">Status - Methodik</a>
               </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+            </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/guidance">Technische&nbspHinweise</a>
+            </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/agenda">Agenda 2030</a>
+            </li>
             <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Status</span>
+            <span class="status-toggle-text">Bewertung</span>
             <i class="status-toggle fa fa-chevron-down"></i>
-            <i class="status-toggle fa fa-chevron-up" style="display:none;"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
@@ -218,6 +222,28 @@ var translations = {
                 
                   <li class="nav-link active">
                     <a href="/status">Methodik</a>
+                  </li>
+                </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Über uns</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/guidance">Technische&nbspHinweise</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/agenda">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li>
@@ -254,28 +280,59 @@ var translations = {
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Wettersymbole</h1>
-        <p>Um sich einen schnellen Überblick zum Status der einzelnen Indikatoren zu verschaffen, wird im Bericht bei jedem Indikator sofern möglich eines von vier möglichen „Wettersymbolen“ abgebildet. Diese Kennzeichnung ist keine politische Bewertung und auch keine Prognose. Stattdessen bieten die Symbole eine erste Einschätzung der Entwicklung, ersetzen aber nicht die erläuternden Texte sowie weitere Analysen und Hintergrundinformationen. Die Art und Weise, wie die Symbole den einzelnen Indikatoren zugeordnet werden, hängt von der Formulierung des jeweiligen Ziels ab.</p>
+        <h1>Status der Indikatoren</h1>
+        <p>Um sich einen schnellen Überblick zum Status der einzelnen Indikatoren zu verschaffen, wird im Bericht bei jedem Indikator, sofern berechenbar, eines von vier möglichen Wettersymbolen abgebildet. Diese Kennzeichnung ist keine politische Bewertung und auch keine Prognose. Stattdessen bieten die Symbole eine erste Einschätzung der Entwicklung, ersetzen aber nicht die erläuternden Texte sowie weitere Analysen und Hintergrundinformationen. Die Art und Weise,
+wie die Symbole den einzelnen Indikatoren zugeordnet werden, hängt von der Formulierung des jeweiligen Ziels ab.</p>
+
+<p><b>Indikatoren mit absoluten oder relativen Zielwerten</b></p>
 
 <p>In den meisten Fällen soll ein Indikator einen konkreten absoluten oder relativen Zielwert in einem Zieljahr erreichen (zum Beispiel Indikator 3.1.a). Bei einer solchen Zielformulierung wird zunächst anhand der letzten sechs Datenpunkte der Durchschnitt der letzten fünf jährlichen Veränderungen ermittelt. Dieser Wert wird für die zukünftige jährliche Entwicklung bis zum Zieljahr unterstellt. Auf dieser Entwicklung aufbauend wird ein hypothetischer Zielwert ermittelt und mit dem vorgegebenen Zielwert des Indikators verglichen. Basierend auf der resultierenden Differenz der beiden Werte wird dem Indikator eines der folgenden Symbole zugewiesen:</p>
 
-<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Sonne" />    Bei Fortsetzung der Entwicklung beträgt die Abweichung vom Zielwert weniger als 5 % der Differenz zwischen Zielwert und aktuellem Wert;</p>
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Sonne.png" alt="Sonne" />   Bei Fortsetzung der Entwicklung würde der Zielwert erreicht oder um weniger als 5 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt.</p>
 
-<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Leicht bewölkt.png" alt="Leicht bewölkt" />    Bei Fortsetzung der Entwicklung würde das Ziel voraussichtlich um mindestens 5 %, aber maximal um 20 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt;</p>
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Leicht bewölkt.png" alt="Leicht bewölkt" />   Bei Fortsetzung der Entwicklung würde das Ziel voraussichtlich um mindestens 5 %, aber maximal um 20 % der Differenz zwischen Zielwert und aktuellem Wert verfehlt.</p>
 
-<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Wolke.png" alt="Wolke" />    Der Indikator entwickelt sich zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung würde das Ziel im Zieljahr aber um mehr als 20 % verfehlt;</p>
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Wolke.png" alt="Wolke" />   Der Indikator entwickelt sich zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung würde das Ziel im Zieljahr aber um mehr als 20 % verfehlt.</p>
 
-<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Blitz.png" alt="Blitz" />    Der Indikator entwickelt sich nicht in die gewünschte Richtung und somit vergrößert sich der Abstand zum Ziel.</p>
+<p><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/Blitz.png" alt="Blitz" />   Der Indikator entwickelt sich nicht in die gewünschte Richtung und somit vergrößert sich der Abstand zum Ziel.</p>
 
-<p>Liegen nicht für jedes Jahr Daten vor, so werden nach Möglichkeit die letzten sechs Zeitpunkte, zu denen gesicherte Daten existieren, für die Berechnung der durchschnittlichen Veränderung verwendet. Wenn weniger als vier verwendbare Zeitpunkte zur Verfügung stehen, wird von einer Berechnung abgesehen.</p>
+<p>LIn Ausnahmefällen, wenn für die oben genannte Berechnung nicht genügend Daten vorliegen, werden mindestens die letzten vier zusammenhängenden Zeitpunkte, zu denen Daten existieren, für die Berechnung der durchschnittlichen Veränderung herangezogen. Stehen weniger als vier verwendbare Jahreswerte zur Verfügung, wird von einer Berechnung abgesehen.</p>
 
-<p>Falls kein exakter Zielwert, sondern ein Zielintervall vorgegeben ist (zum Beispiel Indikator 11.1.a), so wird zur Bestimmung des Status die schwächste Zielforderung angenommen, die sich aus dem Zielintervall ergibt. Falls für einen Indikator mehrere Zielwerte vorgegeben sind, die in unterschiedlichen Jahren erreicht werden sollen (zum Beispiel Indikator 4.2.b), so wird für die Bestimmung des Status jeweils das nächste zukünftige Zieljahr verwendet.</p>
+<p><b>Indikatoren mit Zielintervallen</b></p>
 
-<p>Auf diese Systematik aufbauend werden zwei Sonderfälle behandelt. Soll ein Ziel- oder Grenz-wert nicht zukünftig erreicht sondern jedes Jahr eingehalten werden (zum Beispiel Indikator 6.2), so werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der zuletzt erreichte Wert sowie untergeordnet der Durchschnitt der letzten fünf Veränderungen. Wurde der Zielwert oder ein besserer Wert im letzten Jahr erreicht und deutet die durchschnittliche Veränderung nicht in Richtung einer Verschlechterung, so wird eine Sonne dargestellt. Wurde der Zielwert oder ein besserer Wert im letzten Jahr erreicht, aber die durchschnittliche Veränderung deutet in Richtung einer Verschlechterung, so führt der Indikator weiterhin eine Sonne jedoch leicht verdeckt durch eine Wolke. Falls der Zielwert nicht erreicht wurde, aber die durchschnittliche Entwicklung in Richtung des Ziels zeigt, wird nur eine Wolke dargestellt. Ist der Zielwert verfehlt und der Indikator hat sich im Durchschnitt der letzten Veränderungen nicht in Richtung des Ziels bewegt, wird das Symbol „Gewitter“ gezeigt. Dieses Verfahren wird auch dann angewandt, wenn ein Indikator zwar einen konkreten Zielwert für ein genaues Zieljahr erreichen soll, diesen aber bereits vorher erreicht hat, da für diese Fälle das Standardverfahren keine richtungssicheren Aussagen treffen kann.</p>
+<p>Falls kein exakter Zielwert, sondern ein Zielintervall vorgegeben ist (zum Beispiel Indikator 11.1.a), so wird zur Bestimmung des Status die schwächste Zielforderung angenommen, die sich aus dem Zielintervall ergibt. Falls für einen Indikator mehrere Zielwerte vorgegeben sind, die in unterschiedlichen Jahren erreicht werden sollen (zum Beispiel Indikator 4.2.b), so wird für die
+Bestimmung des Status jeweils das zeitlich nächste Zieljahr verwendet.</p>
 
-<p>Wenn für einen Indikator nur eine Richtung vorgegeben ist, in die er sich entwickeln soll, aber kein konkreter Zielwert (zum Beispiel Indikator 1.1.a), dann werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der Durchschnitt der letzten fünf Veränderungen und untergeordnet die letzte jährliche Veränderung. Deuten sowohl der Durchschnittswert als auch die letzte jährliche Veränderung in die richtige Richtung, so wird eine Sonne dargestellt. Zielt die durchschnittliche Entwicklung in die richtige Richtung, im letzten Jahr ergab sich jedoch eine Entwicklung in die falsche Richtung oder gar keine Veränderung, so wird die Sonne um eine Wolke ergänzt. Zielt umgekehrt der Durchschnittswert in die falsche Richtung oder zeigt eine Stagnation an, im letzten Jahr zeigte sich jedoch eine Wende in die gewünschte Richtung, so wird eine Wolke gezeigt. Deuten weder Durchschnittswert noch die letzte Veränderung in die richtige Richtung, wird ein Gewitter dargestellt.</p>
+<p><b>Indikatoren mit gleichbleibender Zielvorgabe in jedem Jahr</b></p>
+
+<p>Soll ein Ziel- oder Grenzwert nicht zukünftig erreicht, sondern jedes Jahr eingehalten werden (zum Beispiel Indikator 6.2), so werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der zuletzt erreichte Wert sowie untergeordnet der Durchschnitt der letzten fünf
+Veränderungen:</p>
+
+<ul>
+  <li>Wurde der Zielwert oder ein besserer Wert im letzten Jahr erreicht und deutet die durchschnittliche Veränderung nicht in Richtung einer Verschlechterung, so wird eine Sonne dargestellt.</li>
+  <li>Wurde der Zielwert oder ein besserer Wert im letzten Jahr erreicht, aber die durchschnittliche Veränderung deutet in Richtung einer Verschlechterung, so führt der Indikator weiterhin eine Sonne, jedoch leicht verdeckt durch eine Wolke.</li>
+  <li>Falls der Zielwert nicht erreicht wurde, aber die durchschnittliche Entwicklung nicht vom Ziel weg weist, wird nur eine Wolke dargestellt.</li>
+  <li>Ist der Zielwert verfehlt und der Indikator hat sich im Durchschnitt der letzten Veränderungen nicht in Richtung des Ziels bewegt, wird das Symbol „Gewitter“ gezeigt.</li>
+</ul>
+
+<p>Dieses Verfahren wird auch dann angewandt, wenn ein Indikator zwar einen konkreten Zielwert für ein genaues Zieljahr erreichen soll, diesen aber bereits vorher erreicht hat, da für diese Fälle das Standardverfahren keine richtungssicheren Aussagen treffen kann.</p>
+
+<p><b>Indikatoren mit Zielrichtungsvorgabe ohne konkreten Zielwert</b></p>
+
+<p>Wenn für einen Indikator nur eine Richtung vorgegeben ist, in die er sich entwickeln soll, aber kein konkreter Zielwert (zum Beispiel Indikator 1.1.a), dann werden für die Bewertung zwei Informationen kombiniert, und zwar vorrangig der Durchschnitt der letzten fünf Veränderungen und untergeordnet die letzte jährliche Veränderung:</p>
+
+<ul>
+  <li>Deuten sowohl der Durchschnittswert als auch die letzte jährliche Veränderung in die richtige Richtung, so wird eine Sonne dargestellt.</li>
+  <li>Zielt die durchschnittliche Entwicklung in die richtige Richtung, im letzten Jahr ergab sich jedoch eine Entwicklung in die falsche Richtung oder gar keine Veränderung, so wird die Sonne um eine Wolke ergänzt.</li>
+  <li>Zielt umgekehrt der Durchschnittswert in die falsche Richtung oder zeigt eine Stagnation an, im letzten Jahr zeigte sich jedoch eine Wende in die gewünschte Richtung, so wird eine Wolke gezeigt.</li>
+  <li>Deuten weder Durchschnittswert noch die letzte Veränderung in die richtige Richtung, wird ein Gewitter dargestellt.</li>
+</ul>
+
+<p><b>Indikatoren mit mehreren Zielwerten</b></p>
 
 <p>Falls für einen einzelnen Indikator mehrere Ziele vorgegeben sind, die zugleich erfüllt werden sollen (zum Beispiel Indikator 10.1), so wird die Entwicklung für jedes der Ziele bewertet. Das Wettersymbol für den Indikator folgt dann der negativsten Einzelbewertung.</p>
+
+<p><b>Bewertungen im Zeitvergleich</b></p>
 
 <p>In der Übersichtstabelle sind jeweils auch die Bewertungen eines Indikators nach Stand der vorhergehenden Jahre angegeben. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war.</p>
 
@@ -303,6 +360,9 @@ var translations = {
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -314,7 +374,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200128153218'></script><script>
+<script src='/assets/js/sdg.js?v=20200207124511'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

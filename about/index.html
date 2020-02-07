@@ -125,7 +125,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200128153218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200207124511">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,13 +133,13 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200128153218"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200207124511"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:DNS-Indikatoren@destatis.de\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div id="disclaimer">
@@ -189,14 +189,6 @@ var translations = {
                 <a href="/">Ziele</a>
               </li>
             
-              <li class="nav-link active">
-                <a href="/about/">Über uns</a>
-              </li>
-            
-              <li class="nav-link ">
-                <a href="/guidance">Technische Hinweise</a>
-              </li>
-            
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/status_summary">Status - Übersicht</a>
               </li>
@@ -204,12 +196,24 @@ var translations = {
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/status">Status - Methodik</a>
               </li>
+            
+            <li class="nav-link active hidden-sm hidden-md hidden-lg">
+              <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+            </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/guidance">Technische&nbspHinweise</a>
+            </li>
+            
+            <li class="nav-link  hidden-sm hidden-md hidden-lg">
+              <a href="/agenda">Agenda 2030</a>
+            </li>
             <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Status</span>
+            <span class="status-toggle-text">Bewertung</span>
             <i class="status-toggle fa fa-chevron-down"></i>
-            <i class="status-toggle fa fa-chevron-up" style="display:none;"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
@@ -218,6 +222,28 @@ var translations = {
                 
                   <li class="nav-link ">
                     <a href="/status">Methodik</a>
+                  </li>
+                </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Über uns</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link active">
+                    <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/guidance">Technische&nbspHinweise</a>
+                  </li>
+                
+                  <li class="nav-link ">
+                    <a href="/agenda">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li>
@@ -254,12 +280,67 @@ var translations = {
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>About</h1>
-        <p>This website is for disseminating SDG indicator data. We are at an Alpha stage in development, so the site is still ‘work in progress’.</p>
+        <h1>Über die Berichtsplattform für die DNS</h1>
+        <h3>Ziel und Hintergrund</h3>
+<p>Ziel dieser nationalen Berichtsplattform ist die Darstellung der Indikatoren der Deutschen Nachhaltigkeitsstrategie. Deutschland hat seit 2002 eine nationale Nachhaltigkeitsstrategie mit eigenen Zielen, Indikatorenbereichen und Postulaten.
+2017 wurde diese Strategie anlässlich der <a href="https://sustainabledevelopment-deutschland.github.io/agenda/">Agenda 2030</a> der Vereinten Nationen und den zugehörigen 17 Zielen für eine nachhaltige Entwicklung (Sustainable Development Goals, SGDs) überarbeitet und firmiert nun unter dem Namen Deutschen Nachhaltigkeitsstrategie (DNS). Bei der Überarbeitung wurde thematisch passend mindestens ein Indikator zu jedem der 17 Ziele in die Strategie aufgenommen. Die zu erreichenden Zielwerte, die Indikatoren, ihre Datengrundlagen und Berechnungen sind von der Bundesregierung beschlossen worden.</p>
 
-<p>Other countries wishing to reuse this site’s underlying platform are welcome to do so for free. Our <a href="/guidance/">Guidance page</a> highlights key information on how to do this, linking to detailed technical instructions available in the platform’s <a href="https://open-sdg.readthedocs.io">documentation</a>. The <a href="http://www.opendataenterprise.org/">Center for Open Data Enterprise (CODE)</a> can also provide guidance and support through their <a href="https://www.sdgreporting.org/">SDG National Reporting Initiative</a>.</p>
+<p>Das Statistische Bundesamt berichtet im Auftrag der Bundesregierung seit dem Jahr 2006 im zweijährlichen Rhythmus über die Zielerreichung der Deutschen Nachhaltigkeitsstrategie. In gebundener Form und als PDF liegen die Informationen als <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/_inhalt.html">Indikatorenbericht</a> vor. Seit 2020 wird die Entwicklung der Indikatoren der DNS zusätzlich über diese Berichtsplattform veröffentlicht.</p>
 
-<p>If you have any feedback on this website or SDG data then please contact us at <a href="mailto:DNS-Indikatoren@destatis.de">DNS-Indikatoren@destatis.de</a>. The answers to some frequently asked questions are also available in our <a href="/faq/">FAQ</a>.</p>
+<h3>Struktur der Berichtsplattform</h3>
+
+<p>Die Plattform ist nach Zielen, Indikatorbereichen und Postulaten und den dazugehörigen Indikatoren gegliedert (Abb.1). Alle vier Jahre wird die Strategie und ihre Indikatoren durch die Bundesregierung überprüft und bei Bedarf angepasst. Dabei können z.B. Indikatoren ersetzt werden oder neue hinzukommen.</p>
+
+<p><br />
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/dnsTargetPage.png" alt="Abbildung 1: Aufbau der Ziel-Seiten" class="responsiveImg" /></p>
+
+<p style="text-align:center">
+<small> Abb. 1: Beispiel für die Gliederung der DNS anhand von Ziel 7 „Bezahlbare und Saubere Energie“ (Stand Indikatorenbericht 2018)</small>
+</p>
+<p><br /></p>
+
+<p>Jeder Indikator der DNS wird auf einer eigenen Seite einzeln oder mit einem inhaltlich eng verbundenen Indikator zusammen dargestellt. Die Entwicklung des Indikators wird in einer Grafik visualisiert. Außerdem werden die Definitionen, Intentionen sowie die Entwicklung der jeweiligen Indikatoren angegeben. Diese Informationen stammen aus dem zweijährlich erscheinenden <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/_inhalt.html">Indikatorenbericht</a> des Statistischen Bundesamtes.</p>
+
+<p>Die Symbole und Farbwahl der 17 Ziele (Abb. 2 und Abb. 3), die hier und auf der SDG-Seite dieser Berichtsplattform verwendet werden, stammen von den Vereinten Nationen. Auf der DNS-Seite der Plattform werden außerdem noch „Die Glorreichen 17“ verwendet (Abb. 4). Sie sind Teil der gleichnamigen Informationskampagne der Bundesregierung zu den Zielen für nachhaltige Entwicklung.</p>
+
+<div class="container" style="padding-left: 0px;">
+<div class="col-xs-12 col-md-4 col-lg-4" style="padding-left: 0px;">
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIcons.PNG" alt="Abbildung 2: SDG Icons" class="responsiveImg" style="width: 100%;" />
+<small> Abb. 2: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG-Seite der Berichtsplattform Deutschland</b></small>
+</div>
+
+<div class="col-xs-12 col-md-4 col-lg-4" style="padding-left: 0px;">
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="Abbildung 3: SDG Icons inverted" class="responsiveImg" style="width: 100%;" />
+<small> Abb. 3: 17 SDG-Symbole der Vereinten Nationen, invertiert, eingesetzt auf der <b>DNS-Seite der Berichtsplattform</b></small>
+</div>
+
+<div class="col-xs-12 col-md-4 col-lg-4" style="padding-left: 0px;">
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/glory17.PNG" alt="Abbildung 4: Glory 17" class="responsiveImg" style="width: 100%;" />
+<small> Abb. 4: Die Glorreichen 17, eingesetzt auf der <b>DNS-Seite der Berichtsplattform</b></small>
+</div>
+</div>
+
+<h3 align="left">Bewertung der Indikatoren</h3>
+<p>Bei den meisten Indikatoren veranschaulicht ein Wettersymbol –von Sonnenschein bis Gewitter– auf leicht zu erfassende Weise, inwiefern sich der Indikator auf dem angestrebten Pfad in Richtung Ziel bewegt (Abb. 5). Erläuterungen zur Definition der Symbole können <a href="https://sustainabledevelopment-deutschland.github.io/status/">hier</a> gefunden werden. Wettersymbole für die letzten vier Jahre sind unter der Schaltfläche „Statusübersicht“ auf der jeweiligen Indikatorseite zu finden. Anhand der Wettersymbole lässt sich grob einschätzen, wie stabil die Entwicklung zuletzt gewesen ist. Sie ersetzen jedoch nicht die erläuternden Texte mit ihren Hintergrundinformationen.</p>
+
+<p>Über die Schaltfläche „Bewertung“ und „Übersicht“ ganz oben auf der DNS-Seite kommt man zur Übersicht der <a href="https://sustainabledevelopment-deutschland.github.io/status_summary/">gesamten zeitlichen Entwicklung der Wettersymbole aller Indikatoren</a>.</p>
+
+<h3>Indikatorenvergleich DNS und SDG</h3>
+<p>Die Indikatoren der DNS und ihre Nummerierung sind nicht identisch mit den SDG-Indikatoren der Vereinten Nationen. Wenn ein vergleichbarer Indikator der SDGs zu einem Indikator der DNS vorhanden ist, ist dies über eine Schaltfläche mit Direktlink zum jeweiligen Indikator kenntlich gemacht (Abb.5).</p>
+
+<p><br />
+<img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/dnsIndicatorPage.PNG" alt="Abbildung 5: Aufbau der Indikator-Seiten" class="responsiveImg" /></p>
+
+<p style="text-align:center">
+<small> Abb. 5: Schaltfläche zu verwandtem globalen Indikator (rot markiert) <br />und Beispiel für Wettersymbol anhand des Indikators 6.1.a „Phosphor in Fließgewässern“ (Stand Indikatorenbericht 2018)</small>
+</p>
+<p><br /></p>
+
+<p>Neben dem Suchfeld oben rechts auf dieser Seite gibt es einen Direktlink zur Startseite der nationalen Berichtsplattform zu den SDG-Indikatoren der Agenda 2030 der Vereinten Nationen:
+<a href="https://sustainabledevelopment-deutschland/guidance/"><img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/wheel.png" alt="Wheel" /></a></p>
+
+<h3>Technischer Hintergrund</h3>
+<p>Um die Daten aufbereitet darstellen zu können, bietet das Open-Source-Projekt Open SDG auf GitHub Vorlagen. Mehr dazu finden Sie unter <a href="https://sustainabledevelopment-deutschland.github.io/guidance/">Technische Hinweise</a>.</p>
 
     </div>
 </div>
@@ -285,6 +366,9 @@ var translations = {
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -296,7 +380,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200128153218'></script><script>
+<script src='/assets/js/sdg.js?v=20200207124511'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
