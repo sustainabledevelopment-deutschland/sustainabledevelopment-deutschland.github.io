@@ -139,7 +139,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200207124511">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200210104301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -147,7 +147,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200207124511"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200210104301"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -271,7 +271,7 @@ var translations = {
 
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
-          <a href="https://g205sdgs.github.io/sdg-indicators/">
+          <a href="https://sustainabledevelopment-germany.github.io/">
             <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
             <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
           </a>
@@ -452,8 +452,8 @@ var translations = {
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_3-1-e' data-id="3-1-e" data-country="Deutschland"
   data-charttitle="Anteil der Jugendlichen (11 bis 17 Jahre) mit Übergewicht" data-measurementunit="Prozent der Befragten" data-datasource="Robert Koch-Institut (RKI)" data-copyright="&copy; Statistisches Bundesamt (Destatis), 2020"
-  data-geographicalarea="Deutschland" data-footnote="Der Vergleich von KiGGS-Basiserhebung (2003 bis 2006) und KiGGS Welle 2 (2014 bis 2017) basiert ausschließlich auf Metadaten und ist auf die Bevölkerung 2015 altersstandardisiert" data-showdata="true" data-graphtype="line"
-  data-geocoderegex="" data-showmap="" data-startvalues="">
+  data-geographicalarea="Deutschland" data-footnote="Der Vergleich von KiGGS-Basiserhebung (2003 bis 2006) und KiGGS Welle 2 (2014 bis 2017) basiert ausschließlich auf Metadaten und ist auf die Bevölkerung 2015 altersstandardisiert" data-showdata="true" data-graphtype="bar"
+  data-geocoderegex="" data-showmap="" data-startvalues="overweight|obese|boys|girls">
     
     <div id="indicator-sidebar" class="col-md-3">
       <div id="toolbar">
@@ -572,6 +572,9 @@ data-event-label="Change to Map tab"
         <div id="chart" class="plot-container">
           
 <canvas></canvas>
+
+
+
 
 
         </div>
@@ -726,7 +729,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Der Indikator gibt den Anteil der 11- bis 17-jährigen Jugendlichen mit Adipositas an.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+                <p>Der Indikator gibt den Anteil der 11- bis 17-jährigen Jugendlichen mit Adipositas an.</p>
 
               
             </td>
@@ -765,7 +768,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Adipositas bei Jugendlichen gefährdet die altersübliche Entwicklung. Ausgrenzung und sozialer Rückzug sind die Folgen und führen zusätzlich sowohl zu gesundheitlichen als auch zu gesellschaftlichen Problemen. Ein Großteil der bereits adipösen Jugendlichen leidet auch im Erwachsenenalter an Adipositas. Daher soll der Anteil von Jugendlichen mit Adipositas in Deutschland nicht weiter ansteigen.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+                <p>Adipositas bei Jugendlichen gefährdet die altersübliche Entwicklung. Ausgrenzung und sozialer Rückzug sind die Folgen und führen zusätzlich sowohl zu gesundheitlichen als auch zu gesellschaftlichen Problemen. Ein Großteil der bereits adipösen Jugendlichen leidet auch im Erwachsenenalter an Adipositas. Daher soll der Anteil von Jugendlichen mit Adipositas in Deutschland nicht weiter ansteigen.</p>
 
               
             </td>
@@ -800,8 +803,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/f33740b80e81ca2b2a25691882f9759f28a8004a" target="_blank">
-                    2020-01-22: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/7deaa54000c3af6211579f3663c96d09765576dd" target="_blank">
+                    2020-02-06: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -848,8 +851,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/efce35da956913e2871b7d11377347052850a9d3" target="_blank">
-                    2020-01-28: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/64129f5020006cc8f0a28e8f84e8b74340e00281" target="_blank">
+                    2020-02-06: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -875,6 +878,27 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -1234,10 +1258,38 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+         <!-- case: content -->
+          <p> <p><i> Text aus dem Indikatorenbericht 2018</i><br /><br />Der Body Mass Index (BMI) ist ein Richtwert zur Erfassung von Übergewicht und insbesondere Adipositas und berechnet sich aus dem Verhältnis von Körpergewicht in Kilogramm zur Körpergröße in Metern zum Quadrat. Bei dieser Berechnung bleiben alters- und geschlechtsspezifische Unterschiede sowie die individuelle Zusammensetzung der Körpermasse unberücksichtigt. Bei Kindern und Jugendlichen werden hingegen zur Definition von Adipositas und Übergewicht auch das Alter und Geschlecht verwendet. Um festzustellen, ob Adipositas oder Übergewicht vorliegt, wird der individuelle BMI-Wert mit einer fest definierten Vergleichsgruppe (Referenzpopulation) verglichen. Als Vergleichsmaßstab werden die Perzentil-Referenzwerte nach Kromeyer-Hauschild verwendet, die die Arbeitsgemeinschaft Adipositas im Kinder- und Jugendalter (AGA) empfiehlt. Man spricht demnach bei Kindern und Jugendlichen von Übergewicht, wenn der BMI-Wert oberhalb des 90. alters- und geschlechtsspezifischen Perzentils der Referenzpopulation liegt (&gt; P90), das heißt im Bereich derjenigen 10 % der Referenzgruppe mit den höchsten BMI-Werten. Liegt der BMI-Wert oberhalb des 97. Perzentils der Referenzpopulation (also so hoch wie bei den 3 % Jugendlichen mit den höchsten BMI-Werten), handelt es sich um Adipositas (&gt; P97). Diese Referenzwerte beruhen auf Angaben zu Körpergröße und Gewicht, die zwischen 1985 und 1998 in verschiedenen Regionen Deutschlands und mit unterschiedlichen Methoden erhoben wurden. <br /><br />Die Daten für den Indikator werden vom Robert Koch-Institut (RKI) erhoben. Hierzu lieferte die Studie zur Gesundheit von Kindern und Jugendlichen (sogenannte KiGGS-Basiserhebung) für den Zeitraum 2003 bis 2006 die ersten bundesweit repräsentativen Ergebnisse. Im Jahr 2015 wurden neue Ergebnisse für die Berichtsjahre 2009 bis 2012 veröffentlicht (KiGGS Welle 1). Diese Ergebnisse beruhten auf Angaben der telefonisch Befragten statt – wie die Basiserhebung – auf Messdaten. Neue Messdaten liegen für den Zeitraum 2014 bis 2017 aus der zweiten Folgeerhebung der KiGGS-Studie vor (KiGGS Welle 2). Um einen geeigneten Datenvergleich zu ermöglichen, wurden die Ergebnisse altersstandardisiert auf den Stichtag 31.12.2015 der Bevölkerungsfortschreibung. <br /><br />Für den Zeitraum 2014 bis 2017 wurden 8,0 % der Jugendlichen als adipös eingestuft. Bei den Mädchen betrug der Anteil 7,2 % und bei den Jungen 8,7 %. Im Zeitraum 2003 bis 2006 lag der Anteil der Jugendlichen mit Adipositas bei 8,3 %. Dies entsprach 8,2 % der Mädchen und 8,4 % der Jungen. Die Adipositasquote bei Jugendlichen hat insgesamt leicht abgenommen. Während die Adipositasquote bei den Mädchen um 1,0 Prozentpunkte sank, stieg sie bei den Jungen um 0,3 Prozentpunkte leicht an. <br /><br />Der Anteil der Jugendlichen mit Übergewicht einschließlich Adipositas (&gt; P90) hat sich nicht wesentlich gegenüber 2003 bis 2006 verändert (Anstieg um 0,6 Prozentpunkte auf 18,7 %). <br /><br />Maßgeblich bei der Entstehung von Übergewicht sind das Ernährungs- und das Bewegungsverhalten, welche sich bei Betrachtung der Ergebnisse nach dem sozioökonomischen Status (SES) unterscheiden. Die Ergebnisse aus KiGGS Welle 2 bestätigen, dass sich 3- bis 17-jährige Kinder und Jugendliche mit niedrigem sozioökonomischen Status häufiger als Gleichaltrige aus sozial bessergestellten Familien ungesund ernähren und seltener Sport treiben. Das Risiko für Übergewicht und Adipositas ist bei Kindern und Jugendlichen mit niedrigem SES rund drei- bis viermal so hoch wie bei der hohen Statusgruppe (jeweils rund 20 % der Studienpopulation). <br /><br />Ein gegenteiliges Phänomen zu Übergewicht ist das Untergewicht. Liegt der BMI-Wert unterhalb des 10. Perzentils der Referenzpopulation, wird von Untergewicht gesprochen. Der Anteil der Jugendlichen mit Untergewicht hat sich in den letzten Jahren negativ entwickelt: Er stieg von 7,4 auf 8,4 % an. Dabei ist bei den Mädchen ein Anstieg von 7,1 auf 7,5 % zu verzeichnen, während der Anteil der Jungen sogar von 7,7 auf 9,2 % angestiegen ist. Insgesamt sind mehr Jungen als Mädchen von Untergewicht betroffen.</p>
+ </p>
+        
+      </tr>
+      
 
       
 
 
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -1668,6 +1720,25 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Indikator</th>
+
+            <td colspan="4">
+              
+                <p>3.1.e - Adipositasquote von Jugendlichen</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -1677,6 +1748,25 @@ data-event-label="Change to Sources tab"
   
 
     
+      
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Ziel</th>
+
+            <td colspan="4">
+              
+                <p>Anstieg dauerhaft stoppen</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
       
 
       
@@ -2247,6 +2337,27 @@ data-event-label="Change to Sources tab"
 
     
   
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 </table>
 
     </div>
@@ -2469,6 +2580,9 @@ data-event-label="Change to Sources tab"
   
 
     
+  
+
+    
       
       <tr>
         
@@ -2479,7 +2593,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://www.rki.de/DE/Home/homepage_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/rki.png" alt="Logo RKI" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
+                <p><a href="https://www.rki.de/DE/Home/homepage_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/rki.png" alt="Logo Robert Koch-Institut (RKI)" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
 
               
             </td>
@@ -2509,6 +2623,43 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>Robert Koch-Institut (RKI)</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -2529,25 +2680,13 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
 
-      
+          
 
-
-
-    
-  
-
-    
-      
-
-      
-
-
-
-    
-  
-
-    
+        
+      </tr>
       
 
       
@@ -2569,6 +2708,14 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -2583,6 +2730,49 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+
+      
+
+
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -2777,7 +2967,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200207124511'></script><script>
+<script src='/assets/js/sdg.js?v=20200210104301'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -2790,6 +2980,7 @@ $(function() {
           $('.async-loading').remove();
           $('.async-loaded').show();
           var model = new indicatorModel({
+
             data: res.data,
             edgesData: res.edges,
             geoCodeRegEx: domData.geocoderegex,

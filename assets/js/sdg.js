@@ -135,7 +135,7 @@ opensdg.autotrack = function(preset, category, action, label) {
 
     this.years = _.uniq(_.pluck(this.geoData, 'Year')).sort();
     this.currentYear = this.years.slice(-1)[0];//[0];
-    console.log("jq:",this.years.slice(-1)[0]);
+    //console.log("jq:",this.years.slice(-1)[0]);
     //---#2.1 caseNoTimeSeriesInCsv---start------------------------------------
     this.title = translations.t(this.title);
     //---#2.1 caseNoTimeSeriesInCsv---stop------------------------------------
@@ -1301,17 +1301,17 @@ var indicatorDataStore = function(dataUrl) {
 
         if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
           if (data.length == 1){
-            console.log('a',combinationDescription, datasetIndexMod)
+            //console.log('a',combinationDescription, datasetIndexMod)
             return true;
           }
           else{
-            console.log('b',combinationDescription, datasetIndexMod)
+            //console.log('b',combinationDescription, datasetIndexMod)
             return false;
           }
           //return true;//'rgba(0, 0, 0, 0.0)';
         }
         else{
-          console.log('c',combinationDescription, datasetIndexMod)
+          //console.log('c',combinationDescription, datasetIndexMod)
           return true;//'#' + getColor(datasetIndexMod);
         }
       },
@@ -1341,6 +1341,17 @@ var indicatorDataStore = function(dataUrl) {
       },
       //---#22 xxx---stop--------------------------------------------------------------------------------------------------
 
+      stackedCharts = ['indicator_12-1-b'];
+      getStacked = function(indicatorId){
+        if (stackedCharts.indexOf(indicatorId) != -1) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      },
+
+
       //--#14 mixedCharts---start-------------------------------------------------------------------------------------------------------
       //barCharts = [//translations.t('a) time series')+", "+translations.t('calculated annual values'),
                   //translations.t('a) time series')+", "+translations.t('air pollutants overall'),
@@ -1364,11 +1375,17 @@ var indicatorDataStore = function(dataUrl) {
 
       //--#14.1 barsOnly---start--------------------------------------------------------------------------------------------------------
       barCharts = ['indicator_2-2-a','indicator_3-1-e','indicator_5-1-b','indicator_5-1-c','indicator_6-2-a','indicator_8-2-c','indicator_8-3-a','indicator_8-4-a','indicator_8-6-a','indicator_11-1-a','indicator_11-1-b','indicator_11-2-c','indicator_12-1-a','indicator_12-1-b','indicator_13-1-b','indicator_15-2-a','indicator_16-1-a','indicator_16-2-a','indicator_17-1-a','indicator_17-2-a'];
+      exceptions = [translations.t('direct co2 emissions and co2 content of consumer goods')];
 
-      getChartStyle = function (indicatorId) {
+      getChartStyle = function (indicatorId, combinationDescription) {
 
         if (barCharts.indexOf(indicatorId) != -1) {
-          return 'bar';
+          if (exceptions.indexOf(combinationDescription) != -1){
+            return 'line';
+          }
+          else{
+            return 'bar';
+          }
         }
         else {
           return 'line';
@@ -1452,8 +1469,11 @@ var indicatorDataStore = function(dataUrl) {
             //type: getChartStyle(combinationDescription),
             //--#14 mixedCharts---stop-------------------------------------------------
             //--#14.1 barsOnly---start------------------------------------------------
-            type: getChartStyle(that.indicatorId),
+            type: getChartStyle(that.indicatorId, combinationDescription),
             //--#14.1 barsOnly---stop-------------------------------------------------
+
+            stacked: getStacked(that.indicatorId),
+
             borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
 
@@ -1860,13 +1880,13 @@ var indicatorView = function (model, options) {
         //--#21 allowMultipleStartValues---start------------------------------
         //setTimeout(getClickFunction(fieldToSelect, fieldValue), 500);
         if (typeof args.minimumFieldSelections[fieldToSelect] == 'object'){
-          console.log('M: ',args.minimumFieldSelections, args.minimumFieldSelections[fieldToSelect], typeof args.minimumFieldSelections[fieldToSelect]);
+          //console.log('M: ',args.minimumFieldSelections, args.minimumFieldSelections[fieldToSelect], typeof args.minimumFieldSelections[fieldToSelect]);
           _.each(fieldValue, function(multiValue){
             setTimeout(getClickFunction(fieldToSelect, multiValue), 500);
           });
         }
         else {
-          console.log('S: ',args.minimumFieldSelections, args.minimumFieldSelections[fieldToSelect], typeof args.minimumFieldSelections[fieldToSelect]);
+          //console.log('S: ',args.minimumFieldSelections, args.minimumFieldSelections[fieldToSelect], typeof args.minimumFieldSelections[fieldToSelect]);
           setTimeout(getClickFunction(fieldToSelect, fieldValue), 500);
         }
         //--#21 allowMultipleStartValues---stop------------------------------
@@ -2160,8 +2180,10 @@ var indicatorView = function (model, options) {
 
 
   this.createPlot = function (chartInfo) {
-    console.log("chartinfo",chartInfo);
+    console.log("chartinfox",chartInfo);
+
     var that = this;
+
     var chartConfig = {
       type: this._model.graphType,
       data: chartInfo,
@@ -2180,7 +2202,7 @@ var indicatorView = function (model, options) {
             }
           }],
           yAxes: [{
-            ticks: {
+              ticks: {
               suggestedMin: 0
             },
             scaleLabel: {
@@ -3077,7 +3099,7 @@ $(function() {
       times: options.years.join('-01-02,') + '-01-02',
       currentTime: new Date(options.years.slice(-1)[0] + '-01-02').getTime(),
     });
-    console.log("ys:",options.years);
+    //console.log("ys:",options.years);
     // Create the player.
     options.player = new L.TimeDimension.Player(options.playerOptions, options.timeDimension);
     // Listen for time changes.

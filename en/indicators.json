@@ -16,13 +16,6 @@
       "id": "2",
       "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
-          "id": "2-2-a",
-          "title": "Support for good governance in attaining appropriate nutrition globally",
-          "description": "",
-          "keywords": "",
-          "href": "/en/2-2-a",
-          "status": "complete"
-        },{
           "id": "2-1-b",
           "title": "Organic farming",
           "description": "",
@@ -36,6 +29,13 @@
           "keywords": "",
           "href": "/en/2-1-a",
           "status": "complete"
+        },{
+          "id": "2-2-a",
+          "title": "Support for good governance in attaining appropriate nutrition globally",
+          "description": "",
+          "keywords": "",
+          "href": "/en/2-2-a",
+          "status": "complete"
         }]
     }
   },{
@@ -48,20 +48,6 @@
           "description": "",
           "keywords": "",
           "href": "/en/3-1-f",
-          "status": "complete"
-        },{
-          "id": "3-1-e",
-          "title": "Obesity rate among adolescents",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-1-e",
-          "status": "complete"
-        },{
-          "id": "3-2-b",
-          "title": "Share of the population with excessive exposure to PM<sub>10</sub> in Germany",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-2-b",
           "status": "complete"
         },{
           "id": "3-1-cd",
@@ -83,6 +69,20 @@
           "description": "",
           "keywords": "",
           "href": "/en/3-1-ab",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Obesity rate among adolescents",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-1-e",
+          "status": "complete"
+        },{
+          "id": "3-2-b",
+          "title": "Share of the population with excessive exposure to PM<sub>10</sub> in Germany",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-2-b",
           "status": "complete"
         }]
     }
@@ -118,6 +118,13 @@
       "id": "5",
       "title": "Achieve gender equality and empower all women and girls",
       "indicators": [{
+          "id": "5-1-a",
+          "title": "Gender pay gap",
+          "description": "",
+          "keywords": "",
+          "href": "/en/5-1-a",
+          "status": "complete"
+        },{
           "id": "5-1-b",
           "title": "Women in management positions in business",
           "description": "",
@@ -131,13 +138,6 @@
           "keywords": "",
           "href": "/en/5-1-c",
           "status": "complete"
-        },{
-          "id": "5-1-a",
-          "title": "Gender pay gap",
-          "description": "",
-          "keywords": "",
-          "href": "/en/5-1-a",
-          "status": "complete"
         }]
     }
   },{
@@ -145,11 +145,11 @@
       "id": "6",
       "title": "Ensure availability and sustainable management of water and sanitation for all",
       "indicators": [{
-          "id": "6-1-b",
-          "title": "Nitrate in groundwater",
+          "id": "6-2-a",
+          "title": "Development cooperation for drinking water and sanitation",
           "description": "",
           "keywords": "",
-          "href": "/en/6-1-b",
+          "href": "/en/6-2-a",
           "status": "complete"
         },{
           "id": "6-1-a",
@@ -159,11 +159,11 @@
           "href": "/en/6-1-a",
           "status": "complete"
         },{
-          "id": "6-2-a",
-          "title": "Development cooperation for drinking water and sanitation",
+          "id": "6-1-b",
+          "title": "Nitrate in groundwater",
           "description": "",
           "keywords": "",
-          "href": "/en/6-2-a",
+          "href": "/en/6-1-b",
           "status": "complete"
         }]
     }
@@ -172,13 +172,6 @@
       "id": "7",
       "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
-          "id": "7-2-a",
-          "title": "Share of renewable energies in gross final energy consumption",
-          "description": "",
-          "keywords": "",
-          "href": "/en/7-2-a",
-          "status": "complete"
-        },{
           "id": "7-1-ab",
           "title": "Final energy productivity and primary energy consumption",
           "description": "",
@@ -192,6 +185,13 @@
           "keywords": "",
           "href": "/en/7-2-b",
           "status": "complete"
+        },{
+          "id": "7-2-a",
+          "title": "Share of renewable energies in gross final energy consumption",
+          "description": "",
+          "keywords": "",
+          "href": "/en/7-2-a",
+          "status": "complete"
         }]
     }
   },{
@@ -199,18 +199,18 @@
       "id": "8",
       "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
+          "id": "8-2-ab",
+          "title": "Government deficit, structural deficit",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-2-ab",
+          "status": "complete"
+        },{
           "id": "8-4-a",
           "title": "Gross domestic product per capita",
           "description": "",
           "keywords": "",
           "href": "/en/8-4-a",
-          "status": "complete"
-        },{
-          "id": "8-1-a",
-          "title": "Raw material input productivity",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-1-a",
           "status": "complete"
         },{
           "id": "8-5-ab",
@@ -220,13 +220,6 @@
           "href": "/en/8-5-ab",
           "status": "complete"
         },{
-          "id": "8-3-a",
-          "title": "Gross fixed capital formation in relation to GDP",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-3-a",
-          "status": "complete"
-        },{
           "id": "8-2-c",
           "title": "Government debt",
           "description": "",
@@ -234,11 +227,11 @@
           "href": "/en/8-2-c",
           "status": "complete"
         },{
-          "id": "8-2-ab",
-          "title": "Government deficit, structural deficit",
+          "id": "8-1-a",
+          "title": "Raw material input productivity",
           "description": "",
           "keywords": "",
-          "href": "/en/8-2-ab",
+          "href": "/en/8-1-a",
           "status": "complete"
         },{
           "id": "8-6-a",
@@ -246,6 +239,13 @@
           "description": "",
           "keywords": "",
           "href": "/en/8-6-a",
+          "status": "complete"
+        },{
+          "id": "8-3-a",
+          "title": "Gross fixed capital formation in relation to GDP",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-3-a",
           "status": "complete"
         }]
     }
@@ -267,18 +267,18 @@
       "id": "10",
       "title": "Reduce inequality within and among countries",
       "indicators": [{
-          "id": "10-1-a",
-          "title": "Foreign school graduates",
-          "description": "",
-          "keywords": "",
-          "href": "/en/10-1-a",
-          "status": "complete"
-        },{
           "id": "10-2-a",
           "title": "Gini coefficient of income distribution",
           "description": "",
           "keywords": "",
           "href": "/en/10-2-a",
+          "status": "complete"
+        },{
+          "id": "10-1-a",
+          "title": "Foreign school graduates",
+          "description": "",
+          "keywords": "",
+          "href": "/en/10-1-a",
           "status": "complete"
         }]
     }
@@ -287,13 +287,6 @@
       "id": "11",
       "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
       "indicators": [{
-          "id": "11-2-a",
-          "title": "Final energy consumption in goods transport",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-2-a",
-          "status": "complete"
-        },{
           "id": "11-1-b",
           "title": "Loss of open space area",
           "description": "",
@@ -301,11 +294,11 @@
           "href": "/en/11-1-b",
           "status": "complete"
         },{
-          "id": "11-2-b",
-          "title": "Final energy consumption in passenger transport",
+          "id": "11-2-a",
+          "title": "Final energy consumption in goods transport",
           "description": "",
           "keywords": "",
-          "href": "/en/11-2-b",
+          "href": "/en/11-2-a",
           "status": "complete"
         },{
           "id": "11-1-c",
@@ -322,11 +315,11 @@
           "href": "/en/11-3-a",
           "status": "complete"
         },{
-          "id": "11-1-a",
-          "title": "Expansion of settlement and transport area",
+          "id": "11-2-b",
+          "title": "Final energy consumption in passenger transport",
           "description": "",
           "keywords": "",
-          "href": "/en/11-1-a",
+          "href": "/en/11-2-b",
           "status": "complete"
         },{
           "id": "11-2-c",
@@ -335,6 +328,13 @@
           "keywords": "",
           "href": "/en/11-2-c",
           "status": "complete"
+        },{
+          "id": "11-1-a",
+          "title": "Expansion of settlement and transport area",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-1-a",
+          "status": "complete"
         }]
     }
   },{
@@ -342,11 +342,11 @@
       "id": "12",
       "title": "Ensure sustainable consumption and production patterns",
       "indicators": [{
-          "id": "12-3-ab",
-          "title": "Responsible procurement",
+          "id": "12-2-a",
+          "title": "EMAS eco-management",
           "description": "",
           "keywords": "",
-          "href": "/en/12-3-ab",
+          "href": "/en/12-2-a",
           "status": "complete"
         },{
           "id": "12-1-a",
@@ -356,11 +356,11 @@
           "href": "/en/12-1-a",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "EMAS eco-management",
+          "id": "12-3-ab",
+          "title": "Responsible procurement",
           "description": "",
           "keywords": "",
-          "href": "/en/12-2-a",
+          "href": "/en/12-3-ab",
           "status": "complete"
         },{
           "id": "12-1-b",
@@ -376,18 +376,18 @@
       "id": "13",
       "title": "Take urgent action to combat climate change and its impacts",
       "indicators": [{
-          "id": "13-1-b",
-          "title": "International climate finance for the reduction of greenhouse gases and adaptation to climate change",
-          "description": "",
-          "keywords": "",
-          "href": "/en/13-1-b",
-          "status": "complete"
-        },{
           "id": "13-1-a",
           "title": "Greenhouse gas emissions",
           "description": "",
           "keywords": "",
           "href": "/en/13-1-a",
+          "status": "complete"
+        },{
+          "id": "13-1-b",
+          "title": "International climate finance for the reduction of greenhouse gases and adaptation to climate change",
+          "description": "",
+          "keywords": "",
+          "href": "/en/13-1-b",
           "status": "complete"
         }]
     }
@@ -416,13 +416,6 @@
       "id": "15",
       "title": "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss",
       "indicators": [{
-          "id": "15-2-a",
-          "title": "Eutrophication of ecosystems",
-          "description": "",
-          "keywords": "",
-          "href": "/en/15-2-a",
-          "status": "complete"
-        },{
           "id": "15-3-a",
           "title": "Preservation or restoration of forests in developing countries under the REDD+ rulebook",
           "description": "",
@@ -435,6 +428,13 @@
           "description": "",
           "keywords": "",
           "href": "/en/15-1-a",
+          "status": "complete"
+        },{
+          "id": "15-2-a",
+          "title": "Eutrophication of ecosystems",
+          "description": "",
+          "keywords": "",
+          "href": "/en/15-2-a",
           "status": "complete"
         }]
     }
@@ -450,18 +450,18 @@
           "href": "/en/16-2-a",
           "status": "complete"
         },{
-          "id": "16-1-a",
-          "title": "Criminal offences",
-          "description": "",
-          "keywords": "",
-          "href": "/en/16-1-a",
-          "status": "complete"
-        },{
           "id": "16-3-ab",
           "title": "Corruption Perceptions Index (CPI) in Germany and in partner countries of German development assistance",
           "description": "",
           "keywords": "",
           "href": "/en/16-3-ab",
+          "status": "complete"
+        },{
+          "id": "16-1-a",
+          "title": "Criminal offences",
+          "description": "",
+          "keywords": "",
+          "href": "/en/16-1-a",
           "status": "complete"
         }]
     }
@@ -470,18 +470,18 @@
       "id": "17",
       "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
       "indicators": [{
-          "id": "17-3-a",
-          "title": "Imports from least developed countries",
-          "description": "",
-          "keywords": "",
-          "href": "/en/17-3-a",
-          "status": "complete"
-        },{
           "id": "17-2-a",
           "title": "Number of students and researchers from developing countries and LDCs per year",
           "description": "",
           "keywords": "",
           "href": "/en/17-2-a",
+          "status": "complete"
+        },{
+          "id": "17-3-a",
+          "title": "Imports from least developed countries",
+          "description": "",
+          "keywords": "",
+          "href": "/en/17-3-a",
           "status": "complete"
         },{
           "id": "17-1-a",

@@ -139,7 +139,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200207124511">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200210104301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -147,7 +147,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200207124511"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200210104301"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -271,7 +271,7 @@ var translations = {
 
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
-          <a href="https://g205sdgs.github.io/sdg-indicators/">
+          <a href="https://sustainabledevelopment-germany.github.io/">
             <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
             <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
           </a>
@@ -425,7 +425,7 @@ var translations = {
     </a>                           
   </div>
   <div class="my-header-note">
-    <span>(Bewertung des Berichtsjahres 2015)</span>
+    <span>(Bewertung des Berichtsjahres 2015 aus dem Indikatorenbericht 2018)</span>
   </div>                           
 </div>
 
@@ -447,8 +447,8 @@ var translations = {
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_12-1-b' data-id="12-1-b" data-country="Deutschland"
   data-charttitle="Energieverbrauch und CO<sub>2</sub>-Emissionen der privaten Haushalte" data-measurementunit="2005=100" data-datasource="Statistisches Bundesamt (Destatis)" data-copyright="&copy; Statistisches Bundesamt (Destatis), 2020"
-  data-geographicalarea="Deutschland" data-footnote="2015 vorläufige Daten" data-showdata="true" data-graphtype="line"
-  data-geocoderegex="" data-showmap="" data-startvalues="">
+  data-geographicalarea="Deutschland" data-footnote="2015 vorläufige Daten" data-showdata="true" data-graphtype="bar"
+  data-geocoderegex="" data-showmap="" data-startvalues="a) time series|b) target (min)|direct co2 emissions and co2 content of consumer goods|energy content of consumer goods|direct energy consumption">
     
     <div id="indicator-sidebar" class="col-md-3">
       <div id="toolbar">
@@ -567,6 +567,29 @@ data-event-label="Change to Map tab"
         <div id="chart" class="plot-container">
           
 <canvas></canvas>
+
+
+
+
+  <script>
+    opensdg.chartConfigAlter = function(config) {
+      var overrides = {
+        options: {
+          scales: {
+            xAxes: [{
+              stacked: true,
+            }],
+            yAxes: [{
+              stacked: true,
+            }]
+          }
+        }
+      }
+      // Add these overrides onto the normal config, and return it.
+      $.extend(true, config, overrides);
+      return config;
+    }
+  </script>
 
 
         </div>
@@ -721,7 +744,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Der Indikator gibt die Entwicklung des direkten und indirekten Energieverbrauchs der privaten Haushalte an und stellt so die Beanspruchung von Energie durch Konsumaktivitäten der privaten Haushalte dar.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+                <p>Der Indikator gibt die Entwicklung des direkten und indirekten Energieverbrauchs der privaten Haushalte an und stellt so die Beanspruchung von Energie durch Konsumaktivitäten der privaten Haushalte dar.</p>
 
               
             </td>
@@ -760,7 +783,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Private Haushalte haben einen wesentlichen Anteil am Energieverbrauch einer Volkswirtschaft sowie an den eng mit dem Energieverbrauch zusammenhängenden Kohlendioxidemissionen. Der Energieverbrauch des Konsums erstreckt sich jedoch nicht nur auf das Inland, sondern auch auf die Produktion importierter Güter im Ausland. Der Indikator gibt daher zusätzlich Aufschluss über die globale Umweltinanspruchnahme durch Konsumaktivitäten. Mit einer Minderung des Energieverbrauchs werden Ressourcen im In- und Ausland eingespart und klimaschädliche Kohlendioxidemissionen vermindert. Ziel der Bundesregierung ist es daher, den Energieverbrauch des Konsums kontinuierlich abzusenken.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+                <p>Private Haushalte haben einen wesentlichen Anteil am Energieverbrauch einer Volkswirtschaft sowie an den eng mit dem Energieverbrauch zusammenhängenden Kohlendioxidemissionen. Der Energieverbrauch des Konsums erstreckt sich jedoch nicht nur auf das Inland, sondern auch auf die Produktion importierter Güter im Ausland. Der Indikator gibt daher zusätzlich Aufschluss über die globale Umweltinanspruchnahme durch Konsumaktivitäten. Mit einer Minderung des Energieverbrauchs werden Ressourcen im In- und Ausland eingespart und klimaschädliche Kohlendioxidemissionen vermindert. Ziel der Bundesregierung ist es daher, den Energieverbrauch des Konsums kontinuierlich abzusenken.</p>
 
               
             </td>
@@ -795,8 +818,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/c410e731d386a95a3a1c0b6211b6e794c54c28b2" target="_blank">
-                    2020-01-28: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/08124d3ce8506318dd808acee6fc105681ad0d65" target="_blank">
+                    2020-02-10: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -843,8 +866,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/efce35da956913e2871b7d11377347052850a9d3" target="_blank">
-                    2020-01-28: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/fd26b769999b7129f3425371f56fd96dfdc83164" target="_blank">
+                    2020-02-10: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -870,6 +893,27 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -1229,10 +1273,38 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+         <!-- case: content -->
+          <p> <p><i> Text aus dem Indikatorenbericht 2018</i><br /><br />Die Daten stammen aus den Berechnungen der Umweltökonomischen Gesamtrechnungen des Statistischen Bundesamtes auf Basis der Energiebilanzen der Arbeitsgemeinschaft Energiebilanzen und auf Basis der Emissionsberichterstattung des Umweltbundesamtes.<br /><br />Haushalte verbrauchen direkt Energie, etwa zum Heizen oder durch den Verbrauch von Kraftstoffen im Straßenverkehr. Außer diesem direkten Energieverbrauch werden erhebliche Energiemengen bei der Herstellung von Gütern für den privaten Konsum verbraucht. Dieser indirekte Energieverbrauch fällt im In- und Ausland, sowohl bei den unmittelbaren Herstellern der Konsumgüter als auch bei deren Zulieferern an. Beide Formen werden mit dem vorliegenden Indikator erfasst.<br /><br />Gleiches gilt für die informativ als Index dargestellten Emissionen von Kohlendioxid (CO<sub>2</sub> ): Neben den direkten Emissionen der privaten Haushalte aus der Verbrennung von Brenn- und Kraftstoffen entstehen noch weitaus größere Mengen an indirekten Emissionen bei der Produktion der Konsumgüter. Die vorliegende Kennzahl umfasst sowohl direkte als auch indirekte Emissionen.<br /><br />Der Blick auf die Zeitreihe offenbart eine wellenförmige Entwicklung des Energieverbrauchs durch Konsumaktivitäten der privaten Haushalte mit einem leichten Anstieg um 1,9 % vom Jahr 2005 bis 2010. Zwischen 2010 und 2012 sank der Energieverbrauch der privaten Haushalte stetig um insgesamt 5,3 %. Im Jahr 2013 hingegen stieg der Verbrauch gegenüber dem Vorjahr wieder um 1,9 % an, während er im Jahr 2014 gegenüber dem Vorjahr um 6,2 % sank. Nach vorläufigen Ergebnissen für 2015 stieg der Energieverbrauch gegenüber dem Vorjahr wieder um 2,0 % an. Der Wert des Indikators nahm im Jahr 2015 gegenüber 2005 insgesamt um 5,7 % ab. Eine kontinuierliche Abnahme ist derzeit jedoch nicht zu beobachten.<br /><br />Im Jahr 2015 machte der direkte Energieverbrauch der privaten Haushalte 39,2 % des gesamten Energieverbrauchs der Haushalte aus. Davon entfielen auf Brennstoffe einschließlich Strom und Fernwärme 62,6 % und auf Kraftstoffe 37,4 %. Den größeren Teil des gesamten Energieverbrauchs bildete mit 60,8 % der indirekte Energieverbrauch in Verbindung mit der Herstellung der Konsumgüter im In- und Ausland.<br /><br />Der Energieverbrauch wird unterschieden nach den Bedarfsfeldern Wohnen, Mobilität, Ernährung, sonstige Produkte und Dienstleistungen. Die meiste Energie wird in den Bereichen Wohnen, Verkehr und Ernährung verbraucht. Der Bereich Wohnen bildet dabei im Jahr 2015 mit insgesamt rund 3 324 Petajoule (35,6 % des Gesamtverbrauchs der privaten Haushalte) den größten Verbrauchsbereich. Die Verluste, die bei der Erzeugung von Strom und Fernwärme für die privaten Haushalte anfallen, sind hierin als indirekter Verbrauch enthalten.<br /><br />Die Entwicklung der energiebedingten CO<sub>2</sub>-Emissionen weist einen ähnlichen Verlauf wie der Energieverbrauch auf. Im Jahr 2015 betrugen die CO<sub>2</sub>-Emissionen der privaten Haushalte einschließlich des Emissionsgehalts der Konsumgüter sowie der Emissionen aus der Verbrennung von Biomasse 638 Millionen Tonnen und sind somit gegenüber 2005 um 1,0 % gesunken. Bei der Verbrennung von Brenn- und Kraftstoffen fielen 33,3 % der Emissionen an, die verbleibenden 66,7 % bei der Herstellung der Konsumgüter. Zwischen 2005 und 2015 sanken die direkten CO<sub>2</sub>- Emissionen um 2,5 %, der Emissionsgehalt der Konsumgüter stieg hingegen um 2,5 %.</p>
+ </p>
+        
+      </tr>
+      
 
       
 
 
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -1663,6 +1735,25 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Indikator</th>
+
+            <td colspan="4">
+              
+                <p>12.1.b - Energieverbrauch und CO<sub>2</sub>-Emissionen des Konsum</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -1672,6 +1763,25 @@ data-event-label="Change to Sources tab"
   
 
     
+      
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Ziel</th>
+
+            <td colspan="4">
+              
+                <p>Kontinuierliche Abnahme des Energieverbrauchs</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
       
 
       
@@ -2247,6 +2357,27 @@ data-event-label="Change to Sources tab"
 
     
   
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 </table>
 
     </div>
@@ -2469,6 +2600,9 @@ data-event-label="Change to Sources tab"
   
 
     
+  
+
+    
       
       <tr>
         
@@ -2479,7 +2613,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/destatis.png" alt="Logo Destatis" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
+                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/destatis.png" alt="Logo Statistisches Bundesamt (Destatis)" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
 
               
             </td>
@@ -2509,6 +2643,43 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>Statistisches Bundesamt (Destatis)</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -2529,25 +2700,13 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
 
-      
+          
 
-
-
-    
-  
-
-    
-      
-
-      
-
-
-
-    
-  
-
-    
+        
+      </tr>
       
 
       
@@ -2569,6 +2728,14 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -2583,6 +2750,49 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+
+      
+
+
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -2777,7 +2987,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200207124511'></script><script>
+<script src='/assets/js/sdg.js?v=20200210104301'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -2790,6 +3000,7 @@ $(function() {
           $('.async-loading').remove();
           $('.async-loaded').show();
           var model = new indicatorModel({
+
             data: res.data,
             edgesData: res.edges,
             geoCodeRegEx: domData.geocoderegex,

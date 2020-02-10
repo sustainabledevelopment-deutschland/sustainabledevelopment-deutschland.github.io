@@ -139,7 +139,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200207124511">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200210104301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -147,7 +147,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200207124511"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200210104301"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -271,7 +271,7 @@ var translations = {
 
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
-          <a href="https://g205sdgs.github.io/sdg-indicators/">
+          <a href="https://sustainabledevelopment-germany.github.io/">
             <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
             <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
           </a>
@@ -425,7 +425,7 @@ var translations = {
     </a>                           
   </div>
   <div class="my-header-note">
-    <span>(Bewertung des Berichtsjahres 2017)</span>
+    <span>(Bewertung des Berichtsjahres 2017 aus dem Indikatorenbericht 2018)</span>
   </div>                           
 </div>
 
@@ -447,8 +447,8 @@ var translations = {
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_16-1-a' data-id="16-1-a" data-country="Deutschland"
   data-charttitle="Straftaten" data-measurementunit="Erfasste Fälle je 100&nbsp;000 Einwohnerinnen und Einwohner" data-datasource="Bundeskriminalamt (BKA), Statistisches Bundesamt (Destatis)" data-copyright="&copy; Statistisches Bundesamt (Destatis), 2020"
-  data-geographicalarea="Deutschland" data-footnote="" data-showdata="true" data-graphtype="line"
-  data-geocoderegex="" data-showmap="true" data-startvalues="a) time series|criminal offences (overall)">
+  data-geographicalarea="Deutschland" data-footnote="" data-showdata="true" data-graphtype="bar"
+  data-geocoderegex="" data-showmap="true" data-startvalues="a) time series|b) target (max)|a) criminal offences (overall)|other criminal offences|serious and grievous bodily harm|fraud|burglary in homes">
     
     <div id="indicator-sidebar" class="col-md-3">
       <div id="toolbar">
@@ -567,6 +567,9 @@ data-event-label="Change to Map tab"
         <div id="chart" class="plot-container">
           
 <canvas></canvas>
+
+
+
 
 
         </div>
@@ -721,7 +724,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Der Indikator zeigt die Anzahl der Straftaten, die der Polizei angezeigt werden, je 100 000 Einwohnerinnen und Einwohner.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+                <p>Der Indikator zeigt die Anzahl der Straftaten, die der Polizei angezeigt werden, je 100 000 Einwohnerinnen und Einwohner.</p>
 
               
             </td>
@@ -760,7 +763,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p>Ein sicheres Umfeld, in dem die Bürgerinnen und Bürger ohne Angst vor Willkür und Kriminalität leben können, ist eine wesentliche Voraussetzung für eine nachhaltige Entwicklung. Deshalb soll die Anzahl der erfassten Straftaten je 100 000 Einwohnerinnen und Einwohner bis zum Jahr 2030 auf unter 7 000 sinken.<sub> Text aus dem Indikatorenbericht 2018</sub></p>
+                <p>Ein sicheres Umfeld, in dem die Bürgerinnen und Bürger ohne Angst vor Willkür und Kriminalität leben können, ist eine wesentliche Voraussetzung für eine nachhaltige Entwicklung. Deshalb soll die Anzahl der erfassten Straftaten je 100 000 Einwohnerinnen und Einwohner bis zum Jahr 2030 auf unter 7 000 sinken.</p>
 
               
             </td>
@@ -795,8 +798,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/e9b8dcca35f4bb103e1bfc23ccd7b8682be2ad2f" target="_blank">
-                    2020-01-27: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/6300fc7b79672d0615f5089d6187d78c80c9ea82" target="_blank">
+                    2020-01-29: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -843,8 +846,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/efce35da956913e2871b7d11377347052850a9d3" target="_blank">
-                    2020-01-28: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/6118a24001738288df856fd910a1173839d78f1f" target="_blank">
+                    2020-02-06: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -870,6 +873,27 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -1229,10 +1253,38 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+         <!-- case: content -->
+          <p> <p><i> Text aus dem Indikatorenbericht 2018</i><br /><br />Der Indikator erfasst alle in der Polizeilichen Kriminalstatistik (PKS) erfassten Straftaten. Dies sind bei der Polizei angezeigte und durch sie endbearbeitete Straftaten, solange es sich nicht um Staatsschutzdelikte, Verkehrsdelikte (mit Ausnahme der Verstöße gegen §§ 315, 315b Strafgesetzbuch und § 22a Straßenverkehrsgesetz) oder Verstöße gegen strafrechtliche Landesgesetze (mit Ausnahme der einschlägigen Vorschriften in den Landesdatenschutzgesetzen) handelt.<br /><br />Straftaten, die außerhalb der Bundesrepublik Deutschland begangen wurden, sind ebenso wenig enthalten wie Delikte, die nicht zum Aufgabenbereich der Polizei gehören (zum Beispiel Finanz- und Steuerdelikte) beziehungsweise unmittelbar bei der Staatsanwaltschaft angezeigt und ausschließlich von ihr bearbeitet werden (zum Beispiel Aussagedelikte).<br /><br />Die PKS-Veröffentlichungen werden jährlich auf der Basis von Daten der Landeskriminalämter und des Bundeskriminalamts erstellt. Zur Berechnung der Straftaten je 100 000 Einwohnerinnen und Einwohner werden für die gesamte Zeitreihe die (zurückgerechneten) Bevölkerungszahlen auf Grundlage des Zensus 2011 verwendet. Dies ermöglicht Zeitvergleiche ab 1993, allerdings ergeben sich dadurch Differenzen zu den veröffentlichten Daten der PKS vor 2013. Veränderungen in der PKS lassen nicht immer auf tatsächliche Veränderungen schließen, denn die Statistik erfasst nur das sogenannte Hellfeld – also die der Polizei offiziell bekannt gewordene Kriminalität. Aufgrund fehlender statistischer Daten kann das sogenannte Dunkelfeld – die der Polizei offiziell nicht bekannt gewordene Kriminalität – in der PKS nicht abgebildet werden. Wenn sich zum Beispiel das Anzeigeverhalten der Bevölkerung oder die Verfolgungsintensität der Polizei ändert, kann sich die Grenze zwischen Hell- und Dunkelfeld verschieben, ohne dass damit eine Änderung des Umfangs der tatsächlichen Kriminalität verbunden sein muss.<br /><br />Die Anzahl der Straftaten lag 2017 bei 6 982 je 100 000 Einwohnerinnen und Einwohner, sodass der Zielwert von unter 7 000 Straftaten für 2030 bereits jetzt erreicht ist. Zwischen 1993 und 2017 fiel der Indikator um 16,4 % ab. Dabei handelte es sich jedoch nicht um eine kontinuierliche Entwicklung. So kam es beispielsweise von 2000 bis 2004 zu einem Anstieg, dem ein leichter Rückgang bis 2010 folgte. Die große Zahl der Menschen, die ab dem Jahr 2015 als Flüchtlinge und Schutzsuchende nach Deutschland gekommen sind, spiegelt sich auch in der PKS wider. So sind im Jahr 2016 ausländerrechtliche Verstöße (z. B. illegale Einrei-se) im Vergleich zu 2014 um 211,8 % angestiegen. Diese waren jedoch 2017 stark rückläufig und machten noch 3,1 % aller Straftaten aus. Selbst wenn die ausländerrechtlichen Straftaten herausgerechnet werden, liegt die Gesamtzahl der polizeilich registrierten Straftaten 2017 niedriger als in den Vorjahren.<br /><br />Im Jahr 2017 lag die Anzahl der polizeilich registrierten Straftaten bei insgesamt 5,8 Millionen. Darunter entfielen 2,0 % auf Wohnungseinbruchsdiebstahl, 15,8 % auf Betrug und 2,4 % auf gefährliche und schwere Körperverletzung. Während die Wohnungseinbruchsdiebstähle zwi-schen 1993 und 2017 um 48,7 % zurückgingen, nahmen die Betrugsfälle um 72,3 % und die Fälle von gefährlicher und schwerer Körperverletzung um 56,1 % zu. Richtet man den Blick ausschließlich auf die Entwicklung der letzten fünf betrachteten Jahre, so weichen diese von der geschilderten Tendenz ab. Zwischen 2012 und 2017 gingen die Wohnungseinbruchsdiebstähle um 19,1 % und die Betrugsfälle um 5,0 % zurück, während die Fälle von gefährlicher und schwerer Körperverletzung leicht um 0,7 % anstiegen.<br /><br />2017 betrug die Aufklärungsquote aller polizeilich registrierten Delikte 57,1 % und lag in etwa auf Vorjahresniveau. Dabei gibt es deutliche Unterschiede je nach Art der Straftat. So lag die Aufklärungsquote beim Wohnungseinbruchsdiebstahl nur bei 17,8 %. Bei Betrugsdelikten wurden dagegen 73,7 % und bei gefährlicher und schwerer Körperverletzung 82,8 % aller Straftaten aufgeklärt. Die vergleichsweise geringe Aufklärungsquote beim Wohnungseinbruchsdiebstahl hängt mit einer hohen Anzeigebereitschaft bei nur vergleichsweise selten vorliegenden konkreten Anhaltspunkten zur Täterschaft zusammen. Dies steht in deutlichem Gegensatz zur Situation bei Betrugs- und Körperverletzungsdelikten. Diese Straftaten weisen eine hohe Aufklärungsquote auf, weil der Polizei die Tatverdächtigen meist bereits bei der Anzeigenerstattung bekannt werden.</p>
+ </p>
+        
+      </tr>
+      
 
       
 
 
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -1663,6 +1715,25 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Indikator</th>
+
+            <td colspan="4">
+              
+                <p>16.1 - Straftaten</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -1672,6 +1743,25 @@ data-event-label="Change to Sources tab"
   
 
     
+      
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Ziel</th>
+
+            <td colspan="4">
+              
+                <p>Rückgang der Zahl der erfassten Straftaten je 100 000 Einwohner/ -innen auf unter 7 000 bis 2030</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
       
 
       
@@ -2247,6 +2337,27 @@ data-event-label="Change to Sources tab"
 
     
   
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 </table>
 
     </div>
@@ -2471,6 +2582,9 @@ data-event-label="Change to Sources tab"
   
 
     
+  
+
+    
       
       <tr>
         
@@ -2481,7 +2595,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://www.bka.de/DE/Home/home_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/bka.png" alt="Logo BKA" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
+                <p><a href="https://www.bka.de/DE/Home/home_node.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/bka.png" alt="Logo Bundeskriminalamt (BKA)" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
 
               
             </td>
@@ -2511,6 +2625,63 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>Bundeskriminalamt (BKA)</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Link zur <br>Datenquelle</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www.bka.de/DE/AktuelleInformationen/StatistikenLagebilder/PolizeilicheKriminalstatistik/pks_node.html" target="_blank">
+                    Polizeiliche Kriminalstatistik <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -2531,25 +2702,13 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
 
-      
+          
 
-
-
-    
-  
-
-    
-      
-
-      
-
-
-
-    
-  
-
-    
+        
+      </tr>
       
 
       
@@ -2571,6 +2730,14 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -2585,6 +2752,49 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+
+      
+
+
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -2971,6 +3181,12 @@ data-event-label="Change to Sources tab"
   
 
     
+  
+
+    
+  
+
+    
       
       <tr>
         
@@ -2981,7 +3197,7 @@ data-event-label="Change to Sources tab"
 
             <td colspan="4">
               
-                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/destatis.png" alt="Logo Destatis" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
+                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html"><img src="https://g205sdgs.github.io/sdg-indicators/public/logos/destatis.png" alt="Logo Statistisches Bundesamt (Destatis)" title="Klicken Sie hier um zu der Homepage der Organisation zu gelangen" /></a></p>
 
               
             </td>
@@ -3011,6 +3227,43 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p>Statistisches Bundesamt (Destatis)</p>
+
+              
+            </td>
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -3031,25 +3284,13 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
 
-      
+          
 
-
-
-    
-  
-
-    
-      
-
-      
-
-
-
-    
-  
-
-    
+        
+      </tr>
       
 
       
@@ -3071,6 +3312,14 @@ data-event-label="Change to Sources tab"
 
     
       
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
 
       
 
@@ -3085,6 +3334,46 @@ data-event-label="Change to Sources tab"
       
 
 
+
+    
+  
+
+    
+      
+      <tr>
+        
+
+          
+
+        
+      </tr>
+      
+
+      
+
+
+
+    
+  
+
+    
+      
+
+      
+
+
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
 
     
   
@@ -3246,7 +3535,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200207124511'></script><script>
+<script src='/assets/js/sdg.js?v=20200210104301'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -3259,6 +3548,7 @@ $(function() {
           $('.async-loading').remove();
           $('.async-loaded').show();
           var model = new indicatorModel({
+
             data: res.data,
             edgesData: res.edges,
             geoCodeRegEx: domData.geocoderegex,
