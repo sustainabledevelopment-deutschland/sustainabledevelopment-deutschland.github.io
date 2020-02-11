@@ -398,10 +398,10 @@ opensdg.autotrack = function(preset, category, action, label) {
               var div = L.DomUtil.create('div', 'command');
               //set the Button on position 'startExp' to status checked
               if (i == plugin.startExp){
-                div.innerHTML = '<label><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'" checked> '+translations.t(label)+'</label><br>';
+                div.innerHTML = '<label  style="background-color: #c0c2c2"><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'" checked> '+translations.t(label)+' </label><br>';
               }
               else{
-                div.innerHTML = '<label><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'"> '+translations.t(label)+'</label><br>';
+                div.innerHTML = '<label style="background-color: #c0c2c2"><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'"> '+translations.t(label)+' </label><br>';
               }
               return div;
           };
@@ -1374,8 +1374,19 @@ var indicatorDataStore = function(dataUrl) {
       //--#14 mixedCharts---stop--------------------------------------------------------------------------------------------------------
 
       //--#14.1 barsOnly---start--------------------------------------------------------------------------------------------------------
-      barCharts = ['indicator_2-2-a','indicator_3-1-e','indicator_5-1-b','indicator_5-1-c','indicator_6-2-a','indicator_8-2-c','indicator_8-3-a','indicator_8-4-a','indicator_8-6-a','indicator_11-1-a','indicator_11-1-b','indicator_11-2-c','indicator_12-1-a','indicator_12-1-b','indicator_13-1-b','indicator_15-2-a','indicator_16-1-a','indicator_16-2-a','indicator_17-1-a','indicator_17-2-a'];
-      exceptions = [translations.t('direct co2 emissions and co2 content of consumer goods')];
+      barCharts = ['indicator_2-2-a','indicator_3-1-e','indicator_5-1-b','indicator_5-1-c','indicator_6-2-a','indicator_8-2-c','indicator_8-3-a',
+      'indicator_8-4-a','indicator_8-6-a','indicator_11-1-a','indicator_11-1-b','indicator_11-2-c','indicator_12-1-a','indicator_12-1-b','indicator_13-1-b','indicator_15-2-a','indicator_16-1-a','indicator_16-2-a','indicator_17-1-a','indicator_17-2-a'];
+
+      bl = ['bw','by','be','bb','hb','hh','he','mv','ni','nw','rp','sl','sn','st','sh','th'];
+
+      exceptions = [translations.t('direct co2 emissions and co2 content of consumer goods'),
+                    translations.t('a) time series') + ', ' + translations.t('a) total (moving four-year average)'),
+                    translations.t('b) target (max)') + ', ' + translations.t('a) total (moving four-year average)')];
+
+      for (var i=0; i<bl.length; i++){
+        exceptions.push(translations.t('a) time series') + ', ' + translations.t('a) total (moving four-year average)') + ', ' + translations.t(bl[i]));
+      };
+
 
       getChartStyle = function (indicatorId, combinationDescription) {
 
@@ -1906,23 +1917,23 @@ var indicatorView = function (model, options) {
     view_obj.initialiseSeries(args);
 
     //---#1 GoalDependendMapColor---start--------------------------
-    if (args.indicatorId.includes('_1-')){var goalNr = 0;}
-    else if (args.indicatorId.includes('_2-')) {var goalNr = 1;}
-    else if (args.indicatorId.includes('_3-')) {var goalNr = 2;}
-    else if (args.indicatorId.includes('_4-')) {var goalNr = 3;}
-    else if (args.indicatorId.includes('_5-')) {var goalNr = 4;}
-    else if (args.indicatorId.includes('_6-')) {var goalNr = 5;}
-    else if (args.indicatorId.includes('_7-')) {var goalNr = 6;}
-    else if (args.indicatorId.includes('_8-')) {var goalNr = 7;}
-    else if (args.indicatorId.includes('_9-')) {var goalNr = 8;}
-    else if (args.indicatorId.includes('_10-')) {var goalNr = 9;}
-    else if (args.indicatorId.includes('_11-')) {var goalNr = 10;}
-    else if (args.indicatorId.includes('_12-')) {var goalNr = 11;}
-    else if (args.indicatorId.includes('_13-')) {var goalNr = 12;}
-    else if (args.indicatorId.includes('_14-')) {var goalNr = 13;}
-    else if (args.indicatorId.includes('_15-')) {var goalNr = 14;}
-    else if (args.indicatorId.includes('_16-')) {var goalNr = 15;}
-    else if (args.indicatorId.includes('_17-')) {var goalNr = 16;}
+    if (args.indicatorId.indexOf('_1-') != -1){var goalNr = 0;}
+    else if (args.indicatorId.indexOf('_2-') != -1) {var goalNr = 1;}
+    else if (args.indicatorId.indexOf('_3-') != -1) {var goalNr = 2;}
+    else if (args.indicatorId.indexOf('_4-') != -1) {var goalNr = 3;}
+    else if (args.indicatorId.indexOf('_5-') != -1) {var goalNr = 4;}
+    else if (args.indicatorId.indexOf('_6-') != -1) {var goalNr = 5;}
+    else if (args.indicatorId.indexOf('_7-') != -1) {var goalNr = 6;}
+    else if (args.indicatorId.indexOf('_8-') != -1) {var goalNr = 7;}
+    else if (args.indicatorId.indexOf('_9-') != -1) {var goalNr = 8;}
+    else if (args.indicatorId.indexOf('_10-') != -1) {var goalNr = 9;}
+    else if (args.indicatorId.indexOf('_11-') != -1) {var goalNr = 10;}
+    else if (args.indicatorId.indexOf('_12-') != -1) {var goalNr = 11;}
+    else if (args.indicatorId.indexOf('_13-') != -1) {var goalNr = 12;}
+    else if (args.indicatorId.indexOf('_14-') != -1) {var goalNr = 13;}
+    else if (args.indicatorId.indexOf('_15-') != -1) {var goalNr = 14;}
+    else if (args.indicatorId.indexOf('_16-') != -1) {var goalNr = 15;}
+    else if (args.indicatorId.indexOf('_17-') != -1) {var goalNr = 16;}
     //---#1 GoalDependendMapColor---stop---------------------------
     if(args.hasGeoData && args.showMap) {
       view_obj._mapView = new mapView();
@@ -2264,6 +2275,7 @@ var indicatorView = function (model, options) {
               var label = dataset.label;
               var replace = [{old: '2,5', new: '2.5'},
                             {old: 'Gebäude-, Frei- & Betriebsfläche', new: 'Gebäude- Frei- & Betriebsfläche'},
+                            {old: 'Erholungsfläche, Friedhof', new: 'Erholungsfläche Friedhof'},
                             {old: 'Konsum, Investitionen und Exporte', new: 'Konsum Investitionen und Exporte'},
                             {old: 'Entwicklungszusammenarbeit, deren', new: 'Entwicklungszusammenarbeit deren'},
                             {old: 'Moving five-year average, referring to the middle year', new: 'Moving five-year average referring to the middle year'},
@@ -2278,7 +2290,7 @@ var indicatorView = function (model, options) {
               var exceptions = ['Deutschland (insgesamt)', 'Germany (total)',
                                 'Insgesamt', 'Total',
                                 'Index insgesamt', 'Index overall'];
-              if (exceptions.includes(label)) {
+              if (exceptions.indexOf(label) != -1) {
                 exc = 1;
               }
 
@@ -2355,7 +2367,7 @@ var indicatorView = function (model, options) {
     });
 
     this.createTableFooter('selectionChartFooter', chartInfo.footerFields, '#chart-canvas');
-    this.createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#selectionsChart');
+    //this.createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#selectionsChart');
     this.createSourceButton(chartInfo.shortIndicatorId, '#selectionsChart');
 
     $("#btnSave").click(function() {
@@ -2491,7 +2503,6 @@ var indicatorView = function (model, options) {
     this.createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#selectionsTable');
     this.createSourceButton(chartInfo.shortIndicatorId, '#selectionsTable');
   };
-
 
   this.createDownloadButton = function(table, name, indicatorId, el) {
     if(window.Modernizr.blobconstructor) {
