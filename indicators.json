@@ -43,32 +43,11 @@
       "id": "3",
       "title": "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern",
       "indicators": [{
-          "id": "3-1-ab",
-          "title": "Vorzeitige Sterblichkeit",
-          "description": "",
-          "keywords": "",
-          "href": "/3-1-ab",
-          "status": "complete"
-        },{
-          "id": "3-1-e",
-          "title": "Adipositasquote von Jugendlichen",
-          "description": "",
-          "keywords": "",
-          "href": "/3-1-e",
-          "status": "complete"
-        },{
           "id": "3-1-f",
           "title": "Adipositasquote von Erwachsenen",
           "description": "",
           "keywords": "",
           "href": "/3-1-f",
-          "status": "complete"
-        },{
-          "id": "3-2-b",
-          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Feinstaubexposition",
-          "description": "",
-          "keywords": "",
-          "href": "/3-2-b",
           "status": "complete"
         },{
           "id": "3-2-a",
@@ -78,11 +57,32 @@
           "href": "/3-2-a",
           "status": "complete"
         },{
+          "id": "3-2-b",
+          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Feinstaubexposition",
+          "description": "",
+          "keywords": "",
+          "href": "/3-2-b",
+          "status": "complete"
+        },{
           "id": "3-1-cd",
           "title": "Raucherquote von Jugendlichen und Erwachsenen",
           "description": "",
           "keywords": "",
           "href": "/3-1-cd",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Adipositasquote von Jugendlichen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-e",
+          "status": "complete"
+        },{
+          "id": "3-1-ab",
+          "title": "Vorzeitige Sterblichkeit",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-ab",
           "status": "complete"
         }]
     }
@@ -91,13 +91,6 @@
       "id": "4",
       "title": "Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern",
       "indicators": [{
-          "id": "4-1-a",
-          "title": "Frühe Schulabgängerinnen und Schulabgänger",
-          "description": "",
-          "keywords": "",
-          "href": "/4-1-a",
-          "status": "complete"
-        },{
           "id": "4-2-ab",
           "title": "Ganztagsbetreuung für Kinder",
           "description": "",
@@ -111,6 +104,13 @@
           "keywords": "",
           "href": "/4-1-b",
           "status": "complete"
+        },{
+          "id": "4-1-a",
+          "title": "Frühe Schulabgängerinnen und Schulabgänger",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-a",
+          "status": "complete"
         }]
     }
   },{
@@ -118,13 +118,6 @@
       "id": "5",
       "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
       "indicators": [{
-          "id": "5-1-a",
-          "title": "Verdienstabstand zwischen Frauen und Männern",
-          "description": "",
-          "keywords": "",
-          "href": "/5-1-a",
-          "status": "complete"
-        },{
           "id": "5-1-b",
           "title": "Frauen in Führungspositionen in der Wirtschaft",
           "description": "",
@@ -138,6 +131,13 @@
           "keywords": "",
           "href": "/5-1-c",
           "status": "complete"
+        },{
+          "id": "5-1-a",
+          "title": "Verdienstabstand zwischen Frauen und Männern",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-a",
+          "status": "complete"
         }]
     }
   },{
@@ -145,13 +145,6 @@
       "id": "6",
       "title": "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten",
       "indicators": [{
-          "id": "6-1-b",
-          "title": "Nitrat im Grundwasser",
-          "description": "",
-          "keywords": "",
-          "href": "/6-1-b",
-          "status": "complete"
-        },{
           "id": "6-1-a",
           "title": "Phosphor in Fließgewässern",
           "description": "",
@@ -165,6 +158,13 @@
           "keywords": "",
           "href": "/6-2-a",
           "status": "complete"
+        },{
+          "id": "6-1-b",
+          "title": "Nitrat im Grundwasser",
+          "description": "",
+          "keywords": "",
+          "href": "/6-1-b",
+          "status": "complete"
         }]
     }
   },{
@@ -172,18 +172,18 @@
       "id": "7",
       "title": "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern",
       "indicators": [{
-          "id": "7-1-ab",
-          "title": "Endenergieproduktivität und Primärenergieverbrauch",
-          "description": "",
-          "keywords": "",
-          "href": "/7-1-ab",
-          "status": "complete"
-        },{
           "id": "7-2-a",
           "title": "Anteil erneuerbarer Energien am Brutto-Endenergieverbrauch",
           "description": "",
           "keywords": "",
           "href": "/7-2-a",
+          "status": "complete"
+        },{
+          "id": "7-1-ab",
+          "title": "Endenergieproduktivität und Primärenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-1-ab",
           "status": "complete"
         },{
           "id": "7-2-b",
@@ -199,18 +199,18 @@
       "id": "8",
       "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
       "indicators": [{
-          "id": "8-2-c",
-          "title": "Schuldenstand",
+          "id": "8-1-a",
+          "title": "Gesamtrohstoffproduktivität",
           "description": "",
           "keywords": "",
-          "href": "/8-2-c",
+          "href": "/8-1-a",
           "status": "complete"
         },{
-          "id": "8-4-a",
-          "title": "Bruttoinlandsprodukt je Einwohner",
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
           "description": "",
           "keywords": "",
-          "href": "/8-4-a",
+          "href": "/8-2-ab",
           "status": "complete"
         },{
           "id": "8-5-ab",
@@ -220,18 +220,11 @@
           "href": "/8-5-ab",
           "status": "complete"
         },{
-          "id": "8-6-a",
-          "title": "Anzahl der Mitglieder des Textilbündnisses",
+          "id": "8-4-a",
+          "title": "Bruttoinlandsprodukt je Einwohner",
           "description": "",
           "keywords": "",
-          "href": "/8-6-a",
-          "status": "complete"
-        },{
-          "id": "8-1-a",
-          "title": "Gesamtrohstoffproduktivität",
-          "description": "",
-          "keywords": "",
-          "href": "/8-1-a",
+          "href": "/8-4-a",
           "status": "complete"
         },{
           "id": "8-3-a",
@@ -241,11 +234,18 @@
           "href": "/8-3-a",
           "status": "complete"
         },{
-          "id": "8-2-ab",
-          "title": "Staatsdefizit und strukturelles Defizit",
+          "id": "8-6-a",
+          "title": "Anzahl der Mitglieder des Textilbündnisses",
           "description": "",
           "keywords": "",
-          "href": "/8-2-ab",
+          "href": "/8-6-a",
+          "status": "complete"
+        },{
+          "id": "8-2-c",
+          "title": "Schuldenstand",
+          "description": "",
+          "keywords": "",
+          "href": "/8-2-c",
           "status": "complete"
         }]
     }
@@ -267,18 +267,18 @@
       "id": "10",
       "title": "Ungleichheit in und zwischen Ländern verringern",
       "indicators": [{
-          "id": "10-2-a",
-          "title": "Gini-Koeffizient zur Einkommensverteilung",
-          "description": "",
-          "keywords": "",
-          "href": "/10-2-a",
-          "status": "complete"
-        },{
           "id": "10-1-a",
           "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
           "description": "",
           "keywords": "",
           "href": "/10-1-a",
+          "status": "complete"
+        },{
+          "id": "10-2-a",
+          "title": "Gini-Koeffizient zur Einkommensverteilung",
+          "description": "",
+          "keywords": "",
+          "href": "/10-2-a",
           "status": "complete"
         }]
     }
@@ -287,6 +287,27 @@
       "id": "11",
       "title": "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten",
       "indicators": [{
+          "id": "11-2-b",
+          "title": "Endenergieverbrauch im Personenverkehr",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-b",
+          "status": "complete"
+        },{
+          "id": "11-1-a",
+          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-a",
+          "status": "complete"
+        },{
+          "id": "11-1-b",
+          "title": "Freiraumverlust",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-b",
+          "status": "complete"
+        },{
           "id": "11-2-c",
           "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln",
           "description": "",
@@ -301,32 +322,11 @@
           "href": "/11-1-c",
           "status": "complete"
         },{
-          "id": "11-1-b",
-          "title": "Freiraumverlust",
-          "description": "",
-          "keywords": "",
-          "href": "/11-1-b",
-          "status": "complete"
-        },{
-          "id": "11-1-a",
-          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
-          "description": "",
-          "keywords": "",
-          "href": "/11-1-a",
-          "status": "complete"
-        },{
           "id": "11-2-a",
           "title": "Endenergieverbrauch im Güterverkehr",
           "description": "",
           "keywords": "",
           "href": "/11-2-a",
-          "status": "complete"
-        },{
-          "id": "11-2-b",
-          "title": "Endenergieverbrauch im Personenverkehr",
-          "description": "",
-          "keywords": "",
-          "href": "/11-2-b",
           "status": "complete"
         },{
           "id": "11-3-a",
@@ -342,18 +342,11 @@
       "id": "12",
       "title": "Nachhaltige Konsum- und Produktionsmuster sicherstellen",
       "indicators": [{
-          "id": "12-2-a",
-          "title": "Umweltmanagement EMAS",
+          "id": "12-1-a",
+          "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
           "description": "",
           "keywords": "",
-          "href": "/12-2-a",
-          "status": "complete"
-        },{
-          "id": "12-1-b",
-          "title": "Energieverbrauch und CO<sub>2</sub>-Emissionen des Konsums",
-          "description": "",
-          "keywords": "",
-          "href": "/12-1-b",
+          "href": "/12-1-a",
           "status": "complete"
         },{
           "id": "12-3-ab",
@@ -363,11 +356,18 @@
           "href": "/12-3-ab",
           "status": "complete"
         },{
-          "id": "12-1-a",
-          "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
+          "id": "12-1-b",
+          "title": "Energieverbrauch und CO<sub>2</sub>-Emissionen des Konsums",
           "description": "",
           "keywords": "",
-          "href": "/12-1-a",
+          "href": "/12-1-b",
+          "status": "complete"
+        },{
+          "id": "12-2-a",
+          "title": "Umweltmanagement EMAS",
+          "description": "",
+          "keywords": "",
+          "href": "/12-2-a",
           "status": "complete"
         }]
     }
@@ -416,6 +416,13 @@
       "id": "15",
       "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen",
       "indicators": [{
+          "id": "15-1-a",
+          "title": "Artenvielfalt und Landschaftsqualität",
+          "description": "",
+          "keywords": "",
+          "href": "/15-1-a",
+          "status": "complete"
+        },{
           "id": "15-3-a",
           "title": "Erhalt bzw. Wiederaufbau von Wäldern in Entwicklungsländern unter dem REDD+-Regelwerk",
           "description": "",
@@ -429,13 +436,6 @@
           "keywords": "",
           "href": "/15-2-a",
           "status": "complete"
-        },{
-          "id": "15-1-a",
-          "title": "Artenvielfalt und Landschaftsqualität",
-          "description": "",
-          "keywords": "",
-          "href": "/15-1-a",
-          "status": "complete"
         }]
     }
   },{
@@ -443,6 +443,13 @@
       "id": "16",
       "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
       "indicators": [{
+          "id": "16-2-a",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
+          "description": "",
+          "keywords": "",
+          "href": "/16-2-a",
+          "status": "complete"
+        },{
           "id": "16-3-ab",
           "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit",
           "description": "",
@@ -455,13 +462,6 @@
           "description": "",
           "keywords": "",
           "href": "/16-1-a",
-          "status": "complete"
-        },{
-          "id": "16-2-a",
-          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
-          "description": "",
-          "keywords": "",
-          "href": "/16-2-a",
           "status": "complete"
         }]
     }
@@ -477,18 +477,18 @@
           "href": "/17-2-a",
           "status": "complete"
         },{
-          "id": "17-3-a",
-          "title": "Einfuhren aus am wenigsten entwickelten Ländern",
-          "description": "",
-          "keywords": "",
-          "href": "/17-3-a",
-          "status": "complete"
-        },{
           "id": "17-1-a",
           "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen",
           "description": "",
           "keywords": "",
           "href": "/17-1-a",
+          "status": "complete"
+        },{
+          "id": "17-3-a",
+          "title": "Einfuhren aus am wenigsten entwickelten Ländern",
+          "description": "",
+          "keywords": "",
+          "href": "/17-3-a",
           "status": "complete"
         }]
     }
