@@ -613,3 +613,567 @@ header {
   display: block;
   margin-left: auto;
   margin-right: auto; }
+
+.goal-1.heading {
+  background-color: white;
+  border-bottom: 15px solid #E52B3D;
+  border-top: 15px solid #E52B3D; }
+.goal-1.underline {
+  height: 5px;
+  border-top: 5px solid #c51829; }
+.goal-1.titles {
+  color: #c51829; }
+.goal-1.heading.contrast-high {
+  background: black; }
+  .goal-1.heading.contrast-high a {
+    color: yellow; }
+.goal-1.goal-indicators div span {
+  border-color: #c51829;
+  color: #c51829; }
+
+.goal-tiles #goal-1:hover {
+  background-color: #E52B3D; }
+
+.goal-2.heading {
+  background-color: white;
+  border-bottom: 15px solid #DDA63A;
+  border-top: 15px solid #DDA63A; }
+.goal-2.underline {
+  height: 5px;
+  border-top: 5px solid #c28c22; }
+.goal-2.titles {
+  color: #c28c22; }
+.goal-2.heading.contrast-high {
+  background: black; }
+  .goal-2.heading.contrast-high a {
+    color: yellow; }
+.goal-2.goal-indicators div span {
+  border-color: #c28c22;
+  color: #c28c22; }
+
+.goal-tiles #goal-2:hover {
+  background-color: #DDA63A; }
+
+.goal-3.heading {
+  background-color: white;
+  border-bottom: 15px solid #4C9F38;
+  border-top: 15px solid #4C9F38; }
+.goal-3.underline {
+  height: 5px;
+  border-top: 5px solid #3a792b; }
+.goal-3.titles {
+  color: #3a792b; }
+.goal-3.heading.contrast-high {
+  background: black; }
+  .goal-3.heading.contrast-high a {
+    color: yellow; }
+.goal-3.goal-indicators div span {
+  border-color: #3a792b;
+  color: #3a792b; }
+
+.goal-tiles #goal-3:hover {
+  background-color: #4C9F38; }
+
+.goal-4.heading {
+  background-color: white;
+  border-bottom: 15px solid #C42130;
+  border-top: 15px solid #C42130; }
+.goal-4.underline {
+  height: 5px;
+  border-top: 5px solid #981a25; }
+.goal-4.titles {
+  color: #981a25; }
+.goal-4.heading.contrast-high {
+  background: black; }
+  .goal-4.heading.contrast-high a {
+    color: yellow; }
+.goal-4.goal-indicators div span {
+  border-color: #981a25;
+  color: #981a25; }
+
+.goal-tiles #goal-4:hover {
+  background-color: #C42130; }
+
+.goal-5.heading {
+  background-color: white;
+  border-bottom: 15px solid #FF3E24;
+  border-top: 15px solid #FF3E24; }
+.goal-5.underline {
+  height: 5px;
+  border-top: 5px solid #f01c00; }
+.goal-5.titles {
+  color: #f01c00; }
+.goal-5.heading.contrast-high {
+  background: black; }
+  .goal-5.heading.contrast-high a {
+    color: yellow; }
+.goal-5.goal-indicators div span {
+  border-color: #f01c00;
+  color: #f01c00; }
+
+.goal-tiles #goal-5:hover {
+  background-color: #FF3E24; }
+
+.goal-6.heading {
+  background-color: white;
+  border-bottom: 15px solid #28BCE1;
+  border-top: 15px solid #28BCE1; }
+.goal-6.underline {
+  height: 5px;
+  border-top: 5px solid #1a9bbc; }
+.goal-6.titles {
+  color: #1a9bbc; }
+.goal-6.heading.contrast-high {
+  background: black; }
+  .goal-6.heading.contrast-high a {
+    color: yellow; }
+.goal-6.goal-indicators div span {
+  border-color: #1a9bbc;
+  color: #1a9bbc; }
+
+.goal-tiles #goal-6:hover {
+  background-color: #28BCE1; }
+
+.goal-7.heading {
+  background-color: white;
+  border-bottom: 15px solid #FCC30B;
+  border-top: 15px solid #FCC30B; }
+.goal-7.underline {
+  height: 5px;
+  border-top: 5px solid #d1a103; }
+.goal-7.titles {
+  color: #d1a103; }
+.goal-7.heading.contrast-high {
+  background: black; }
+  .goal-7.heading.contrast-high a {
+    color: yellow; }
+.goal-7.goal-indicators div span {
+  border-color: #d1a103;
+  color: #d1a103; }
+
+.goal-tiles #goal-7:hover {
+  background-color: #FCC30B; }
+
+.goal-8.heading {
+  background-color: white;
+  border-bottom: 15px solid #A21942;
+  border-top: 15px solid #A21942; }
+.goal-8.underline {
+  height: 5px;
+  border-top: 5px solid #761230; }
+.goal-8.titles {
+  color: #761230; }
+.goal-8.heading.contrast-high {
+  background: black; }
+  .goal-8.heading.contrast-high a {
+    color: yellow; }
+.goal-8.goal-indicators div span {
+  border-color: #761230;
+  color: #761230; }
+
+.goal-tiles #goal-8:hover {
+  background-color: #A21942; }
+
+.goal-9.heading {
+  background-color: white;
+  border-bottom: 15px solid #FD6925;
+  border-top: 15px solid #FD6925; }
+.goal-9.underline {
+  height: 5px;
+  border-top: 5px solid #ed4c02; }
+.goal-9.titles {
+  color: #ed4c02; }
+.goal-9.heading.contrast-high {
+  background: black; }
+  .goal-9.heading.contrast-high a {
+    color: yellow; }
+.goal-9.goal-indicators div span {
+  border-color: #ed4c02;
+  color: #ed4c02; }
+
+.goal-tiles #goal-9:hover {
+  background-color: #FD6925; }
+
+.goal-10.heading {
+  background-color: white;
+  border-bottom: 15px solid #DD1367;
+  border-top: 15px solid #DD1367; }
+.goal-10.underline {
+  height: 5px;
+  border-top: 5px solid #ae0f51; }
+.goal-10.titles {
+  color: #ae0f51; }
+.goal-10.heading.contrast-high {
+  background: black; }
+  .goal-10.heading.contrast-high a {
+    color: yellow; }
+.goal-10.goal-indicators div span {
+  border-color: #ae0f51;
+  color: #ae0f51; }
+
+.goal-tiles #goal-10:hover {
+  background-color: #DD1367; }
+
+.goal-11.heading {
+  background-color: white;
+  border-bottom: 15px solid #FD9C27;
+  border-top: 15px solid #FD9C27; }
+.goal-11.underline {
+  height: 5px;
+  border-top: 5px solid #ef8402; }
+.goal-11.titles {
+  color: #ef8402; }
+.goal-11.heading.contrast-high {
+  background: black; }
+  .goal-11.heading.contrast-high a {
+    color: yellow; }
+.goal-11.goal-indicators div span {
+  border-color: #ef8402;
+  color: #ef8402; }
+
+.goal-tiles #goal-11:hover {
+  background-color: #FD9C27; }
+
+.goal-12.heading {
+  background-color: white;
+  border-bottom: 15px solid #BF8B2E;
+  border-top: 15px solid #BF8B2E; }
+.goal-12.underline {
+  height: 5px;
+  border-top: 5px solid #966d24; }
+.goal-12.titles {
+  color: #966d24; }
+.goal-12.heading.contrast-high {
+  background: black; }
+  .goal-12.heading.contrast-high a {
+    color: yellow; }
+.goal-12.goal-indicators div span {
+  border-color: #966d24;
+  color: #966d24; }
+
+.goal-tiles #goal-12:hover {
+  background-color: #BF8B2E; }
+
+.goal-13.heading {
+  background-color: white;
+  border-bottom: 15px solid #417D46;
+  border-top: 15px solid #417D46; }
+.goal-13.underline {
+  height: 5px;
+  border-top: 5px solid #305b33; }
+.goal-13.titles {
+  color: #305b33; }
+.goal-13.heading.contrast-high {
+  background: black; }
+  .goal-13.heading.contrast-high a {
+    color: yellow; }
+.goal-13.goal-indicators div span {
+  border-color: #305b33;
+  color: #305b33; }
+
+.goal-tiles #goal-13:hover {
+  background-color: #417D46; }
+
+.goal-14.heading {
+  background-color: white;
+  border-bottom: 15px solid #0A96D8;
+  border-top: 15px solid #0A96D8; }
+.goal-14.underline {
+  height: 5px;
+  border-top: 5px solid #0874a7; }
+.goal-14.titles {
+  color: #0874a7; }
+.goal-14.heading.contrast-high {
+  background: black; }
+  .goal-14.heading.contrast-high a {
+    color: yellow; }
+.goal-14.goal-indicators div span {
+  border-color: #0874a7;
+  color: #0874a7; }
+
+.goal-tiles #goal-14:hover {
+  background-color: #0A96D8; }
+
+.goal-15.heading {
+  background-color: white;
+  border-bottom: 15px solid #57BE2F;
+  border-top: 15px solid #57BE2F; }
+.goal-15.underline {
+  height: 5px;
+  border-top: 5px solid #449525; }
+.goal-15.titles {
+  color: #449525; }
+.goal-15.heading.contrast-high {
+  background: black; }
+  .goal-15.heading.contrast-high a {
+    color: yellow; }
+.goal-15.goal-indicators div span {
+  border-color: #449525;
+  color: #449525; }
+
+.goal-tiles #goal-15:hover {
+  background-color: #57BE2F; }
+
+.goal-16.heading {
+  background-color: white;
+  border-bottom: 15px solid #00689C;
+  border-top: 15px solid #00689C; }
+.goal-16.underline {
+  height: 5px;
+  border-top: 5px solid #004669; }
+.goal-16.titles {
+  color: #004669; }
+.goal-16.heading.contrast-high {
+  background: black; }
+  .goal-16.heading.contrast-high a {
+    color: yellow; }
+.goal-16.goal-indicators div span {
+  border-color: #004669;
+  color: #004669; }
+
+.goal-tiles #goal-16:hover {
+  background-color: #00689C; }
+
+.goal-17.heading {
+  background-color: white;
+  border-bottom: 15px solid #1F4A6A;
+  border-top: 15px solid #1F4A6A; }
+.goal-17.underline {
+  height: 5px;
+  border-top: 5px solid #132e43; }
+.goal-17.titles {
+  color: #132e43; }
+.goal-17.heading.contrast-high {
+  background: black; }
+  .goal-17.heading.contrast-high a {
+    color: yellow; }
+.goal-17.goal-indicators div span {
+  border-color: #132e43;
+  color: #132e43; }
+
+.goal-tiles #goal-17:hover {
+  background-color: #1F4A6A; }
+
+body.contrast-high {
+  background-color: black; }
+  body.contrast-high .goal-1.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-1.titles {
+    color: white; }
+  body.contrast-high .goal-2.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-2.titles {
+    color: white; }
+  body.contrast-high .goal-3.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-3.titles {
+    color: white; }
+  body.contrast-high .goal-4.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-4.titles {
+    color: white; }
+  body.contrast-high .goal-5.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-5.titles {
+    color: white; }
+  body.contrast-high .goal-6.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-6.titles {
+    color: white; }
+  body.contrast-high .goal-7.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-7.titles {
+    color: white; }
+  body.contrast-high .goal-8.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-8.titles {
+    color: white; }
+  body.contrast-high .goal-9.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-9.titles {
+    color: white; }
+  body.contrast-high .goal-10.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-10.titles {
+    color: white; }
+  body.contrast-high .goal-11.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-11.titles {
+    color: white; }
+  body.contrast-high .goal-12.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-12.titles {
+    color: white; }
+  body.contrast-high .goal-13.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-13.titles {
+    color: white; }
+  body.contrast-high .goal-14.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-14.titles {
+    color: white; }
+  body.contrast-high .goal-15.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-15.titles {
+    color: white; }
+  body.contrast-high .goal-16.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-16.titles {
+    color: white; }
+  body.contrast-high .goal-17.heading {
+    background-color: black;
+    border-bottom: 15px solid yellow;
+    border-top: 15px solid yellow; }
+  body.contrast-high .goal-17.titles {
+    color: white; }
+  body.contrast-high #page-content .alert div p, body.contrast-high #page-content .alert div h4 {
+    color: black; }
+  body.contrast-high #accessibility-nav li.contrast-default {
+    display: block; }
+  body.contrast-high #accessibility-nav li.contrast-high {
+    display: none; }
+  body.contrast-high .table {
+    background: black; }
+  body.contrast-high .btn {
+    background: white !important;
+    color: black !important; }
+    body.contrast-high .btn:hover {
+      background: yellow !important; }
+    body.contrast-high .btn:focus {
+      background: yellow !important; }
+  body.contrast-high div#units {
+    color: white; }
+  body.contrast-high .nav-tabs {
+    border-color: yellow; }
+  body.contrast-high #main-content #fields .bar .selected {
+    background-color: white; }
+  body.contrast-high #main-content #fields .variable-selector .variable-hint {
+    color: white; }
+  body.contrast-high #main-content .nav-tabs .nav-item.active a {
+    background: yellow;
+    color: black;
+    border-color: yellow; }
+  body.contrast-high a.nav-link:focus {
+    background: white;
+    color: black; }
+  body.contrast-high caption {
+    color: white; }
+  body.contrast-high .table-hover tbody tr:hover {
+    background: yellow; }
+    body.contrast-high .table-hover tbody tr:hover td {
+      color: black; }
+    body.contrast-high .table-hover tbody tr:hover th {
+      color: black; }
+    body.contrast-high .table-hover tbody tr:hover a {
+      color: blue;
+      text-decoration: underline; }
+  body.contrast-high .container, body.contrast-high #main-content, body.contrast-high header, body.contrast-high footer, body.contrast-high #disclaimer, body.contrast-high .heading {
+    background: black;
+    border-color: black; }
+  body.contrast-high p, body.contrast-high h2, body.contrast-high h3, body.contrast-high h4, body.contrast-high span, body.contrast-high td, body.contrast-high th, body.contrast-high a#text {
+    color: white; }
+  body.contrast-high h1, body.contrast-high li, body.contrast-high a {
+    color: yellow; }
+  body.contrast-high li.contrast-default a {
+    color: black !important; }
+  body.contrast-high .navbar li a {
+    color: white; }
+    body.contrast-high .navbar li a:hover, body.contrast-high .navbar li a:focus {
+      color: yellow; }
+  body.contrast-high .navbar li.active a {
+    color: yellow;
+    border-color: yellow; }
+    body.contrast-high .navbar li.active a:hover {
+      color: yellow; }
+    body.contrast-high .navbar li.active a:focus {
+      color: yellow; }
+  body.contrast-high .goal-indicators div span {
+    border-color: white !important;
+    color: white !important; }
+  body.contrast-high .goal-indicators .indicator-cards a, body.contrast-high .goal-indicators .indicator-cards.target {
+    color: white !important; }
+  body.contrast-high .goal-indicators .indicator-cards span.status, body.contrast-high .goal-indicators .indicator-cards .tags li {
+    color: black !important; }
+  body.contrast-high #main-content #fields label {
+    background: black;
+    color: white; }
+    body.contrast-high #main-content #fields label:hover {
+      background: white;
+      color: black; }
+    body.contrast-high #main-content #fields label:focus {
+      background: white;
+      color: black; }
+  body.contrast-high #toolbar button {
+    background-color: black !important;
+    border-color: white;
+    color: white; }
+  body.contrast-high .danger {
+    background-color: red; }
+  body.contrast-high .warning {
+    background-color: yellow; }
+  body.contrast-high .success {
+    background-color: green; }
+  body.contrast-high .statuses strong {
+    color: white; }
+  body.contrast-high .statuses .value {
+    color: white !important; }
+  body.contrast-high .variable-options {
+    background: black;
+    color: white; }
+    body.contrast-high .variable-options div {
+      background: black;
+      color: white; }
+    body.contrast-high .variable-options button {
+      background: black;
+      color: white !important;
+      border-color: white; }
+  body.contrast-high .breadcrumb {
+    background: white; }
+    body.contrast-high .breadcrumb a {
+      color: black !important; }
+  body.contrast-high span.match {
+    color: black !important; }
+  @media screen and (max-width: 768px) {
+    body.contrast-high .navbar.navbar-default {
+      background: black;
+      color: white; }
+    body.contrast-high .navbar .top-level li.active {
+      background: white; }
+      body.contrast-high .navbar .top-level li.active span {
+        color: black; }
+    body.contrast-high .navbar .menu-target {
+      background: black; }
+    body.contrast-high .navbar ul.navbar-nav li a {
+      background: black; } }
