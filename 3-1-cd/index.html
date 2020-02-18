@@ -139,7 +139,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200214130737">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200218070918">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -147,7 +147,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200214130737"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200218070918"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -275,7 +275,7 @@ var translations = {
         <li class="nav-link">
           <a href="https://sustainabledevelopment-germany.github.io//">
             <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
-            <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-Berichtsplattform</span>
           </a>
         </li>
         <!---#17 addLinkToOtherPage---stop------------->
@@ -374,6 +374,12 @@ var translations = {
       <!--
 
       
+        <li class="btn">
+          <a href="https://g205sdgs.github.io/sdg-indicators/3-a-1/">
+            Verwandter globaler Indikator: 3.a.1
+          </a>
+        </li>
+      
 
 
       <li class="pull-right">
@@ -399,17 +405,24 @@ var translations = {
 
   <!---3 Btns if there is a corresponding Indicator-->
   
-    <div class="col-xs-6 col-md-6 col-lg-6">
+    <div class="col-xs-3 col-md-3 col-lg-4">
       <a href="/3-1-ab" class="btn btn-primary btn-block G3-background" role="button">
         <i class="fa fa-chevron-left" aria-hidden="true"></i> <b><span class="hidden-sm hidden-xs">Vorheriger Indikator</span></b>
       </a>
     </div>
 
-    <div class="col-xs-6 col-md-6 col-lg-6">
+    <div class="col-xs-6 col-md-6 col-lg-4">
+      <a href="https://sustainabledevelopment-germany.github.io//3-a-1/" class="btn btn-primary btn-block G3-background" title="Hier gelangen Sie zur Seite des korrespondierenden SDG-Indikators" role="button">
+        <b><span class="hidden-sm hidden-xs">Verwandter globaler Indikator:</span> SDG-3.a.1</b>
+      </a>
+    </div>
+
+    <div class="col-xs-3 col-md-3 col-lg-4">
       <a href="/3-1-e" class="btn btn-primary btn-block G3-background" role="button">
         <b><span class="hidden-sm hidden-xs">Nächster Indikator</span></b> <i class="fa fa-chevron-right" aria-hidden="true"></i>
       </a>
     </div>
+  <!---2 Btns if there is no corresponding Indicator-->
   
 
 <!---Goal page-->
@@ -847,8 +860,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/9959c593da7dfda1bc6ff110b89a1737deb125d0" target="_blank">
-                    2020-02-11: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/884fddb4def8739cd0b162c17e5b8e69ba6b7550" target="_blank">
+                    2020-02-17: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -4009,7 +4022,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200214130737'></script><script>
+<script src='/assets/js/sdg.js?v=20200218070918'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

@@ -1177,3 +1177,13 @@ body.contrast-high {
       background: black; }
     body.contrast-high .navbar ul.navbar-nav li a {
       background: black; } }
+
+figure {
+  float: right;
+  display: table;
+  border: 1px solid #ddd;
+  border-radius: 4px; }
+
+figcaption {
+  display: table-caption;
+  caption-side: bottom; }
