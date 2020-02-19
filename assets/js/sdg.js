@@ -850,6 +850,10 @@ var indicatorDataStore = function(dataUrl) {
     return this.indexOf(val) != -1;
   };
 
+  this.colorSet = "goalColors";
+  this.numberOfColors = 20>16 ? 17 : 20;
+
+  console.log("b",this.colorSet);
   // events:
   this.onDataComplete = new event(this);
   this.onSeriesComplete = new event(this);
@@ -1035,6 +1039,45 @@ var indicatorDataStore = function(dataUrl) {
   }());
 
   var headlineColor = '777777';
+
+  //---
+  var goalNumber = parseInt(this.indicatorId.slice(this.indicatorId.indexOf('_')+1,this.indicatorId.indexOf('-')));
+  var colorSets = {'default':['7e984f', '8d73ca', 'aaa533', 'c65b8a', '4aac8d', 'c95f44'],
+                  'sdgColors':['e5243b', 'DDA63A', '4c9f38', 'c5192d', 'ff3a21', '26bde2', 'fcc30b', 'a21942', 'fd6925', 'dd1367','FD9D24','BF8B2E','3F7E44','0A97D9','56C02B','00689D','19486A'],
+                  'goalColors':[]};
+  var shades = [0,1,-1,1/2,-1/2,3/4,-3/4,1/4,-1/4,7/8,-7/8,3/8,-3/8,5/8,-5/8,1/8,-1/8];
+
+  function LightenDarkenColor(col, amt) {
+    var num = parseInt(col, 16);
+    var r = (num >> 16) + amt;
+    var b = ((num >> 8) & 0x00FF) + amt;
+    var g = (num & 0x0000FF) + amt;
+    var newColor = g | (b << 8) | (r << 16);
+    return newColor.toString(16);
+  }
+
+  if (this.colorSet == 'goalColors'){
+
+    var sdgColor = colorSets['sdgColors'][goalNumber-1];
+    colorSets['goalColors'].push(sdgColor);
+
+    for (var num=1; num<this.numberOfColors; num++){
+      var shadeNum = shades[num-1];
+      if ( num % 2 == 0) {
+        var darker = LightenDarkenColor(sdgColor, shadeNum*50);
+        colorSets['goalColors'].push(darker);
+      }
+      else{
+        var lighter = LightenDarkenColor(sdgColor, shadeNum*-50);
+        colorSets['goalColors'].push(lighter);
+      }
+    }
+  }
+
+  var colors = colorSets[this.colorSet].slice(0,this.numberOfColors);
+  console.log(colorSets, colors);
+  //---
+
   if (this.indicatorId.indexOf('_1-') != -1){
     var colors = ['e5243b', '891523', 'ef7b89', '2d070b', 'f4a7b0', 'b71c2f', 'ea4f62', '5b0e17', 'fce9eb'];
   }
@@ -1086,6 +1129,7 @@ var indicatorDataStore = function(dataUrl) {
   else if(this.indicatorId.indexOf('_17-') != -1){
     var colors = ['19486a', '0a1c2a', '8ca3b4', '16377c', 'd1dae1', '11324a', '466c87', '5b73a3', '0f2656'];
   };
+  //
   //SDG goal colors
   //['e5243b', 'e5b735', '4c9f38', 'c5192d', 'ff3a21', '26bde2', 'fcc30b', 'a21942', 'fd6925', 'dd1367'];
   var headlinePointstyle = 'circle';
@@ -2191,7 +2235,7 @@ var indicatorView = function (model, options) {
 
 
   this.createPlot = function (chartInfo) {
-    console.log("chartinfox",chartInfo);
+    //console.log("chartinfox",chartInfo);
 
     var that = this;
 
@@ -2661,6 +2705,7 @@ indicatorController.prototype = {
   }
 };
 var indicatorSearch = function(inputElement, indicatorDataStore) {
+
   that = this;
   this.inputElement = inputElement;
   this.indicatorDataStore = indicatorDataStore;
@@ -2668,6 +2713,7 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
   this.hasErrored = false;
 
   this.processData = function(data) {
+    console.log("search",data);
     for(var goalLoop = 0; goalLoop < data.length; goalLoop++) {
       for(var indicatorLoop = 0; indicatorLoop < data[goalLoop].goal.indicators.length; indicatorLoop++) {
         var currentIndicator = data[goalLoop].goal.indicators[indicatorLoop];
@@ -2714,6 +2760,7 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
 
       that.processData(data);
       var searchResults = _.filter(that.indicatorData, function(indicator) {
+
         return indicator.title.toLowerCase().indexOf(searchString.toLowerCase()) != -1 ||
           indicator.description.toLowerCase().indexOf(searchString.toLowerCase()) != -1 ||
           indicator.keywords.toLowerCase().indexOf(searchString.toLowerCase()) != -1;

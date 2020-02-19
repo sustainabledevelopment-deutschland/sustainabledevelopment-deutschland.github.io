@@ -16,6 +16,13 @@
       "id": "2",
       "title": "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern",
       "indicators": [{
+          "id": "2-1-b",
+          "title": "Ökologischer Landbau",
+          "description": "",
+          "keywords": "",
+          "href": "/2-1-b",
+          "status": "complete"
+        },{
           "id": "2-1-a",
           "title": "Stick&shy;stoff&shy;über&shy;schuss der Landwirtschaft",
           "description": "",
@@ -28,13 +35,6 @@
           "description": "",
           "keywords": "",
           "href": "/2-2-a",
-          "status": "complete"
-        },{
-          "id": "2-1-b",
-          "title": "Ökologischer Landbau",
-          "description": "",
-          "keywords": "",
-          "href": "/2-1-b",
           "status": "complete"
         }]
     }
@@ -57,20 +57,6 @@
           "href": "/3-1-cd",
           "status": "complete"
         },{
-          "id": "3-1-ab",
-          "title": "Vorzeitige Sterblichkeit",
-          "description": "",
-          "keywords": "",
-          "href": "/3-1-ab",
-          "status": "complete"
-        },{
-          "id": "3-1-e",
-          "title": "Adipositasquote von Jugendlichen",
-          "description": "",
-          "keywords": "",
-          "href": "/3-1-e",
-          "status": "complete"
-        },{
           "id": "3-2-b",
           "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Fein&shy;staub&shy;expo&shy;sition",
           "description": "",
@@ -78,11 +64,25 @@
           "href": "/3-2-b",
           "status": "complete"
         },{
+          "id": "3-1-ab",
+          "title": "Vorzeitige Sterblichkeit",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-ab",
+          "status": "complete"
+        },{
           "id": "3-2-a",
           "title": "Emissionen von Luftschadstoffen",
           "description": "",
           "keywords": "",
           "href": "/3-2-a",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Adipositasquote von Jugendlichen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-e",
           "status": "complete"
         }]
     }
@@ -98,18 +98,18 @@
           "href": "/4-2-ab",
           "status": "complete"
         },{
-          "id": "4-1-a",
-          "title": "Frühe Schul&shy;abgäng&shy;erinnen und Schulabgänger",
-          "description": "",
-          "keywords": "",
-          "href": "/4-1-a",
-          "status": "complete"
-        },{
           "id": "4-1-b",
           "title": "30- bis 34-Jährige mit tertiärem oder post&shy;sekun&shy;darem nicht-tertiären Abschluss",
           "description": "",
           "keywords": "",
           "href": "/4-1-b",
+          "status": "complete"
+        },{
+          "id": "4-1-a",
+          "title": "Frühe Schul&shy;abgäng&shy;erinnen und Schulabgänger",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-a",
           "status": "complete"
         }]
     }
@@ -118,11 +118,11 @@
       "id": "5",
       "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
       "indicators": [{
-          "id": "5-1-a",
-          "title": "Ver&shy;dienst&shy;ab&shy;stand zwischen Frauen und Männern",
+          "id": "5-1-c",
+          "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche ent&shy;wick&shy;lungs&shy;po&shy;li&shy;ti&shy;sche Zu&shy;sam&shy;men&shy;ar&shy;beit",
           "description": "",
           "keywords": "",
-          "href": "/5-1-a",
+          "href": "/5-1-c",
           "status": "complete"
         },{
           "id": "5-1-b",
@@ -132,11 +132,11 @@
           "href": "/5-1-b",
           "status": "complete"
         },{
-          "id": "5-1-c",
-          "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche ent&shy;wick&shy;lungs&shy;po&shy;li&shy;ti&shy;sche Zu&shy;sam&shy;men&shy;ar&shy;beit",
+          "id": "5-1-a",
+          "title": "Ver&shy;dienst&shy;ab&shy;stand zwischen Frauen und Männern",
           "description": "",
           "keywords": "",
-          "href": "/5-1-c",
+          "href": "/5-1-a",
           "status": "complete"
         }]
     }
@@ -145,6 +145,13 @@
       "id": "6",
       "title": "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten",
       "indicators": [{
+          "id": "6-2-a",
+          "title": "Entwicklungs&shy;zusammen&shy;arbeit für Trinkwasser- und Sanitär&shy;versorgung",
+          "description": "",
+          "keywords": "",
+          "href": "/6-2-a",
+          "status": "complete"
+        },{
           "id": "6-1-b",
           "title": "Nitrat im Grundwasser",
           "description": "",
@@ -158,13 +165,6 @@
           "keywords": "",
           "href": "/6-1-a",
           "status": "complete"
-        },{
-          "id": "6-2-a",
-          "title": "Entwicklungs&shy;zusammen&shy;arbeit für Trinkwasser- und Sanitär&shy;versorgung",
-          "description": "",
-          "keywords": "",
-          "href": "/6-2-a",
-          "status": "complete"
         }]
     }
   },{
@@ -172,18 +172,18 @@
       "id": "7",
       "title": "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern",
       "indicators": [{
-          "id": "7-2-b",
-          "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Brutto&shy;strom&shy;ver&shy;brauch",
-          "description": "",
-          "keywords": "",
-          "href": "/7-2-b",
-          "status": "complete"
-        },{
           "id": "7-1-ab",
           "title": "Endenergie&shy;produkti&shy;vität und Primär&shy;energie&shy;verbrauch",
           "description": "",
           "keywords": "",
           "href": "/7-1-ab",
+          "status": "complete"
+        },{
+          "id": "7-2-b",
+          "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Brutto&shy;strom&shy;ver&shy;brauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-2-b",
           "status": "complete"
         },{
           "id": "7-2-a",
@@ -199,18 +199,18 @@
       "id": "8",
       "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
       "indicators": [{
+          "id": "8-5-ab",
+          "title": "Erwerbs&shy;tätigen&shy;quote",
+          "description": "",
+          "keywords": "",
+          "href": "/8-5-ab",
+          "status": "complete"
+        },{
           "id": "8-4-a",
           "title": "Brutto&shy;inlands&shy;produkt je Einwohner",
           "description": "",
           "keywords": "",
           "href": "/8-4-a",
-          "status": "complete"
-        },{
-          "id": "8-6-a",
-          "title": "Anzahl der Mitglieder des Textil&shy;bünd&shy;nisses",
-          "description": "",
-          "keywords": "",
-          "href": "/8-6-a",
           "status": "complete"
         },{
           "id": "8-2-c",
@@ -220,11 +220,11 @@
           "href": "/8-2-c",
           "status": "complete"
         },{
-          "id": "8-5-ab",
-          "title": "Erwerbs&shy;tätigen&shy;quote",
+          "id": "8-1-a",
+          "title": "Gesamt&shy;roh&shy;stoff&shy;pro&shy;duk&shy;tivi&shy;tät",
           "description": "",
           "keywords": "",
-          "href": "/8-5-ab",
+          "href": "/8-1-a",
           "status": "complete"
         },{
           "id": "8-3-a",
@@ -234,11 +234,11 @@
           "href": "/8-3-a",
           "status": "complete"
         },{
-          "id": "8-1-a",
-          "title": "Gesamt&shy;roh&shy;stoff&shy;pro&shy;duk&shy;tivi&shy;tät",
+          "id": "8-6-a",
+          "title": "Anzahl der Mitglieder des Textil&shy;bünd&shy;nisses",
           "description": "",
           "keywords": "",
-          "href": "/8-1-a",
+          "href": "/8-6-a",
           "status": "complete"
         },{
           "id": "8-2-ab",
@@ -294,13 +294,6 @@
           "href": "/11-2-c",
           "status": "complete"
         },{
-          "id": "11-1-c",
-          "title": "Siedlungsdichte",
-          "description": "",
-          "keywords": "",
-          "href": "/11-1-c",
-          "status": "complete"
-        },{
           "id": "11-2-b",
           "title": "End&shy;energie&shy;ver&shy;brauch im Per&shy;sonen&shy;ver&shy;kehr",
           "description": "",
@@ -315,11 +308,18 @@
           "href": "/11-1-b",
           "status": "complete"
         },{
-          "id": "11-3-a",
-          "title": "Überlastung durch Wohnkosten",
+          "id": "11-1-a",
+          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
           "description": "",
           "keywords": "",
-          "href": "/11-3-a",
+          "href": "/11-1-a",
+          "status": "complete"
+        },{
+          "id": "11-1-c",
+          "title": "Siedlungsdichte",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-c",
           "status": "complete"
         },{
           "id": "11-2-a",
@@ -329,11 +329,11 @@
           "href": "/11-2-a",
           "status": "complete"
         },{
-          "id": "11-1-a",
-          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
+          "id": "11-3-a",
+          "title": "Überlastung durch Wohnkosten",
           "description": "",
           "keywords": "",
-          "href": "/11-1-a",
+          "href": "/11-3-a",
           "status": "complete"
         }]
     }
@@ -342,11 +342,11 @@
       "id": "12",
       "title": "Nachhaltige Konsum- und Produktionsmuster sicherstellen",
       "indicators": [{
-          "id": "12-1-b",
-          "title": "Energie&shy;ver&shy;brauch und CO<sub>2</sub>-Emissionen des Konsums",
+          "id": "12-2-a",
+          "title": "Um&shy;welt&shy;manage&shy;ment EMAS",
           "description": "",
           "keywords": "",
-          "href": "/12-1-b",
+          "href": "/12-2-a",
           "status": "complete"
         },{
           "id": "12-3-ab",
@@ -356,18 +356,18 @@
           "href": "/12-3-ab",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "Um&shy;welt&shy;manage&shy;ment EMAS",
-          "description": "",
-          "keywords": "",
-          "href": "/12-2-a",
-          "status": "complete"
-        },{
           "id": "12-1-a",
           "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
           "description": "",
           "keywords": "",
           "href": "/12-1-a",
+          "status": "complete"
+        },{
+          "id": "12-1-b",
+          "title": "Energie&shy;ver&shy;brauch und CO<sub>2</sub>-Emissionen des Konsums",
+          "description": "",
+          "keywords": "",
+          "href": "/12-1-b",
           "status": "complete"
         }]
     }
@@ -423,18 +423,18 @@
           "href": "/15-3-a",
           "status": "complete"
         },{
-          "id": "15-1-a",
-          "title": "Artenvielfalt und Land&shy;schafts&shy;quali&shy;tät",
-          "description": "",
-          "keywords": "",
-          "href": "/15-1-a",
-          "status": "complete"
-        },{
           "id": "15-2-a",
           "title": "Eutrophierung der Ökosysteme",
           "description": "",
           "keywords": "",
           "href": "/15-2-a",
+          "status": "complete"
+        },{
+          "id": "15-1-a",
+          "title": "Artenvielfalt und Land&shy;schafts&shy;quali&shy;tät",
+          "description": "",
+          "keywords": "",
+          "href": "/15-1-a",
           "status": "complete"
         }]
     }
@@ -443,18 +443,18 @@
       "id": "16",
       "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
       "indicators": [{
-          "id": "16-2-a",
-          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
-          "description": "",
-          "keywords": "",
-          "href": "/16-2-a",
-          "status": "complete"
-        },{
           "id": "16-1-a",
           "title": "Straftaten",
           "description": "",
           "keywords": "",
           "href": "/16-1-a",
+          "status": "complete"
+        },{
+          "id": "16-2-a",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
+          "description": "",
+          "keywords": "",
+          "href": "/16-2-a",
           "status": "complete"
         },{
           "id": "16-3-ab",
@@ -470,6 +470,13 @@
       "id": "17",
       "title": "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen",
       "indicators": [{
+          "id": "17-2-a",
+          "title": "Anzahl der Studierenden und Forschenden aus Entwick&shy;lungs&shy;ländern sowie LDCs pro Jahr",
+          "description": "",
+          "keywords": "",
+          "href": "/17-2-a",
+          "status": "complete"
+        },{
           "id": "17-1-a",
           "title": "Anteil öffentlicher Entwick&shy;lungs&shy;ausga&shy;ben am Brutto&shy;natio&shy;nal&shy;ein&shy;kommen",
           "description": "",
@@ -482,13 +489,6 @@
           "description": "",
           "keywords": "",
           "href": "/17-3-a",
-          "status": "complete"
-        },{
-          "id": "17-2-a",
-          "title": "Anzahl der Studierenden und Forschenden aus Entwick&shy;lungs&shy;ländern sowie LDCs pro Jahr",
-          "description": "",
-          "keywords": "",
-          "href": "/17-2-a",
           "status": "complete"
         }]
     }

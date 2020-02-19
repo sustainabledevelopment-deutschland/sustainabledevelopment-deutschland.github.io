@@ -16,6 +16,13 @@
       "id": "2",
       "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
+          "id": "2-1-b",
+          "title": "Organic farming",
+          "description": "",
+          "keywords": "",
+          "href": "/en/2-1-b",
+          "status": "complete"
+        },{
           "id": "2-1-a",
           "title": "Nitrogen surplus in agriculture",
           "description": "",
@@ -28,13 +35,6 @@
           "description": "",
           "keywords": "",
           "href": "/en/2-2-a",
-          "status": "complete"
-        },{
-          "id": "2-1-b",
-          "title": "Organic farming",
-          "description": "",
-          "keywords": "",
-          "href": "/en/2-1-b",
           "status": "complete"
         }]
     }
@@ -57,20 +57,6 @@
           "href": "/en/3-1-cd",
           "status": "complete"
         },{
-          "id": "3-1-ab",
-          "title": "Premature mortality",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-1-ab",
-          "status": "complete"
-        },{
-          "id": "3-1-e",
-          "title": "Obesity rate among adolescents",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-1-e",
-          "status": "complete"
-        },{
           "id": "3-2-b",
           "title": "Share of the population with excessive exposure to PM<sub>10</sub> in Germany",
           "description": "",
@@ -78,11 +64,25 @@
           "href": "/en/3-2-b",
           "status": "complete"
         },{
+          "id": "3-1-ab",
+          "title": "Premature mortality",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-1-ab",
+          "status": "complete"
+        },{
           "id": "3-2-a",
           "title": "Emissions of air pollutants",
           "description": "",
           "keywords": "",
           "href": "/en/3-2-a",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Obesity rate among adolescents",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-1-e",
           "status": "complete"
         }]
     }
@@ -98,18 +98,18 @@
           "href": "/en/4-2-ab",
           "status": "complete"
         },{
-          "id": "4-1-a",
-          "title": "Early school leavers (18 to 24-year-olds leaving school without graduation)",
-          "description": "",
-          "keywords": "",
-          "href": "/en/4-1-a",
-          "status": "complete"
-        },{
           "id": "4-1-b",
           "title": "30 to 34-year-olds with a tertiary or post-secondary non-tertiary level of education",
           "description": "",
           "keywords": "",
           "href": "/en/4-1-b",
+          "status": "complete"
+        },{
+          "id": "4-1-a",
+          "title": "Early school leavers (18 to 24-year-olds leaving school without graduation)",
+          "description": "",
+          "keywords": "",
+          "href": "/en/4-1-a",
           "status": "complete"
         }]
     }
@@ -118,11 +118,11 @@
       "id": "5",
       "title": "Achieve gender equality and empower all women and girls",
       "indicators": [{
-          "id": "5-1-a",
-          "title": "Gender pay gap",
+          "id": "5-1-c",
+          "title": "Vocational qualification of women and girls through German development assistance",
           "description": "",
           "keywords": "",
-          "href": "/en/5-1-a",
+          "href": "/en/5-1-c",
           "status": "complete"
         },{
           "id": "5-1-b",
@@ -132,11 +132,11 @@
           "href": "/en/5-1-b",
           "status": "complete"
         },{
-          "id": "5-1-c",
-          "title": "Vocational qualification of women and girls through German development assistance",
+          "id": "5-1-a",
+          "title": "Gender pay gap",
           "description": "",
           "keywords": "",
-          "href": "/en/5-1-c",
+          "href": "/en/5-1-a",
           "status": "complete"
         }]
     }
@@ -145,6 +145,13 @@
       "id": "6",
       "title": "Ensure availability and sustainable management of water and sanitation for all",
       "indicators": [{
+          "id": "6-2-a",
+          "title": "Development cooperation for drinking water and sanitation",
+          "description": "",
+          "keywords": "",
+          "href": "/en/6-2-a",
+          "status": "complete"
+        },{
           "id": "6-1-b",
           "title": "Nitrate in groundwater",
           "description": "",
@@ -158,13 +165,6 @@
           "keywords": "",
           "href": "/en/6-1-a",
           "status": "complete"
-        },{
-          "id": "6-2-a",
-          "title": "Development cooperation for drinking water and sanitation",
-          "description": "",
-          "keywords": "",
-          "href": "/en/6-2-a",
-          "status": "complete"
         }]
     }
   },{
@@ -172,18 +172,18 @@
       "id": "7",
       "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
-          "id": "7-2-b",
-          "title": "Share of electricity from renewable energy sources in electricity consumption",
-          "description": "",
-          "keywords": "",
-          "href": "/en/7-2-b",
-          "status": "complete"
-        },{
           "id": "7-1-ab",
           "title": "Final energy productivity and primary energy consumption",
           "description": "",
           "keywords": "",
           "href": "/en/7-1-ab",
+          "status": "complete"
+        },{
+          "id": "7-2-b",
+          "title": "Share of electricity from renewable energy sources in electricity consumption",
+          "description": "",
+          "keywords": "",
+          "href": "/en/7-2-b",
           "status": "complete"
         },{
           "id": "7-2-a",
@@ -199,18 +199,18 @@
       "id": "8",
       "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
+          "id": "8-5-ab",
+          "title": "Employment rate",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-5-ab",
+          "status": "complete"
+        },{
           "id": "8-4-a",
           "title": "Gross domestic product per capita",
           "description": "",
           "keywords": "",
           "href": "/en/8-4-a",
-          "status": "complete"
-        },{
-          "id": "8-6-a",
-          "title": "Number of members of the Textiles Partnership",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-6-a",
           "status": "complete"
         },{
           "id": "8-2-c",
@@ -220,11 +220,11 @@
           "href": "/en/8-2-c",
           "status": "complete"
         },{
-          "id": "8-5-ab",
-          "title": "Employment rate",
+          "id": "8-1-a",
+          "title": "Raw material input productivity",
           "description": "",
           "keywords": "",
-          "href": "/en/8-5-ab",
+          "href": "/en/8-1-a",
           "status": "complete"
         },{
           "id": "8-3-a",
@@ -234,11 +234,11 @@
           "href": "/en/8-3-a",
           "status": "complete"
         },{
-          "id": "8-1-a",
-          "title": "Raw material input productivity",
+          "id": "8-6-a",
+          "title": "Number of members of the Textiles Partnership",
           "description": "",
           "keywords": "",
-          "href": "/en/8-1-a",
+          "href": "/en/8-6-a",
           "status": "complete"
         },{
           "id": "8-2-ab",
@@ -294,13 +294,6 @@
           "href": "/en/11-2-c",
           "status": "complete"
         },{
-          "id": "11-1-c",
-          "title": "Density of settlements",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-1-c",
-          "status": "complete"
-        },{
           "id": "11-2-b",
           "title": "Final energy consumption in passenger transport",
           "description": "",
@@ -315,11 +308,18 @@
           "href": "/en/11-1-b",
           "status": "complete"
         },{
-          "id": "11-3-a",
-          "title": "Housing cost overload",
+          "id": "11-1-a",
+          "title": "Expansion of settlement and transport area",
           "description": "",
           "keywords": "",
-          "href": "/en/11-3-a",
+          "href": "/en/11-1-a",
+          "status": "complete"
+        },{
+          "id": "11-1-c",
+          "title": "Density of settlements",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-1-c",
           "status": "complete"
         },{
           "id": "11-2-a",
@@ -329,11 +329,11 @@
           "href": "/en/11-2-a",
           "status": "complete"
         },{
-          "id": "11-1-a",
-          "title": "Expansion of settlement and transport area",
+          "id": "11-3-a",
+          "title": "Housing cost overload",
           "description": "",
           "keywords": "",
-          "href": "/en/11-1-a",
+          "href": "/en/11-3-a",
           "status": "complete"
         }]
     }
@@ -342,11 +342,11 @@
       "id": "12",
       "title": "Ensure sustainable consumption and production patterns",
       "indicators": [{
-          "id": "12-1-b",
-          "title": "Energy consumption and CO<sub>2</sub> emissions from consumption",
+          "id": "12-2-a",
+          "title": "EMAS eco-management",
           "description": "",
           "keywords": "",
-          "href": "/en/12-1-b",
+          "href": "/en/12-2-a",
           "status": "complete"
         },{
           "id": "12-3-ab",
@@ -356,18 +356,18 @@
           "href": "/en/12-3-ab",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "EMAS eco-management",
-          "description": "",
-          "keywords": "",
-          "href": "/en/12-2-a",
-          "status": "complete"
-        },{
           "id": "12-1-a",
           "title": "Market share of products certified by publicly managed eco-labelling schemes",
           "description": "",
           "keywords": "",
           "href": "/en/12-1-a",
+          "status": "complete"
+        },{
+          "id": "12-1-b",
+          "title": "Energy consumption and CO<sub>2</sub> emissions from consumption",
+          "description": "",
+          "keywords": "",
+          "href": "/en/12-1-b",
           "status": "complete"
         }]
     }
@@ -423,18 +423,18 @@
           "href": "/en/15-3-a",
           "status": "complete"
         },{
-          "id": "15-1-a",
-          "title": "Biodiversity and landscape quality",
-          "description": "",
-          "keywords": "",
-          "href": "/en/15-1-a",
-          "status": "complete"
-        },{
           "id": "15-2-a",
           "title": "Eutrophication of ecosystems",
           "description": "",
           "keywords": "",
           "href": "/en/15-2-a",
+          "status": "complete"
+        },{
+          "id": "15-1-a",
+          "title": "Biodiversity and landscape quality",
+          "description": "",
+          "keywords": "",
+          "href": "/en/15-1-a",
           "status": "complete"
         }]
     }
@@ -443,18 +443,18 @@
       "id": "16",
       "title": "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels",
       "indicators": [{
-          "id": "16-2-a",
-          "title": "Number of projects to secure, register and destroy small arms and light weapons carried out by Germany in affected regions of the world",
-          "description": "",
-          "keywords": "",
-          "href": "/en/16-2-a",
-          "status": "complete"
-        },{
           "id": "16-1-a",
           "title": "Criminal offences",
           "description": "",
           "keywords": "",
           "href": "/en/16-1-a",
+          "status": "complete"
+        },{
+          "id": "16-2-a",
+          "title": "Number of projects to secure, register and destroy small arms and light weapons carried out by Germany in affected regions of the world",
+          "description": "",
+          "keywords": "",
+          "href": "/en/16-2-a",
           "status": "complete"
         },{
           "id": "16-3-ab",
@@ -470,6 +470,13 @@
       "id": "17",
       "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
       "indicators": [{
+          "id": "17-2-a",
+          "title": "Number of students and researchers from developing countries and LDCs per year",
+          "description": "",
+          "keywords": "",
+          "href": "/en/17-2-a",
+          "status": "complete"
+        },{
           "id": "17-1-a",
           "title": "Expenditure for official development assistance as a proportion of gross national income",
           "description": "",
@@ -482,13 +489,6 @@
           "description": "",
           "keywords": "",
           "href": "/en/17-3-a",
-          "status": "complete"
-        },{
-          "id": "17-2-a",
-          "title": "Number of students and researchers from developing countries and LDCs per year",
-          "description": "",
-          "keywords": "",
-          "href": "/en/17-2-a",
           "status": "complete"
         }]
     }
