@@ -2253,6 +2253,7 @@ var indicatorView = function (model, options) {
 
               // replace parts that contain a comma which is no separator---
               var label = dataset.label;
+
               var replace = [{old: '2,5', new: '2.5'},
                             {old: 'Gebäude-, Frei- & Betriebsfläche', new: 'Gebäude- Frei- & Betriebsfläche'},
                             {old: 'Erholungsfläche, Friedhof', new: 'Erholungsfläche Friedhof'},
@@ -2260,19 +2261,23 @@ var indicatorView = function (model, options) {
                             {old: 'Entwicklungszusammenarbeit, deren', new: 'Entwicklungszusammenarbeit deren'},
                             {old: 'Moving five-year average, referring to the middle year', new: 'Moving five-year average referring to the middle year'},
                             {old: 'onsumption, investments', new: 'onsumption investments'},
-                            {old: 'area, c', new: 'area c'}];
+                            {old: 'area, c', new: 'area c'},
+                            ];
 
               for (var i=0; i<replace.length; i++){
                 label = label.replace(replace[i]['old'], replace[i]['new']);
               };
               //-----------------------------------------------------------
               var exc = 0;
-              var exceptions = ['Deutschland (insgesamt)', 'Germany (total)',
+              var exceptions = ['Deutschland', 'Germany',
                                 'Insgesamt', 'Total',
                                 'Index insgesamt', 'Index overall'];
-              if (exceptions.indexOf(label) != -1) {
-                exc = 1;
+              for (var j=0; j<exceptions.length; j++){
+                if (label.indexOf(exceptions[j]) != -1){
+                  exc += 1;
+                }
               }
+
 
               //if (label.indexOf('Deutschland (insgesamt)') != -1 || label.indexOf('Germany (total)') != -1) {
                 //exc = 1;
