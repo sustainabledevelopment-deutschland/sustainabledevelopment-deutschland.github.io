@@ -16,18 +16,18 @@
       "id": "2",
       "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
-          "id": "2-1-b",
-          "title": "Organic farming",
-          "description": "",
-          "keywords": "",
-          "href": "/en/2-1-b",
-          "status": "complete"
-        },{
           "id": "2-1-a",
           "title": "Nitrogen surplus in agriculture",
           "description": "",
           "keywords": "",
           "href": "/en/2-1-a",
+          "status": "complete"
+        },{
+          "id": "2-1-b",
+          "title": "Organic farming",
+          "description": "",
+          "keywords": "",
+          "href": "/en/2-1-b",
           "status": "complete"
         },{
           "id": "2-2-a",
@@ -57,13 +57,6 @@
           "href": "/en/3-1-e",
           "status": "complete"
         },{
-          "id": "3-1-ab",
-          "title": "Premature mortality",
-          "description": "",
-          "keywords": "",
-          "href": "/en/3-1-ab",
-          "status": "complete"
-        },{
           "id": "3-2-a",
           "title": "Emissions of air pollutants",
           "description": "",
@@ -76,6 +69,13 @@
           "description": "",
           "keywords": "",
           "href": "/en/3-1-f",
+          "status": "complete"
+        },{
+          "id": "3-1-ab",
+          "title": "Premature mortality",
+          "description": "",
+          "keywords": "",
+          "href": "/en/3-1-ab",
           "status": "complete"
         },{
           "id": "3-1-cd",
@@ -91,11 +91,11 @@
       "id": "4",
       "title": "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all",
       "indicators": [{
-          "id": "4-1-b",
-          "title": "30 to 34-year-olds with a tertiary or post-secondary non-tertiary level of education",
+          "id": "4-2-ab",
+          "title": "All-day care provision for children",
           "description": "",
           "keywords": "",
-          "href": "/en/4-1-b",
+          "href": "/en/4-2-ab",
           "status": "complete"
         },{
           "id": "4-1-a",
@@ -105,11 +105,11 @@
           "href": "/en/4-1-a",
           "status": "complete"
         },{
-          "id": "4-2-ab",
-          "title": "All-day care provision for children",
+          "id": "4-1-b",
+          "title": "30 to 34-year-olds with a tertiary or post-secondary non-tertiary level of education",
           "description": "",
           "keywords": "",
-          "href": "/en/4-2-ab",
+          "href": "/en/4-1-b",
           "status": "complete"
         }]
     }
@@ -118,11 +118,11 @@
       "id": "5",
       "title": "Achieve gender equality and empower all women and girls",
       "indicators": [{
-          "id": "5-1-b",
-          "title": "Women in management positions in business",
+          "id": "5-1-c",
+          "title": "Vocational qualification of women and girls through German development assistance",
           "description": "",
           "keywords": "",
-          "href": "/en/5-1-b",
+          "href": "/en/5-1-c",
           "status": "complete"
         },{
           "id": "5-1-a",
@@ -132,11 +132,11 @@
           "href": "/en/5-1-a",
           "status": "complete"
         },{
-          "id": "5-1-c",
-          "title": "Vocational qualification of women and girls through German development assistance",
+          "id": "5-1-b",
+          "title": "Women in management positions in business",
           "description": "",
           "keywords": "",
-          "href": "/en/5-1-c",
+          "href": "/en/5-1-b",
           "status": "complete"
         }]
     }
@@ -172,18 +172,18 @@
       "id": "7",
       "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
-          "id": "7-1-ab",
-          "title": "Final energy productivity and primary energy consumption",
-          "description": "",
-          "keywords": "",
-          "href": "/en/7-1-ab",
-          "status": "complete"
-        },{
           "id": "7-2-a",
           "title": "Share of renewable energies in gross final energy consumption",
           "description": "",
           "keywords": "",
           "href": "/en/7-2-a",
+          "status": "complete"
+        },{
+          "id": "7-1-ab",
+          "title": "Final energy productivity and primary energy consumption",
+          "description": "",
+          "keywords": "",
+          "href": "/en/7-1-ab",
           "status": "complete"
         },{
           "id": "7-2-b",
@@ -199,13 +199,6 @@
       "id": "8",
       "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
-          "id": "8-4-a",
-          "title": "Gross domestic product per capita",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-4-a",
-          "status": "complete"
-        },{
           "id": "8-2-ab",
           "title": "Government deficit, structural deficit",
           "description": "",
@@ -220,20 +213,6 @@
           "href": "/en/8-2-c",
           "status": "complete"
         },{
-          "id": "8-5-ab",
-          "title": "Employment rate",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-5-ab",
-          "status": "complete"
-        },{
-          "id": "8-1-a",
-          "title": "Raw material input productivity",
-          "description": "",
-          "keywords": "",
-          "href": "/en/8-1-a",
-          "status": "complete"
-        },{
           "id": "8-6-a",
           "title": "Number of members of the Textiles Partnership",
           "description": "",
@@ -241,11 +220,32 @@
           "href": "/en/8-6-a",
           "status": "complete"
         },{
+          "id": "8-5-ab",
+          "title": "Employment rate",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-5-ab",
+          "status": "complete"
+        },{
           "id": "8-3-a",
           "title": "Gross fixed capital formation in relation to GDP",
           "description": "",
           "keywords": "",
           "href": "/en/8-3-a",
+          "status": "complete"
+        },{
+          "id": "8-4-a",
+          "title": "Gross domestic product per capita",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-4-a",
+          "status": "complete"
+        },{
+          "id": "8-1-a",
+          "title": "Raw material input productivity",
+          "description": "",
+          "keywords": "",
+          "href": "/en/8-1-a",
           "status": "complete"
         }]
     }
@@ -267,18 +267,18 @@
       "id": "10",
       "title": "Reduce inequality within and among countries",
       "indicators": [{
-          "id": "10-2-a",
-          "title": "Gini coefficient of income distribution",
-          "description": "",
-          "keywords": "",
-          "href": "/en/10-2-a",
-          "status": "complete"
-        },{
           "id": "10-1-a",
           "title": "Foreign school graduates",
           "description": "",
           "keywords": "",
           "href": "/en/10-1-a",
+          "status": "complete"
+        },{
+          "id": "10-2-a",
+          "title": "Gini coefficient of income distribution",
+          "description": "",
+          "keywords": "",
+          "href": "/en/10-2-a",
           "status": "complete"
         }]
     }
@@ -287,25 +287,11 @@
       "id": "11",
       "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
       "indicators": [{
-          "id": "11-1-b",
-          "title": "Loss of open space area",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-1-b",
-          "status": "complete"
-        },{
           "id": "11-1-a",
           "title": "Expansion of settlement and transport area",
           "description": "",
           "keywords": "",
           "href": "/en/11-1-a",
-          "status": "complete"
-        },{
-          "id": "11-1-c",
-          "title": "Density of settlements",
-          "description": "",
-          "keywords": "",
-          "href": "/en/11-1-c",
           "status": "complete"
         },{
           "id": "11-3-a",
@@ -315,11 +301,25 @@
           "href": "/en/11-3-a",
           "status": "complete"
         },{
+          "id": "11-1-b",
+          "title": "Loss of open space area",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-1-b",
+          "status": "complete"
+        },{
           "id": "11-2-a",
           "title": "Final energy consumption in goods transport",
           "description": "",
           "keywords": "",
           "href": "/en/11-2-a",
+          "status": "complete"
+        },{
+          "id": "11-1-c",
+          "title": "Density of settlements",
+          "description": "",
+          "keywords": "",
+          "href": "/en/11-1-c",
           "status": "complete"
         },{
           "id": "11-2-c",
@@ -356,18 +356,18 @@
           "href": "/en/12-1-b",
           "status": "complete"
         },{
-          "id": "12-3-ab",
-          "title": "Responsible procurement",
-          "description": "",
-          "keywords": "",
-          "href": "/en/12-3-ab",
-          "status": "complete"
-        },{
           "id": "12-2-a",
           "title": "EMAS eco-management",
           "description": "",
           "keywords": "",
           "href": "/en/12-2-a",
+          "status": "complete"
+        },{
+          "id": "12-3-ab",
+          "title": "Responsible procurement",
+          "description": "",
+          "keywords": "",
+          "href": "/en/12-3-ab",
           "status": "complete"
         }]
     }
@@ -376,18 +376,18 @@
       "id": "13",
       "title": "Take urgent action to combat climate change and its impacts",
       "indicators": [{
-          "id": "13-1-a",
-          "title": "Greenhouse gas emissions",
-          "description": "",
-          "keywords": "",
-          "href": "/en/13-1-a",
-          "status": "complete"
-        },{
           "id": "13-1-b",
           "title": "International climate finance for the reduction of greenhouse gases and adaptation to climate change",
           "description": "",
           "keywords": "",
           "href": "/en/13-1-b",
+          "status": "complete"
+        },{
+          "id": "13-1-a",
+          "title": "Greenhouse gas emissions",
+          "description": "",
+          "keywords": "",
+          "href": "/en/13-1-a",
           "status": "complete"
         }]
     }
@@ -470,11 +470,11 @@
       "id": "17",
       "title": "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development",
       "indicators": [{
-          "id": "17-1-a",
-          "title": "Expenditure for official development assistance as a proportion of gross national income",
+          "id": "17-2-a",
+          "title": "Number of students and researchers from developing countries and LDCs per year",
           "description": "",
           "keywords": "",
-          "href": "/en/17-1-a",
+          "href": "/en/17-2-a",
           "status": "complete"
         },{
           "id": "17-3-a",
@@ -484,11 +484,11 @@
           "href": "/en/17-3-a",
           "status": "complete"
         },{
-          "id": "17-2-a",
-          "title": "Number of students and researchers from developing countries and LDCs per year",
+          "id": "17-1-a",
+          "title": "Expenditure for official development assistance as a proportion of gross national income",
           "description": "",
           "keywords": "",
-          "href": "/en/17-2-a",
+          "href": "/en/17-1-a",
           "status": "complete"
         }]
     }
