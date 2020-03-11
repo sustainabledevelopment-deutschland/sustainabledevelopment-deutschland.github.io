@@ -23,18 +23,18 @@
           "href": "/2-1-a",
           "status": "complete"
         },{
-          "id": "2-1-b",
-          "title": "Ökologischer Landbau",
-          "description": "",
-          "keywords": "",
-          "href": "/2-1-b",
-          "status": "complete"
-        },{
           "id": "2-2-a",
           "title": "Unterstützung guter Regierungs&shy;führung bei der Erreichung einer angemessenen Ernährung weltweit",
           "description": "",
           "keywords": "",
           "href": "/2-2-a",
+          "status": "complete"
+        },{
+          "id": "2-1-b",
+          "title": "Ökologischer Landbau",
+          "description": "",
+          "keywords": "",
+          "href": "/2-1-b",
           "status": "complete"
         }]
     }
@@ -43,11 +43,11 @@
       "id": "3",
       "title": "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern",
       "indicators": [{
-          "id": "3-2-b",
-          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Fein&shy;staub&shy;expo&shy;sition",
+          "id": "3-1-ab",
+          "title": "Vorzeitige Sterblichkeit",
           "description": "",
           "keywords": "",
-          "href": "/3-2-b",
+          "href": "/3-1-ab",
           "status": "complete"
         },{
           "id": "3-1-e",
@@ -64,18 +64,18 @@
           "href": "/3-2-a",
           "status": "complete"
         },{
+          "id": "3-2-b",
+          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Fein&shy;staub&shy;expo&shy;sition",
+          "description": "",
+          "keywords": "",
+          "href": "/3-2-b",
+          "status": "complete"
+        },{
           "id": "3-1-f",
           "title": "Adipositasquote von Erwachsenen",
           "description": "",
           "keywords": "",
           "href": "/3-1-f",
-          "status": "complete"
-        },{
-          "id": "3-1-ab",
-          "title": "Vorzeitige Sterblichkeit",
-          "description": "",
-          "keywords": "",
-          "href": "/3-1-ab",
           "status": "complete"
         },{
           "id": "3-1-cd",
@@ -118,18 +118,18 @@
       "id": "5",
       "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
       "indicators": [{
-          "id": "5-1-c",
-          "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche ent&shy;wick&shy;lungs&shy;po&shy;li&shy;ti&shy;sche Zu&shy;sam&shy;men&shy;ar&shy;beit",
-          "description": "",
-          "keywords": "",
-          "href": "/5-1-c",
-          "status": "complete"
-        },{
           "id": "5-1-a",
           "title": "Ver&shy;dienst&shy;ab&shy;stand zwischen Frauen und Männern",
           "description": "",
           "keywords": "",
           "href": "/5-1-a",
+          "status": "complete"
+        },{
+          "id": "5-1-c",
+          "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche ent&shy;wick&shy;lungs&shy;po&shy;li&shy;ti&shy;sche Zu&shy;sam&shy;men&shy;ar&shy;beit",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-c",
           "status": "complete"
         },{
           "id": "5-1-b",
@@ -145,18 +145,18 @@
       "id": "6",
       "title": "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten",
       "indicators": [{
-          "id": "6-1-a",
-          "title": "Phosphor in Fließgewässern",
-          "description": "",
-          "keywords": "",
-          "href": "/6-1-a",
-          "status": "complete"
-        },{
           "id": "6-1-b",
           "title": "Nitrat im Grundwasser",
           "description": "",
           "keywords": "",
           "href": "/6-1-b",
+          "status": "complete"
+        },{
+          "id": "6-1-a",
+          "title": "Phosphor in Fließgewässern",
+          "description": "",
+          "keywords": "",
+          "href": "/6-1-a",
           "status": "complete"
         },{
           "id": "6-2-a",
@@ -179,18 +179,18 @@
           "href": "/7-2-a",
           "status": "complete"
         },{
-          "id": "7-1-ab",
-          "title": "Endenergie&shy;produkti&shy;vität und Primär&shy;energie&shy;verbrauch",
-          "description": "",
-          "keywords": "",
-          "href": "/7-1-ab",
-          "status": "complete"
-        },{
           "id": "7-2-b",
           "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Brutto&shy;strom&shy;ver&shy;brauch",
           "description": "",
           "keywords": "",
           "href": "/7-2-b",
+          "status": "complete"
+        },{
+          "id": "7-1-ab",
+          "title": "Endenergie&shy;produkti&shy;vität und Primär&shy;energie&shy;verbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-1-ab",
           "status": "complete"
         }]
     }
@@ -199,32 +199,11 @@
       "id": "8",
       "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
       "indicators": [{
-          "id": "8-2-ab",
-          "title": "Staatsdefizit und strukturelles Defizit",
-          "description": "",
-          "keywords": "",
-          "href": "/8-2-ab",
-          "status": "complete"
-        },{
           "id": "8-2-c",
           "title": "Schuldenstand",
           "description": "",
           "keywords": "",
           "href": "/8-2-c",
-          "status": "complete"
-        },{
-          "id": "8-6-a",
-          "title": "Anzahl der Mitglieder des Textil&shy;bünd&shy;nisses",
-          "description": "",
-          "keywords": "",
-          "href": "/8-6-a",
-          "status": "complete"
-        },{
-          "id": "8-5-ab",
-          "title": "Erwerbs&shy;tätigen&shy;quote",
-          "description": "",
-          "keywords": "",
-          "href": "/8-5-ab",
           "status": "complete"
         },{
           "id": "8-3-a",
@@ -234,11 +213,11 @@
           "href": "/8-3-a",
           "status": "complete"
         },{
-          "id": "8-4-a",
-          "title": "Brutto&shy;inlands&shy;produkt je Einwohner",
+          "id": "8-6-a",
+          "title": "Anzahl der Mitglieder des Textil&shy;bünd&shy;nisses",
           "description": "",
           "keywords": "",
-          "href": "/8-4-a",
+          "href": "/8-6-a",
           "status": "complete"
         },{
           "id": "8-1-a",
@@ -246,6 +225,27 @@
           "description": "",
           "keywords": "",
           "href": "/8-1-a",
+          "status": "complete"
+        },{
+          "id": "8-4-a",
+          "title": "Brutto&shy;inlands&shy;produkt je Einwohner",
+          "description": "",
+          "keywords": "",
+          "href": "/8-4-a",
+          "status": "complete"
+        },{
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
+          "description": "",
+          "keywords": "",
+          "href": "/8-2-ab",
+          "status": "complete"
+        },{
+          "id": "8-5-ab",
+          "title": "Erwerbs&shy;tätigen&shy;quote",
+          "description": "",
+          "keywords": "",
+          "href": "/8-5-ab",
           "status": "complete"
         }]
     }
@@ -267,18 +267,18 @@
       "id": "10",
       "title": "Ungleichheit in und zwischen Ländern verringern",
       "indicators": [{
-          "id": "10-1-a",
-          "title": "Ausländische Schul&shy;absol&shy;ven&shy;tinnen und Schul&shy;absol&shy;venten",
-          "description": "",
-          "keywords": "",
-          "href": "/10-1-a",
-          "status": "complete"
-        },{
           "id": "10-2-a",
           "title": "Gini-Koeffizient zur Ein&shy;kommens&shy;ver&shy;teilung",
           "description": "",
           "keywords": "",
           "href": "/10-2-a",
+          "status": "complete"
+        },{
+          "id": "10-1-a",
+          "title": "Ausländische Schul&shy;absol&shy;ven&shy;tinnen und Schul&shy;absol&shy;venten",
+          "description": "",
+          "keywords": "",
+          "href": "/10-1-a",
           "status": "complete"
         }]
     }
@@ -294,20 +294,6 @@
           "href": "/11-1-a",
           "status": "complete"
         },{
-          "id": "11-3-a",
-          "title": "Überlastung durch Wohnkosten",
-          "description": "",
-          "keywords": "",
-          "href": "/11-3-a",
-          "status": "complete"
-        },{
-          "id": "11-1-b",
-          "title": "Freiraumverlust",
-          "description": "",
-          "keywords": "",
-          "href": "/11-1-b",
-          "status": "complete"
-        },{
           "id": "11-2-a",
           "title": "End&shy;energie&shy;ver&shy;brauch im Güterverkehr",
           "description": "",
@@ -320,6 +306,20 @@
           "description": "",
           "keywords": "",
           "href": "/11-1-c",
+          "status": "complete"
+        },{
+          "id": "11-3-a",
+          "title": "Überlastung durch Wohnkosten",
+          "description": "",
+          "keywords": "",
+          "href": "/11-3-a",
+          "status": "complete"
+        },{
+          "id": "11-1-b",
+          "title": "Freiraumverlust",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-b",
           "status": "complete"
         },{
           "id": "11-2-c",
@@ -356,18 +356,18 @@
           "href": "/12-1-b",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "Um&shy;welt&shy;manage&shy;ment EMAS",
-          "description": "",
-          "keywords": "",
-          "href": "/12-2-a",
-          "status": "complete"
-        },{
           "id": "12-3-ab",
           "title": "Nachhaltige Beschaffung",
           "description": "",
           "keywords": "",
           "href": "/12-3-ab",
+          "status": "complete"
+        },{
+          "id": "12-2-a",
+          "title": "Um&shy;welt&shy;manage&shy;ment EMAS",
+          "description": "",
+          "keywords": "",
+          "href": "/12-2-a",
           "status": "complete"
         }]
     }
@@ -423,18 +423,18 @@
           "href": "/15-2-a",
           "status": "complete"
         },{
-          "id": "15-1-a",
-          "title": "Artenvielfalt und Land&shy;schafts&shy;quali&shy;tät",
-          "description": "",
-          "keywords": "",
-          "href": "/15-1-a",
-          "status": "complete"
-        },{
           "id": "15-3-a",
           "title": "Erhalt bzw. Wiederaufbau von Wäldern in Entwick&shy;lungs&shy;ländern unter dem REDD+-Regelwerk",
           "description": "",
           "keywords": "",
           "href": "/15-3-a",
+          "status": "complete"
+        },{
+          "id": "15-1-a",
+          "title": "Artenvielfalt und Land&shy;schafts&shy;quali&shy;tät",
+          "description": "",
+          "keywords": "",
+          "href": "/15-1-a",
           "status": "complete"
         }]
     }
@@ -443,6 +443,13 @@
       "id": "16",
       "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
       "indicators": [{
+          "id": "16-2-a",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
+          "description": "",
+          "keywords": "",
+          "href": "/16-2-a",
+          "status": "complete"
+        },{
           "id": "16-3-ab",
           "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungs&shy;zusammen&shy;arbeit",
           "description": "",
@@ -455,13 +462,6 @@
           "description": "",
           "keywords": "",
           "href": "/16-1-a",
-          "status": "complete"
-        },{
-          "id": "16-2-a",
-          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
-          "description": "",
-          "keywords": "",
-          "href": "/16-2-a",
           "status": "complete"
         }]
     }
