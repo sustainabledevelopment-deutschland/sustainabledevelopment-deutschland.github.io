@@ -1071,12 +1071,16 @@ var indicatorDataStore = function(dataUrl) {
   // var colors = colorSets[this.colorSet].slice(0,this.numberOfColors);
 
 
+  if (opensdg.chartColors){
 
-  this.colorSet = "goal";
-  this.numberOfColors = null;
-  this.customColors = null;
-  var colors = opensdg.chartColors(this.indicatorId, this.colorSet, this.numberOfColors, this.customColors);
-
+    this.colorSet = "goal";
+    this.numberOfColors = null;
+    this.customColors = null;
+    var colors = opensdg.chartColors(this.shortIndicatorId, this.colorSet, this.numberOfColors, this.customColors);
+  }
+  else{
+    var colors = ['7e984f', '8d73ca', 'aaa533', 'c65b8a', '4aac8d', 'c95f44'];
+  }
 
    var headlinePointstyle = 'circle';
    var pointStyles = ['circle', 'triangle', 'cross', 'crossRot', 'dash', 'line', 'rect', 'rectRounded', 'rectRot', 'star', 'triangle'];
@@ -1326,7 +1330,9 @@ var indicatorDataStore = function(dataUrl) {
           return '#ffffff';
         }
         else{
-          return '#' + getColor(datasetIndexMod);
+          var color = '#' + getColor(datasetIndex);
+          return datasetIndex >= colors.length ? pattern.draw('line', color) : color;
+          //return '#' + getColor(datasetIndexMod);
         }
       },
       //---#22 xxx---stop--------------------------------------------------------------------------------------------------
