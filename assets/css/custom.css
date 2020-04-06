@@ -439,6 +439,8 @@ header {
   color: black; }
   .contrast-high .status-toggle-mobile .status-options a:hover, .contrast-high ul.navbar-nav .status-options a:hover {
     color: black; }
+.contrast-high .btn-label {
+  color: black; }
 
 .link_btn {
   padding-top: 0px;
