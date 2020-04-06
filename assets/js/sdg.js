@@ -2219,6 +2219,7 @@ var indicatorView = function (model, options) {
           }]
         },
         legendCallback: function(chart) {
+            console.log("chart: ", chart);
             var text = ['<ul id="legend" style="text-align: left; padding-left: 0px">'];// #18.3 lengend entries on the left >>> var text = ['<ul id="legend">'];
 
             //---#18 structureLegendEntries---start------------------------------------

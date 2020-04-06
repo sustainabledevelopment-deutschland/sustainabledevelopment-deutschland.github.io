@@ -195,6 +195,9 @@ header {
   visibility: visible;
   opacity: 1; }
 
+.btn-label {
+  color: white; }
+
 .G1-background {
   background-color: #E5243B;
   border-color: transparent;
