@@ -2272,8 +2272,8 @@ var indicatorView = function (model, options) {
               var label = dataset.label;
 
               var replace = [{old: '2,5', new: '2.5'},
-                            {old: 'Gebäude-, Frei- & Betriebsfläche', new: 'Gebäude- Frei- & Betriebsfläche'},
-                            {old: 'Erholungsfläche, Friedhof', new: 'Erholungsfläche Friedhof'},
+                            {old: 'Siedlungsfläche: Wohnbau, Industrie und Gewerbe (ohne Abbauland), Öffentliche Einrichtungen', new: 'Siedlungsfläche: Wohnbau Industrie und Gewerbe (ohne Abbauland) Öffentliche Einrichtungen'},
+                            {old: 'Siedlungsfläche: Sport-, Freizeit-, und Erholungsfläche, Friedhof', new: 'Siedlungsfläche: Sport- Freizeit- und Erholungsfläche Friedhof'},
                             {old: 'Konsum, Investitionen und Exporte', new: 'Konsum Investitionen und Exporte'},
                             {old: 'Entwicklungszusammenarbeit, deren', new: 'Entwicklungszusammenarbeit deren'},
                             {old: 'Moving five-year average, referring to the middle year', new: 'Moving five-year average referring to the middle year'},
