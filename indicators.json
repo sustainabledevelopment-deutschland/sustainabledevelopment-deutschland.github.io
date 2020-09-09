@@ -23,18 +23,18 @@
           "href": "/2-1-b",
           "status": "complete"
         },{
-          "id": "2-1-a",
-          "title": "Stick&shy;stoff&shy;über&shy;schuss der Landwirtschaft",
-          "description": "",
-          "keywords": "2-1-a,2.1.a,2.1.a",
-          "href": "/2-1-a",
-          "status": "complete"
-        },{
           "id": "2-2-a",
           "title": "Unterstützung guter Regierungs&shy;führung bei der Erreichung einer angemessenen Ernährung weltweit",
           "description": "",
           "keywords": "2-2-a,2.2.a,2.2",
           "href": "/2-2-a",
+          "status": "complete"
+        },{
+          "id": "2-1-a",
+          "title": "Stick&shy;stoff&shy;über&shy;schuss der Landwirtschaft",
+          "description": "",
+          "keywords": "2-1-a,2.1.a,2.1.a",
+          "href": "/2-1-a",
           "status": "complete"
         }]
     }
@@ -43,18 +43,11 @@
       "id": "3",
       "title": "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern",
       "indicators": [{
-          "id": "3-1-cd",
-          "title": "Raucherquote von Jugendlichen und Erwachsenen",
+          "id": "3-1-f",
+          "title": "Adipositasquote von Erwachsenen",
           "description": "",
-          "keywords": "3-1-cd,3.1.cd,3.1.c, d",
-          "href": "/3-1-cd",
-          "status": "complete"
-        },{
-          "id": "3-2-b",
-          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Fein&shy;staub&shy;expo&shy;sition",
-          "description": "",
-          "keywords": "3-2-b,3.2.b,3.2.b",
-          "href": "/3-2-b",
+          "keywords": "3-1-f,3.1.f,3.1.f",
+          "href": "/3-1-f",
           "status": "complete"
         },{
           "id": "3-2-a",
@@ -64,18 +57,11 @@
           "href": "/3-2-a",
           "status": "complete"
         },{
-          "id": "3-1-f",
-          "title": "Adipositasquote von Erwachsenen",
+          "id": "3-1-cd",
+          "title": "Raucherquote von Jugendlichen und Erwachsenen",
           "description": "",
-          "keywords": "3-1-f,3.1.f,3.1.f",
-          "href": "/3-1-f",
-          "status": "complete"
-        },{
-          "id": "3-1-e",
-          "title": "Adipositasquote von Jugendlichen",
-          "description": "",
-          "keywords": "3-1-e,3.1.e,3.1.e",
-          "href": "/3-1-e",
+          "keywords": "3-1-cd,3.1.cd,3.1.c, d",
+          "href": "/3-1-cd",
           "status": "complete"
         },{
           "id": "3-1-ab",
@@ -84,6 +70,20 @@
           "keywords": "3-1-ab,3.1.ab,3.1.a, b",
           "href": "/3-1-ab",
           "status": "complete"
+        },{
+          "id": "3-2-b",
+          "title": "Anteil der Bevölkerung mit erhöhter PM<sub>10</sub>-Fein&shy;staub&shy;expo&shy;sition",
+          "description": "",
+          "keywords": "3-2-b,3.2.b,3.2.b",
+          "href": "/3-2-b",
+          "status": "complete"
+        },{
+          "id": "3-1-e",
+          "title": "Adipositasquote von Jugendlichen",
+          "description": "",
+          "keywords": "3-1-e,3.1.e,3.1.e",
+          "href": "/3-1-e",
+          "status": "complete"
         }]
     }
   },{
@@ -91,11 +91,11 @@
       "id": "4",
       "title": "Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern",
       "indicators": [{
-          "id": "4-1-a",
-          "title": "Frühe Schul&shy;abgäng&shy;erinnen und Schulabgänger",
+          "id": "4-1-b",
+          "title": "30- bis 34-Jährige mit tertiärem oder post&shy;sekun&shy;darem nicht-tertiären Abschluss",
           "description": "",
-          "keywords": "4-1-a,4.1.a,4.1.a",
-          "href": "/4-1-a",
+          "keywords": "4-1-b,4.1.b,4.1.b",
+          "href": "/4-1-b",
           "status": "complete"
         },{
           "id": "4-2-ab",
@@ -105,11 +105,11 @@
           "href": "/4-2-ab",
           "status": "complete"
         },{
-          "id": "4-1-b",
-          "title": "30- bis 34-Jährige mit tertiärem oder post&shy;sekun&shy;darem nicht-tertiären Abschluss",
+          "id": "4-1-a",
+          "title": "Frühe Schul&shy;abgäng&shy;erinnen und Schulabgänger",
           "description": "",
-          "keywords": "4-1-b,4.1.b,4.1.b",
-          "href": "/4-1-b",
+          "keywords": "4-1-a,4.1.a,4.1.a",
+          "href": "/4-1-a",
           "status": "complete"
         }]
     }
@@ -118,18 +118,18 @@
       "id": "5",
       "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
       "indicators": [{
-          "id": "5-1-a",
-          "title": "Ver&shy;dienst&shy;ab&shy;stand zwischen Frauen und Männern",
-          "description": "",
-          "keywords": "5-1-a,5.1.a,5.1.a",
-          "href": "/5-1-a",
-          "status": "complete"
-        },{
           "id": "5-1-c",
           "title": "Berufliche Qualifizierung von Mädchen und Frauen durch deutsche ent&shy;wick&shy;lungs&shy;po&shy;li&shy;ti&shy;sche Zu&shy;sam&shy;men&shy;ar&shy;beit",
           "description": "",
           "keywords": "5-1-c,5.1.c,5.1.c",
           "href": "/5-1-c",
+          "status": "complete"
+        },{
+          "id": "5-1-a",
+          "title": "Ver&shy;dienst&shy;ab&shy;stand zwischen Frauen und Männern",
+          "description": "",
+          "keywords": "5-1-a,5.1.a,5.1.a",
+          "href": "/5-1-a",
           "status": "complete"
         },{
           "id": "5-1-b",
@@ -145,6 +145,13 @@
       "id": "6",
       "title": "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten",
       "indicators": [{
+          "id": "6-2-a",
+          "title": "Entwicklungs&shy;zusammen&shy;arbeit für Trinkwasser- und Sanitär&shy;versorgung",
+          "description": "",
+          "keywords": "6-2-a,6.2.a,6.2",
+          "href": "/6-2-a",
+          "status": "complete"
+        },{
           "id": "6-1-b",
           "title": "Nitrat im Grundwasser",
           "description": "",
@@ -158,13 +165,6 @@
           "keywords": "6-1-a,6.1.a,6.1.a",
           "href": "/6-1-a",
           "status": "complete"
-        },{
-          "id": "6-2-a",
-          "title": "Entwicklungs&shy;zusammen&shy;arbeit für Trinkwasser- und Sanitär&shy;versorgung",
-          "description": "",
-          "keywords": "6-2-a,6.2.a,6.2",
-          "href": "/6-2-a",
-          "status": "complete"
         }]
     }
   },{
@@ -172,6 +172,13 @@
       "id": "7",
       "title": "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern",
       "indicators": [{
+          "id": "7-2-b",
+          "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Brutto&shy;strom&shy;ver&shy;brauch",
+          "description": "",
+          "keywords": "7-2-b,7.2.b,7.2.b",
+          "href": "/7-2-b",
+          "status": "complete"
+        },{
           "id": "7-2-a",
           "title": "Anteil erneuerbarer Energien am Brutto-End&shy;energie&shy;ver&shy;brauch",
           "description": "",
@@ -185,13 +192,6 @@
           "keywords": "7-1-ab,7.1.ab,7.1.a, b",
           "href": "/7-1-ab",
           "status": "complete"
-        },{
-          "id": "7-2-b",
-          "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Brutto&shy;strom&shy;ver&shy;brauch",
-          "description": "",
-          "keywords": "7-2-b,7.2.b,7.2.b",
-          "href": "/7-2-b",
-          "status": "complete"
         }]
     }
   },{
@@ -199,18 +199,18 @@
       "id": "8",
       "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
       "indicators": [{
+          "id": "8-2-c",
+          "title": "Schuldenstand",
+          "description": "",
+          "keywords": "8-2-c,8.2.c,8.2.c",
+          "href": "/8-2-c",
+          "status": "complete"
+        },{
           "id": "8-4-a",
           "title": "Brutto&shy;inlands&shy;produkt je Einwohner",
           "description": "",
           "keywords": "8-4-a,8.4.a,8.4",
           "href": "/8-4-a",
-          "status": "complete"
-        },{
-          "id": "8-2-ab",
-          "title": "Staatsdefizit und strukturelles Defizit",
-          "description": "",
-          "keywords": "8-2-ab,8.2.ab,8.2.a, b",
-          "href": "/8-2-ab",
           "status": "complete"
         },{
           "id": "8-6-a",
@@ -220,11 +220,11 @@
           "href": "/8-6-a",
           "status": "complete"
         },{
-          "id": "8-5-ab",
-          "title": "Erwerbs&shy;tätigen&shy;quote",
+          "id": "8-1-a",
+          "title": "Gesamt&shy;roh&shy;stoff&shy;pro&shy;duk&shy;tivi&shy;tät",
           "description": "",
-          "keywords": "8-5-ab,8.5.ab,8.5.a, b",
-          "href": "/8-5-ab",
+          "keywords": "8-1-a,8.1.a,8.1",
+          "href": "/8-1-a",
           "status": "complete"
         },{
           "id": "8-3-a",
@@ -234,18 +234,18 @@
           "href": "/8-3-a",
           "status": "complete"
         },{
-          "id": "8-1-a",
-          "title": "Gesamt&shy;roh&shy;stoff&shy;pro&shy;duk&shy;tivi&shy;tät",
+          "id": "8-5-ab",
+          "title": "Erwerbs&shy;tätigen&shy;quote",
           "description": "",
-          "keywords": "8-1-a,8.1.a,8.1",
-          "href": "/8-1-a",
+          "keywords": "8-5-ab,8.5.ab,8.5.a, b",
+          "href": "/8-5-ab",
           "status": "complete"
         },{
-          "id": "8-2-c",
-          "title": "Schuldenstand",
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
           "description": "",
-          "keywords": "8-2-c,8.2.c,8.2.c",
-          "href": "/8-2-c",
+          "keywords": "8-2-ab,8.2.ab,8.2.a, b",
+          "href": "/8-2-ab",
           "status": "complete"
         }]
     }
@@ -267,18 +267,18 @@
       "id": "10",
       "title": "Ungleichheit in und zwischen Ländern verringern",
       "indicators": [{
-          "id": "10-1-a",
-          "title": "Ausländische Schul&shy;absol&shy;ven&shy;tinnen und Schul&shy;absol&shy;venten",
-          "description": "",
-          "keywords": "10-1-a,10.1.a,10.1",
-          "href": "/10-1-a",
-          "status": "complete"
-        },{
           "id": "10-2-a",
           "title": "Gini-Koeffizient zur Ein&shy;kommens&shy;ver&shy;teilung",
           "description": "",
           "keywords": "10-2-a,10.2.a,10.2",
           "href": "/10-2-a",
+          "status": "complete"
+        },{
+          "id": "10-1-a",
+          "title": "Ausländische Schul&shy;absol&shy;ven&shy;tinnen und Schul&shy;absol&shy;venten",
+          "description": "",
+          "keywords": "10-1-a,10.1.a,10.1",
+          "href": "/10-1-a",
           "status": "complete"
         }]
     }
@@ -287,20 +287,6 @@
       "id": "11",
       "title": "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten",
       "indicators": [{
-          "id": "11-2-b",
-          "title": "End&shy;energie&shy;ver&shy;brauch im Per&shy;sonen&shy;ver&shy;kehr",
-          "description": "",
-          "keywords": "11-2-b,11.2.b,11.2.b",
-          "href": "/11-2-b",
-          "status": "complete"
-        },{
-          "id": "11-1-a",
-          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
-          "description": "",
-          "keywords": "11-1-a,11.1.a,11.1.a",
-          "href": "/11-1-a",
-          "status": "complete"
-        },{
           "id": "11-1-c",
           "title": "Siedlungsdichte",
           "description": "",
@@ -308,11 +294,11 @@
           "href": "/11-1-c",
           "status": "complete"
         },{
-          "id": "11-3-a",
-          "title": "Überlastung durch Wohnkosten",
+          "id": "11-2-c",
+          "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln",
           "description": "",
-          "keywords": "11-3-a,11.3.a,11.3",
-          "href": "/11-3-a",
+          "keywords": "11-2-c,11.2.c,11.2.c",
+          "href": "/11-2-c",
           "status": "complete"
         },{
           "id": "11-2-a",
@@ -322,18 +308,32 @@
           "href": "/11-2-a",
           "status": "complete"
         },{
+          "id": "11-3-a",
+          "title": "Überlastung durch Wohnkosten",
+          "description": "",
+          "keywords": "11-3-a,11.3.a,11.3",
+          "href": "/11-3-a",
+          "status": "complete"
+        },{
+          "id": "11-1-a",
+          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
+          "description": "",
+          "keywords": "11-1-a,11.1.a,11.1.a",
+          "href": "/11-1-a",
+          "status": "complete"
+        },{
+          "id": "11-2-b",
+          "title": "End&shy;energie&shy;ver&shy;brauch im Per&shy;sonen&shy;ver&shy;kehr",
+          "description": "",
+          "keywords": "11-2-b,11.2.b,11.2.b",
+          "href": "/11-2-b",
+          "status": "complete"
+        },{
           "id": "11-1-b",
           "title": "Freiraumverlust",
           "description": "",
           "keywords": "11-1-b,11.1.b,11.1.b",
           "href": "/11-1-b",
-          "status": "complete"
-        },{
-          "id": "11-2-c",
-          "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln",
-          "description": "",
-          "keywords": "11-2-c,11.2.c,11.2.c",
-          "href": "/11-2-c",
           "status": "complete"
         }]
     }
@@ -356,18 +356,18 @@
           "href": "/12-2-a",
           "status": "complete"
         },{
-          "id": "12-3-ab",
-          "title": "Nachhaltige Beschaffung",
-          "description": "",
-          "keywords": "12-3-ab,12.3.ab,12.3.a, b",
-          "href": "/12-3-ab",
-          "status": "complete"
-        },{
           "id": "12-1-b",
           "title": "Energie&shy;ver&shy;brauch und CO<sub>2</sub>-Emissionen des Konsums",
           "description": "",
           "keywords": "12-1-b,12.1.b,12.1.b",
           "href": "/12-1-b",
+          "status": "complete"
+        },{
+          "id": "12-3-ab",
+          "title": "Nachhaltige Beschaffung",
+          "description": "",
+          "keywords": "12-3-ab,12.3.ab,12.3.a, b",
+          "href": "/12-3-ab",
           "status": "complete"
         }]
     }
@@ -396,18 +396,18 @@
       "id": "14",
       "title": "Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung erhalten und nachhaltig nutzen",
       "indicators": [{
-          "id": "14-1-a",
-          "title": "Stickstoffeintrag über die Zuflüsse in Nord- und Ostsee",
-          "description": "",
-          "keywords": "14-1-a,14.1.a,14.1.a",
-          "href": "/14-1-a",
-          "status": "complete"
-        },{
           "id": "14-1-b",
           "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
           "description": "",
           "keywords": "14-1-b,14.1.b,14.1.b",
           "href": "/14-1-b",
+          "status": "complete"
+        },{
+          "id": "14-1-a",
+          "title": "Stickstoffeintrag über die Zuflüsse in Nord- und Ostsee",
+          "description": "",
+          "keywords": "14-1-a,14.1.a,14.1.a",
+          "href": "/14-1-a",
           "status": "complete"
         }]
     }
@@ -416,11 +416,11 @@
       "id": "15",
       "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen",
       "indicators": [{
-          "id": "15-2-a",
-          "title": "Eutrophierung der Ökosysteme",
+          "id": "15-1-a",
+          "title": "Artenvielfalt und Land&shy;schafts&shy;quali&shy;tät",
           "description": "",
-          "keywords": "15-2-a,15.2.a,15.2",
-          "href": "/15-2-a",
+          "keywords": "15-1-a,15.1.a,15.1",
+          "href": "/15-1-a",
           "status": "complete"
         },{
           "id": "15-3-a",
@@ -430,11 +430,11 @@
           "href": "/15-3-a",
           "status": "complete"
         },{
-          "id": "15-1-a",
-          "title": "Artenvielfalt und Land&shy;schafts&shy;quali&shy;tät",
+          "id": "15-2-a",
+          "title": "Eutrophierung der Ökosysteme",
           "description": "",
-          "keywords": "15-1-a,15.1.a,15.1",
-          "href": "/15-1-a",
+          "keywords": "15-2-a,15.2.a,15.2",
+          "href": "/15-2-a",
           "status": "complete"
         }]
     }
@@ -443,18 +443,18 @@
       "id": "16",
       "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
       "indicators": [{
-          "id": "16-2-a",
-          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
-          "description": "",
-          "keywords": "16-2-a,16.2.a,16.2",
-          "href": "/16-2-a",
-          "status": "complete"
-        },{
           "id": "16-1-a",
           "title": "Straftaten",
           "description": "",
           "keywords": "16-1-a,16.1.a,16.1",
           "href": "/16-1-a",
+          "status": "complete"
+        },{
+          "id": "16-2-a",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
+          "description": "",
+          "keywords": "16-2-a,16.2.a,16.2",
+          "href": "/16-2-a",
           "status": "complete"
         },{
           "id": "16-3-ab",
@@ -470,18 +470,18 @@
       "id": "17",
       "title": "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen",
       "indicators": [{
-          "id": "17-1-a",
-          "title": "Anteil öffentlicher Entwick&shy;lungs&shy;ausga&shy;ben am Brutto&shy;natio&shy;nal&shy;ein&shy;kommen",
-          "description": "",
-          "keywords": "17-1-a,17.1.a,17.1",
-          "href": "/17-1-a",
-          "status": "complete"
-        },{
           "id": "17-3-a",
           "title": "Einfuhren aus am wenigsten entwickelten Ländern",
           "description": "",
           "keywords": "17-3-a,17.3.a,17.3",
           "href": "/17-3-a",
+          "status": "complete"
+        },{
+          "id": "17-1-a",
+          "title": "Anteil öffentlicher Entwick&shy;lungs&shy;ausga&shy;ben am Brutto&shy;natio&shy;nal&shy;ein&shy;kommen",
+          "description": "",
+          "keywords": "17-1-a,17.1.a,17.1",
+          "href": "/17-1-a",
           "status": "complete"
         },{
           "id": "17-2-a",
