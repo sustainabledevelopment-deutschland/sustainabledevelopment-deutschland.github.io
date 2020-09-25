@@ -125,7 +125,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200914083452">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200925093432">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200914083452"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200925093432"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
@@ -188,7 +188,7 @@ var translations = {
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
               <li class="nav-link ">
-                <a href="/">Ziele</a>
+                <a href="/">17 Ziele</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
@@ -200,15 +200,15 @@ var translations = {
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
               </li>
             
               <li class="nav-link active hidden-sm hidden-md hidden-lg">
-                <a href="/guidance">Technische&nbspHinweise</a>
+                <a href="/guidance/">Technische&nbspHinweise</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/agenda">Agenda 2030</a>
+                <a href="/facts_agenda/">Agenda 2030</a>
               </li>
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
@@ -237,15 +237,25 @@ var translations = {
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                    <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
                   </li>
                 
                   <li class="nav-link active">
-                    <a href="/guidance">Technische&nbspHinweise</a>
+                    <a href="/guidance/">Technische&nbspHinweise</a>
                   </li>
-                
+                </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Wissenswertes</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/agenda">Agenda 2030</a>
+                    <a href="/facts_agenda/">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li>
@@ -282,31 +292,47 @@ var translations = {
 <div id="main-content" class="container" role="main">
     <div>
         <h1>Technische Hinweise</h1>
-        <h3 id="open-source-projekt-auf-github">Open-Source-Projekt auf GitHub</h3>
+        <h2 id="open-source-projekt-auf-github">Open-Source-Projekt auf GitHub</h2>
 
-<p>Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Berichtsplattformen, insbesondere als Open-Source-Lösung. Vorreiter in diesem Bereich sind die USA und Großbritannien. Sie haben Plattformen entwickelt, um die Indikatoren für die SDGs (Sustainable Development Goals) der Vereinten Nationen darzustellen.</p>
+<p>Die DNS-Online Plattform ist ein öffentlich zugängliches Instrument zur Verbreitung und Präsentation von Daten zu den Indikatoren der Deutschen Nachhaltigkeitsstrategie.</p>
 
-<p>Eine universelle Version des von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Berichtsplattform für SDGs ist verfügbar. Auf diesem basiert die Berichtsplattform für die Indikatoren der Deutschen Nachhaltigkeitsstrategie. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Plattformen in den USA und in Großbritannien sowie mit der entsprechenden <a href="https://open-sdg.readthedocs.io/en/latest/">Open SDG Projektdokumentation</a> vertraut zu machen. Diese enthält technische Anweisungen, wie z.B. eine Kopie der Open SDG-Plattform erstellt werden kann.</p>
+<h2 id="quellen">Quellen</h2>
+
+<p>Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Online Plattformen, insbesondere als Open-Source-Lösung zur Darstellung von DNS-Indikatoren. Vorreiter in diesem Bereich sind die USA und Großbritannien. Der Projektcode für die DNS-Online Plattform ist im folgenden <a href="https://github.com/sustainabledevelopment-deutschland/sustainabledevelopment-deutschland.github.io">GitHub Repository</a> öffentlich zugänglich.
+Eine universelle Version des von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Online Plattform ist verfügbar. Auf diesem basiert die DNS-Online Plattform. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Online Plattformen in den USA und in Großbritannien sowie mit der entsprechenden <a href="https://open-sdg.readthedocs.io/en/latest/">Open-SDG Projektdokumentation</a> vertraut zu machen. Diese enthält technische Anweisungen, wie z.B. eine Kopie der Open SDG-Online Plattform erstellt werden kann.</p>
 
 <ul>
   <li>
-    <p><a href="https://sdg.data.gov/">SDG Berichtsplattform USA</a></p>
+    <p><a href="https://sdg.data.gov/">SDG-Online Plattform USA</a></p>
   </li>
   <li>
-    <p><a href="https://sustainabledevelopment-uk.github.io">SDG Berichtsplattform GB</a></p>
+    <p><a href="https://sustainabledevelopment-uk.github.io">SDG-Online Plattform Großbritannien</a></p>
   </li>
 </ul>
 
-<p>Der Projektcode für diese Plattform ist im folgenden <a href="https://github.com/sustainabledevelopment-deutschland/sustainabledevelopment-deutschland.github.io">GitHub Repository</a> öffentlich zugänglich.</p>
-
 <p>Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an <a href="https://github.com/open-sdg/open-sdg/issues">Open SDG GitHub</a>.</p>
+
+<h2 id="genutzte-software">Genutzte Software</h2>
+
+<h4 id="back-end-it-anforderungen">Back-end IT-Anforderungen:</h4>
+<ul>
+  <li>GitHub: Hosting der Website, die für die Programmierung von Projekten mit dem Git-Versionskontrollsystem entwickelt wurde.</li>
+  <li>Jekyll: Generator für statische Seiten, die in Ruby geschrieben wurden.</li>
+</ul>
+
+<h4 id="front-end-it-anforderungen">Front-end IT-Anforderungen:</h4>
+<ul>
+  <li>XHTML, CSS, JavaScript</li>
+  <li>Chartist: JavaScript Bibliothek</li>
+  <li>Bootstrap: framework CSS</li>
+</ul>
 
 <h3 id="aktuelle-darstellung">Aktuelle Darstellung</h3>
 
-<p>Aufgrund von technischen Schwierigkeiten finden sich auf der aktuellen Version der Berichtsplattform einige mangelhafte Darstellungen, auf die an dieser Stelle hingewiesen wird:</p>
+<p>Aufgrund von technischen Schwierigkeiten finden sich auf der aktuellen Version der DNS-Online Plattform einige suboptimale Darstellungen, auf die an dieser Stelle hingewiesen wird:</p>
 <ul>
-  <li>Ganze Zahlen werden ohne Nachkommastelle dargestellt - auch wenn es andere Datenpunkte in derselben Zeitreihe gibt, in denen Zahlenwerte mit angezeigten Nachkommastelle vorhanden sind.</li>
-  <li>Sehr lange Zeitreihenbezeichnungen werden in den Achsenbeschriftungen der Grafiken nicht in mehrere Zeilen umgebrochen und z.T. abgeschnitten.</li>
+  <li>Ganze Zahlen werden ohne Nachkommastelle dargestellt (auch in Zeitreihen, in denen andere Zahlenwerte mit Nachkommastelle vorhanden sind).</li>
+  <li>Sehr lange Zeitreihenbezeichnungen werden in den Achsenbeschriftungen der Grafiken nicht in mehrere Zeilen umgebrochen und z. T. abgeschnitten.</li>
   <li>Wenn man mit dem Mausanzeiger über einem Datenpunkt in den Grafiken verweilt, werden die Beschriftung und der exakte Wert dieses Datenpunktes angezeigt. Tief- und hochgestellte Ziffern und Buchstaben werden dabei nicht korrekt übernommen.</li>
   <li>Beim gleichen Vorgang werden auch die Namen der Datenreihen nicht umgebrochen.</li>
 </ul>
@@ -319,7 +345,7 @@ var translations = {
     <div class="row">
       <div class="col-xs-9">
         
-          <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+          <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank">Seite basiert auf Open SDG</a> | <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
         
 
       </div>
@@ -352,7 +378,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200914083452'></script><script src="/assets/js/chartColors.js?v=20200914083452"></script><script>
+<script src='/assets/js/sdg.js?v=20200925093432'></script><script src="/assets/js/chartColors.js?v=20200925093432"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

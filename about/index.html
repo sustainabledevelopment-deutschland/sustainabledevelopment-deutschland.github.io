@@ -125,7 +125,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200914083452">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200925093432">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200914083452"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200925093432"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
@@ -188,7 +188,7 @@ var translations = {
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
               <li class="nav-link ">
-                <a href="/">Ziele</a>
+                <a href="/">17 Ziele</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
@@ -200,15 +200,15 @@ var translations = {
               </li>
             
               <li class="nav-link active hidden-sm hidden-md hidden-lg">
-                <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/guidance">Technische&nbspHinweise</a>
+                <a href="/guidance/">Technische&nbspHinweise</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/agenda">Agenda 2030</a>
+                <a href="/facts_agenda/">Agenda 2030</a>
               </li>
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
@@ -237,15 +237,25 @@ var translations = {
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link active">
-                    <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                    <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
                   </li>
                 
                   <li class="nav-link ">
-                    <a href="/guidance">Technische&nbspHinweise</a>
+                    <a href="/guidance/">Technische&nbspHinweise</a>
                   </li>
-                
+                </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Wissenswertes</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/agenda">Agenda 2030</a>
+                    <a href="/facts_agenda/">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li>
@@ -281,65 +291,72 @@ var translations = {
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Über die Berichtsplattform für die DNS</h1>
-        <h3>Ziel und Hintergrund</h3>
-<p>Ziel dieses Teils der nationalen Berichtsplattform ist die Darstellung der Indikatoren der Deutschen Nachhaltigkeitsstrategie. Deutschland hat seit 2002 eine nationale Nachhaltigkeitsstrategie mit eigenen Zielen, Indikatorenbereichen und Postulaten.
-2017 wurde diese Strategie anlässlich der <a href="https://sustainabledevelopment-deutschland.github.io/agenda/">Agenda 2030</a> der Vereinten Nationen und den zugehörigen 17 Zielen für eine nachhaltige Entwicklung (Sustainable Development Goals, SGDs) überarbeitet und wird nun Deutsche Nachhaltigkeitsstrategie (DNS) genannt. Bei der Überarbeitung wurde thematisch passend mindestens ein Indikator zu jedem der 17 Ziele in die Strategie aufgenommen. Die Zielwerte, die Indikatoren, ihre Datengrundlagen und Berechnungen sind von der Bundesregierung beschlossen worden.</p>
+        <h1>Über die Online Plattform</h1>
+        <p>Die Online Plattform gliedert sich in das Indikatorenset der <a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns/die-deutsche-nachhaltigkeitsstrategie">Deutschen Nachhaltigkeitsstrategie</a> (DNS) sowie das Indikatorenset für Deutschland zu den globalen Nachhaltigkeitszielen (<a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">Sustainable Development Goals, SDGs</a>) der Agenda 2030 der Vereinten Nationen. Da die Deutsche Nachhaltigkeitsstrategie die nationale Umsetzung der Agenda 2030 ist, werden verwandte Indikatoren beider Strategien auf der Plattform miteinander verlinkt.</p>
 
-<p>Seit 2006 berichtet das Statistische Bundesamt im Auftrag der Bundesregierung im zweijährlichen Rhythmus über die Zielerreichung der Deutschen Nachhaltigkeitsstrategie. In gebundener Form und als PDF liegen die Informationen als <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/_inhalt.html">Indikatorenbericht</a> vor. Seit 2020 wird die Entwicklung der Indikatoren der DNS zusätzlich über diese Berichtsplattform veröffentlicht.</p>
+<p>Die Zeitreihen zu den Indikatoren beider Online Plattformen stehen Ihnen zum Download zur Verfügung.</p>
 
-<h3>Struktur der Berichtsplattform</h3>
+<p>Einen Direktlink zur Startseite der SDG-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: <a href="https://sustainabledevelopment-germany.github.io"><img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/wheel.png" alt="Wheel" /></a></p>
 
-<p>Die Plattform ist nach Zielen, Indikatorenbereichen und Postulaten und den dazugehörigen Indikatoren gegliedert (Abb.1). Alle vier Jahre werden die Strategie und ihre Indikatoren durch die Bundesregierung überprüft und bei Bedarf angepasst. Dabei können z.B. Indikatoren ersetzt werden oder neue hinzukommen.</p>
-
-<p><br />
-<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/dnsTargetPage.png" alt="Abbildung 1: Aufbau der Ziel-Seiten" class="responsiveImg" /></p>
-
-<p style="text-align:center">
-<small> Abb. 1: Beispiel für die Gliederung der DNS anhand von Ziel 7 „Bezahlbare und Saubere Energie“ (Stand Indikatorenbericht 2018)</small>
-</p>
-<p><br /></p>
-
-<p>Jeder Indikator der DNS wird auf einer eigenen Seite einzeln oder mit einem inhaltlich eng verbundenen Indikator zusammen dargestellt. Die Entwicklung des Indikators und - soweit möglich - das zu erreichende Ziel für Deutschland werden in einer Grafik visualisiert. Die Definitionen und Intentionen sowie die Entwicklung der Indikatoren werden erklärt. Diese Informationen stammen aus dem zweijährlich erscheinenden <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/_inhalt.html">Indikatorenbericht</a> des Statistischen Bundesamtes.</p>
-
-<p>Für manche Indikatoren können die Daten auch nach Bundesländern disaggregiert werden. Das angezeigte, zu erreichende Ziel bleibt jedoch das deutschlandweite Ziel. Die Bundesländer haben zum Großteil eigene Nachhaltigkeitsstrategien und –Indikatoren. Diese werden auf der DNS-Plattform nicht dargestellt. <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/nachhaltigkeit-laender.html">Hier</a> finden Sie eine Zusammenstellung der Nachhaltigkeitsstrategien der Länder.</p>
-
-<p>Die Symbole und Farbwahl der 17 Ziele (Abb. 2 und Abb. 3), die hier und auf der SDG-Seite dieser Berichtsplattform verwendet werden, stammen von den Vereinten Nationen.</p>
+<p>Beide Indikatorensets sind nach den 17 Zielen der Agenda 2030 der Vereinten Nationen gegliedert. Entsprechend stammen die Symbole und die Farbwahl der 17 Ziele (Abb. 1 und Abb. 2), die hier und auf der SDG-Online Plattform verwendet werden, von den Vereinten Nationen. Die Symbole sind urheberrechtlich geschützt.</p>
 
 <div class="container" style="padding-left: 0px;">
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
-<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIcons.PNG" alt="Abbildung 2: SDG Icons" class="responsiveImg" style="width: 100%;" />
-<small> Abb. 2: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG-Seite der Berichtsplattform Deutschland</b></small>
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="Abbildung 1: SDG Icons inverted" class="responsiveImg" style="width: 100%;" />
+<small> Abb. 1: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS-Online Plattform</b></small>
 </div>
 
 <div class="col-xs-12 col-md-6 col-lg-6" style="padding-left: 100px; padding-right: 100px;">
-<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIconsInvert.PNG" alt="Abbildung 3: SDG Icons inverted" class="responsiveImg" style="width: 100%;" />
-<small> Abb. 3: 17 invertierte SDG-Symbole der Vereinten Nationen und das N im Kreis aus der Deutschen Nachhaltigkeitsstrategie, eingesetzt auf der <b>DNS-Seite der Berichtsplattform</b></small>
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/sdgIcons.PNG" alt="Abbildung 2: SDG Icons" class="responsiveImg" style="width: 100%;" />
+<small> Abb. 2: 17 SDG-Symbole der Vereinten Nationen, eingesetzt auf der <b>SDG-Online Plattform für Deutschland</b></small>
 </div>
 
 </div>
 
-<h3 align="left">Bewertung der Indikatoren</h3>
+<h3>Ziel und Hintergrund</h3>
+<p>Ziel der DNS-Online Plattform ist die Darstellung der Indikatoren der Deutschen Nachhaltigkeitsstrategie.</p>
+
+<p>Deutschland hat seit 2002 eine nationale Nachhaltigkeitsstrategie mit eigenen Zielen, Indikatorenberichten und Postulaten. 2017 wurde diese Strategie anlässlich der <a href="https://sustainabledevelopment-deutschland.github.io/agenda/">Agenda 2030</a> der Vereinten Nationen und den zugehörigen 17 Zielen für eine nachhaltige Entwicklung (Sustainable Development Goals, SGDs) überarbeitet und wird nun Deutsche Nachhaltigkeitsstrategie (DNS) genannt. Bei der Überarbeitung wurde thematisch passend mindestens ein Indikator zu jedem der 17 Ziele in die Strategie aufgenommen. Die Zielwerte, die Indikatoren, ihre Datengrundlagen und Berechnungen sind von der Bundesregierung beschlossen worden.</p>
+
+<p>Seit 2006 berichtet das Statistische Bundesamt im Auftrag der Bundesregierung im zweijährlichen Rhythmus über die Zielerreichung der Deutschen Nachhaltigkeitsstrategie. In gebundener Form und als PDF liegen die Informationen als <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/_inhalt.html">Indikatorenbericht</a> vor. Seit 2020 wird die Entwicklung der DNS-Indikatoren zusätzlich über die DNS-Online Plattform veröffentlicht.</p>
+
+<h3>Struktur der DNS-Online Plattform</h3>
+<p>Die DNS-Online Plattform ist nach Zielen, Indikatorenberichten und Postulaten und den dazugehörigen Indikatoren gegliedert (Abb.3). Alle vier Jahre werden die Strategie und ihre Indikatoren durch die Bundesregierung überprüft und bei Bedarf angepasst. Dabei können z.B. Indikatoren ersetzt werden oder neue hinzukommen.</p>
+
+<p><br />
+<img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/dnsTargetPage.png" alt="Abbildung 3: Aufbau der Ziel-Seiten" class="responsiveImg" /></p>
+
+<p style="text-align:center">
+<small> Abb. 3: Beispiel für die Gliederung der DNS anhand von Ziel 7 „Bezahlbare und Saubere Energie“ (Stand: Indikatorenbericht 2018)</small>
+</p>
+<p><br /></p>
+
+<p>Jeder DNS-Indikator wird auf einer eigenen Seite einzeln oder mit einem inhaltlich eng verbundenen Indikator zusammen dargestellt. Die Entwicklung des Indikators und - soweit möglich - das zu erreichende Ziel für Deutschland werden in einer Grafik visualisiert. Die Definitionen und Intentionen sowie die Entwicklung der Indikatoren werden erklärt. Diese Informationen stammen aus dem zweijährlich erscheinenden <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/_inhalt.html">Indikatorenbericht</a> des Statistischen Bundesamtes.</p>
+
+<p>Für manche Indikatoren können die Daten auch nach Bundesländern disaggregiert werden. Das angezeigte, zu erreichende Ziel bleibt jedoch das deutschlandweite Ziel. Die Bundesländer haben zum Großteil eigene Nachhaltigkeitsstrategien und -Indikatoren. Diese werden auf der DNS-Online Plattform nicht dargestellt. <a href="https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Nachhaltigkeitsindikatoren/Deutsche-Nachhaltigkeit/nachhaltigkeit-laender.html">Hier</a> finden Sie eine Zusammenstellung der Nachhaltigkeitsstrategien der Länder.</p>
+
+<p>Die Symbole und Farbwahl der 17 Ziele, die hier und auf der SDG-Online Plattform verwendet werden, stammen von den Vereinten Nationen.</p>
+
+<h3>Bewertung der Indikatoren</h3>
 <p>Bei den meisten Indikatoren veranschaulicht ein Wettersymbol –von Sonnenschein bis Gewitter– auf leicht zu erfassende Weise, inwiefern sich der Indikator auf dem angestrebten Pfad in Richtung Ziel bewegt (Abb. 4). Erläuterungen zur Definition der Symbole können <a href="https://sustainabledevelopment-deutschland.github.io/status/">hier</a> gefunden werden. Wettersymbole für die letzten vier Jahre sind unter der Schaltfläche „Statusübersicht“ auf der jeweiligen Indikatorseite zu finden. Anhand der Wettersymbole lässt sich grob einschätzen, wie stabil die Entwicklung zuletzt gewesen ist. Sie ersetzen jedoch nicht die erläuternden Texte mit ihren Hintergrundinformationen.</p>
 
 <p>Oben auf der DNS-Seite gelangt man über die Schaltfläche „Bewertung“ und die Auswahl „Übersicht“ zur Darstellung der <a href="https://sustainabledevelopment-deutschland.github.io/status_summary/">gesamten zeitlichen Entwicklung der Wettersymbole aller Indikatoren</a>.</p>
 
 <h3>Indikatorenvergleich DNS und SDG</h3>
-<p>Die Indikatoren der DNS und ihre Nummerierung sind nicht identisch mit den SDG-Indikatoren der Vereinten Nationen. Wenn ein vergleichbarer Indikator der SDGs zu einem Indikator der DNS vorhanden ist, ist dies über eine Schaltfläche mit Direktlink zum jeweiligen Indikator kenntlich gemacht (Abb.4).</p>
+<p>Die DNS-Indikatoren und ihre Nummerierung sind nicht identisch mit den SDG-Indikatoren der Vereinten Nationen. Wenn ein vergleichbarer SDG-Indikator zu einem DNS-Indikator vorhanden ist, ist dies über eine Schaltfläche mit Direktlink zum jeweiligen Indikator kenntlich gemacht (Abb.4).</p>
 
 <p><br />
 <img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/dnsIndicatorPage.PNG" alt="Abbildung 4: Aufbau der Indikator-Seiten" class="responsiveImg" /></p>
 
 <p style="text-align:center">
-<small> Abb. 4: Schaltfläche zu verwandtem globalen Indikator (hervorgehoben) <br />und Beispiel für Wettersymbol anhand des Indikators 6.1.a „Phosphor in Fließgewässern“ (Stand Indikatorenbericht 2018)</small>
+<small> Abb. 4: Schaltfläche zu verwandtem SDG-Indikator (hervorgehoben) <br />und Beispiel für Wettersymbol anhand des Indikators 6.1.a „Phosphor in Fließgewässern“ (Stand: Indikatorenbericht 2018)</small>
 </p>
 <p><br /></p>
 
-<p>Neben dem Suchfeld oben rechts auf dieser Seite gibt es einen Direktlink zur Startseite der nationalen Berichtsplattform zu den SDG-Indikatoren der Agenda 2030 der Vereinten Nationen:
-<a href="https://sustainabledevelopment-germany.github.io"><img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/wheel.png" alt="Wheel" /></a></p>
+<p>Einen Direktlink zur Startseite der SDG-Online Plattform finden Sie oben rechts auf dieser Seite neben dem Suchfeld: <a href="https://sustainabledevelopment-germany.github.io"><img src="https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/img/about/wheel.png" alt="Wheel" /></a></p>
 
 <h3>Technischer Hintergrund</h3>
-<p>Um die Daten aufbereitet darstellen zu können, bietet das Open-Source-Projekt Open SDG auf GitHub Vorlagen. Mehr dazu finden Sie unter <a href="https://sustainabledevelopment-deutschland.github.io/guidance/">Technische Hinweise</a>.</p>
+<p>Um die Daten aufbereitet darstellen zu können, bietet das Open-Source-Projekt Open SDG auf GitHub eine normierte Vorlage einer Online Plattform. Mehr dazu finden Sie unter <a href="https://sustainabledevelopment-deutschland.github.io/guidance/">Technische Hinweise</a>.</p>
 
     </div>
 </div>
@@ -349,7 +366,7 @@ var translations = {
     <div class="row">
       <div class="col-xs-9">
         
-          <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+          <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank">Seite basiert auf Open SDG</a> | <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
         
 
       </div>
@@ -382,7 +399,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200914083452'></script><script src="/assets/js/chartColors.js?v=20200914083452"></script><script>
+<script src='/assets/js/sdg.js?v=20200925093432'></script><script src="/assets/js/chartColors.js?v=20200925093432"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

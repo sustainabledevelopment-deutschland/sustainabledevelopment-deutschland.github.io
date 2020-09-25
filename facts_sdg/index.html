@@ -125,7 +125,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200914083452">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200925093432">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,7 +133,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200914083452"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200925093432"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
@@ -169,7 +169,7 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-<ul class="language-options language-toggle"><li><a href="/en/agenda/">English</a></li></ul>
+<ul class="language-options language-toggle"><li><a href="/en/facts_sdg/">English</a></li></ul>
 
     </div></div>
 
@@ -188,7 +188,7 @@ var translations = {
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
               <li class="nav-link ">
-                <a href="/">Ziele</a>
+                <a href="/">17 Ziele</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
@@ -200,15 +200,15 @@ var translations = {
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/guidance">Technische&nbspHinweise</a>
+                <a href="/guidance/">Technische&nbspHinweise</a>
               </li>
             
-              <li class="nav-link active hidden-sm hidden-md hidden-lg">
-                <a href="/agenda">Agenda 2030</a>
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/facts_agenda/">Agenda 2030</a>
               </li>
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
@@ -237,15 +237,25 @@ var translations = {
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/about/">Über&nbspdiese&nbspBerichtsplattform</a>
+                    <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
                   </li>
                 
                   <li class="nav-link ">
-                    <a href="/guidance">Technische&nbspHinweise</a>
+                    <a href="/guidance/">Technische&nbspHinweise</a>
                   </li>
-                
-                  <li class="nav-link active">
-                    <a href="/agenda">Agenda 2030</a>
+                </ul>
+        </li>
+
+        <li class="nav-link visible-sm visible-md visible-lg">
+          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
+            <!--<i class="fa fa-globe"></i>-->
+            <span class="status-toggle-text">Wissenswertes</span>
+            <i class="status-toggle fa fa-chevron-down"></i>
+            <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
+          </a>
+          <ul class="status-options status-toggle">
+                  <li class="nav-link ">
+                    <a href="/facts_agenda/">Agenda 2030</a>
                   </li>
                 </ul>
         </li><li>
@@ -255,7 +265,7 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-<ul class="language-options language-toggle"><li><a href="/en/agenda/">English</a></li></ul>
+<ul class="language-options language-toggle"><li><a href="/en/facts_sdg/">English</a></li></ul>
 
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
@@ -281,28 +291,12 @@ var translations = {
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Agenda 2030 und die Arbeit der nationalen Statistikämter</h1>
-        <h3>Die UN-Nachhaltigkeitsziele</h3>
+        <h1>Über die SDGs</h1>
+        <p>Die SDGs sind in der <a href="https://sustainabledevelopment-deutschland.github.io/agenda/">Agenda 2030</a> für nachhaltige Entwicklung verankert, die im September 2015 von der Generalversammlung der Vereinten Nationen und somit im Einvernehmen aller Mitgliedsstaaten verabschiedet wurde. Die Agenda schafft die Grundlage, um weltweiten wirtschaftlichen Fortschritt im Einklang mit sozialer Gerechtigkeit und im Rahmen der ökologischen Grenzen der Erde zu gestalten.</p>
 
-<figure style="width: 20%; margin-left: 10px;"><img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/agenda1.png" alt="Abbildung 1: Logo der SDGs" style="width: 100%; padding-left: 20px; padding-right:20px; padding-bottom:10px; padding-top:10px;" /><figcaption style="margin-bottom:20px;"><small>Abb. 1: Ein Logo der SDGs</small></figcaption></figure>
-<p>Die <a href="https://www.un.org/sustainabledevelopment/development-agenda/">Agenda 2030 für nachhaltige Entwicklung</a> ist ein globaler Aktionsplan der Vereinten Nationen für die Menschen, den Planeten und den Wohlstand, der von der UN-Generalversammlung im September 2015 verabschiedet worden ist. Mit der Agenda 2030 haben die Mitgliedstaaten der Vereinten Nationen einen Fahrplan zur „Transformation der Welt zum Besseren“ im Sinne einer nachhaltigen Umgestaltung von Gesellschaft, Wirtschaft und Umwelt bis zum Jahr 2030 entwickelt. Bestandteil der Agenda 2030 sind 17 globale Ziele unterteilt in 169 Unterziele und über 240 Indikatoren. Die Ziele heißen im Englischen Sustainable Development Goals und werden mit SDGs abgekürzt (Abb. 1).</p>
+<p>Das Statistische Bundesamt ist für die Koordination und Veröffentlichung nationaler Daten für Deutschland zu den SDG-Indikatoren verantwortlich. Die SDG-Online Plattform ermöglicht es den zuständigen internationalen Organisationen (Custodian Agencies) die Daten für einzelne SDG-Indikatoren direkt herunterzuladen und z. B. für die ihnen durch die Vereinten Nationen übertragene globale Berichterstattung zu nutzen. Zudem bietet sie stets aktualisierte Informationen über den Stand der SDG-Indikatoren für Deutschland und detaillierte Angaben zu deren Berechnungsmethodik.</p>
 
-<h3>Überprüfung der Zielerreichung</h3>
-
-<p>Die Statistische Kommission der Vereinten Nationen wurde beauftragt, gemeinsam mit den nationalen Statistischen Ämtern globale Indikatoren für die Unterziele zu entwickeln. Die dafür eingesetzte „Inter-agency and Expert Group on SDG Indicators“ (IAEG-SDGs) hat ein Indikatorenset vorgelegt und kontinuierlich weiterentwickelt. Die IAEG-SDGs setzt sich aus statistischen Ämtern einiger UN-Mitgliedstaaten zusammen, darunter das Statistische Bundesamt für Deutschland.</p>
-
-<h3>Nationale Berichterstattung zur nachhaltigen Entwicklung in Deutschland</h3>
-
-<p>Das Statistische Bundesamt ist verantwortlich für die Koordination und Veröffentlichung deutscher Daten für die SDG-Indikatoren und für die statistische Berichterstattung zu den Fortschritten Deutschlands auf diesem Gebiet.</p>
-
-<p><img src="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter//assets/img/about/agenda2.png" alt="Abbildung 2: Datenfluss Diagramm" class="responsiveImg" /></p>
-
-<p style="text-align:center;">
-<small> Abb. 2: Datenfluss zum Berechnen der Indikatoren der SDGs in Bezug auf Deutschland
-</small>
-</p>
-
-<p>Im Juli 2019 hat das Statistische Bundesamt Bundesamt den Bereich der Berichtsplattform zu den Indikatoren der globalen Nachhaltigkeitsziele der UN freigeschaltet. In diesem stehen statistische Daten und Metadaten für Deutschland zur globalen nachhaltigen Entwicklung in aufbereiteter und interaktiver Form zur Verfügung. Die SDG-Seite dieser <a href="https://sustainabledevelopment-germany.github.io/">Berichtsplattform</a> ermöglicht es den zuständigen internationalen Organisationen (Custodian Agencies) die Daten für einzelne SDG-Indikatoren direkt herunterzuladen und zum Beispiel für die globale Berichterstattung zu nutzen (Abb. 2). Seit Anfang 2020 gibt es die Berichtsplattform auch für die Indikatoren der Deutschen Nachhaltigkeitsstrategie (DNS).</p>
+<p>Seit Juli 2019 stellt das Statistische Bundesamt die SDG-Indikatoren auf dieser Online Plattform zur Verfügung.</p>
 
     </div>
 </div>
@@ -312,7 +306,7 @@ var translations = {
     <div class="row">
       <div class="col-xs-9">
         
-          <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+          <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank">Seite basiert auf Open SDG</a> | <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
         
 
       </div>
@@ -345,7 +339,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200914083452'></script><script src="/assets/js/chartColors.js?v=20200914083452"></script><script>
+<script src='/assets/js/sdg.js?v=20200925093432'></script><script src="/assets/js/chartColors.js?v=20200925093432"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
