@@ -1028,8 +1028,8 @@ var indicatorDataStore = function(dataUrl) {
     that.footerFields[translations.indicator.source] = that.dataSource;
     that.footerFields[translations.indicator.geographical_area] = that.geographicalArea;
     that.footerFields[translations.indicator.unit_of_measurement] = that.measurementUnit;
-    that.footerFields[translations.indicator.copyright] = that.copyright;
     that.footerFields[translations.indicator.footnote] = that.footnote;
+    that.footerFields[translations.indicator.copyright] = that.copyright;
     // Filter out the empty values.
     that.footerFields = _.pick(that.footerFields, _.identity);
   }());
