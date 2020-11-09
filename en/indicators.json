@@ -16,11 +16,11 @@
       "id": "2",
       "title": "End hunger, achieve food security and improved nutrition and promote sustainable agriculture",
       "indicators": [{
-          "id": "2-1-a",
-          "title": "Nitrogen surplus in agriculture",
+          "id": "2-1-b",
+          "title": "Organic farming",
           "description": "",
-          "keywords": "2-1-a,2.1.a,2.1.a",
-          "href": "/en/2-1-a",
+          "keywords": "2-1-b,2.1.b,2.1.b",
+          "href": "/en/2-1-b",
           "status": "complete"
         },{
           "id": "2-2-a",
@@ -30,11 +30,11 @@
           "href": "/en/2-2-a",
           "status": "complete"
         },{
-          "id": "2-1-b",
-          "title": "Organic farming",
+          "id": "2-1-a",
+          "title": "Nitrogen surplus in agriculture",
           "description": "",
-          "keywords": "2-1-b,2.1.b,2.1.b",
-          "href": "/en/2-1-b",
+          "keywords": "2-1-a,2.1.a,2.1.a",
+          "href": "/en/2-1-a",
           "status": "complete"
         }]
     }
@@ -43,32 +43,11 @@
       "id": "3",
       "title": "Ensure healthy lives and promote well-being for all at all ages",
       "indicators": [{
-          "id": "3-1-f",
-          "title": "Obesity rate among adults",
-          "description": "",
-          "keywords": "3-1-f,3.1.f,3.1.f",
-          "href": "/en/3-1-f",
-          "status": "complete"
-        },{
           "id": "3-1-ab",
           "title": "Premature mortality",
           "description": "",
           "keywords": "3-1-ab,3.1.ab,3.1.a, b",
           "href": "/en/3-1-ab",
-          "status": "complete"
-        },{
-          "id": "3-2-b",
-          "title": "Share of the population with excessive exposure to PM<sub>10</sub> in Germany",
-          "description": "",
-          "keywords": "3-2-b,3.2.b,3.2.b",
-          "href": "/en/3-2-b",
-          "status": "complete"
-        },{
-          "id": "3-1-cd",
-          "title": "Smoking rate among adolescents and adults",
-          "description": "",
-          "keywords": "3-1-cd,3.1.cd,3.1.c, d",
-          "href": "/en/3-1-cd",
           "status": "complete"
         },{
           "id": "3-2-a",
@@ -78,11 +57,32 @@
           "href": "/en/3-2-a",
           "status": "complete"
         },{
+          "id": "3-1-cd",
+          "title": "Smoking rate among adolescents and adults",
+          "description": "",
+          "keywords": "3-1-cd,3.1.cd,3.1.c, d",
+          "href": "/en/3-1-cd",
+          "status": "complete"
+        },{
+          "id": "3-1-f",
+          "title": "Obesity rate among adults",
+          "description": "",
+          "keywords": "3-1-f,3.1.f,3.1.f",
+          "href": "/en/3-1-f",
+          "status": "complete"
+        },{
           "id": "3-1-e",
           "title": "Obesity rate among adolescents",
           "description": "",
           "keywords": "3-1-e,3.1.e,3.1.e",
           "href": "/en/3-1-e",
+          "status": "complete"
+        },{
+          "id": "3-2-b",
+          "title": "Share of the population with excessive exposure to PM<sub>10</sub> in Germany",
+          "description": "",
+          "keywords": "3-2-b,3.2.b,3.2.b",
+          "href": "/en/3-2-b",
           "status": "complete"
         }]
     }
@@ -118,13 +118,6 @@
       "id": "5",
       "title": "Achieve gender equality and empower all women and girls",
       "indicators": [{
-          "id": "5-1-a",
-          "title": "Gender pay gap",
-          "description": "",
-          "keywords": "5-1-a,5.1.a,5.1.a",
-          "href": "/en/5-1-a",
-          "status": "complete"
-        },{
           "id": "5-1-b",
           "title": "Women in management positions in business",
           "description": "",
@@ -137,6 +130,13 @@
           "description": "",
           "keywords": "5-1-c,5.1.c,5.1.c",
           "href": "/en/5-1-c",
+          "status": "complete"
+        },{
+          "id": "5-1-a",
+          "title": "Gender pay gap",
+          "description": "",
+          "keywords": "5-1-a,5.1.a,5.1.a",
+          "href": "/en/5-1-a",
           "status": "complete"
         }]
     }
@@ -172,13 +172,6 @@
       "id": "7",
       "title": "Ensure access to affordable, reliable, sustainable and modern energy for all",
       "indicators": [{
-          "id": "7-2-a",
-          "title": "Share of renewable energies in gross final energy consumption",
-          "description": "",
-          "keywords": "7-2-a,7.2.a,7.2.a",
-          "href": "/en/7-2-a",
-          "status": "complete"
-        },{
           "id": "7-2-b",
           "title": "Share of electricity from renewable energy sources in electricity consumption",
           "description": "",
@@ -192,6 +185,13 @@
           "keywords": "7-1-ab,7.1.ab,7.1.a, b",
           "href": "/en/7-1-ab",
           "status": "complete"
+        },{
+          "id": "7-2-a",
+          "title": "Share of renewable energies in gross final energy consumption",
+          "description": "",
+          "keywords": "7-2-a,7.2.a,7.2.a",
+          "href": "/en/7-2-a",
+          "status": "complete"
         }]
     }
   },{
@@ -199,13 +199,6 @@
       "id": "8",
       "title": "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all",
       "indicators": [{
-          "id": "8-5-ab",
-          "title": "Employment rate",
-          "description": "",
-          "keywords": "8-5-ab,8.5.ab,8.5.a, b",
-          "href": "/en/8-5-ab",
-          "status": "complete"
-        },{
           "id": "8-4-a",
           "title": "Gross domestic product per capita",
           "description": "",
@@ -213,11 +206,11 @@
           "href": "/en/8-4-a",
           "status": "complete"
         },{
-          "id": "8-3-a",
-          "title": "Gross fixed capital formation in relation to GDP",
+          "id": "8-5-ab",
+          "title": "Employment rate",
           "description": "",
-          "keywords": "8-3-a,8.3.a,8.3",
-          "href": "/en/8-3-a",
+          "keywords": "8-5-ab,8.5.ab,8.5.a, b",
+          "href": "/en/8-5-ab",
           "status": "complete"
         },{
           "id": "8-2-ab",
@@ -225,6 +218,13 @@
           "description": "",
           "keywords": "8-2-ab,8.2.ab,8.2.a, b",
           "href": "/en/8-2-ab",
+          "status": "complete"
+        },{
+          "id": "8-3-a",
+          "title": "Gross fixed capital formation in relation to GDP",
+          "description": "",
+          "keywords": "8-3-a,8.3.a,8.3",
+          "href": "/en/8-3-a",
           "status": "complete"
         },{
           "id": "8-6-a",
@@ -287,20 +287,6 @@
       "id": "11",
       "title": "Make cities and human settlements inclusive, safe, resilient and sustainable",
       "indicators": [{
-          "id": "11-3-a",
-          "title": "Housing cost overload",
-          "description": "",
-          "keywords": "11-3-a,11.3.a,11.3",
-          "href": "/en/11-3-a",
-          "status": "complete"
-        },{
-          "id": "11-2-a",
-          "title": "Final energy consumption in goods transport",
-          "description": "",
-          "keywords": "11-2-a,11.2.a,11.2.a",
-          "href": "/en/11-2-a",
-          "status": "complete"
-        },{
           "id": "11-2-c",
           "title": "Accessibility of medium-sized and large cities by public transport",
           "description": "",
@@ -315,11 +301,25 @@
           "href": "/en/11-1-c",
           "status": "complete"
         },{
+          "id": "11-3-a",
+          "title": "Housing cost overload",
+          "description": "",
+          "keywords": "11-3-a,11.3.a,11.3",
+          "href": "/en/11-3-a",
+          "status": "complete"
+        },{
           "id": "11-1-b",
           "title": "Loss of open space area",
           "description": "",
           "keywords": "11-1-b,11.1.b,11.1.b",
           "href": "/en/11-1-b",
+          "status": "complete"
+        },{
+          "id": "11-1-a",
+          "title": "Expansion of settlement and transport area",
+          "description": "",
+          "keywords": "11-1-a,11.1.a,11.1.a",
+          "href": "/en/11-1-a",
           "status": "complete"
         },{
           "id": "11-2-b",
@@ -329,11 +329,11 @@
           "href": "/en/11-2-b",
           "status": "complete"
         },{
-          "id": "11-1-a",
-          "title": "Expansion of settlement and transport area",
+          "id": "11-2-a",
+          "title": "Final energy consumption in goods transport",
           "description": "",
-          "keywords": "11-1-a,11.1.a,11.1.a",
-          "href": "/en/11-1-a",
+          "keywords": "11-2-a,11.2.a,11.2.a",
+          "href": "/en/11-2-a",
           "status": "complete"
         }]
     }
@@ -342,11 +342,11 @@
       "id": "12",
       "title": "Ensure sustainable consumption and production patterns",
       "indicators": [{
-          "id": "12-3-ab",
-          "title": "Responsible procurement",
+          "id": "12-2-a",
+          "title": "EMAS eco-management",
           "description": "",
-          "keywords": "12-3-ab,12.3.ab,12.3.a, b",
-          "href": "/en/12-3-ab",
+          "keywords": "12-2-a,12.2.a,12.2",
+          "href": "/en/12-2-a",
           "status": "complete"
         },{
           "id": "12-1-a",
@@ -363,11 +363,11 @@
           "href": "/en/12-1-b",
           "status": "complete"
         },{
-          "id": "12-2-a",
-          "title": "EMAS eco-management",
+          "id": "12-3-ab",
+          "title": "Responsible procurement",
           "description": "",
-          "keywords": "12-2-a,12.2.a,12.2",
-          "href": "/en/12-2-a",
+          "keywords": "12-3-ab,12.3.ab,12.3.a, b",
+          "href": "/en/12-3-ab",
           "status": "complete"
         }]
     }
@@ -376,18 +376,18 @@
       "id": "13",
       "title": "Take urgent action to combat climate change and its impacts",
       "indicators": [{
-          "id": "13-1-a",
-          "title": "Greenhouse gas emissions",
-          "description": "",
-          "keywords": "13-1-a,13.1.a,13.1.a",
-          "href": "/en/13-1-a",
-          "status": "complete"
-        },{
           "id": "13-1-b",
           "title": "International climate finance for the reduction of greenhouse gases and adaptation to climate change",
           "description": "",
           "keywords": "13-1-b,13.1.b,13.1.b",
           "href": "/en/13-1-b",
+          "status": "complete"
+        },{
+          "id": "13-1-a",
+          "title": "Greenhouse gas emissions",
+          "description": "",
+          "keywords": "13-1-a,13.1.a,13.1.a",
+          "href": "/en/13-1-a",
           "status": "complete"
         }]
     }
@@ -423,18 +423,18 @@
           "href": "/en/15-2-a",
           "status": "complete"
         },{
-          "id": "15-1-a",
-          "title": "Biodiversity and landscape quality",
-          "description": "",
-          "keywords": "15-1-a,15.1.a,15.1",
-          "href": "/en/15-1-a",
-          "status": "complete"
-        },{
           "id": "15-3-a",
           "title": "Preservation or restoration of forests in developing countries under the REDD+ rulebook",
           "description": "",
           "keywords": "15-3-a,15.3.a,15.3",
           "href": "/en/15-3-a",
+          "status": "complete"
+        },{
+          "id": "15-1-a",
+          "title": "Biodiversity and landscape quality",
+          "description": "",
+          "keywords": "15-1-a,15.1.a,15.1",
+          "href": "/en/15-1-a",
           "status": "complete"
         }]
     }
@@ -450,18 +450,18 @@
           "href": "/en/16-3-ab",
           "status": "complete"
         },{
-          "id": "16-1-a",
-          "title": "Criminal offences",
-          "description": "",
-          "keywords": "16-1-a,16.1.a,16.1",
-          "href": "/en/16-1-a",
-          "status": "complete"
-        },{
           "id": "16-2-a",
           "title": "Number of projects to secure, register and destroy small arms and light weapons carried out by Germany in affected regions of the world",
           "description": "",
           "keywords": "16-2-a,16.2.a,16.2",
           "href": "/en/16-2-a",
+          "status": "complete"
+        },{
+          "id": "16-1-a",
+          "title": "Criminal offences",
+          "description": "",
+          "keywords": "16-1-a,16.1.a,16.1",
+          "href": "/en/16-1-a",
           "status": "complete"
         }]
     }

@@ -2497,7 +2497,9 @@ var indicatorView = function (model, options) {
 
   this.createSelectionsTable = function(chartInfo) {
     //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
-    var tableUnit = (chartInfo.selectedUnit && !chartInfo.footerFields[translations.indicator.unit_of_measurement]) ? translations.t(chartInfo.selectedUnit) : '';
+    //---Edit from 26.10.20: Add Unit to table heading
+    //var tableUnit = (chartInfo.selectedUnit && !chartInfo.footerFields[translations.indicator.unit_of_measurement]) ? translations.t(chartInfo.selectedUnit) : '';
+    var tableUnit = chartInfo.footerFields[translations.indicator.unit_of_measurement];
     //this.createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
     this.createTable(chartInfo.selectionsTable, tableUnit, chartInfo.indicatorId, '#selectionsTable', true);
     //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
@@ -2557,7 +2559,6 @@ var indicatorView = function (model, options) {
     }));
   }
   //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
-  //this.createTable = function(table, indicatorId, el) {
   this.createTable = function(table, tableUnit, indicatorId, el) {
   //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
     options = options || {};
@@ -2580,7 +2581,8 @@ var indicatorView = function (model, options) {
         //'id': currentId
       });
 
-      currentTable.append('<caption>' + that._model.chartTitle + '</caption>');
+      //---Edit from 26.10.2020: Add Unit to table headings
+      currentTable.append('<caption>' + that._model.chartTitle + ' (' + tableUnit + ')</caption>');
 
       var table_head = '<thead><tr>';
 
@@ -2588,8 +2590,9 @@ var indicatorView = function (model, options) {
         var span = '<span class="sort" />';
         var span_heading = '<span>' + translations.t(heading) + '</span>';
         //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
-        //return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading;
-        return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading + ((tableUnit == '') ? '' : ('<br>(' + tableUnit)+')');
+        //---Undo via Edit from 26.10.20
+        return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading;
+        //return (!index || heading.toLowerCase() == 'units') ? span_heading + span : span + span_heading + ((tableUnit == '') ? '' : ('<br>(' + tableUnit)+')');
         //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
       };
       table.headings.forEach(function (heading, index) {
