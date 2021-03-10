@@ -130,6 +130,16 @@ header {
       background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
       background-repeat: repeat;
       background-position: -5px 0; }
+  #legend .swatchTgtLine {
+    display: inline-block;
+    width: 45px;
+    height: 2.5px;
+    margin-top: 0px;
+    margin-right: 3px; }
+    #legend .swatchTgtLine.dashed {
+      background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
+      background-repeat: repeat;
+      background-position: -5px 0; }
   #legend .swatchBar {
     display: inline-block;
     width: 45px;
@@ -516,6 +526,9 @@ header {
 .my-header-note {
   display: inline-block;
   font-size: 0.8em; }
+
+.leaflet-container {
+  background-color: rgba(51, 51, 51, 0.8); }
 
 #main-content #map {
   height: 500px;

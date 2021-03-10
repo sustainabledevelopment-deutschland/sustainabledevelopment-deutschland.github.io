@@ -114,18 +114,28 @@ var translations = {
 
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <!--<link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">-->
         <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
         http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
         -->
+        <link rel="shortcut icon" href="/assets/img/favicons/196x196.png" sizes="196x196">
 
+        <link rel="apple-touch-icon" href="/assets/img/favicons/180x180.png">
+
+        <meta name="msapplication-square70x70logo" content="/assets/img/favicons/70x70.png">
+        <meta name="msapplication-square150x150logo" content="/assets/img/favicons/150x150.png">
+        <meta name="msapplication-wide310x150logo" content="/assets/img/favicons/310x150.png">
+        <meta name="msapplication-square310x310logo" content="/assets/img/favicons/310x310.png">
+
+
+        <!--
         
-
+        -->
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20210121154649">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20210310110723">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -133,7 +143,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210121154649"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210310110723"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-page">
@@ -162,16 +172,7 @@ var translations = {
     </a>
 
   <div class='hidden visible-xs float-right'>
-    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
-      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">Deutsch</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
-<ul class="language-options language-toggle"><li><a href="/en/imprint/">English</a></li></ul>
-
-    </div></div>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
@@ -209,6 +210,10 @@ var translations = {
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/facts_agenda/">Agenda 2030</a>
+              </li>
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/facts_publications/">Veröffentlichungen</a>
               </li>
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
@@ -257,16 +262,11 @@ var translations = {
                   <li class="nav-link ">
                     <a href="/facts_agenda/">Agenda 2030</a>
                   </li>
+                
+                  <li class="nav-link ">
+                    <a href="/facts_publications/">Veröffentlichungen</a>
+                  </li>
                 </ul>
-        </li><li>
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">Deutsch</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
-<ul class="language-options language-toggle"><li><a href="/en/imprint/">English</a></li></ul>
-
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
           <a href="https://sustainabledevelopment-germany.github.io//">
@@ -338,11 +338,13 @@ Statistisches Bundesamt (Destatis)
 <p><b>Das Statistische Bundesamt nimmt den Schutz Ihrer Privat- und Persönlichkeitssphäre ernst und beachtet die datenschutzrechtlichen Bestimmungen. Ihr Vertrauen ist uns wichtig!</b></p>
 
 <p>Mit diesen Hinweisen kommen wir unseren Informationspflichten nach Artikel 13 der Datenschutz-Grundverordnung (DS-GVO) bei der Erhebung personenbezogener Daten nach.
-Beim Zugriff auf die DNS-Online Plattform werden vom Statistischen Bundesamt keine personenbezogenen Daten erhoben. Sie nutzen allerdings die Dienste des Anbieters GitHub.  Die Datenschutzerklärung von GitHub finden Sie unter <a href="https://help.github.com/en/articles/github-privacy-statement">https://help.github.com/en/articles/github-privacy-statement</a>.</p>
+Beim Zugriff auf die SDG-Online Plattform werden vom Statistischen Bundesamt keine personenbezogenen Daten erhoben.</p>
 
-<p>Als Website-Besucher werden technische Informationen, auch die IP-Adresse, erfasst: diese kann ggf. ein personenbezogenes Datum sein. Personenbezogene Daten werden erfasst, wenn Sie einen Account anlegen.</p>
+<p>Sie nutzen allerdings die Dienste des Anbieters GitHub.  Die Datenschutzerklärung von GitHub finden Sie unter <a href="https://help.github.com/en/articles/github-privacy-statement">https://help.github.com/en/articles/github-privacy-statement</a>.</p>
 
-<p>Im Zusammenhang mit der Nutzung sozialer Medien sowie des weiteren Internet-Angebotes des Statistischen Bundesamtes gilt die Datenschutzerklärung unter <a href="https://www.destatis.de/DE/Service/Datenschutz/_inhalt.html">https://www.destatis.de/DE/Service/Datenschutz/_inhalt.html</a>.</p>
+<p>Wir haben technische und organisatorische Maßnahmen getroffen, die sicherstellen, dass die Vorschriften über den Datenschutz sowohl von uns als auch von unserem Dienstleister beachtet werden. In diesem Zusammenhang weisen wir daraufhin, dass die Daten von GitHub in den USA verarbeitet werden können.</p>
+
+<p>Als Website-Besucher werden technische Informationen, auch die IP-Adresse, erfasst: diese kann ggf. ein personenbezogenes Datum sein.</p>
 
 <p>Im Zuge der Weiterentwicklung unserer Website können auch Änderungen dieser Datenschutzerklärung erforderlich werden. Daher empfehlen wir Ihnen, sich diese Erklärung regelmäßig durchzulesen.</p>
 
@@ -350,28 +352,25 @@ Beim Zugriff auf die DNS-Online Plattform werden vom Statistischen Bundesamt kei
 
 <p>Personenbezogene Daten sind Informationen zu Ihrer Person, wie zum Beispiel Ihr Name, Adresse, Postanschrift oder auch Ihr Nutzerverhalten, wenn dies nicht anonymisiert wird. Informationen, die nicht mit Ihrer Identität in Verbindung gebracht werden, fallen nicht darunter.</p>
 
-<p>Ihre Daten werden dadurch erhoben, dass Sie uns diese, z. B. in einer E-Mail, mitteilen. Dabei beruht die Verarbeitung auf Ihrer Einwilligung.</p>
-
 <h2 id="einsatz-von-cookies">Einsatz von Cookies</h2>
 
 <p>Auf diesen Seiten kommen Cookies zum Einsatz. Diese sind zur optimalen Bereitstellung unseres Internetangebots technisch erforderlich. Der Einsatz dieser Cookies erfolgt auf der Grundlage des Art. 6 Absatz 1 lit. e DS-GVO in Verbindung mit § 3 Bundesdatenschutzgesetz (BDSG).</p>
 
-<p>Die meisten Internetbrowser sind so eingestellt, dass sie Cookies automatisch akzeptieren. Sie können das Speichern von Cookies jedoch deaktivieren oder Ihren Browser so einstellen, dass Cookies nur für die Dauer der jeweiligen Verbindung zum Internet gespeichert werden.
-Sollten Sie eine Browsererweiterung nutzen, die die Ablage unserer Cookies verhindert, respektieren wir dies selbstverständlich. Cookies werden in diesem Fall nicht abgelegt. Wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
+<p>Die meisten Internetbrowser sind so eingestellt, dass sie Cookies automatisch akzeptieren. Sie können das Speichern von Cookies jedoch deaktivieren oder Ihren Browser so einstellen, dass Cookies nur für die Dauer der jeweiligen Verbindung zum Internet gespeichert werden. Sollten Sie eine Browsererweiterung nutzen, die die Ablage unserer Cookies verhindert, respektieren wir dies selbstverständlich. Cookies werden in diesem Fall nicht abgelegt. Wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich werden nutzen können.</p>
 
 <h2 id="soziale-medien">Soziale Medien</h2>
 
-<p>Das Statistische Bundesamt nutzt den Kurznachrichtendienst Twitter.</p>
-
-<p>Diese Funktionen werden angeboten durch die Twitter Inc., 1355 Market Street, Suite 900, San Francisco, CA 94103, USA. Durch das Benutzen von Twitter und der Funktion „Re-Tweet“ werden die von Ihnen besuchten Websites mit Ihrem Twitter-Account verknüpft und anderen Nutzern bekannt gegeben. Dabei werden auch Daten an Twitter übertragen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Twitter erhalten. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Twitter unter: Version: <a href="https://twitter.com/privacy">https://twitter.com/privacy</a>.</p>
-
-<p>Ihre Datenschutzeinstellungen bei Twitter können Sie in den Konto-Einstellungen unter <a href="https://twitter.com/account/settings">https://twitter.com/account/settings</a> ändern.</p>
-
-<p>Um Inhalte in den sozialen Netzwerken zu planen und zu posten, keine für uns relevanten Posts zu verpassen sowie mit Nutzerinnen und Nutzern zu interagieren, nutzt das Statistische Bundesamt das Produkt „Social Hub“ des Dienstleisters maloon GmbH; Schütterlettenweg 4; 85053 Ingolstadt; Deutschland; Telefon: +49 (0)841 493 990-0; Fax: +49 (0)841 493 990-10; E-Mail: hallo@socialhub.io; Web: <a href="http://www.socialhub.io/">www.socialhub.io</a></p>
+<p>Im Zusammenhang mit der Nutzung sozialer Medien (Twitter) sowie des weiteren Internet-Angebotes des Statistischen Bundesamtes gilt die Datenschutzerklärung unter <a href="https://www.destatis.de/DE/Service/Datenschutz/_inhalt.html">https://www.destatis.de/DE/Service/Datenschutz/_inhalt.html</a>.</p>
 
 <h2 id="anfragen-per-e-mail-oder-telefon">Anfragen per E-Mail oder Telefon</h2>
 
 <p>Wenn Sie Ihre Anfragen per E-Mail oder Telefon an uns richten, werden Ihre Angaben zur Beantwortung der Anfrage in unserem Kundenmanagement gespeichert. Dies erfolgt in Erfüllung unserer öffentlichen Aufgaben nach Artikel 6 Absatz 1 lit. e) DS-GVO in Verbindung mit § 3 BDSG. Sollte eine Anfrage kostenpflichtig sein, werden Sie darauf per E-Mail hingewiesen, es sei denn Ihre Anfrage enthält im Einzelfall bereits eine konkrete Bestellung mit den erforderlichen Vertragsbestandteilen. Die Verarbeitung basiert sodann auf Artikel 6 Absatz 1 lit. b) DS-GVO. Ihnen stehen ebenso die jeweils einschlägigen untenstehenden Rechte zu.</p>
+
+<h2 id="weitergabe-personenbezogener-daten-an-dritte">Weitergabe personenbezogener Daten an Dritte</h2>
+
+<p>Daten, die beim Zugriff auf das Internet-Angebot von Destatis protokolliert worden sind, werden an Dritte nur übermittelt, soweit wir gesetzlich oder durch Gerichtsentscheidung dazu verpflichtet sind oder die Weitergabe im Falle von Angriffen auf die Internet-Infrastruktur von Destatis zu Rechts- oder Strafverfolgung erforderlich ist. Eine Weitergabe zu anderen nichtkommerziellen oder zu kommerziellen Zwecken erfolgt nicht.</p>
+
+<p>Im Falle der Bestellung von Publikationen verwenden wir die von Ihnen eingegebenen personenbezogenen Informationen nur innerhalb des Statistischen Bundesamtes und der mit dem Versand von Publikationen beauftragten Unternehmen. Wir geben sie nicht ohne Ihre ausdrückliche Einwilligung an Dritte weiter.</p>
 
 <h2 id="minderjährigenschutz">Minderjährigenschutz</h2>
 
@@ -409,15 +408,11 @@ Sollten Sie eine Browsererweiterung nutzen, die die Ablage unserer Cookies verhi
 Telefon:	+49 (0)611 75-4449<br />
 E-Mail:	<a href="mailto:datenschutzbeauftragter@destatis.de">datenschutzbeauftragter@destatis.de</a></p>
 
-<h2 id="kontaktaufnahme">Kontaktaufnahme</h2>
-
-<p>Kommunikation via E-Mail kann Sicherheitslücken aufweisen. Beispielsweise können E-Mails auf ihrem Weg an die Mitarbeiter des Statistischen Bundesamts von versierten Internet-Nutzern aufgehalten, eingesehen und auch manipuliert werden. Daher sind über E-Mail ausnahmslos nur informelle Kontakte möglich. Rechtsverbindliche Erklärungen können auf diesem Wege derzeit nicht abgegeben werden. Sollten wir eine E-Mail von Ihnen erhalten, so gehen wir davon aus, dass wir zu einer Beantwortung per E-Mail berechtigt sind. Ansonsten müssen Sie ausdrücklich auf eine andere Art der Kommunikation verweisen.</p>
-
 <h2 id="copyright-allgemein">Copyright allgemein</h2>
 
 <p>Für die Standard-Veröffentlichungen des Statistischen Bundesamtes in gedruckter und elektronischer Form sowie für die Inhalte auf dieser Website einschließlich Grafiken sowie der zum Download bereitgestellten Produkte gilt, soweit bei dem jeweiligen Produkt/Internetseite keine ergänzenden oder anderslautenden Angaben ausgewiesen sind:</p>
 
-<p>© Statistisches Bundesamt (Destatis), 2020 <br />
+<p>© Statistisches Bundesamt (Destatis), 2021 <br />
 Vervielfältigung und Verbreitung, auch auszugsweise, mit Quellennachweis gestattet.</p>
 
 <p>Diese Regelung gilt für jede Art der Weiterverbreitung von Texten, Daten und Grafiken durch Dritte, soweit das Statistische Bundesamt Inhaber des Urheberrechts ist und die alleinigen Herausgeberrechte besitzt. Die Weiterverwendung ist sowohl für nicht gewerbliche als auch gewerbliche Zwecke erlaubt. Auch die Verbreitungsform elektronisch, via Internet oder als Print ist nicht eingeschränkt. Es bedarf keiner ausdrücklichen Genehmigung durch unser Haus. Eine Quellenangabe ist jedoch erforderlich. Das Statistische Bundesamt (Destatis) ist als Herausgeber in den Quellennachweis aufzunehmen.</p>
@@ -428,8 +423,21 @@ Vervielfältigung und Verbreitung, auch auszugsweise, mit Quellennachweis gestat
 
 <p>Bei Verwendung unserer Daten empfiehlt es sich daher, auf die Ausbringung der Copyright-Angaben im jeweiligen Produkt zu achten und im Bedarfsfalle die im Impressum genannten Copyright-Inhaber zu kontakten.</p>
 
-<h2 id="copyright-icons">Copyright Icons</h2>
+<p><b>Empfohlener Quellennachweis:</b></p>
 
+<p>Quelle: Genaue Bezeichnung der Fundstelle (Tabelle, Publikation, Ausgabe bzw. bei Internetseiten: www.destatis.de / URL oder thematischer Rechercheweg sowie Dokumentart sowie Abrufdatum), Statistisches Bundesamt (Destatis) als Hrsg. und Datenhalter;</p>
+
+<ul>
+  <li><i>Beispiel für Tabelle aus Publikation (Download-Produkt):</i><br />
+Quelle: Daten zur Energiepreisentwicklung – Lange Reihe von Januar 2000 bis November 2017, Tabelle 5.3.1 Erdgas – Indizes, Statistisches Bundesamt (Destatis), 2017<br /><br /></li>
+  <li><i>Beispiel Internet-Auszug:</i><br />
+Quelle: Sterbefälle 2017 nach den 10 häufigsten Todesursachen der ICD-10, Statistisches Bundesamt (Destatis), 2020.<br />
+In http://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Gesundheit/Todesursachen/Tabellen/gestorbene_anzahl.html<br /><br /></li>
+  <li><i>Beispiel für die Zusätze zum Quellennachweis, wenn die Daten nur als Grundlage für eigene Berechnungen verwendet wurden oder Daten als Grundlage für die Erstellung eigener Graphiken dienen:</i><br />
+Quelle: …; eigene Berechnung / …; eigene Darstellung</li>
+</ul>
+
+<h2 id="copyright-icons">Copyright Icons</h2>
 <p>© United Nations/<a href="http://www.globalgoals.org/asset-licence/">www.globalgoals.org</a>, <a href="https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/01/SDG_Guidelines_AUG_2019_Final.pdf">Guidelines for the use</a> (Logos und Pictogramme) / © Bundespresseamt, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> (deutsche Übersetzung)</p>
 
     </div>
@@ -473,7 +481,7 @@ Vervielfältigung und Verbreitung, auch auszugsweise, mit Quellennachweis gestat
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20210121154649'></script><script src="/assets/js/chartColors.js?v=20210121154649"></script><script>
+<script src='/assets/js/sdg.js?v=20210310110723'></script><script src="/assets/js/chartColors.js?v=20210310110723"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -495,6 +503,7 @@ $(function() {
             indicatorId: domData.indicatorid,
             shortIndicatorId: domData.id,
             chartTitle: domData.charttitle,
+            mapTitle: domData.maptitle,
             measurementUnit: domData.measurementunit,
             copyright: domData.copyright,
             dataSource: domData.datasource,
@@ -502,6 +511,7 @@ $(function() {
             showData: domData.showdata,
             footnote: domData.footnote,
             graphType: domData.graphtype,
+            stackedDisaggregation: domData.stackeddisaggregation,
             startValues: domData.startvalues
           }),
           view  = new indicatorView(model, {

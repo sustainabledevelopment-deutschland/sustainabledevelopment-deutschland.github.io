@@ -46,8 +46,8 @@ opensdg.autotrack = function(preset, category, action, label) {
       attribution: '[replace me]',
     },
     // Zoom limits.
-    minZoom: 5,
-    maxZoom: 15,
+    minZoom: 4.5,
+    maxZoom: 11,
     // Visual/choropleth considerations.
     colorRange: chroma.brewer.BuGn,
     noValueColor: '#ffffff',
@@ -82,6 +82,7 @@ opensdg.autotrack = function(preset, category, action, label) {
   };
 
   function Plugin(element, options) {
+    console.log("Options:", options);
 
     this.element = element;
     this.options = $.extend(true, {}, defaults, options.mapOptions);
@@ -163,6 +164,8 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.typificationName = translations.t(this.typification[this.typification.length -1]);
     this.criminalOffence = _.pluck(this.geoData, 'criminal offences');
     this.criminalOffenceName = translations.t(this.criminalOffence[this.criminalOffence.length -1]);
+
+    this.mapTitle = options.mapTitle;
     //---#6 enableMapsForDisagData---start-----------------------------------------------------------------
     this.startExp = 0;
     this.reloadCounter = 0; // to avoid multiple search buttons
@@ -209,6 +212,9 @@ opensdg.autotrack = function(preset, category, action, label) {
         else if(cat == 'age'){
           var records = _.where(geoData, { GeoCode: geocode, age: exp });
         }
+        else if(cat == 'typification'){
+          var records = _.where(geoData, { GeoCode: geocode, typification: exp });
+        }
 
         //---#6 enableMapsForDisagData---stop------------------------------------------------------------------
         records.forEach(function(record) {
@@ -228,7 +234,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     //---#6 enableMapsForDisagData---start-----------------------------------------------------------------
     //Find those disaggregation-categories that have more then one expression in all lines that have geoData
     findCat: function(){
-      var categories = ['title','sex','age'];
+      var categories = ['title','sex','age', 'typification'];
       var category = '';
 
       for (var i = 0; i<categories.length; i++){
@@ -261,6 +267,35 @@ opensdg.autotrack = function(preset, category, action, label) {
       this.map.fitBounds(layer.getBounds());
     },
 
+    // Build content for a tooltip.
+   getTooltipContent(feature) {
+     var tooltipContent = feature.properties.name;
+     var tooltipData = this.getData(feature.properties);
+     if (tooltipData) {
+       tooltipContent += ': ' + tooltipData;
+     }
+     return tooltipContent;
+   },
+
+   // Update a tooltip.
+   updateTooltip: function(layer) {
+     if (layer.getTooltip()) {
+       var tooltipContent = this.getTooltipContent(layer.feature);
+       layer.setTooltipContent(tooltipContent);
+     }
+   },
+
+   // Create tooltip.
+   createTooltip: function(layer) {
+     if (!layer.getTooltip()) {
+       var tooltipContent = this.getTooltipContent(layer.feature);
+       layer.bindTooltip(tooltipContent, {
+         permanent: true,
+       }).addTo(this.map);
+     }
+   },
+
+
     // Select a feature.
     highlightFeature: function(layer) {
       // Abort if the layer is not on the map.
@@ -270,16 +305,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       // Update the style.
       layer.setStyle(this.options.styleHighlighted);
       // Add a tooltip if not already there.
-      if (!layer.getTooltip()) {
-        var tooltipContent = layer.feature.properties.name;
-        var tooltipData = this.getData(layer.feature.properties);
-        if (tooltipData) {
-          tooltipContent += ': ' + tooltipData;
-        }
-        layer.bindTooltip(tooltipContent, {
-          permanent: true,
-        }).addTo(this.map);
-      }
+      this.createTooltip(layer);
       if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
       }
@@ -334,6 +360,14 @@ opensdg.autotrack = function(preset, category, action, label) {
       });
     },
 
+
+    // Update the tooltips of the selected Features on the map.
+    updateTooltips: function() {
+      var plugin = this;
+      this.selectionLegend.selections.forEach(function(selection) {
+        plugin.updateTooltip(selection);
+      });
+    },
     // Get the data from a feature's properties, according to the current year.
     getData: function(props) {
       if (props[this.currentYear]) {
@@ -360,6 +394,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         minZoom: this.options.minZoom,
         maxZoom: this.options.maxZoom,
         zoomControl: false,
+        zoomSnap: 0.5,
       });
       this.map.setView([51.9, 10.26],0);
       this.dynamicLayers = new ZoomShowHide();
@@ -383,6 +418,19 @@ opensdg.autotrack = function(preset, category, action, label) {
       // Because after this point, "this" rarely works.
       var plugin = this;
 
+      // Add the year slider.
+      this.map.addControl(L.Control.yearSlider({
+        years: this.years,
+        yearChangeCallback: function(e) {
+          plugin.currentYear = new Date(e.time).getFullYear();
+          plugin.updateColors();
+          plugin.updateTooltips();
+          plugin.selectionLegend.update();
+
+        },
+        playReverseButton: true
+      }));
+
       //---#6 enableMapsForDisagData---start-----------------------------------------------------------------
       //Add the radio buttons
       //count up the reloadCounter to avoid multiple builds of the search buttons
@@ -390,18 +438,19 @@ opensdg.autotrack = function(preset, category, action, label) {
       //Create a Button for every expression and add it to the map
       var cat = plugin.findCat();
       if (cat != ''){
+        //div.innerHTML = '<label style="background-color: #c0c2c2"><input id="command'+toString(i)+' name="disagg" value="'+i+'"> Auswahl: </label><br>';
         var exp = plugin.findDisagg(cat);
         for (var i = 0; i<exp.length; i++) {
           var label = exp[i];
-          var command = L.control({position: 'bottomright'});
+          var command = L.control({position: 'bottomleft'});
           command.onAdd = function (map) {
               var div = L.DomUtil.create('div', 'command');
               //set the Button on position 'startExp' to status checked
               if (i == plugin.startExp){
-                div.innerHTML = '<label  style="background-color: #c0c2c2"><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'" checked> '+translations.t(label)+' </label><br>';
+                div.innerHTML = '<label style="background-color: #c0c2c2; padding-right: 6px; padding-left: 4px; font-size: 14px"><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'" checked> '+translations.t(label)+' </label><br>';
               }
               else{
-                div.innerHTML = '<label style="background-color: #c0c2c2"><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'"> '+translations.t(label)+' </label><br>';
+                div.innerHTML = '<label style="background-color: #c0c2c2; padding-right: 6px; padding-left: 4px; font-size: 14px"><input id="command'+toString(i)+'" type="radio" name="disagg" value="'+i+'"> '+translations.t(label)+' </label><br>';
               }
               return div;
           };
@@ -421,6 +470,9 @@ opensdg.autotrack = function(preset, category, action, label) {
         else if (cat == 'age'){
           plugin.ageName = translations.t(plugin.expression);
         }
+        else if (cat == 'typification'){
+          plugin.typificationName = translations.t(plugin.expression);
+        }
 
         //action, when click:
         $('input[type="radio"]').on('click change', function(e) {
@@ -439,17 +491,7 @@ opensdg.autotrack = function(preset, category, action, label) {
       }
       //---#6 enableMapsForDisagData---stop------------------------------------------------------------------
 
-      // Add the year slider.
-      this.map.addControl(L.Control.yearSlider({
-        years: this.years,
-        yearChangeCallback: function(e) {
-          plugin.currentYear = new Date(e.time).getFullYear();
-          plugin.updateColors();
-          plugin.selectionLegend.update();
 
-        },
-        playReverseButton: true
-      }));
 
       //---#7 addMapboxWordmark---start-----------------------------------------------------------------------------------------
       //var logo = L.control({position: 'bottomleft'});
@@ -538,6 +580,7 @@ opensdg.autotrack = function(preset, category, action, label) {
           plugin.searchControl = new L.Control.Search({
             layer: plugin.getAllLayers(),
             propertyName: 'name',
+            textPlaceholder: 'Suche nach Bundesländern',
             marker: false,
             moveToLocation: function(latlng) {
               plugin.zoomToFeature(latlng.layer);
@@ -879,7 +922,10 @@ var indicatorDataStore = function(dataUrl) {
   this.country = options.country;
   this.indicatorId = options.indicatorId;
   this.shortIndicatorId = options.shortIndicatorId;
-  this.chartTitle = options.chartTitle;
+  this.chartTitle = options.chartTitle; // + "<br>" + options.measurementUnit;
+  //---4.3.21: No content but map title in maps
+  this.mapTitle =   options.mapTitle;
+  //---4.3.21: No content but map title in maps stop
   this.graphType = options.graphType;
   this.measurementUnit = options.measurementUnit;
   this.copyright = options.copyright;
@@ -899,6 +945,8 @@ var indicatorDataStore = function(dataUrl) {
   this.geoData = [];
   this.geoCodeRegEx = options.geoCodeRegEx;
   this.showMap = options.showMap;
+
+  this.stackedDisaggregation = options.stackedDisaggregation;
 
   // initialise the field information, unique fields and unique values for each field:
   (function initialise() {
@@ -1279,13 +1327,17 @@ var indicatorDataStore = function(dataUrl) {
         return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
       },
       //---#11 setTargetPointstyle---start-----------------------------------------------------------------------------------------------
-      getPointStyle = function (combinationDescription) {
+      getPointStyle = function (datasetIndex, combinationDescription) {
+        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell']
         if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
-          return 'rect';
+          return dashedLines.indexOf(combinationDescription.substr(0,17)) == -1 ? 'rect' : 'false';
         }
         else {
           return 'circle';
         }
+      },
+      getRadius = function(datasetIndex, combinationDescription){
+        return getPointStyle(datasetIndex, combinationDescription) == 'circle' || getPointStyle(datasetIndex, combinationDescription) == 'rect' ? 5 : 0
       },
       //---#11 setTargetPointstyle---stop-----------------------------------------------------------------------------------------------
 
@@ -1337,7 +1389,7 @@ var indicatorDataStore = function(dataUrl) {
       },
       //---#22 xxx---stop--------------------------------------------------------------------------------------------------
 
-      stackedCharts = ['indicator_12-1-b'];
+      stackedCharts = ['indicator_3-3-a'];
       getStacked = function(indicatorId){
         if (stackedCharts.indexOf(indicatorId) != -1) {
           return true;
@@ -1346,7 +1398,11 @@ var indicatorDataStore = function(dataUrl) {
           return false;
         }
       },
-
+      getStackGroup = function(indicatorId){
+        if (indicatorId == 'indicator_3-2-e'){
+          return ''
+        }
+      }
 
       //--#14 mixedCharts---start-------------------------------------------------------------------------------------------------------
       //barCharts = [//translations.t('a) time series')+", "+translations.t('calculated annual values'),
@@ -1370,14 +1426,43 @@ var indicatorDataStore = function(dataUrl) {
       //--#14 mixedCharts---stop--------------------------------------------------------------------------------------------------------
 
       //--#14.1 barsOnly---start--------------------------------------------------------------------------------------------------------
-      barCharts = ['indicator_2-2-a','indicator_3-1-e','indicator_5-1-b','indicator_5-1-c','indicator_6-2-a','indicator_8-2-c','indicator_8-3-a',
-      'indicator_8-4-a','indicator_8-6-a','indicator_11-1-a','indicator_11-1-b','indicator_11-2-c','indicator_12-1-a','indicator_12-1-b','indicator_13-1-b','indicator_15-2-a','indicator_16-1-a','indicator_16-2-a','indicator_17-1-a','indicator_17-2-a'];
+      barCharts = ['indicator_2-1-a', 'indicator_2-2-a','indicator_3-1-e','indicator_3-2-a','indicator_3-3-a','indicator_5-1-b','indicator_5-1-c','indicator_5-1-e','indicator_6-2-ab','indicator_8-2-ab', 'indicator_8-2-c','indicator_8-3-a',
+      'indicator_8-4-a','indicator_8-6-a','indicator_11-1-a','indicator_11-1-b','indicator_11-2-c','indicator_12-1-a','indicator_13-1-b','indicator_14-1-b','indicator_15-1-a','indicator_15-2-a','indicator_16-1-a','indicator_16-2-a','indicator_17-1-a','indicator_17-2-a'];
 
       bl = ['bw','by','be','bb','hb','hh','he','mv','ni','nw','rp','sl','sn','st','sh','th'];
 
       exceptions = [translations.t('direct co2 emissions and co2 content of consumer goods'),
                     translations.t('a) time series') + ', ' + translations.t('a) total (moving four-year average)'),
-                    translations.t('b) target (max)') + ', ' + translations.t('a) total (moving four-year average)')];
+                    translations.t('b) target (max)') + ', ' + translations.t('a) total (moving four-year average)'),
+                    translations.t('a) time series') + ', ' + translations.t('gross domestic produkt (price-adjusted) (year-on-year changes in %)'),
+                    translations.t('b) target (min)') + ', ' + translations.t('structural funding balance (share of gross domestic product (at current prices) in %)'),
+                    translations.t('b) target (min)') + ', ' + translations.t('funding balance (share of gross domestic product (at current prices) in %)'),
+                    translations.t('b) target (min)') + ', ' + translations.t('a) drinking water and sanitation'),//6.2.ab
+                    translations.t('b) target (min)') + ', ' + translations.t('b) drinking water'),//6.2.ab
+                    translations.t('b) target (min)') + ', ' + translations.t('c) sanitation'),//6.2.ab
+                    translations.t('a) time series') + ', ' + translations.t('a) moving five-year average, referring to the middle year'),//2.1.a
+                    translations.t('b) target (max)') + ', ' + translations.t('a) moving five-year average, referring to the middle year'),//2.1.a
+                    translations.t('a) time series') + ', ' + translations.t('so2'),//3.2.a
+                    translations.t('a) time series') + ', ' + translations.t('nox'),//3.2.a
+                    translations.t('a) time series') + ', ' + translations.t('nh3'),//3.2.a
+                    translations.t('a) time series') + ', ' + translations.t('nmvoc'),//3.2.a
+                    translations.t('a) time series') + ', ' + translations.t('pm2.5'),//3.2.a
+                    translations.t('a) time series') + ', ' + translations.t('a) sub-index forests'),//15.1.a
+                    translations.t('a) time series') + ', ' + translations.t('c) sub-index farmland'),//15.1.a
+                    translations.t('a) time series') + ', ' + translations.t('b) sub-index settlements'),//15.1.a
+                    translations.t('a) time series') + ', ' + translations.t('d) sub-index inland waters'),//15.1.a
+                    translations.t('a) time series') + ', ' + translations.t('e) sub-index coasts/seas'),
+                    translations.t('b) target (min)') + ', ' + translations.t('f) index overall'),
+                    translations.t('a) time series') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks'),
+                    translations.t('a) time series') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks') + ', ' + translations.t('north sea'),
+                    translations.t('a) time series') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks') + ', ' + translations.t('baltic sea')];//14.1.b
+                    // translations.t('a) time series') + ', ' + translations.t('sub-index forests'),//15.1.a,
+                    // translations.t('a) time series') + ', ' + translations.t('sub-index farmland'),//15.1.a
+                    // translations.t('a) time series') + ', ' + translations.t('sub-index settlements'),//15.1.a
+                    // translations.t('a) time series') + ', ' + translations.t('sub-index inland waters'),//15.1.a
+                    // translations.t('a) time series') + ', ' + translations.t('sub-index coasts/seas')];//15.1.a
+
+
 
       for (var i=0; i<bl.length; i++){
         exceptions.push(translations.t('a) time series') + ', ' + translations.t('a) total (moving four-year average)') + ', ' + translations.t(bl[i]));
@@ -1399,9 +1484,16 @@ var indicatorDataStore = function(dataUrl) {
         }
       },
       //--#14.1 barsOnly---stop--------------------------------------------------------------------------------------------------------
+      getOrder = function(combinationDescription) {
+        if (exceptions.indexOf(combinationDescription) != -1){
+          return 3;
+        }
+        else {
+          return 1;
+        }
+      }
 
-
-      getBorderDash = function(datasetIndex) {
+      getBorderDash = function(datasetIndex, combinationDescription) {
         // offset if there is no headline data:
         if(!this.hasHeadline) {
           datasetIndex += 1;
@@ -1409,9 +1501,11 @@ var indicatorDataStore = function(dataUrl) {
 
         // 0 -
         // the first dataset is the headline:
-        return datasetIndex > colors.length ? [5, 5] : undefined;
+        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell']
+
+        return datasetIndex  > colors.length || dashedLines.indexOf(combinationDescription.substring(0, 17)) != -1 ? [5, 5] : undefined;
       },
-      convertToDataset = function (data, combinationDescription /*field, fieldValue*/) {
+      convertToDataset = function (data, combinationDescription, combination /*field, fieldValue*/) {
         // var fieldIndex = field ? _.findIndex(that.selectedFields, function (f) {
         //     return f === field;
         //   }) : undefined,
@@ -1451,6 +1545,8 @@ var indicatorDataStore = function(dataUrl) {
           ds = _.extend({
 
             label: combinationDescription ? combinationDescription : that.country,
+            disaggregation: combination,
+            order: getOrder(combinationDescription),
             //---#13 noLineForTargets---start-------------------------------
             borderColor: getBorderColor(combinationDescription,datasetIndexMod,that.indicatorId),//'#' + getColor(datasetIndexMod),
             //borderColor: getLineStyle(combinationDescription, datasetIndexMod),
@@ -1461,29 +1557,54 @@ var indicatorDataStore = function(dataUrl) {
             backgroundColor: getBackground(combinationDescription,datasetIndexMod),
             //---#4 sameColorForTargetAndTimeSeries---stop------------------
             //---#11 setTargetPointstyle---start---------------------------------------
-            pointStyle: getPointStyle(combinationDescription),
+            pointStyle: getPointStyle(datasetIndex, combinationDescription),
             //---#11 setTargetPointstyle---stop----------------------------------------
-            radius: 6,
+            radius: getRadius(datasetIndex, combinationDescription), //6,
+            pointRadius: getRadius(datasetIndex, combinationDescription),
             pointBorderColor: '#' + getColor(datasetIndexMod),
-            borderDash: getBorderDash(datasetIndex),
+            borderDash: getBorderDash(datasetIndex, combinationDescription),
+
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
                 Year: year
               });
+
+
               return found ? found.Value : null;
             }),
+
+
+            // data: _.map(that.years, function(year, index) {
+            //   return [year].concat(datasets.map(function(ds) {
+            //     if (typeof ds.data[index] === 'undefined') {
+            //       return null;
+            //     }
+            //     return ds.data[index];
+            //   }));
+            // }),
+
+
             //--#14 mixedCharts---start------------------------------------------------
             //type: getChartStyle(combinationDescription),
             //--#14 mixedCharts---stop-------------------------------------------------
             //--#14.1 barsOnly---start------------------------------------------------
             type: getChartStyle(that.indicatorId, combinationDescription),
             //--#14.1 barsOnly---stop-------------------------------------------------
-
-            stacked: getStacked(that.indicatorId),
-
+            // options:{
+            //     scales: {
+            //         xAxes: [{
+            //             stacked:  getStacked(that.indicatorId)
+            //         }],
+            //         yAxes: [{
+            //             stacked: getStacked(that.indicatorId)
+            //         }]
+            //       }
+            //     },
+            // //stacked: getStacked(that.indicatorId),
+            // stack: getStackGroup(that.indicatorId),
             borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
-
+        //console.log("DS: ",ds);
         datasetIndex++;
         return ds;
       };
@@ -1574,7 +1695,8 @@ var indicatorDataStore = function(dataUrl) {
         // but some combinations may not have any data:
         filteredDatasets.push({
           data: filtered,
-          combinationDescription: getCombinationDescription(combination)
+          combinationDescription: getCombinationDescription(combination),
+          combination: combination
         });
       }
     });
@@ -1587,7 +1709,7 @@ var indicatorDataStore = function(dataUrl) {
 
     _.chain(filteredDatasets)
       .sortBy(function(ds) { return ds.combinationDescription; })
-      .each(function(ds) { datasets.push(convertToDataset(ds.data, ds.combinationDescription)); });
+      .each(function(ds) { datasets.push(convertToDataset(ds.data, ds.combinationDescription, ds.combinations)); });
 
     // convert datasets to tables:
     var selectionsTable = {
@@ -1653,6 +1775,8 @@ var indicatorDataStore = function(dataUrl) {
         //------------------------------------------------
 
         //---#2.1 caseNoTimeSeriesInCsv---start-----------------------------------
+        //---4.3.21: No content but map title in maps
+        mapTitle: this.mapTitle,
         title: this.chartTitle,
         //---#2.1 caseNoTimeSeriesInCsv---stop------------------------------------
 
@@ -1762,14 +1886,14 @@ var mapView = function () {
   //this.initialise = function(geoData, geoCodeRegEx) {
   //this.initialise = function(geoData, geoCodeRegEx, goal) {
   //---#1 GoalDependendMapColor---stop---------------------------------------
-  this.initialise = function(geoData, geoCodeRegEx, goal, title, measurementUnit) {
+  this.initialise = function(geoData, geoCodeRegEx, goal, title, measurementUnit, mapTitle) { //, mapTitle
   //---#2.1 caseNoTimeSeriesInCsv---stop-------------------------------------
     $('.map').show();
     $('#map').sdgMap({
       geoData: geoData,
       geoCodeRegEx: geoCodeRegEx,
-      mapOptions: {"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":null,"accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1MGR4b3gwNWNzM2dzeGlkeWdkNmF5In0.7NmEzTzFKQVhdvc0Vvqv5w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2020</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2020</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0"},
-      mapLayers: [{"min_zoom":5,"max_zoom":15,"serviceUrl":"https://g205sdgs.github.io/sdg-indicators/assets/maps/Ländergrenzen_ohne_Seegrenzen.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":false}],
+      mapOptions: {"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":null,"accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1MGR4b3gwNWNzM2dzeGlkeWdkNmF5In0.7NmEzTzFKQVhdvc0Vvqv5w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2021</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2021</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0"},
+      mapLayers: [{"min_zoom":4.5,"max_zoom":7.5,"serviceUrl":"https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/diy_lan.geojson","nameProperty":"GEN","idProperty":"AGS","staticBorders":true},{"min_zoom":8,"max_zoom":11,"serviceUrl":"https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/maps/diy_krs.geojson","nameProperty":"GEN","idProperty":"ARS","staticBorders":true}],
       //---#1 GoalDependendMapColor---start--------------------------------------
       goal: goal,
       //---#1 GoalDependendMapColor---stop---------------------------------------
@@ -1777,6 +1901,7 @@ var mapView = function () {
       //---#2.2 footerUnitInMapLegend---start----------------------------------------------------------
       measurementUnit: measurementUnit,
       //---#2.2 footerUnitInMapLegend---stop-----------------------------------------------------------
+      mapTitle: mapTitle,
 
       title: title
     });
@@ -1938,7 +2063,8 @@ var indicatorView = function (model, options) {
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
       //---#1 GoalDependendMapColor---stop---------------------------
-      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title, args.measurementUnit); //---#2.2 footerUnitInMapLegend
+      console.log("Args: ", args);
+      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title, args.measurementUnit, args.mapTitle); //---#2.2 footerUnitInMapLegend  , args.mapTitle
       //---#2 TimeSeriesNameDisplayedInMaps---stop------------------
 
     }
@@ -2171,11 +2297,13 @@ var indicatorView = function (model, options) {
     // Create a temp object to alter, and then apply. We go to all this trouble
     // to avoid completely replacing view_obj._chartInstance -- and instead we
     // just replace it's properties: "type", "data", and "options".
+    //var updatedConfig = opensdg.chartConfigAlter({
     var updatedConfig = opensdg.chartConfigAlter({
       type: view_obj._chartInstance.type,
       data: view_obj._chartInstance.data,
       options: view_obj._chartInstance.options
     });
+
     view_obj._chartInstance.type = updatedConfig.type;
     view_obj._chartInstance.data = updatedConfig.data;
     view_obj._chartInstance.options = updatedConfig.options;
@@ -2219,7 +2347,7 @@ var indicatorView = function (model, options) {
           }]
         },
         legendCallback: function(chart) {
-            console.log("chart: ", chart);
+            //console.log("chart: ", chart);
             var text = ['<ul id="legend" style="text-align: left; padding-left: 0px">'];// #18.3 lengend entries on the left >>> var text = ['<ul id="legend">'];
 
             //---#18 structureLegendEntries---start------------------------------------
@@ -2234,8 +2362,9 @@ var indicatorView = function (model, options) {
                                   {old: 'Germany', new: 'AAA'},
                                   {old: 'Straftaten (insgesamt)', new: 'AAA'},
                                   {old: 'Criminal offences (total)', new: 'AAA'},
-                                  {old: 'Index (insgesamt)', new: 'AAA'},
-                                  {old: 'Index (overall)', new: 'AAA'}];
+                                  {old: 'Index insgesamt', new: 'AAA'},
+                                  {old: 'Index (overall)', new: 'AAA'},
+                                  {old: 'Berechnete jährliche Werte', new: 'AAA'}];
 
             var sorted = temp.sort(function(a, b) {
               var sub = a.label.substr(0,4);
@@ -2259,7 +2388,7 @@ var indicatorView = function (model, options) {
 
               return (subA > subB) - (subA < subB);
             });
-
+            console.log('Sorted:',sorted);
             //^^^^ #18.1 ^^^^
             _.each(sorted, function(dataset) { //#18.2 use the sorted dataset instead of the original >>> _.each(chart.data.datasets, function(dataset, datasetIndex) {
 
@@ -2274,6 +2403,8 @@ var indicatorView = function (model, options) {
               var replace = [{old: '2,5', new: '2.5'},
                             {old: 'Siedlungsfläche: Wohnbau, Industrie und Gewerbe (ohne Abbauland), Öffentliche Einrichtungen', new: 'Siedlungsfläche: Wohnbau Industrie und Gewerbe (ohne Abbauland) Öffentliche Einrichtungen'},
                             {old: 'Siedlungsfläche: Sport-, Freizeit-, und Erholungsfläche, Friedhof', new: 'Siedlungsfläche: Sport- Freizeit- und Erholungsfläche Friedhof'},
+                            {old: 'Sport-, Freizeit- und Erholungsfläche, Friedhof', new: 'Sport- Freizeit- und Erholungsfläche Friedof'},
+                            {old: 'Wohnbau, Industrie und Gewerbe (ohne Abbauland), Öffentliche Einrichtungen', new: 'Wohnbau Industrie und Gewerbe (ohne Abbauland) Öffentliche Einrichtungen'},
                             {old: 'Konsum, Investitionen und Exporte', new: 'Konsum Investitionen und Exporte'},
                             {old: 'Entwicklungszusammenarbeit, deren', new: 'Entwicklungszusammenarbeit deren'},
                             {old: 'Moving five-year average, referring to the middle year', new: 'Moving five-year average referring to the middle year'},
@@ -2308,9 +2439,18 @@ var indicatorView = function (model, options) {
 
               //---#3 targetDifferentInLegend---start----------------------------------------------------------------------------------------------------------------------------
               //text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
+              dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell']
               if (dataset.label.substr(0,4) == 'Ziel' || dataset.label.substr(0,6) == 'Target'){
                 if (dataset.type != 'bar'){
-                  text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                  //edit legend for dashed target lines
+                  if (dashedLines.indexOf(dataset.label.substring(0,17)) != -1){
+                    text.push('<span class="swatchTgtLine dashed" style="background-color: ' + dataset.pointBorderColor + '"></span>');
+                  }
+                  else {
+                    text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                  }
+                  //text.push('<span class="swatchTgt' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
+                  //
                 }
                 else{
                   text.push('<span class="swatchTgtBar' + '" style="border-color: ' + dataset.pointBorderColor + '"></span>');
@@ -2350,7 +2490,7 @@ var indicatorView = function (model, options) {
       }
     };
     chartConfig = opensdg.chartConfigAlter(chartConfig);
-
+    //console.log(chartInfo);
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), chartConfig);
     Chart.pluginService.register({
@@ -2496,10 +2636,18 @@ var indicatorView = function (model, options) {
 
 
   this.createSelectionsTable = function(chartInfo) {
+    console.log("chartInfo:", chartInfo);
     //---#19 addUnitToTableHeaderIfNeeded---start---------------------------------------------------
     //---Edit from 26.10.20: Add Unit to table heading
     //var tableUnit = (chartInfo.selectedUnit && !chartInfo.footerFields[translations.indicator.unit_of_measurement]) ? translations.t(chartInfo.selectedUnit) : '';
-    var tableUnit = chartInfo.footerFields[translations.indicator.unit_of_measurement];
+    //var tableUnit = (chartInfo.indicatorId == 'indicator_6-1-b' || chartInfo.indicatorId == 'indicator_6-1-a') ? '' : ' (' + chartInfo.footerFields[translations.indicator.unit_of_measurement] + ')';
+    if (chartInfo.indicatorId ===  'indicator_8-2-ab'){
+      var tableUnit = '<br><small>in %</small>';
+    }
+    else{
+      var tableUnit =  '<br><small>' + chartInfo.footerFields[translations.indicator.unit_of_measurement] + '</small>';
+    }
+
     //this.createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', true);
     this.createTable(chartInfo.selectionsTable, tableUnit, chartInfo.indicatorId, '#selectionsTable', true);
     //---#19 addUnitToTableHeaderIfNeeded---stop----------------------------------------------------
@@ -2582,7 +2730,7 @@ var indicatorView = function (model, options) {
       });
 
       //---Edit from 26.10.2020: Add Unit to table headings
-      currentTable.append('<caption>' + that._model.chartTitle + ' (' + tableUnit + ')</caption>');
+      currentTable.append('<caption>' + that._model.chartTitle +  tableUnit + '</caption>');
 
       var table_head = '<thead><tr>';
 
@@ -2942,6 +3090,7 @@ $(function() {
     initialize: function(plugin) {
       this.selections = [];
       this.plugin = plugin;
+
     },
 
     addSelection: function(selection) {
@@ -2960,11 +3109,18 @@ $(function() {
     },
 
     onAdd: function() {
-      //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
+      //---#2 TimeSeriesNameDisplayedInMaps---start-----------Disabled an 1.3.21----------------------------------
       //var controlTpl = '' +
-      var controlTpl = '<span id="mapHead">{title}</span>' +
+      if (this.plugin.mapTitle == ''){
+        var controlTpl = ''
+      }
+      else{
+        var controlTpl = '<span id="mapHead">{title}</span>'
+      }
+      //var controlTpl = '<span id="mapHead">{title}</span>' +
+      
       //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
-        '<ul id="selection-list"></ul>' +
+        controlTpl += '<ul id="selection-list"></ul>' +
         '<div class="legend-swatches">' + //bar
           '{legendSwatches}' +
         '</div>' +
@@ -2988,28 +3144,32 @@ $(function() {
       }).join('');
       var div = L.DomUtil.create('div', 'selection-legend');
 
+      console.log("Plugin: ", this.plugin);
+
       //---#2 TimeSeriesNameDisplayedInMaps---start--------------------------------------------------------------
-      var headline = this.plugin.title
-      if (this.plugin.timeSeriesName){
-        headline += ', <br>' + this.plugin.timeSeriesName;
-      }
-      if (this.plugin.sexName){
-        headline += ', <br>' + this.plugin.sexName;
-      }
-      if (this.plugin.ageName){
-        headline += ', <br>' + this.plugin.ageName;
-      }
-      if (this.plugin.typificationName){
-        headline += ', <br>' + this.plugin.typificationName;
-      }
-      if (this.plugin.criminalOffenceName){
-        headline += ', <br>' + this.plugin.criminalOffenceName;
-      }
-      headline += ', <br>' + this.plugin.unitName;
+      //---4.3.21: No content but map title in maps
+      var headline = this.plugin.mapTitle
+      // var headline = this.plugin.title
+      // if (this.plugin.timeSeriesName){
+      //   headline += ', <br>' + this.plugin.timeSeriesName;
+      // }
+      // if (this.plugin.sexName){
+      //   headline += ', <br>' + this.plugin.sexName;
+      // }
+      // if (this.plugin.ageName){
+      //   headline += ', <br>' + this.plugin.ageName;
+      // }
+      // if (this.plugin.typificationName){
+      //   headline += ', <br>' + this.plugin.typificationName;
+      // }
+      // if (this.plugin.criminalOffenceName){
+      //   headline += ', <br>' + this.plugin.criminalOffenceName;
+      // }
+      // headline += ', <br>' + this.plugin.unitName;
       //---#2 TimeSeriesNameDisplayedInMaps---stop---------------------------------------------------------------
 
       div.innerHTML = L.Util.template(controlTpl, {
-        lowValue: this.plugin.valueRange[0],
+        lowValue: this.plugin.valueRange[0], // + ' ' + this.plugin.unitName,
         highValue: this.plugin.valueRange[1],
         legendSwatches: swatches,
 
