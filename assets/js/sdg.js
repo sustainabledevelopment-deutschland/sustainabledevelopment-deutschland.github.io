@@ -1328,7 +1328,10 @@ var indicatorDataStore = function(dataUrl) {
       },
       //---#11 setTargetPointstyle---start-----------------------------------------------------------------------------------------------
       getPointStyle = function (datasetIndex, combinationDescription) {
-        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell']
+        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser',
+                        'Target, (a) Acces', 'Target, (b) Acces', 'Target, Access to',
+                        'Ziel, Finanzierun','Ziel, Strukturell',
+                        'Target, Financial','Target, Structura']
         if (String(combinationDescription).substr(0,4) == 'Ziel' || String(combinationDescription).substr(0,6) == 'Target'){
           return dashedLines.indexOf(combinationDescription.substr(0,17)) == -1 ? 'rect' : 'false';
         }
@@ -1382,7 +1385,7 @@ var indicatorDataStore = function(dataUrl) {
           return '#ffffff';
         }
         else{
-          var color = '#' + getColor(datasetIndex);
+          var color = '#' + getColor(datasetIndexMod);
           return datasetIndex >= colors.length ? pattern.draw('line', color) : color;
           //return '#' + getColor(datasetIndexMod);
         }
@@ -1501,7 +1504,11 @@ var indicatorDataStore = function(dataUrl) {
 
         // 0 -
         // the first dataset is the headline:
-        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell']
+        dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser',
+                        'Ziel, Finanzierun','Ziel, Strukturell'
+                        ,'Target, (a) Acces','Target, (b) Acces','Target, Access to',
+                        'Target, Financial','Target, Structura',
+                        ]
 
         return datasetIndex  > colors.length || dashedLines.indexOf(combinationDescription.substring(0, 17)) != -1 ? [5, 5] : undefined;
       },
@@ -1604,7 +1611,7 @@ var indicatorDataStore = function(dataUrl) {
             // stack: getStackGroup(that.indicatorId),
             borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
-        //console.log("DS: ",ds);
+        console.log("DS: ",ds);
         datasetIndex++;
         return ds;
       };
@@ -2439,7 +2446,8 @@ var indicatorView = function (model, options) {
 
               //---#3 targetDifferentInLegend---start----------------------------------------------------------------------------------------------------------------------------
               //text.push('<span class="swatch' + (dataset.borderDash ? ' dashed' : '') + '" style="background-color: ' + dataset.backgroundColor + '">');
-              dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell']
+              dashedLines = ['Ziel, Sanitärvers','Ziel, Trinkwasser','Ziel, Finanzierun','Ziel, Strukturell'
+                              ,'Target, Sanitärve','Target, Trinkwass','Target, Finanzier','Target, Strukture']
               if (dataset.label.substr(0,4) == 'Ziel' || dataset.label.substr(0,6) == 'Target'){
                 if (dataset.type != 'bar'){
                   //edit legend for dashed target lines
