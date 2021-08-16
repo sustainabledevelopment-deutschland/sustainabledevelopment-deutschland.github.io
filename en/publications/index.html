@@ -93,13 +93,13 @@ var translations = {
         <!---#15 setCorrectTitle---start-------------------->
         <title>
           
-            Indikatoren zur Nachhaltigkeitsstrategie für Deutschland
+            Indicators on the German Sustainability Strategy
           
         </title>
         <!---#15 setCorrectTitle---stop--------------------->
 
         
-          <meta name="description" content= "Übersichtlicher Stand der Indikatoren der 17 Sustainable Development Goals (SDGs) in Deutschland samt öffentlich zur Verfügung stehender Datengrundlage" >
+          <meta name="description" content= "Current status of the national indicators for the 17 Sustainable Development Goals (SDGs) in Germany with a publicly available data basis" >
         
 
         <meta property="og:description" content="">
@@ -135,7 +135,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20210816075937">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20210816113315">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -143,22 +143,22 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210816075937"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210816113315"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-de layout-page">
+<body class="language-en layout-page">
 <!-- <div class="container"> -->
 
 
 
-<script>translations['header'] = {"alpha":"Alpha-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_address\">Kommentare</a>.","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Alpha","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
   <div class="container">
   <div class="alert alert-danger" role="alert">
-    <strong class="phase-tag">Alpha-Version</strong>
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:DNS-Indikatoren@destatis.de">Kommentare</a>.
+    <strong class="phase-tag">Alpha</strong>
+    This is a development website. We welcome your <a href="mailto:DNS-Indikatoren@destatis.de">feedback</a>.
   </div>
 </div>
 
@@ -167,19 +167,19 @@ var translations = {
 <header role="banner">
   <div class="container">
 
-    <a class="navbar-brand" href="/" id="home">
-      <img src="/assets/img/dns_logo.png" alt="Nachhaltige Entwicklung in Deutschland - " />
+    <a class="navbar-brand" href="/en/" id="home">
+      <img src="/assets/img/dns_logo.png" alt="Sustainable development in Germany - 17 Goals to Transform our World" />
     </a>
 
   <div class='hidden visible-xs float-right'>
     <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
       <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">Deutsch</span>
+  <span class="language-toggle-text">English</span>
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-<ul class="language-options language-toggle"><li><a href="/en/facts_publications/">English</a></li></ul>
+<ul class="language-options language-toggle"><li><a href="/publications/">Deutsch</a></li></ul>
 
     </div></div>
 
@@ -191,53 +191,53 @@ var translations = {
             aria-haspopup="true"
             aria-expanded="false">
           <span data-target="menu" tabindex="0"
-          role="navigation">Menü</span>
+          role="navigation">Menu</span>
         </li>
-        <li><span data-target="search">Suche</span></li>
+        <li><span data-target="search">Search</span></li>
       </ul>
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-              <li class="nav-link ">
-                <a href="/">17 Ziele</a>
+              
+                <li class="nav-link ">
+                  <a href="/en/">17 Goals</a>
+                </li>
+              
+            
+              <li class="nav-link  hidden-sm hidden-md hidden-lg">
+                <a href="/en/status_summary">Status - Summary</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/status_summary">Status - Übersicht</a>
+                <a href="/en/status">Status - Methodology</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/status">Status - Methodik</a>
+                <a href="/en/about/">DNS&nbsponline&nbspplatform</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
+                <a href="/en/guidance/">Technical&nbspinstructions</a>
               </li>
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/guidance/">Technische&nbspHinweise</a>
+                <a href="/en/facts_agenda/">2030 Agenda</a>
               </li>
             
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/facts_agenda/">Agenda 2030</a>
-              </li>
-            
-              <li class="nav-link active hidden-sm hidden-md hidden-lg">
-                <a href="/facts_publications/">Publikationen</a>
-              </li>
+              
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Bewertung</span>
+            <span class="status-toggle-text">Evaluation</span>
             <i class="status-toggle fa fa-chevron-down"></i>
             <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/status_summary">Übersicht</a>
+                    <a href="/en/status_summary">Summary</a>
                   </li>
                 
                   <li class="nav-link ">
-                    <a href="/status">Methodik</a>
+                    <a href="/en/status">Methodology</a>
                   </li>
                 </ul>
         </li>
@@ -245,17 +245,17 @@ var translations = {
         <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Über uns</span>
+            <span class="status-toggle-text">About</span>
             <i class="status-toggle fa fa-chevron-down"></i>
             <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/about/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
+                    <a href="/en/about/">DNS&nbsponline&nbspplatform</a>
                   </li>
                 
                   <li class="nav-link ">
-                    <a href="/guidance/">Technische&nbspHinweise</a>
+                    <a href="/en/guidance/">Technical&nbspinstructions</a>
                   </li>
                 </ul>
         </li>
@@ -263,42 +263,40 @@ var translations = {
         <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Wissenswertes</span>
+            <span class="status-toggle-text">Useful information</span>
             <i class="status-toggle fa fa-chevron-down"></i>
             <!--<i class="status-toggle fa fa-chevron-up" style="display:none;"></i>-->
           </a>
           <ul class="status-options status-toggle">
                   <li class="nav-link ">
-                    <a href="/facts_agenda/">Agenda 2030</a>
-                  </li>
-                
-                  <li class="nav-link active">
-                    <a href="/facts_publications/">Publikationen</a>
+                    <a href="/en/facts_agenda/">2030 Agenda</a>
                   </li>
                 </ul>
-        </li><li>
+        </li><li class="nav-link ">
+              <a href="/en/publications/">Publications</a>
+            </li><li>
           <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">Deutsch</span>
+  <span class="language-toggle-text">English</span>
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-<ul class="language-options language-toggle"><li><a href="/en/facts_publications/">English</a></li></ul>
+<ul class="language-options language-toggle"><li><a href="/publications/">Deutsch</a></li></ul>
 
         </li><!---#17 addLinkToOtherPage---start------------>
         <li class="nav-link">
-          <a href="https://sustainabledevelopment-germany.github.io//">
-            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Zur Seite der globalen Indikatoren" alt="Link SDG" style="width:24px;height:24px;"/>
-            <span class="hidden-sm hidden-md hidden-lg">SDG-Berichtsplattform</span>
+          <a href="https://sustainabledevelopment-germany.github.io/en/">
+            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="To the page of the global indicators" alt="Link SDG" style="width:24px;height:24px;"/>
+            <span class="hidden-sm hidden-md hidden-lg">SDG-platform</span>
           </a>
         </li>
         <!---#17 addLinkToOtherPage---stop------------->
       </ul>
 
       <div id="search" class="menu-target">
-  <input id="indicator_search" title="Indikatorensuche" placeholder="Indikatorensuche" data-url="/indicators.json" data-pageurl="/search/?q=" />
+  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/en/indicators.json" data-pageurl="/en/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indikatorensuche></i></button><span>Suche:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -309,52 +307,48 @@ var translations = {
 
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Publikationen</h1>
-        <h3 id="indikatorenberichte">Indikatorenberichte</h3>
+        <h1>Publications</h1>
+        <h3 id="indicator-reports">Indicator reports</h3>
 <p><br />
-<a href="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/reports/de/2021.pdf">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2021</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2018.pdf">Sustainable Development in Germany - Indicator report  2018</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00089372">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2018</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2016.pdf">Sustainable Development in Germany - Indicator report  2016</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00066907">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2016</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2014.pdf">Sustainable Development in Germany - Indicator report  2014</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00023410">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2014</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2012.pdf">Sustainable Development in Germany - Indicator report  2012</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010546">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2012</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2010.pdf">Sustainable Development in Germany - Indicator report  2010</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010549">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2010</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2008.pdf">Sustainable Development in Germany - Indicator report  2008</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010552">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2008</a>
-<br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010555">Nachhaltige Entwicklung in Deutschland - Indikatorenbericht 2006</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/2006.pdf">Sustainable Development in Germany - Indicator report  2006</a>
 <br /><br /></p>
-<h3 id="daten-zum-indikatorenbericht">Daten zum Indikatorenbericht</h3>
+<h3 id="data-on-the-indicator-report">Data on the indicator report</h3>
 <p><br />
-<a href="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/reports/de/daten2021.pdf">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2021</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/daten2018.pdf">Sustainable Development in Germany - Data on the Indicator report 2018</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132993">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2018</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/daten2016.pdf">Sustainable Development in Germany - Data on the Indicator report 2016</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00132992">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2016</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/daten2014.pdf">Sustainable Development in Germany - Data on the Indicator report 2014</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00067001">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2014</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/daten2012.pdf">Sustainable Development in Germany - Data on the Indicator report 2012</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010558">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2012</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/daten2010.pdf">Sustainable Development in Germany - Data on the Indicator report 2010</a>
 <br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010572">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2010</a>
-<br /><br />
-<a href="https://www.statistischebibliothek.de/mir/receive/DEHeft_mods_00010568">Nachhaltige Entwicklung in Deutschland - Daten zum Indikatorenbericht 2008</a>
+<a href="https://dns-indikatoren.de/assets/publications/reports/en/daten2008.pdf">Sustainable Development in Germany - Data on the Indicator report 2008</a>
 <br /><br /></p>
-<h3 id="auszug-aus-der-publikation-wista---wirtschaft-und-statistik-12017">Auszug aus der Publikation “WISTA - Wirtschaft und Statistik”, 1/2017</h3>
+<h3 id="extract-from-the-publication-wista---economy-and-statistics-12017">Extract from the publication “WISTA - Economy and Statistics”, 1/2017</h3>
 <p><br />
-<a href="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/wista2017_01.pdf">Neuauflage der deutschen Nachhaltigkeitsstrategie</a>
+<a href="https://dns-indikatoren.de/assets/publications/wista2017_01.pdf">New edition of the German sustainability strategy (only available in German)</a>
 <br /><br /></p>
-<h3 id="machbarkeitsstudie-zur-darstellung-der-indikatoren">Machbarkeitsstudie zur Darstellung der Indikatoren</h3>
+<h3 id="feasibility-study-for-the-presentation-of-the-indicators">Feasibility study for the presentation of the indicators</h3>
 <p><br />
-<a href="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/machbarkeitsstudie.pdf">Machbarkeitsstudie zur Darstellung der Indikatorender Deutschen Nachhaltigkeitsstrategie nach Bundesländern</a>
+<a href="https://dns-indikatoren.de/assets/publications/machbarkeitsstudie.pd">Feasibility study for the presentation of indicators of German sustainability strategies by federal states (only available in German)</a>
 <br /><br /></p>
-<h3 id="sonderauswertung-für-ausgewählte-indikatoren-nach-gebietsstand">Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand</h3>
+<h3 id="special-evaluation-for-selected-indicators-by-territorial-status">Special evaluation for selected indicators by territorial status</h3>
 <p><br />
-<a href="https://nachhaltige-entwicklung-deutschland.github.io/open-sdg-site-starter/assets/publications/DNS_Sonderauswertung_2021.pdf">Sonderauswertung für ausgewählte Indikatoren nach Gebietsstand</a></p>
+<a href="https://dns-indikatoren.de/assets/publications/DNS_Sonderauswertung_2021.pdf">Special evaluation for selected indicators by territorial status (only available in German)</a></p>
 
     </div>
 </div>
@@ -364,12 +358,12 @@ var translations = {
     <div class="row">
       <div class="col-xs-9">
         
-          <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank">Seite basiert auf Open SDG</a> | <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
+          <a href="https://open-sdg.readthedocs.io/en/latest/" target="_blank">Site built using Open SDG</a> | <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=en" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
         
 
       </div>
       <div class="col-xs-3 text-right">
-        <a href="/imprint/">Im­pres­s­um</a>
+        <a href="/en/imprint/">Legal Notice</a>
       </div>
     </div>
   </div>
@@ -397,7 +391,7 @@ var translations = {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20210816075937'></script><script src="/assets/js/chartColors.js?v=20210816075937"></script><script>
+<script src='/assets/js/sdg.js?v=20210816113315'></script><script src="/assets/js/chartColors.js?v=20210816113315"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

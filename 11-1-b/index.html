@@ -149,7 +149,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20210816075937">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20210816113315">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -157,7 +157,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210816075937"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210816113315"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -211,9 +211,11 @@ var translations = {
       </ul>
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-              <li class="nav-link ">
-                <a href="/">17 Ziele</a>
-              </li>
+              
+                <li class="nav-link ">
+                  <a href="/">17 Ziele</a>
+                </li>
+              
             
               <li class="nav-link  hidden-sm hidden-md hidden-lg">
                 <a href="/status_summary">Status - Übersicht</a>
@@ -235,9 +237,7 @@ var translations = {
                 <a href="/facts_agenda/">Agenda 2030</a>
               </li>
             
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/facts_publications/">Publikationen</a>
-              </li>
+              
             <li class="nav-link visible-sm visible-md visible-lg">
           <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;" style="margin-right: 0px;">
             <!--<i class="fa fa-globe"></i>-->
@@ -285,12 +285,10 @@ var translations = {
                   <li class="nav-link ">
                     <a href="/facts_agenda/">Agenda 2030</a>
                   </li>
-                
-                  <li class="nav-link ">
-                    <a href="/facts_publications/">Publikationen</a>
-                  </li>
                 </ul>
-        </li><li>
+        </li><li class="nav-link ">
+              <a href="/publications/">Publikationen</a>
+            </li><li>
           <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
   <span class="language-toggle-text">Deutsch</span>
@@ -957,7 +955,7 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/de4131981c813cd273f07f79203047bffa45256b" target="_blank">
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/09fc9a5e6b05000fa65b52151cc37855739dac24" target="_blank">
                     2021-08-16: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
@@ -3407,17 +3405,6 @@ data-event-label="Change to Sources tab"
 
           
 
-            <th scope="row" height="" ></th>
-
-            <td colspan="4">
-              
-                <p><a href="https://www.bbsr.bund.de/BBSR/DE/startseite/_node.html">Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR)</a></p>
-
-              
-            </td>
-
-          
-
         
       </tr>
       
@@ -3439,6 +3426,17 @@ data-event-label="Change to Sources tab"
       
       <tr>
         
+
+          
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p><a href="https://www.bbsr.bund.de/BBSR/DE/startseite/_node.html">Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR)</a></p>
+
+              
+            </td>
 
           
 
@@ -3995,17 +3993,6 @@ data-event-label="Change to Sources tab"
 
           
 
-            <th scope="row" height="" ></th>
-
-            <td colspan="4">
-              
-                <p><a href="https://www.thuenen.de/de/">Johann Heinrich von Thünen-Institut (TI)</a></p>
-
-              
-            </td>
-
-          
-
         
       </tr>
       
@@ -4027,6 +4014,17 @@ data-event-label="Change to Sources tab"
       
       <tr>
         
+
+          
+
+            <th scope="row" height="" >Organisation</th>
+
+            <td colspan="4">
+              
+                <p><a href="https://www.thuenen.de/de/">Johann Heinrich von Thünen-Institut (TI)</a></p>
+
+              
+            </td>
 
           
 
@@ -4253,7 +4251,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20210816075937'></script><script src="/assets/js/chartColors.js?v=20210816075937"></script><script>
+<script src='/assets/js/sdg.js?v=20210816113315'></script><script src="/assets/js/chartColors.js?v=20210816113315"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
