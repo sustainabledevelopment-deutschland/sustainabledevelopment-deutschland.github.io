@@ -149,7 +149,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20220627125921">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20220818140230">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -157,7 +157,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20220627125921"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20220818140230"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-de layout-indicator">
@@ -505,8 +505,8 @@ var translations = {
   
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_17-3-a' data-id="17-3-a" data-country="Deutschland"
-  data-charttitle="Einfuhren aus am wenigsten entwickelten Ländern (LDCs)" data-measurementunit="Anteil an den gesamten Einfuhren nach Deutschland, in&nbsp;%" data-datasource="Statistisches Bundesamt" data-copyright="&copy; Statistisches Bundesamt (Destatis), 2022"
-  data-geographicalarea="Deutschland" data-footnote="2019 vorläufige Daten. LDCs = Am wenigsten entwickelte Länder (Least Developed Countries). Die Daten basieren auf einer Sonderauswertung." data-showdata="true" data-graphtype="line"
+  data-charttitle="Einfuhren aus am wenigsten entwickelten Ländern (LDCs)" data-measurementunit="Anteil an den gesamten Einfuhren, in&nbsp;%" data-datasource="Statistisches Bundesamt" data-copyright="&copy; Statistisches Bundesamt (Destatis), 2022"
+  data-geographicalarea="Deutschland" data-footnote="Die Daten basieren auf einer Sonderauswertung. 2021 vorläufige Daten. LDCs = Am wenigsten entwickelte Länder (Least Developed Countries)." data-showdata="true" data-graphtype="line"
   data-geocoderegex="" data-showmap="" data-startvalues="a) time series|b) target (min)|imports from ldcs" data-maptitle="">
     
     <div id="indicator-sidebar" class="col-md-3">
@@ -626,12 +626,32 @@ data-event-label="Change to Map tab"
           Einfuhren aus am wenigsten entwickelten Ländern (LDCs)
           
             <br>
-            <small>Anteil an den gesamten Einfuhren nach Deutschland, in&nbsp;%</small>
+            <small>Anteil an den gesamten Einfuhren, in&nbsp;%</small>
           
         </h3>
         <div id="chart" class="plot-container">
           
 <canvas></canvas>
+
+  <script>
+    opensdg.chartConfigAlter = function(config) {
+      var overrides = {
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                min: 0.0,
+                max: 1.6
+              }
+            }]
+          }
+        }
+      }
+      // Add these overrides onto the normal config, and return it.
+      $.extend(true, config, overrides);
+      return config;
+    }
+  </script>
 
 
         </div>
@@ -654,7 +674,7 @@ data-event-label="Change to Map tab"
                 <h3 class="chart-title">
                   Einfuhren aus am wenigsten entwickelten Ländern (LDCs)
                   <br>
-                  <small>Anteil an den gesamten Einfuhren nach Deutschland, in&nbsp;%</small>
+                  <small>Anteil an den gesamten Einfuhren, in&nbsp;%</small>
                 </h3>
               </div>
               <div id="map">
@@ -908,8 +928,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/17142c7eeb11e340b9af4fd4485a3edc4f7841f9" target="_blank">
-                    2021-03-08: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/2257f00bcf0ce4afbf0e25eabc83f576db4853eb" target="_blank">
+                    2022-08-17: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -952,8 +972,8 @@ data-event-label="Change to Sources tab"
                 
 
                 
-                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/5b7749f4b2989dee551fc2e9580df5bb1bd02a5a" target="_blank">
-                    2022-02-09: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  <a href="https://github.com/Nachhaltige-Entwicklung-Deutschland/open-sdg-data-starter/commit/2257f00bcf0ce4afbf0e25eabc83f576db4853eb" target="_blank">
+                    2022-08-17: see changes on GitHub <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
                 
 
@@ -2863,6 +2883,26 @@ data-event-label="Change to Sources tab"
 
           
 
+            <th scope="row" height="" >Datenquelle</th>
+
+            <td colspan="4">
+              
+                
+                
+                
+                
+
+                
+                  <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=51000-0001" target="_blank">
+                    Aus- und Einfuhr (Außenhandel) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                  </a>
+                
+
+              
+            </td>
+
+          
+
         
       </tr>
       
@@ -3160,7 +3200,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20220627125921'></script><script src="/assets/js/chartColors.js?v=20220627125921"></script><script>
+<script src='/assets/js/sdg.js?v=20220818140230'></script><script src="/assets/js/chartColors.js?v=20220818140230"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();

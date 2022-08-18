@@ -1340,7 +1340,7 @@ var indicatorDataStore = function(dataUrl) {
         }
       },
       getRadius = function(datasetIndex, combinationDescription){
-        return getPointStyle(datasetIndex, combinationDescription) == 'circle' || getPointStyle(datasetIndex, combinationDescription) == 'rect' ? 5 : 0
+        return getPointStyle(datasetIndex, combinationDescription) == 'circle' ? 5 : getPointStyle(datasetIndex, combinationDescription) == 'rect' ? 8 : 0
       },
       //---#11 setTargetPointstyle---stop-----------------------------------------------------------------------------------------------
 
@@ -1457,6 +1457,7 @@ var indicatorDataStore = function(dataUrl) {
                     translations.t('a) time series') + ', ' + translations.t('e) sub-index coasts/seas'),
                     translations.t('b) target (min)') + ', ' + translations.t('f) index overall'),
                     translations.t('a) time series') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks'),
+                    translations.t('b) target (min)') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks'),
                     translations.t('a) time series') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks') + ', ' + translations.t('north sea'),
                     translations.t('a) time series') + ', ' + translations.t('proportion of sustainable managed stocks in all msy examined stocks') + ', ' + translations.t('baltic sea')];//14.1.b
                     // translations.t('a) time series') + ', ' + translations.t('sub-index forests'),//15.1.a,
@@ -2070,7 +2071,7 @@ var indicatorView = function (model, options) {
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
       //view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr);
       //---#1 GoalDependendMapColor---stop---------------------------
-      console.log("Args: ", args);
+
       view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx, goalNr, args.title, args.measurementUnit, args.mapTitle); //---#2.2 footerUnitInMapLegend  , args.mapTitle
       //---#2 TimeSeriesNameDisplayedInMaps---stop------------------
 
@@ -2426,7 +2427,8 @@ var indicatorView = function (model, options) {
               var exc = 0;
               var exceptions = ['Deutschland', 'Germany',
                                 'Insgesamt', 'Total',
-                                'Index insgesamt', 'Index overall'];
+                                'Index insgesamt', 'Index overall',
+                                'EU'];
               for (var j=0; j<exceptions.length; j++){
                 if (label.indexOf(exceptions[j]) != -1){
                   exc += 1;
@@ -2652,7 +2654,7 @@ var indicatorView = function (model, options) {
     if (chartInfo.indicatorId ===  'indicator_8-2-ab'){
       var tableUnit = '<br><small>in %</small>';
     }
-    else{
+    else if( chartInfo.footerFields[translations.indicator.unit_of_measurement]){
       var tableUnit =  '<br><small>' + chartInfo.footerFields[translations.indicator.unit_of_measurement] + '</small>';
     }
 
@@ -2738,7 +2740,12 @@ var indicatorView = function (model, options) {
       });
 
       //---Edit from 26.10.2020: Add Unit to table headings
-      currentTable.append('<caption>' + that._model.chartTitle +  tableUnit + '</caption>');
+      if(tableUnit){
+        currentTable.append('<caption>' + that._model.chartTitle +  tableUnit + '</caption>');
+      } else {
+        currentTable.append('<caption>' + that._model.chartTitle + '</caption>');
+      }
+      //currentTable.append('<caption>' + that._model.chartTitle +  tableUnit + '</caption>');
 
       var table_head = '<thead><tr>';
 
@@ -2767,7 +2774,7 @@ var indicatorView = function (model, options) {
           var isUnits = (heading.toLowerCase() == 'units');
           var cell_prefix = (isYear) ? '<th scope="row"' : '<td';
           var cell_suffix = (isYear) ? '</th>' : '</td>';
-          row_html += cell_prefix + (isYear || isUnits ? '' : ' class="table-value"') + '>' + (data[index] !== null ? data[index] : '-') + cell_suffix;
+          row_html += cell_prefix + (isYear || isUnits ? '' : ' class="table-value"') + '>' + (data[index] !== null ? data[index] : '') + cell_suffix;
         });
         row_html += '</tr>';
         currentTable.find('tbody').append(row_html);
