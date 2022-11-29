@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -11,27 +11,39 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://sustainabledevelopment-deutschland.github.io/sdg-data-pub',
+  remoteDataBaseUrl: 'https://sustainabledevelopment-deutschland.github.io/sdg-data-pub/en',
 
-  // A hook which can be replaced to modify the configuration for Chart.js.
-  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
-  // To see an example of replacing it, see binary.html.
-  chartConfigAlter: function(config) {
-    // Alterations go here.
-    return config;
+  chartConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Chart.js.
+  chartConfigAlter: function(callback) {
+    this.chartConfigAlterations.push(callback);
+  },
+
+  tableConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Datatables.
+  tableConfigAlter: function(callback) {
+    this.tableConfigAlterations.push(callback);
   },
 
   // A hook which can be replaced to alter whether/how the values that are
-  // displayed on indicator tables/graphs get rounded.
-  dataRounding: function(value) {
+  // displayed on indicator tables/graphs get rounded. A "context" parameter
+  // is also passed which contains additional information.
+  dataRounding: function(value, context) {
     // Alterations go here.
     return value;
   },
-};
 
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+  // A hook which can be used to alter the data before it is displayed on charts/tables.
+  dataDisplayAlterations: [],
+  dataDisplayAlter: function(callback) {
+    this.dataDisplayAlterations.push(callback);
+  },
+
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
+  language: 'en',
+};
 
 </script>
 
@@ -90,262 +102,269 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
 
-        <!---#15 setCorrectTitle---start-------------------->
-        <title>
-          
-            Indicators on the German Sustainability Strategy
-          
-        </title>
-        <!---#15 setCorrectTitle---stop--------------------->
-
         
-          <meta name="description" content= "Current status of the national indicators for the 17 Sustainable Development Goals (SDGs) in Germany with a publicly available data basis" >
-        
+    <title>About - Indicators of the German Sustainable Development Strategy</title>
 
+
+
+        <meta name="description" content="">
         <meta property="og:description" content="">
         
         <link rel="canonical" href="/">
-
-        
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        <!-- Favicons ================================================== -->
-        <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
-        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-        -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
+
 
         
-
-        
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200114131455">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20221129094010">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200114131455"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
+        
+
+        <!--[if IE]>
+        <link rel="stylesheet" href="/assets/css/ie.css">
+        <![endif]-->
+
+        
 
     </head>
-<body class="language-en layout-page">
+<body class="language-en
+layout-page
+">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha","disclaimer":"This is a development website. We welcome your <a href=\"mailto:DNS-Indikatoren@destatis.de\">feedback</a>.","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+<script>translations['header'] = {"alpha":"Alpha","beta":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
+    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.</p>
+</div>
 <div id="disclaimer">
-  <div class="container">
-  <div class="alert alert-danger" role="alert">
-    <strong class="phase-tag">Alpha</strong>
-    This is a development website. We welcome your <a href="mailto:DNS-Indikatoren@destatis.de">feedback</a>.
+    
+<div class="container">
+  <div class="disclaimer-alert">
+    <strong class="phase-tag">beta</strong>
+    
+    This is a development website. We welcome your <a href="mailto:dns-indikatoren@destatis.de">feedback</a>.
+    
   </div>
 </div>
 
 </div>
 
-<header role="banner">
-  <div class="container">
-
-    <a class="navbar-brand" href="/en/" id="home">
-      <img src="/assets/img/dns_logo.png" alt="Sustainable development in Germany - 17 Goals to Transform our World" />
-    </a>
-
-  <div class='hidden visible-xs float-right'>
-    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
-      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">English</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+<header role="banner" class="">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
+            <a class="navbar-brand" href="/en/" id="home" aria-label="" title="">
+    <img src="/assets/img/en/DNS_logo.png" alt="DESTATIS - German Strategy for Sustainable Development" />
 </a>
-<ul class="language-options language-toggle"><li><a href="/about/">Deutsch</a></li></ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex flex-wrap w-100 justify-content-between">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav" id="menu"><li class="nav-item ">
+    <a class="nav-link" href="/en/">17 Goals</a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-title" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Evaluation
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-title"><li class=" ">
+    <a class="dropdown-item" href="/en/status_summary/">Summary</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/en/status/">Methodology</a>
+</li>
+</ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    About
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li class=" ">
+    <a class="dropdown-item" href="/en/about_platform/">DNS&nbsponline&nbspplatform</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/en/about_guidance/">Technical&nbspinstructions</a>
+</li>
+</ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Useful information
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
+    <a class="dropdown-item" href="/en/facts_agenda/">2030 Agenda</a>
+</li>
+</ul>
+          </li><li class="nav-item ">
+    <a class="nav-link" href="https://www.sdg-indicators.de"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Click here to get to the SDG indicators page" alt="Link SDG" style="width:24px;height:24px;"/></a>
+</li>
+</ul>
 
-    </div></div>
+                </div>
+                <div class="header-search-bar">
+                    <form class="align-self-lg-end" id="search" action="/en/search/">
+    <div class="input-group">
+        <label class="visually-hidden" for="indicator_search">Search</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+</form>
 
-    <nav class="navbar navbar-default" id="main-nav">
+                </div>
+                <div class="header-toggles d-flex">
 
-      <ul class="top-level">
-        <li id="menuToggle"
-            aria-label="Menu toggle. Click to expand or collapse the menu."
-            aria-haspopup="true"
-            aria-expanded="false">
-          <span data-target="menu" tabindex="0"
-          role="navigation">Menu</span>
-        </li>
-        <li><span data-target="search">Search</span></li>
-      </ul>
 
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-              <li class="nav-link ">
-                <a href="/en/">Goals</a>
-              </li>
-            
-              <li class="nav-link ">
-                <a href="/en/about/">About</a>
-              </li>
-            
-              <li class="nav-link ">
-                <a href="/en/guidance">Guidance</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/en/status_summary">Status - Summary</a>
-              </li>
-            
-              <li class="nav-link  hidden-sm hidden-md hidden-lg">
-                <a href="/en/status">Status - Methodology</a>
-              </li>
-            <li class="nav-link visible-sm visible-md visible-lg">
-          <a class="status-toggle-button" onclick="$(this).next('.status-toggle').toggle(); return false;">
-            <!--<i class="fa fa-globe"></i>-->
-            <span class="status-toggle-text">Status</span>
-            <i class="status-toggle fa fa-chevron-down"></i>
-            <i class="status-toggle fa fa-chevron-up" style="display:none;"></i>
-          </a>
-          <ul class="status-options status-toggle">
-                  <li class="nav-link ">
-                    <a href="/en/status_summary">Summary</a>
-                  </li>
-                
-                  <li class="nav-link ">
-                    <a href="/en/status">Methodology</a>
-                  </li>
-                </ul>
-        </li><li>
-          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
-  <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">English</span>
-  <i class="language-toggle fa fa-chevron-down"></i>
-  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
-</a>
-<ul class="language-options language-toggle"><li><a href="/about/">Deutsch</a></li></ul>
 
-        </li><!---#17 addLinkToOtherPage---start------------>
-        <li class="nav-link">
-          <a href="https://g205sdgs.github.io/sdg-indicators/">
-            <img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="To the page of the global indicators" alt="Link SDG" style="width:24px;height:24px;"/>
-            <span class="hidden-sm hidden-md hidden-lg">SDG-NRP</span>
-          </a>
-        </li>
-        <!---#17 addLinkToOtherPage---stop------------->
-      </ul>
 
-      <div id="search" class="menu-target">
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/en/indicators.json" data-pageurl="/en/search/?q=" />
-  <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
-  </label>
+
+  <div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/about/">
+                Deutsch
+            </a>
+        </li></ul>
 </div>
 
 
-    </nav>
-  </div>
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <i class="fa fa-globe language-toggle-globe-links"></i>
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
+            <a class="language-toggle-link" href="/about/">
+                Deutsch
+            </a>
+        </li></ul>
+</div></span><a title="" aria-label=""
+    data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+>A</a>
 
+                </div>
+            </div>
+        </nav>
+    </div>
 </header>
+<div id="top" tabindex=-1></div>
 
+
+<div class="container">
+    <nav>
+    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
+        <li class="breadcrumb-item" >
+            <a href="/en/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">About</li>
+    </ol>
+</nav>
+</div>
 <div id="main-content" class="container" role="main">
     <div>
         <h1>About</h1>
-        <p>This website is for disseminating SDG indicator data. We are at an Alpha stage in development, so the site is still ‘work in progress’.</p>
+        
 
-<p>Other countries wishing to reuse this site’s underlying platform are welcome to do so for free. Our <a href="/guidance/">Guidance page</a> highlights key information on how to do this, linking to detailed technical instructions available in the platform’s <a href="https://open-sdg.readthedocs.io">documentation</a>. The <a href="http://www.opendataenterprise.org/">Center for Open Data Enterprise (CODE)</a> can also provide guidance and support through their <a href="https://www.sdgreporting.org/">SDG National Reporting Initiative</a>.</p>
 
-<p>If you have any feedback on this website or SDG data then please contact us at <a href="mailto:DNS-Indikatoren@destatis.de">DNS-Indikatoren@destatis.de</a>. The answers to some frequently asked questions are also available in our <a href="/faq/">FAQ</a>.</p>
+    <p>The aim of the national reporting platform (NRP) is to provide data for Germany on the global indicators of the UN <a href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/">Sustainable Development Goals</a> (SDGs). The Federal Statistical Office is responsible for coordinating and publishing German data on the SDG indicators and for statistical reporting on Germany’s progress in this field. This website enables the international organizations (custodian agencies) responsible for single indicators to directly download the data for their SDG indicators and use them in the global reporting. In addition, it provides to the interested public constantly updated information on the status of Germany’s SDG indicators and detailed information on their calculation methodology.</p>
+
+<p>Although the SDG indicators are primarily intended to measure the achievement of objectives rather on international than on national scale, many of the global indicators can also be calculated nationally. This compilation of the indicators available for Germany is based both on data from official statistics and from other sources. Time series are available at national level for a large number of global indicators and are published here on the national reporting platform. There are several reasons why statistical data are not available for all of the globally agreed indicators: For certain internationally relevant indicators it may not be reasonable to transfer them onto the national level. Other indicators are policy indicators which may not be measured statistically at all. For other indicators, not all the basic statistical data required to calculate them are available yet.</p>
+
+<p>In some cases, data are available for Germany with minor methodological differences from the internationally agreed definitions. In other cases, however, only time series with major deviations from the globally defined calculation methodology are available. This may result in Custodian Agency, responsible for the indicator, altering the provided data in order to achieve comparability on the international scale. Accordingly, the time series found in the <a href="https://unstats.un.org/sdgs/indicators/database/">global SDG-database</a> for Germany may differ from those provided here. The extent to which the published data correspond to the global calculation methodology is described under “Comparability with UN metadata” under each indicator.</p>
+
+
 
     </div>
 </div>
 
 <footer role="contentinfo">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-9">
-        <a href="https://www.destatis.de/DE/Service/Kontakt/Kontakt.html" target="_blank">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/destatis?lang=de" data-show-count="false"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a>
-      </div>
-      <div class="col-xs-3 text-right">
-        <a href="/en/faq/">FAQ</a> | <a href="/en/imprint/">Legal Notice</a>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="footerLinks">
+                    <ul>
+                        <li>
+                            <a href="https://open-sdg.org">Built using Open SDG</a>
+                        </li>
+                        
+                        <li>
+                            
+                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Contact us</a>
+                            
+                        </li>
+                        <li>
+                            
+                            <a href="https://twitter.com/destatis?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                            
+                        </li>
+                        <li>
+                            <a href="/en/imprint/">Legal Notice</a>
+                            
+                        </li>
+                        
+                        
+                        </ul>
+                </div>
+            </div>
+        </div>
+        
     </div>
-  </div>
 </footer>
 
-<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
-<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
-<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200114131455'></script><script>
-$(function() {
-    if($('#indicatorData').length) {
-      var domData = $('#indicatorData').data();
-      $('.async-loading').each(function(i, obj) {
-          $(obj).append($('<img />').attr('src', $(obj).data('img')));
-      });
-      $.ajax({
-        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
-        success: function(res) {
-          $('.async-loading').remove();
-          $('.async-loaded').show();
-          var model = new indicatorModel({
-            data: res.data,
-            edgesData: res.edges,
-            geoCodeRegEx: domData.geocoderegex,
-            showMap: domData.showmap,
-            country: domData.country,
-            indicatorId: domData.indicatorid,
-            shortIndicatorId: domData.id,
-            chartTitle: domData.charttitle,
-            measurementUnit: domData.measurementunit,
-            copyright: domData.copyright,
-            dataSource: domData.datasource,
-            geographicalArea: domData.geographicalarea,
-            showData: domData.showdata,
-            footnote: domData.footnote,
-            graphType: domData.graphtype,
-            startValues: domData.startvalues
-          }),
-          view  = new indicatorView(model, {
-            rootElement: '#indicatorData',
-            legendElement: '#plotLegend',
-            maxChartHeight: 420,
-            tableColumnDefs: [
-              { maxCharCount: 25 }, // nowrap
-              { maxCharCount: 35, width: 200 },
-              { maxCharCount: Infinity, width: 250 }
-            ]
-          }),
-          controller = new indicatorController(model, view);
-          controller.initialise();
-        }
-      });
-    }
-    var switcher = new accessibilitySwitcher();
-});
+
+
+
+
+
+
+
+<script>translations['general'] = translations['general'] || {};
+    translations['general']['hide'] = '';</script>
+
+<script>translations['search'] = translations['search'] || {};
+    translations['search']['search'] = 'Search';</script>
+
+<script src='/assets/js/sdg.js?v=20221129094010'></script>
+
+
+    
+    
+    <script src="/assets/js/custom.js?v=20221129094010"></script><script>
+    new indicatorInit();
+    new accessibilitySwitcher();
 </script>
-
-
 
 
 </body>

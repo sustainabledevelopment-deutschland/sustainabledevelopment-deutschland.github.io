@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>frontpage.heading</title>
+    <description>Data Platform Prototype</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 29 Nov 2022 09:40:10 +0000</pubDate>
+    <lastBuildDate>Tue, 29 Nov 2022 09:40:10 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.4</generator>
+    
+  </channel>
+</rss>
