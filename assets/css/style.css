@@ -3694,3 +3694,6 @@ body {
 
   .prio-d {
     display: none; } }
+abbr[title]:hover::after,
+abbr[title]:focus::after {
+  content: ": " attr(title); }
