@@ -127,7 +127,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230120122924">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230130144719">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -282,7 +282,7 @@ data-event-label="high"
             Statusübersicht - Bewertung für Deutschland aus den Vorjahren
         </h2>
         <div class="container">
-          In der Übersichtstabelle sind die Bewertungen der Indikatoren nach Stand der vorhergehenden Jahre angegeben. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war.<br> Grundlage der dargestellten Bewertungen sind die Daten des <a href="https://dns-indikatoren.de/facts_publications/">Indikatorenberichts 2022</a> mit Datenstand 31.10.2022. Auf der Online-Plattform können aktuellere Daten (als im Indikatorenbericht) verfügbar sein, da die Daten regelmäßig aktualisiert werden.<br><br> <b>Indikatoren mit mehreren Zielen</b><br> Für Indikatoren mit mehreren Zielen, die im Zeitverlauf erfüllt werden sollen (<abbr title="zum Beispiel">z. B.</abbr> Indikator <a href="https://dns-indikatoren.de/status_summary/#7.1.b Primärenergieverbrauch">7.1.b</a>), sind die Bewertungen zur Erfüllung jedes einzelnen Ziels angegeben. Gleiches gilt für Indikatoren mit mehreren Zielen, die zugleich erfüllt werden sollen (<abbr title="zum Beispiel">z. B.</abbr> Indikator <a href="https://dns-indikatoren.de/status_summary/#10.1 Ausländische Schulabsolventinnen und Schulabsolventen">10.1</a>).<br><br> <b>Indikatoren mit Zieländerungen und -verschärfungen</b><br> Neben den aktuell gültigen Zielen der Bundesregierung werden die Ziele dargestellt, die in der Vergangenheit galten, in der Zwischenzeit jedoch geändert und <abbr title="in der Regel">i.d.R.</abbr> verschärft worden sind.<br><br> In ausgegrauter Form werden alle Wettersymbole für Ziele dargestellt, die aktuell keine Gültigkeit haben, weil <br> • das Ziel in der Vergangenheit geändert wurde,<br> • zunächst ein zeitlich näher gelegenes Ziel erfüllt werden muss, oder<br> • das Ziel nur eines von mehreren, zeitgleich zu erfüllenden Zielen ist.<br><br>
+          In der Übersichtstabelle sind die Bewertungen der Indikatoren nach Stand der vorhergehenden Jahre angegeben. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war.<br> Grundlage der dargestellten Bewertungen sind die Daten des <a href="https://dns-indikatoren.de/facts_publications/">Indikatorenberichts 2022</a> mit Datenstand 31.10.2022. Auf der Online-Plattform können aktuellere Daten (als im Indikatorenbericht) verfügbar sein, da die Daten regelmäßig aktualisiert werden.<br><br> <b>Indikatoren mit mehreren Zielen</b><br> Für Indikatoren mit mehreren Zielen, die im Zeitverlauf erfüllt werden sollen (<abbr title="zum Beispiel">z. B.</abbr> Indikator <a href="https://dns-indikatoren.de/status_summary/#7.1.b Primärenergieverbrauch">7.1.b</a>), sind die Bewertungen zur Erfüllung jedes einzelnen Ziels angegeben. Gleiches gilt für Indikatoren mit mehreren Zielen, die zugleich erfüllt werden sollen (<abbr title="zum Beispiel">z. B.</abbr> Indikator <a href="https://dns-indikatoren.de/status_summary/#10.1 Ausländische Schulabsolventinnen und Schulabsolventen">10.1</a>).<br><br> <b>Indikatoren mit Zielanpassungen</b><br> Neben den aktuell gültigen Zielen der Bundesregierung werden die Ziele dargestellt, die in der Vergangenheit galten, in der Zwischenzeit jedoch angepasst worden sind.<br><br> In ausgegrauter Form werden alle Wettersymbole für Ziele dargestellt, die aktuell keine Gültigkeit haben, weil <br> • das Ziel in der Vergangenheit geändert wurde,<br> • zunächst ein zeitlich näher gelegenes Ziel erfüllt werden muss, oder<br> • das Ziel nur eines von mehreren, zeitgleich zu erfüllenden Zielen ist.<br><br>
         </div>
     </div>
     <br style="clear:both;">
@@ -387,6 +387,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -507,11 +509,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -688,6 +694,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -808,11 +816,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -1017,6 +1029,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -1336,6 +1350,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -1343,7 +1359,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2022)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2022)</span>
                         
                         </div>
                       </th>
@@ -1465,11 +1481,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: 20&nbsp;% bis 2030).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Der Zielwert des Indikators wurde im <a href="https://www.bundesregierung.de/resource/blob/992814/2146150/1cc38031193bf28e03327ba17eb6666b/2022-11-30-dns-grundsatzbeschluss-data.pdf?download=1">Grundsatzbeschluss 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie</a> an die Vereinbarungen im Koalitionsvertrag angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (30&nbsp;% bis 2030).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -1491,6 +1511,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -1617,6 +1645,18 @@ data-event-label="high"
                       
                     </tr>
 
+                    
+                      <tr>
+
+                        
+                          <th>
+                            <div class=responsiveText style="opacity: 0.5">Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%; opacity: 0.5"> <div class=responsiveText>Das Zieljahr des Indikators wurde im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/974430/1546450/65089964ed4a2ab07ca8a4919e09e0af/2018-11-07-aktualisierung-dns-2018-data.pdf?download=1">Aktualisierung der Deutschen Nachhaltigkeitsstrategie 2018</a> festgelegt. Seit Inkrafttreten dieses Beschlusses galt für den Indikator das geänderte Ziel (20&nbsp;% bis 2030). Im Rahmen des Grundsatzbeschlusses 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie wurde es erneut angepasst.</div> </td>
+                        
+
+                      </tr>
                     
 
                     
@@ -1750,6 +1790,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -2051,6 +2093,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -2352,6 +2396,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -2663,6 +2709,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -2959,6 +3007,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -3203,6 +3253,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -3483,6 +3535,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -3788,6 +3842,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -4107,6 +4163,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -4422,6 +4480,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -4510,7 +4570,7 @@ data-event-label="high"
                         
                           
 
-                          <td width="10%" align="center" class="prio-a"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Wolke.png" alt="Wolke" class="responsiveWeather hidden-xs" title="Der Indikator entwickelte sich in 2021 zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20 % der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden." /></a> </td>
+                          <td width="10%" align="center" class="prio-a"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2021 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden." /></a> </td>
                           
                         
                       
@@ -4742,6 +4802,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -4749,7 +4811,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2021)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2021)</span>
                         
                         </div>
                       </th>
@@ -4871,11 +4933,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: 10&nbsp;% bis 2020).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Zielwert und -jahr des Indikators wurden im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/998006/1873516/7c0614aff0f2c847f51c4d8e9646e610/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1">Weiterentwicklung der Deutschen Nachhaltigkeitsstrategie 2021</a> angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (9,5&nbsp;% bis 2030).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -4897,6 +4963,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -5209,6 +5283,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -5216,7 +5292,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2021)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2021)</span>
                         
                         </div>
                       </th>
@@ -5338,11 +5414,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: 42&nbsp;% bis 2020).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Zielwert und -jahr des Indikators wurden im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/998006/1873516/7c0614aff0f2c847f51c4d8e9646e610/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1"> Weiterentwicklung der Deutschen Nachhaltigkeitsstrategie 2021</a> angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (55&nbsp;% bis 2030).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -5364,6 +5444,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -5677,6 +5765,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -5978,6 +6068,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -6106,11 +6198,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -6132,6 +6228,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -6448,6 +6552,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -6576,11 +6682,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -6602,6 +6712,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -6629,9 +6747,9 @@ data-event-label="high"
                         
 
                         
+                          
 
-                          <td width="10%" align="center" class="prio-g"></td>
-
+                          <td width="10%" align="center" class="prio-g"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Blitz.png" alt="Blitz" class="responsiveWeather hidden-xs" title="Der Zielwert wurde in 2015 verfehlt und der Indikator hat sich im Durchschnitt der vorangegangenen Veränderungen nicht in Richtung des Ziels bewegt."  style="opacity: 0.2"/></a> </td>
                           
                         
                       
@@ -6643,9 +6761,9 @@ data-event-label="high"
                         
 
                         
+                          
 
-                          <td width="10%" align="center" class="prio-f"></td>
-
+                          <td width="10%" align="center" class="prio-f"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Wolke.png" alt="Wolke" class="responsiveWeather hidden-xs" title="Der Zielwert wurde in 2016 nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung."  style="opacity: 0.2"/></a> </td>
                           
                         
                       
@@ -6657,9 +6775,9 @@ data-event-label="high"
                         
 
                         
+                          
 
-                          <td width="10%" align="center" class="prio-e"></td>
-
+                          <td width="10%" align="center" class="prio-e"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Wolke.png" alt="Wolke" class="responsiveWeather hidden-xs" title="Der Zielwert wurde in 2017 nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung."  style="opacity: 0.2"/></a> </td>
                           
                         
                       
@@ -6671,9 +6789,9 @@ data-event-label="high"
                         
 
                         
+                          
 
-                          <td width="10%" align="center" class="prio-d"></td>
-
+                          <td width="10%" align="center" class="prio-d"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Wolke.png" alt="Wolke" class="responsiveWeather hidden-xs" title="Der Zielwert wurde in 2018 nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung."  style="opacity: 0.2"/></a> </td>
                           
                         
                       
@@ -6685,9 +6803,9 @@ data-event-label="high"
                         
 
                         
+                          
 
-                          <td width="10%" align="center" class="prio-c"></td>
-
+                          <td width="10%" align="center" class="prio-c"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Wolke.png" alt="Wolke" class="responsiveWeather hidden-xs" title="Der Zielwert wurde in 2019 nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung."  style="opacity: 0.2"/></a> </td>
                           
                         
                       
@@ -6699,9 +6817,9 @@ data-event-label="high"
                         
 
                         
+                          
 
-                          <td width="10%" align="center" class="prio-b"></td>
-
+                          <td width="10%" align="center" class="prio-b"> <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole//Wolke.png" alt="Wolke" class="responsiveWeather hidden-xs" title="Der Zielwert wurde in 2020 nicht erreicht, aber die durchschnittliche Entwicklung wies in die gewünschte Richtung."  style="opacity: 0.2"/></a> </td>
                           
                         
                       
@@ -6906,6 +7024,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -7195,6 +7315,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -7506,6 +7628,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -7774,6 +7898,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -8075,6 +8201,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -8394,6 +8522,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -8711,6 +8841,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -8830,11 +8962,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Seit 2019&nbsp;wird die Zeitreihe für die Bereiche Trinkwasserversorgung und Sanitärversorgung getrennt ausgewiesen.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText style="opacity: 0.5">Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%; opacity: 0.5"> <div class=responsiveText>Der Indikator und der Zielwert wurden im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/998006/1873516/7c0614aff0f2c847f51c4d8e9646e610/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1"> Weiterentwicklung der Deutschen Nachhaltigkeitsstrategie 2021</a> angepasst und differenziert nach 6.2.a Trinkwasserzugang und 6.2.b Anschluss an Abwasserentsorgung. Seit Inkrafttreten dieses Beschlusses gelten für die Indikatoren die geänderten Ziele (6.2.a: 6&nbsp;Millionen Menschen pro Jahr bis 2030; 6.2.b: 4&nbsp;Millionen Menschen pro Jahr bis 2030).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -8961,6 +9097,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -9176,6 +9314,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -9461,6 +9601,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -9762,6 +9904,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -9890,11 +10034,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -9916,6 +10064,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -10060,6 +10216,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -10350,6 +10514,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -10478,11 +10644,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -10504,6 +10674,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -10648,6 +10826,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -10792,6 +10978,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -11078,6 +11272,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -11206,11 +11402,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -11232,6 +11432,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -11239,7 +11447,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2022)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2022)</span>
                         
                         </div>
                       </th>
@@ -11361,11 +11569,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: 65&nbsp;% bis 2030).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Der Zielwert des Indikators wurde im <a href="https://www.bundesregierung.de/resource/blob/992814/2146150/1cc38031193bf28e03327ba17eb6666b/2022-11-30-dns-grundsatzbeschluss-data.pdf?download=1">Grundsatzbeschluss 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie</a> an die Vereinbarungen im Koalitionsvertrag angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (80&nbsp;% bis 2030).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -11387,6 +11599,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -11514,6 +11734,18 @@ data-event-label="high"
                     </tr>
 
                     
+                      <tr>
+
+                        
+                          <th>
+                            <div class=responsiveText style="opacity: 0.5">Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%; opacity: 0.5"> <div class=responsiveText>Der Zielwert des Indikators wurde im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/998006/1873516/7c0614aff0f2c847f51c4d8e9646e610/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1"> Weiterentwicklung der Deutschen Nachhaltigkeitsstrategie 2021</a> angepasst. Seit Inkrafttreten dieses Beschlusses galt für den Indikator das geänderte Ziel (65&nbsp;% bis 2030). Im Rahmen des Grundsatzbeschlusses 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie wurde es erneut angepasst.</div> </td>
+                        
+
+                      </tr>
+                    
 
                     
                       <!--weather_indicator_2_target_2-->
@@ -11533,6 +11765,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -11679,6 +11919,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -11825,6 +12073,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -11971,6 +12227,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -12242,6 +12506,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -12562,6 +12828,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -12863,6 +13131,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -13174,6 +13444,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -13494,6 +13766,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -13814,6 +14088,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -14134,6 +14410,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -14435,6 +14713,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -14743,6 +15023,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -15066,6 +15348,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -15073,7 +15357,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2018)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2018)</span>
                         
                         </div>
                       </th>
@@ -15195,11 +15479,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: 3&nbsp;% bis 2030).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Der Zielwert des Indikators wurden im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/974430/1546450/65089964ed4a2ab07ca8a4919e09e0af/2018-11-07-aktualisierung-dns-2018-data.pdf?download=1">Aktualisierung der Deutschen Nachhaltigkeitsstrategie 2018</a> an die Vereinbarungen im Koalitionsvertrag angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (3,5&nbsp;% bis 2025).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -15221,6 +15509,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -15479,6 +15775,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -15780,6 +16078,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -15924,6 +16224,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -16068,6 +16376,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -16194,11 +16510,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Beide Ziele „Erhöhung des Anteils der ausländischen Schulabgänger mit mindestens Hauptschulabschluss“ und „Angleichung des Anteils an die Quote deutscher Schulabgänger“ sollen parallel erfüllt werden, sodass für die Gesamtbewertung des Indikators die Einzelbewertungen zusammengeführt werden, indem jeweils das "schlechtere" Wettersymbol übernommen wird.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Beide Ziele „Erhöhung des Anteils der ausländischen Schulabgänger mit mindestens Hauptschulabschluss“ und „Angleichung des Anteils an die Quote deutscher Schulabgänger“ sollen parallel erfüllt werden, sodass für die Gesamtbewertung des Indikators die Einzelbewertungen zusammengeführt werden, indem jeweils das „schlechtere“ Wettersymbol übernommen wird.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -16372,6 +16692,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -16492,11 +16814,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -16709,6 +17035,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -17028,6 +17356,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -17347,6 +17677,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -17667,6 +17999,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -17986,6 +18320,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -18253,6 +18589,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -18537,6 +18875,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -18657,11 +18997,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die bislang separat durchgeführte Erhebung 'Leben in Europa' (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren und die Berechnung der Wettersymbole nicht möglich (Zeitreihenbruch).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -18859,6 +19203,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -19190,6 +19536,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -19494,6 +19842,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -19783,6 +20133,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -20072,6 +20424,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -20367,6 +20721,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -20681,6 +21037,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -20958,6 +21316,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -21267,6 +21627,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -21395,11 +21757,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -21421,6 +21787,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -21428,7 +21802,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2022)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2022)</span>
                         
                         </div>
                       </th>
@@ -21549,14 +21923,6 @@ data-event-label="high"
                     </tr>
 
                     
-                      <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: mindestens 55&nbsp;% bis 2030&nbsp;gegenüber 1990; Erreichung von Treibhausgasneutralität bis 2050).</div> </td>
-                      </tr>
-                    
 
                     
                       <!--weather_indicator_2_target_2-->
@@ -21576,6 +21942,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -21583,7 +21957,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2022)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2022)</span>
                         
                         </div>
                       </th>
@@ -21723,6 +22097,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -21730,7 +22112,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2022)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2022)</span>
                         
                         </div>
                       </th>
@@ -21851,6 +22233,18 @@ data-event-label="high"
                     </tr>
 
                     
+                      <tr>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Die Zielwerte und -jahre des Indikators wurden im <a href="https://www.bundesregierung.de/resource/blob/992814/2146150/1cc38031193bf28e03327ba17eb6666b/2022-11-30-dns-grundsatzbeschluss-data.pdf?download=1">Grundsatzbeschluss 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie</a> an die Vereinbarungen im Koalitionsvertrag angepasst. Seit Inkrafttreten dieses Beschlusses gelten für den Indikator die geänderten Ziele (65&nbsp;% bis 2030, 88&nbsp;% bis 2040, Erreichung der Treibhausgasneutralität bis 2045).</div> </td>
+                        
+
+                      </tr>
+                    
 
                     
                       <!--weather_indicator_2_target_2-->
@@ -21870,6 +22264,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -22016,6 +22418,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -22143,6 +22553,18 @@ data-event-label="high"
                     </tr>
 
                     
+                      <tr>
+
+                        
+                          <th>
+                            <div class=responsiveText style="opacity: 0.5">Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%; opacity: 0.5"> <div class=responsiveText>Das Ziel des Indikators wurde im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/998006/1873516/7c0614aff0f2c847f51c4d8e9646e610/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1"> Weiterentwicklung der Deutschen Nachhaltigkeitsstrategie 2021</a> angepasst. Seit Inkrafttreten dieses Beschlusses galt für den Indikator das geänderte Ziel (Erreichung von Treibhausgas-neutralität bis 2050). Im Rahmen des Grundsatzbeschlusses 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie wurde es erneut angepasst.</div> </td>
+                        
+
+                      </tr>
+                    
 
                     
                       <!--weather_indicator_2_target_2-->
@@ -22162,6 +22584,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -22308,6 +22738,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -22552,6 +22990,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -22677,11 +23117,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Eine Verdopplung der internationalen Klimafinanzierung von 2014&nbsp;entsprach einer Erhöhung auf 4&nbsp;<abbr title="Milliarde" tabindex="0">Mrd.</abbr> Euro.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Eine Verdopplung der internationalen Klimafinanzierung von 2014&nbsp;entsprach einer Erhöhung auf 4&nbsp;Milliarden Euro.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -22703,6 +23147,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -22710,7 +23162,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2022)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2022)</span>
                         
                         </div>
                       </th>
@@ -22829,11 +23281,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Zielwert und -jahr des Indikators wurden im <a href="https://www.bundesregierung.de/resource/blob/992814/2146150/1cc38031193bf28e03327ba17eb6666b/2022-11-30-dns-grundsatzbeschluss-data.pdf?download=1">Grundsatzbeschluss 2022&nbsp;zur Deutschen Nachhaltigkeitsstrategie</a> an die Vereinbarungen im Koalitionsvertrag angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (6&nbsp;Milliarden Euro bis spätestens 2025).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -23035,6 +23491,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -23336,6 +23794,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -23647,6 +24107,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -23982,6 +24444,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -24298,6 +24762,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -24606,6 +25072,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -24907,6 +25375,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -25234,6 +25704,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -25241,7 +25713,7 @@ data-event-label="high"
                         
                         
                             
-                            <br><span class="smaller">(nach Zielverschärfung in 2021)</span>
+                            <br><span class="smaller">(nach Zielanpassung in 2021)</span>
                         
                         </div>
                       </th>
@@ -25363,11 +25835,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Neues Ziel im Rahmen der Weiterentwicklung von Zielen der Deutschen Nachhaltigkeitsstrategie (vorher: 7&nbsp;000&nbsp;bis 2030).</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Zielwert und -jahr des Indikators wurden im Rahmen der <a href="https://www.bundesregierung.de/resource/blob/998006/1873516/7c0614aff0f2c847f51c4d8e9646e610/2021-03-10-dns-2021-finale-langfassung-barrierefrei-data.pdf?download=1"> Weiterentwicklung der Deutschen Nachhaltigkeitsstrategie 2021</a> angepasst. Seit Inkrafttreten dieses Beschlusses gilt für den Indikator das geänderte Ziel (6&nbsp;500&nbsp;bis 2030).</div> </td>
+                        
+
                       </tr>
                     
 
@@ -25389,6 +25865,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -25700,6 +26184,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -26018,6 +26504,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -26310,6 +26798,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -26628,6 +27118,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -26948,6 +27440,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -27076,11 +27570,15 @@ data-event-label="high"
 
                     
                       <tr>
-                        <th>
-                          <div class=responsiveText>Anmerkung
-                          </div>
-                        </th>
-                        <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+
+                        
+                          <th>
+                            <div class=responsiveText>Anmerkung
+                            </div>
+                          </th>
+                          <td colspan="7" style="padding-left: 4%"> <div class=responsiveText>Wegfall des Ziels für 2020&nbsp;wegen zeitlichen Ablaufs.</div> </td>
+                        
+
                       </tr>
                     
 
@@ -27102,6 +27600,14 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
                     <tr>
                       <th>
                         
@@ -27411,6 +27917,8 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
 
                   
+                  
+
                     <tr>
                       <th>
                         
@@ -27709,12 +28217,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230120122924'></script>
+<script src='/assets/js/sdg.js?v=20230130144719'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230120122924"></script><script>
+    <script src="/assets/js/custom.js?v=20230130144719"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
