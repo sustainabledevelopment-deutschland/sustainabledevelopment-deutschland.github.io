@@ -127,7 +127,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230224135000">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230313152506">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -150,12 +150,12 @@ layout-page
 ">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha-Version","beta":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_contacts.suggestions\">Kommentare</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari. Wenn Sie Schwierigkeiten haben, einen anderen Browser zu installieren oder darauf zuzugreifen, wenden Sie sich bitte an Ihr IT-Supportteam.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","beta":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_contacts.suggestions\">Kommentare</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div class="container internet-explorer-message">
     <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
-    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari. Wenn Sie Schwierigkeiten haben, einen anderen Browser zu installieren oder darauf zuzugreifen, wenden Sie sich bitte an Ihr IT-Supportteam.</p>
+    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
 </div>
 <div id="disclaimer">
     
@@ -200,21 +200,24 @@ layout-page
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li class=" ">
     <a class="dropdown-item" href="/about_platform/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
 </li>
-<li class=" ">
-    <a class="dropdown-item" href="/about_guidance/">Technische&nbspHinweise</a>
+<li class=" active">
+    <a class="dropdown-item" href="/guidance/">Technische&nbspHinweise</a>
 </li>
 </ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-facts" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Wissenswertes
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Publikationen
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-facts"><li class=" ">
-    <a class="dropdown-item" href="/facts_agenda/">Agenda 2030</a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-publications"><li class=" ">
+    <a class="dropdown-item" href="/publications_reports/">Indikatorenberichte</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/publications_strategy/">Nachhaltigkeitsstrategie</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/publications_other/">Weitere Publikationen</a>
 </li>
 </ul>
           </li><li class="nav-item ">
-    <a class="nav-link" href="/facts_publications/">Publikationen</a>
-</li>
-<li class="nav-item ">
     <a class="nav-link" href="https://www.sdg-indikatoren.de"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
 </li>
 </ul>
@@ -290,25 +293,13 @@ data-event-label="high"
 
     <h2 id="open-source-projekt-auf-github">Open-Source-Projekt auf GitHub</h2>
 
-<p>Die SDG-Online Plattform ist ein öffentlich zugängliches Instrument zur Verbreitung und Präsentation von Daten für Deutschland zu den Indikatoren der Ziele zur nachhaltigen Entwicklung (Sustainable Development Goals - SDGs) der Agenda 2030 der Vereinten Nationen.</p>
+<p>Die DNS-Online Plattform ist ein öffentlich zugängliches Instrument zur Verbreitung und Präsentation von Daten zu den Indikatoren der Deutschen Nachhaltigkeitsstrategie.</p>
 
-<p>Um den grundlegenden Prinzipien der Vereinten Nationen für die amtliche Statistik zu entsprechen, sollten die Mindesteigenschaften einer SDG-Online Plattform folgende sein: <br />
-Die SDG-Online Plattform</p>
-<ul>
-  <li>wird von den nationalen statistischen Ämtern verwaltet;</li>
-  <li>enthält offizielle Statistiken und Metadaten nach bewährter Standardmethodik;</li>
-  <li>ist öffentlich zugänglich;</li>
-  <li>ermöglicht Rückmeldungen von Datennutzern;</li>
-  <li>wird mit Open-Source (kostenlosen) Technologien betrieben.</li>
-</ul>
+<h2 id="quellen">Quellen</h2>
 
-<p>Darüber hinaus wurde die SDG-Online Plattform nach anerkannten internationalen Richtlinien entwickelt, insbesondere hinsichtlich frei zugänglicher Daten und Software.</p>
+<p>Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Online Plattformen, insbesondere als Open-Source-Lösung zur Darstellung von DNS-Indikatoren. Vorreiter in diesem Bereich sind die USA und Großbritannien. Der Projektcode für die DNS-Online Plattform ist im folgenden <a href="https://github.com/sustainabledevelopment-deutschland/sustainabledevelopment-deutschland.github.io">GitHub Repository</a> öffentlich zugänglich.</p>
 
-<h3 id="quellen">Quellen</h3>
-
-<p>Das Statistische Bundesamt (Destatis) unterstützt aktiv die Entwicklung nationaler Online Plattformen, insbesondere als Open-Source Lösung zur Darstellung von SDG-Indikatoren. Vorreiter in diesem Bereich sind die USA und Großbritannien. Die aktuelle Version der deutschen Online Plattform wurde auf der Grundlage einer früheren Version der britischen Online Plattform entwickelt und an die Bedürfnisse der deutschen Statistik angepasst. Der Projektcode für die SDG-Online Plattform ist im folgenden <a href="https://github.com/G205SDGs/sdg-indicators">GitHub Repository</a> öffentlich zugänglich.</p>
-
-<p>Eine universelle Version der von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Online Plattform ist verfügbar. Auf diesem basiert die SDG-Online Plattform. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Online Plattformen in den USA und in Großbritannien sowie mit der entsprechenden <a href="https://open-sdg.readthedocs.io/en/latest/">Open SDG-Projektdokumentation</a> vertraut zu machen. Diese enthält technische Anweisungen, wie eine Kopie der Open SDG-Online Plattform erstellt werden kann.</p>
+<p>Eine universelle Version der von den USA, Großbritannien und dem Center for Open Data Enterprise entwickelten Codes für eine Online Plattform ist verfügbar. Auf diesem basiert die SDG-Online Plattform. Bei Interesse empfehlen wir Ihnen, sich mit den SDG-Online Plattformen in den USA und in Großbritannien sowie mit der entsprechenden <a href="https://open-sdg.readthedocs.io/en/latest/">Open-SDG Projektdokumentation</a> vertraut zu machen. Diese enthält technische Anweisungen, wie eine Kopie der Open SDG-Online Plattform erstellt werden kann.</p>
 
 <ul>
   <li>
@@ -321,7 +312,14 @@ Die SDG-Online Plattform</p>
 
 <p>Wenn Sie Kommentare oder Feedback zum Open SDG-Projekt haben oder an der Open SDG-Community teilnehmen möchten, wenden Sie sich an <a href="https://github.com/open-sdg/open-sdg/issues">Open SDG GitHub</a>.</p>
 
-<h3 id="genutzte-software">Genutzte Software</h3>
+<h3 id="anleitungen">Anleitungen</h3>
+<h4 id="öffnen-von-csv-dateien">Öffnen von CSV-Dateien:</h4>
+<p>Wenn Sie bei Ihrer Recherche auf interessante Daten gestoßen sind, können Sie diese zur weiteren Verwendung auf Ihren PC als speicherbare Version im CSV-Format herunterladen. Eine Anleitung wie Sie die CSV-Dateien in MS-Excel öffnen und bearbeiten können, finden Sie <a href="https://g205sdgs.github.io/sdg-indicators/public/HowToCsvDownload.pdf">hier</a>.</p>
+
+<h4 id="öffnen-von-pdf-dateien">Öffnen von PDF-Dateien:</h4>
+<p>PDF-Dokumente können Sie sich (je nach Browsereinstellung) direkt in Ihrem Browser anzeigen lassen oder Sie laden das PDF-Dokument herunter und öffnen es mit einem PDF-Reader Ihrer Wahl. Eine Anleitung wie Sie für ausgewählte Browser die entsprechende Einstellung ändern können, finden Sie <a href="https://g205sdgs.github.io/sdg-indicators/public/HowToPdfDownload.pdf">hier</a> eine Anleitung.</p>
+
+<h2 id="genutzte-software">Genutzte Software</h2>
 
 <h4 id="back-end-it-anforderungen">Back-end IT-Anforderungen:</h4>
 <ul>
@@ -334,16 +332,6 @@ Die SDG-Online Plattform</p>
   <li>XHTML, CSS, JavaScript</li>
   <li>Chartist: JavaScript Bibliothek</li>
   <li>Bootstrap: framework CSS</li>
-</ul>
-
-<h3 id="aktuelle-darstellung">Aktuelle Darstellung</h3>
-
-<p>Aufgrund von technischen Schwierigkeiten finden sich auf der aktuellen Version der SDG-Online Plattform einige suboptimale Darstellungen, auf die an dieser Stelle hingewiesen wird:</p>
-<ul>
-  <li>Ganze Zahlen werden ohne Nachkommastelle dargestellt (auch in Zeitreihen, in denen andere Zahlenwerte mit Nachkommastelle vorhanden sind).</li>
-  <li>Sehr lange Zeitreihenbezeichnungen werden in den Achsenbeschriftungen der Grafiken nicht in mehrere Zeilen umgebrochen und z. T. abgeschnitten.</li>
-  <li>Wenn man mit dem Mausanzeiger über einem Datenpunkt in den Grafiken verweilt, werden die Beschriftung und der exakte Wert dieses Datenpunktes angezeigt. Tief- und hochgestellte Ziffern und Buchstaben werden dabei nicht korrekt übernommen.</li>
-  <li>Beim gleichen Vorgang werden auch die Namen der Datenreihen nicht umgebrochen.</li>
 </ul>
 
 
@@ -411,12 +399,12 @@ Die SDG-Online Plattform</p>
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230224135000'></script>
+<script src='/assets/js/sdg.js?v=20230313152506'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230224135000"></script><script>
+    <script src="/assets/js/custom.js?v=20230313152506"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
