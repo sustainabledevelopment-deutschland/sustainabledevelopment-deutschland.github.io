@@ -132,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230426123414">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230517131714">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -206,7 +206,10 @@ layout-indicator
     <a class="dropdown-item" href="/about_platform/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/guidance/">Technische&nbspHinweise</a>
+    <a class="dropdown-item" href="/about_joint_action/">Gemeinschaftswerk</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/about_guidance/">Technische&nbspHinweise</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -495,7 +498,7 @@ data-event-label="high"
   data-spangaps="true"
   data-graphannotations="[{&quot;value&quot;:60,&quot;label&quot;:{&quot;content&quot;:&quot;Referenzwert&quot;,&quot;position&quot;:&quot;left&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;color&quot;:&quot;transparent&quot;},&quot;preset&quot;:&quot;target_line&quot;,&quot;borderColor&quot;:&quot;transparent&quot;}]"
   data-graphtargetlines="null"
-  data-graphtargetpoints="[{&quot;type&quot;:&quot;line&quot;,&quot;xMin&quot;:21.5,&quot;xMax&quot;:31,&quot;yMin&quot;:60,&quot;yMax&quot;:60,&quot;borderDash&quot;:[4,4],&quot;borderColor&quot;:&quot;#cbc8c8&quot;,&quot;preset&quot;:&quot;target_points&quot;},{&quot;type&quot;:&quot;label&quot;,&quot;xValue&quot;:27.0,&quot;yValue&quot;:73.0,&quot;backgroundColor&quot;:&quot;rgba(203, 200, 200, 0.7)&quot;,&quot;borderRadius&quot;:5,&quot;content&quot;:[&quot;Referenzwert: 60 %&quot;],&quot;font&quot;:{&quot;size&quot;:14},&quot;borderColor&quot;:&quot;transparent&quot;}]"
+  data-graphtargetpoints="[{&quot;type&quot;:&quot;line&quot;,&quot;xMin&quot;:21.5,&quot;xMax&quot;:32,&quot;yMin&quot;:60,&quot;yMax&quot;:60,&quot;borderDash&quot;:[4,4],&quot;borderColor&quot;:&quot;#cbc8c8&quot;,&quot;preset&quot;:&quot;target_points&quot;},{&quot;type&quot;:&quot;label&quot;,&quot;xValue&quot;:27.0,&quot;yValue&quot;:73.0,&quot;backgroundColor&quot;:&quot;rgba(203, 200, 200, 0.7)&quot;,&quot;borderRadius&quot;:5,&quot;content&quot;:[&quot;Referenzwert: 60 %&quot;],&quot;font&quot;:{&quot;size&quot;:14},&quot;borderColor&quot;:&quot;transparent&quot;}]"
   data-graphtargetlabels="null"
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
@@ -1090,7 +1093,7 @@ data-event-label="high"
           
           
           
-          <td>64.6</td>
+          <td>65.2</td>
           
           
           
@@ -1110,7 +1113,7 @@ data-event-label="high"
           
           
           
-          <td>61.3</td>
+          <td>61.9</td>
           
           
           
@@ -1130,7 +1133,7 @@ data-event-label="high"
           
           
           
-          <td>58.9</td>
+          <td>59.6</td>
           
           
           
@@ -1150,7 +1153,7 @@ data-event-label="high"
           
           
           
-          <td>68.0</td>
+          <td>68.7</td>
           
           
           
@@ -1170,7 +1173,27 @@ data-event-label="high"
           
           
           
-          <td>68.6</td>
+          <td>69.3</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>66.3</td>
           
           
           
@@ -1191,7 +1214,7 @@ data-event-label="high"
   
   <div id="datatableFooter">
     
-    <p>Datenquelle: <a href="https://www.bundesbank.de/de/">Deutsche Bundesbank</a></p>
+    <p>Datenquelle: <a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')">Deutsche Bundesbank</a></p>
     
     
     <p>Geographische Abdeckung: Deutschland</p>
@@ -1364,7 +1387,7 @@ data-event-label="Change to embedded item tab"
     <dl>
         
           <dt><u>Datenquellen</u>:</dt>
-          <dd><a href="https://www.bundesbank.de/de/">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html">Statistisches Bundesamt</a></dd>
+          <dd><a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
         
 
         
@@ -1452,7 +1475,7 @@ data-event-label="Change to embedded item tab"
     <dl>
         
           <dt><u>Datenquellen</u>:</dt>
-          <dd><a href="https://www.bundesbank.de/de/">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html">Statistisches Bundesamt</a></dd>
+          <dd><a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
         
 
         
@@ -1529,7 +1552,7 @@ data-event-label="Change to embedded item tab"
     <dl>
         
           <dt><u>Datenquellen</u>:</dt>
-          <dd><a href="https://www.bundesbank.de/de/">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html">Statistisches Bundesamt</a></dd>
+          <dd><a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')">Deutsche Bundesbank</a>, <a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
         
 
         
@@ -1711,7 +1734,8 @@ data-event-label="Change to indicator.sources tab"
       <article>
         <p>Diese Übersicht beinhaltet zusätzliche Informationen zu den oben dargestellten Indikatoren, wie eine kurze Definition des Indikators und eine Beschreibung des politisch festgelegten Zielwertes sowie die politische Intention für die Auswahl des Indikators.</p>
 
-        <table class="table">
+        
+<table class="table">
   
   
   
@@ -2651,7 +2675,8 @@ data-event-label="Change to indicator.sources tab"
     <div role="tabpanel" class="tab-pane " id="content">
       <article>
         
-        <table class="table">
+        
+<table class="table">
   
   
   
@@ -3510,7 +3535,8 @@ data-event-label="Change to indicator.sources tab"
         
         <div class="col-md-6">
           <!--  -->
-          <table class="table">
+          
+<table class="table">
   
   
   
@@ -5226,7 +5252,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Datenquelle 1</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -5976,7 +6003,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://www.bundesbank.de/de/" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/bundesbank.png" alt="Deutsche Bundesbank" title=" Klicken Sie hier um zur Homepage der Organisation Deutsche Bundesbank zu gelangen." style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/bundesbank.png" alt="Deutsche Bundesbank" title=" Klicken Sie hier um zur Homepage der Organisation Deutsche Bundesbank zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -6020,7 +6047,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left">Organisation </th>
             <td>
               
-                <p><a href="https://www.bundesbank.de/de/" target="_blank">Deutsche Bundesbank</a></p>
+                <p><a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')">Deutsche Bundesbank</a></p>
 
               
             </td>
@@ -6054,9 +6081,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
-                  <a href="https://www.bundesbank.de/dynamic/action/de/statistiken/zeitreihen-datenbanken/zeitreihen-datenbank/759778/759778?listId=www_v27_web011_21a" target="_blank">
-                    Verschuldung gem. Maastricht-Vertrag - Deutschland - Gesamtstaat <span class="visuallyhidden">in neuem Fenster öffnen</span>
-                  </a>
+                
+                
+
+                
+                  
+                    <a href="https://www.bundesbank.de/dynamic/action/de/statistiken/zeitreihen-datenbanken/zeitreihen-datenbank/759778/759778?listId=www_v27_web011_21a" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De');">
+                      Verschuldung gem. Maastricht-Vertrag - Deutschland - Gesamtstaat <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                    </a>
+                  
                 
 
               
@@ -6177,7 +6210,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Datenquelle 2</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -6939,7 +6973,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -7017,9 +7051,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
+                
+                
+
+                
+                  
                   <a href="https://www-genesis.destatis.de/genesis//online?operation=table&code=81000-0001&bypass=true&levelindex=0&levelid=1660822010108&language=de" target="_blank">
                     Bruttoinlandsprodukt&nbsp;–&nbsp;GENESIS online 81000-0001 <span class="visuallyhidden">in neuem Fenster öffnen</span>
                   </a>
+                  
                 
 
               
@@ -7139,6 +7179,7 @@ data-event-label="Change to indicator.sources tab"
   <a href="#top"></a>
 </div>
 
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -7146,21 +7187,24 @@ data-event-label="Change to indicator.sources tab"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org">Seite basiert auf Open SDG</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">Seite basiert auf Open SDG</a>
+                        </li>
+                        
+                        
+                        <li>
+                            
+                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Kontakt</a>
+                            
                         </li>
                         
                         <li>
                             
-                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a>
+                              <a href="https://twitter.com/destatis?lang=de" target="_blank"  onclick="return confirm_alert('twitter', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                             
                         </li>
+                        
                         <li>
-                            
-                            <a href="https://twitter.com/destatis?lang=de" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        <li>
-                            <a href="/imprint/">Im­pres­s­um</a>
+                            <a href="/imprint/ ">Im­pres­s­um</a>
                             
                         </li>
                         
@@ -7210,12 +7254,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230426123414'></script>
+<script src='/assets/js/sdg.js?v=20230517131714'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230426123414"></script><script>
+    <script src="/assets/js/custom.js?v=20230517131714"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -7223,3 +7267,4 @@ data-event-label="Change to indicator.sources tab"
 
 </body>
 </html>
+

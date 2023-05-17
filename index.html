@@ -127,7 +127,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230426123414">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230517131714">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -201,7 +201,10 @@ layout-frontpage
     <a class="dropdown-item" href="/about_platform/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/guidance/">Technische&nbspHinweise</a>
+    <a class="dropdown-item" href="/about_joint_action/">Gemeinschaftswerk</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/about_guidance/">Technische&nbspHinweise</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -411,43 +414,130 @@ data-event-label="high"
         
 
         <div class="col-sm-6 col-md-4">
-    <div class="card">
+    <div class="card" style="font-size:14px">
     <div class="card-body">
 
     
     <h2 class="card-title"
         
-        style="border-color: orange;"
+        style="border-color: grey;"
         
-    >Alle Daten herunterladen</h2>
+    ></h2>
     
-  
+
     
-  
+
     
-      <div class="zip-download-container">
-    <a href="https://dns-indikatoren.de/sdg-data-pub/de/zip/all_indicators.zip"
-       class="btn btn-primary btn-download" aria-describedby="zip-download-info">
-        Alle Daten herunterladen
-    </a>
-    <div id="zip-download-info">
+      <div class="container_frontpage">
+    <div style="text-align: center; padding-top: 20px;">
+        <a href="https://dns-indikatoren.de/sdg-data-pub/de/zip/all_indicators.zip">
+          <i class="fa fa-download download-icon"></i>
+        </a>
+    </div>
+    <div>
+        Alle Daten herunterladen<br>
         ZIP Datei. Größe: 1.6 MB
         
             <br>
-            Letzte Änderung der Daten - 19.04.2023
+            Letzte Änderung der Daten - 17.05.2023
         
     </div>
 </div>
 
     
-  
+
     
 
     </div>
-  
+
   </div>
-  
+
   </div>
+
+
+        
+
+    
+        
+
+        
+
+        <div class="col-sm-6 col-md-4">
+    <div class="card" style="font-size:14px">
+    <div class="card-body">
+
+    
+    <h2 class="card-title"
+        
+        style="border-color: grey;"
+        
+    ></h2>
+    
+
+    
+
+    
+      <div>
+    <div>
+      <a href="about_joint_action">
+        <img src="https://dns-indikatoren.de//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png" alt="Gemeinschaftswerk Nachhaltigkeit" style="width:100px; margin-right:10px; float:left">
+      </a>
+      Das Statistische Bundesamt ist Teil des <a href="https://dns-indikatoren.de/about_joint_action">Gemeinschaftswerks Nachhaltigkeit</a>, einer offenen Plattform für alle, die sich für eine nachhaltige Gesellschaft einsetzen.
+    </div>
+</div>
+
+    
+
+    
+
+    </div>
+
+  </div>
+
+  </div>
+
+
+        
+
+    
+        
+
+        
+
+        <div class="col-sm-6 col-md-4">
+    <div class="card" style="font-size:14px">
+    <div class="card-body">
+
+    
+    <h2 class="card-title"
+        
+        style="border-color: grey;"
+        
+    ></h2>
+    
+
+    
+
+    
+      <div>
+    <div>
+      <a href="publications_strategy">
+        <img src="https://dns-indikatoren.de//assets/img/goals/dns/de/18.png" alt="N" style="width:105px; margin-right:10px; float:left">
+      </a>
+      Informationen zur „Deutschen Nachhaltigkeitsstrategie“ finden Sie <a href="https://dns-indikatoren.de/publications_strategy/">hier</a>.
+    </div>
+</div>
+
+    
+
+    
+
+    </div>
+
+  </div>
+
+  </div>
+
 
         
         </div>
@@ -458,6 +548,7 @@ data-event-label="high"
     
 
 </div>
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -465,21 +556,24 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org">Seite basiert auf Open SDG</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">Seite basiert auf Open SDG</a>
+                        </li>
+                        
+                        
+                        <li>
+                            
+                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Kontakt</a>
+                            
                         </li>
                         
                         <li>
                             
-                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a>
+                              <a href="https://twitter.com/destatis?lang=de" target="_blank"  onclick="return confirm_alert('twitter', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                             
                         </li>
+                        
                         <li>
-                            
-                            <a href="https://twitter.com/destatis?lang=de" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        <li>
-                            <a href="/imprint/">Im­pres­s­um</a>
+                            <a href="/imprint/ ">Im­pres­s­um</a>
                             
                         </li>
                         
@@ -518,12 +612,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230426123414'></script>
+<script src='/assets/js/sdg.js?v=20230517131714'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230426123414"></script><script>
+    <script src="/assets/js/custom.js?v=20230517131714"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -531,3 +625,4 @@ data-event-label="high"
 
 </body>
 </html>
+

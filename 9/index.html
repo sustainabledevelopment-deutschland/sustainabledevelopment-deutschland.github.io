@@ -127,7 +127,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230426123414">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230517131714">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -201,7 +201,10 @@ layout-goal
     <a class="dropdown-item" href="/about_platform/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/guidance/">Technische&nbspHinweise</a>
+    <a class="dropdown-item" href="/about_joint_action/">Gemeinschaftswerk</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/about_guidance/">Technische&nbspHinweise</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -408,6 +411,7 @@ data-event-label="high"
       
     </div>
   </div>
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -415,21 +419,24 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org">Seite basiert auf Open SDG</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">Seite basiert auf Open SDG</a>
+                        </li>
+                        
+                        
+                        <li>
+                            
+                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Kontakt</a>
+                            
                         </li>
                         
                         <li>
                             
-                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Kontakt</a>
+                              <a href="https://twitter.com/destatis?lang=de" target="_blank"  onclick="return confirm_alert('twitter', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                             
                         </li>
+                        
                         <li>
-                            
-                            <a href="https://twitter.com/destatis?lang=de" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        <li>
-                            <a href="/imprint/">Im­pres­s­um</a>
+                            <a href="/imprint/ ">Im­pres­s­um</a>
                             
                         </li>
                         
@@ -468,12 +475,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230426123414'></script>
+<script src='/assets/js/sdg.js?v=20230517131714'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230426123414"></script><script>
+    <script src="/assets/js/custom.js?v=20230517131714"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -481,3 +488,4 @@ data-event-label="high"
 
 </body>
 </html>
+

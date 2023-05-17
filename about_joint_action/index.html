@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="de" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/en',
+  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -42,7 +42,7 @@ var opensdg = {
   // Disaggregations which should be ignored on indicator pages.
   ignoredDisaggregations: null,
 
-  language: 'en',
+  language: 'de',
 };
 
 </script>
@@ -103,7 +103,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Technical instructions - Indicators of the German Sustainable Development Strategy</title>
+    <title>Gemeinschaftswerk Nachhaltigkeit – und jetzt alle - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
 
 
 
@@ -127,7 +127,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230426123414">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230517131714">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -145,17 +145,17 @@ var translations = {
         
 
     </head>
-<body class="language-en
+<body class="language-de
 layout-page
 ">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Alpha","beta":"Beta","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
+<script>translations['header'] = {"alpha":"Alpha-Version","beta":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_contacts.suggestions\">Kommentare</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
 
-<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
 <div class="container internet-explorer-message">
-    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
-    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari.</p>
+    <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
+    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
 </div>
 <div id="disclaimer">
     
@@ -163,7 +163,7 @@ layout-page
   <div class="disclaimer-alert">
     <strong class="phase-tag">beta</strong>
     
-    This is a development website. We welcome your <a href="mailto:dns-indikatoren@destatis.de">feedback</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
     
   </div>
 </div>
@@ -173,8 +173,8 @@ layout-page
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/en/" id="home" aria-label="" title="">
-    <img src="/assets/img/en/DNS_logo.png" alt="DESTATIS - German Strategy for Sustainable Development" />
+            <a class="navbar-brand" href="/" id="home" aria-label="" title="">
+    <img src="/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
 </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                 <span class="navbar-toggler-icon"></span>
@@ -182,52 +182,55 @@ layout-page
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav" id="menu"><li class="nav-item ">
-    <a class="nav-link" href="/en/">17 Goals</a>
+    <a class="nav-link" href="/">17 Ziele</a>
 </li>
 <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-status-title" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Evaluation
+                    Bewertung
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-status-title"><li class=" ">
-    <a class="dropdown-item" href="/en/status_summary/">Summary</a>
+    <a class="dropdown-item" href="/status_summary/">Statusübersicht</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/en/status/">Methodology</a>
+    <a class="dropdown-item" href="/status/">Methodik</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    About
+                    Über uns
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-about"><li class=" ">
-    <a class="dropdown-item" href="/en/about_platform/">DNS&nbsponline&nbspplatform</a>
+    <a class="dropdown-item" href="/about_platform/">Die&nbspDNS&#8209;Online&nbspPlattform</a>
+</li>
+<li class=" active">
+    <a class="dropdown-item" href="/about_joint_action/">Gemeinschaftswerk</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/en/guidance/">Technical&nbspinstructions</a>
+    <a class="dropdown-item" href="/about_guidance/">Technische&nbspHinweise</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Publications
+                    Publikationen
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-publications"><li class=" ">
-    <a class="dropdown-item" href="/en/publications_reports/">Indicator reports</a>
+    <a class="dropdown-item" href="/publications_reports/">Indikatorenberichte</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/en/publications_strategy/">Sustainable Development Strategy</a>
+    <a class="dropdown-item" href="/publications_strategy/">Nachhaltigkeitsstrategie</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/en/publications_other/">Other Publications</a>
+    <a class="dropdown-item" href="/publications_other/">Weitere Publikationen</a>
 </li>
 </ul>
           </li><li class="nav-item ">
-    <a class="nav-link" href="https://www.sdg-indicators.de"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Click here to get to the SDG indicators page" alt="Link SDG" style="width:24px;height:24px;"/></a>
+    <a class="nav-link" href="https://www.sdg-indikatoren.de"><img class="link_btn" src="https://g205sdgs.github.io/sdg-indicators/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
 </li>
 </ul>
 
                 </div>
                 <div class="header-search-bar">
-                    <form class="align-self-lg-end" id="search" action="/en/search/">
+                    <form class="align-self-lg-end" id="search" action="/search/">
     <div class="input-group">
-        <label class="visually-hidden" for="indicator_search">Search</label>
-        <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
+        <label class="visually-hidden" for="indicator_search">Suche</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
         <span class="input-group-append">
             <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
@@ -245,9 +248,9 @@ layout-page
 
   <div class="language-toggle-container d-flex">
     <i class="fa fa-globe language-toggle-globe-links"></i>
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
-            <a class="language-toggle-link" href="/guidance/">
-                Deutsch
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/en/about_joint_action/">
+                English
             </a>
         </li></ul>
 </div>
@@ -255,9 +258,9 @@ layout-page
 
                     <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
     <i class="fa fa-globe language-toggle-globe-links"></i>
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item">
-            <a class="language-toggle-link" href="/guidance/">
-                Deutsch
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/en/about_joint_action/">
+                English
             </a>
         </li></ul>
 </div></span><a title="" aria-label=""
@@ -279,58 +282,53 @@ data-event-label="high"
     <nav>
     <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
         <li class="breadcrumb-item" >
-            <a href="/en/">Home</a>
+            <a href="/">Start</a>
         </li>
-        <li class="breadcrumb-item active">Technical instructions</li>
+        <li class="breadcrumb-item active">Gemeinschaftswerk Nachhaltigkeit – und jetzt alle</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Technical instructions</h1>
+        <h1>Gemeinschaftswerk Nachhaltigkeit – und jetzt alle</h1>
         
 
 
-    <h2 id="open-source-project-on-github">Open source project on GitHub</h2>
-
-<p>The DNS online platform is a publicly accessible tool for the dissemination and presentation of German data for the indicators of the German Sustainable Development Strategy.</p>
-
-<h2 id="sources">Sources</h2>
-
-<p>The Federal Statistical Office (Destatis) actively supports the development of national online platforms, in particular as open source solutions for the presentation of DNS indicators. Pioneers in this area are the USA and Great Britain. The current version of the German online platform was developed on the basis of an earlier version of the British online platform and adapted to the needs of German statistics. The project code for the DNS online platform is publicly available in the <a href="https://github.com/sustainabledevelopment-deutschland/sustainabledevelopment-deutschland.github.io">Github repository</a>.</p>
-
-<p>A universal version of the codes for an online platform developed by the United States, Great Britain and the Center for Open Data Enterprise is available. The SDG online platform is based on this. If you are interested, we recommend that you familiarise yourself with the SDG online platforms of the United States and Great Britain and the relevant <a href="https://open-sdg.readthedocs.io/en/latest/">Open SDG project documentation</a>. This contains technical instructions on how to make a copy of the Open SDG online platform.</p>
-
-<ul>
-  <li>
-    <p><a href="https://sdg.data.gov/">SDG online platform of the United States</a></p>
-  </li>
-  <li>
-    <p><a href="https://sustainabledevelopment-uk.github.io">SDG online platform of Great Britain</a></p>
-  </li>
-</ul>
-
-<p>If you have comments or feedback on the Open SDG project or would like to participate in the Open SDG community, please contact <a href="https://github.com/open-sdg/open-sdg/issues">Open SDG GitHub</a>.</p>
-
-<h2 id="applied-technology">Applied technology</h2>
-
-<h3 id="back-end-it-requirements">Back-end IT requirements:</h3>
-<ul>
-  <li>GitHub: hosting website designed for programming projects using the Git version control system</li>
-  <li>Jekyll: generator of static pages written in Ruby</li>
-</ul>
-
-<h3 id="front-end-it-requirements">Front-end IT requirements:</h3>
-<ul>
-  <li>XHTML, CSS, JavaScript</li>
-  <li>Chartist: JavaScript library that offers customizable and responsive charts</li>
-  <li>Bootstrap: framework CSS</li>
-</ul>
+    <div class="row">
+<div class="leftColumn" >
+<p>
+  Das Statistische Bundesamt ist Teil des
+  <a href="https://gemeinschaftswerk-nachhaltigkeit.de/app/organisations/1102" target="_blank" onclick="return confirm_alert('des Gemeinschaftswerks Nachhaltigkeit', 'De');">Gemeinschaftswerks Nachhaltigkeit</a>.
+  Dies ist eine offene Plattform für alle, die sich für eine nachhaltige Gesellschaft einsetzen. Das Gemeinschaftswerk Nachhaltigkeit ist eine
+  Initiative von Bund und Ländern und wird vom
+  <a href="http://www.nachhaltigkeitsrat.de" target="_blank" onclick="return confirm_alert('des Rats für nachhaltige Entwicklung', 'De');">Rat für Nachhaltige Entwicklung</a>
+  koordiniert.
+  <br><br>
+  Altbundeskanzlerin Angela Merkel und die Ministerpräsidentinnen und Ministerpräsiden der Länder haben im Jahr 2019 das Gemeinschaftswerk
+  Nachhaltigkeit beschlossen. Der Beschluss legte fest, dass nachhaltige Entwicklung zu einem Gemeinschaftswerk werden soll und bekräftigte damit die
+  gemeinsame Verantwortung für eine nachhaltige Zukunft.
+  <br><br>
+  Die vier
+  <a href="https://www.renn-netzwerk.de/ueber-uns" target="_blank" onclick="return confirm_alert('der Regionalen Netzstellen Nachhaltigkeitsstrategien', 'De');">Regionalen Netzstellen Nachhaltigkeitsstrategien (RENN)</a>
+  sind zentrale Partner für das Gemeinschaftswerk Nachhaltigkeit in den Regionen.<br><br>
+  Die Webplattform bietet Organisationen aus allen gesellschaftlichen Bereichen Sichtbarkeit für ihre Nachhaltigkeitsaktivitäten und einen Ort zum
+  Vernetzen. Sie ist Ende 2022 online gegangen.
+</p>
+</div>
+<div class="rightColumn">
+  <a href="https://gemeinschaftswerk-nachhaltigkeit.de/" title="Externer Link!" target="_blank" onclick="return confirm_alert('des Gemeinschaftswerks Nachhaltigkeit', 'De');">
+    <img src="https://dns-indikatoren.de//assets/img/Gemeinschaftswerk_Nachhaltigkeit.png"
+        alt="Gemeinschaftswerk Nachhaltigkeit"
+        style="width:400px; margin-right:10px; float:left">
+  </a>
+</div>
+</div>
 
 
 
     </div>
 </div>
+
 
 <footer role="contentinfo">
     <div class="container">
@@ -339,21 +337,24 @@ data-event-label="high"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org">Built using Open SDG</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">Seite basiert auf Open SDG</a>
+                        </li>
+                        
+                        
+                        <li>
+                            
+                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Kontakt</a>
+                            
                         </li>
                         
                         <li>
                             
-                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Contact us</a>
+                              <a href="https://twitter.com/destatis?lang=de" target="_blank"  onclick="return confirm_alert('twitter', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                             
                         </li>
+                        
                         <li>
-                            
-                            <a href="https://twitter.com/destatis?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        <li>
-                            <a href="/en/imprint/">Legal Notice</a>
+                            <a href="/imprint/ ">Im­pres­s­um</a>
                             
                         </li>
                         
@@ -390,14 +391,14 @@ data-event-label="high"
     translations['general']['hide'] = '';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Search';</script>
+    translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230426123414'></script>
+<script src='/assets/js/sdg.js?v=20230517131714'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230426123414"></script><script>
+    <script src="/assets/js/custom.js?v=20230517131714"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -405,3 +406,4 @@ data-event-label="high"
 
 </body>
 </html>
+

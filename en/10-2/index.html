@@ -132,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230426123414">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230517131714">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -206,7 +206,10 @@ layout-indicator
     <a class="dropdown-item" href="/en/about_platform/">DNS&nbsponline&nbspplatform</a>
 </li>
 <li class=" ">
-    <a class="dropdown-item" href="/en/guidance/">Technical&nbspinstructions</a>
+    <a class="dropdown-item" href="/en/about_joint_action/">Joint action</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/en/about_guidance/">Technical&nbspinstructions</a>
 </li>
 </ul>
           </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-publications" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -663,7 +666,7 @@ data-event-label="Change to Table tab"
     <dl>
         
           <dt><u>Data sources</u>:</dt>
-          <dd><a href="https://www.destatis.de/EN/Home/_node.html">Federal Statistical Office</a>, <a href="https://ec.europa.eu/eurostat/home">Eurostat</a>, <a href="https://www.bundesbank.de/en">German Federal Bank</a>, <a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html">European Central Bank</a>, <a href="https://www.diw.de/en">German Institute for Economic Research</a></dd>
+          <dd><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a>, <a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')">Eurostat</a>, <a href="https://www.bundesbank.de/en" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En')">German Federal Bank</a>, <a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En')">European Central Bank</a>, <a href="https://www.diw.de/en" target="_blank" onclick="return confirm_alert('the German Institute for Economic Research', 'En')">German Institute for Economic Research</a></dd>
         
 
         
@@ -751,7 +754,7 @@ data-event-label="Change to Table tab"
     <dl>
         
           <dt><u>Data sources</u>:</dt>
-          <dd><a href="https://www.destatis.de/EN/Home/_node.html">Federal Statistical Office</a>, <a href="https://ec.europa.eu/eurostat/home">Eurostat</a>, <a href="https://www.bundesbank.de/en">German Federal Bank</a>, <a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html">European Central Bank</a>, <a href="https://www.diw.de/en">German Institute for Economic Research</a></dd>
+          <dd><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a>, <a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')">Eurostat</a>, <a href="https://www.bundesbank.de/en" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En')">German Federal Bank</a>, <a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En')">European Central Bank</a>, <a href="https://www.diw.de/en" target="_blank" onclick="return confirm_alert('the German Institute for Economic Research', 'En')">German Institute for Economic Research</a></dd>
         
 
         
@@ -916,7 +919,8 @@ data-event-label="Change to indicator.sources tab"
       <article>
         <p>This table includes additional information to the above visualized indicators, <abbr title="that is to say (id est)">i.e.</abbr> a short definition of this indicator and a description of the politically determined target values as well as explaining the political intention behind selecting this indicator.</p>
 
-        <table class="table">
+        
+<table class="table">
   
   
   
@@ -1856,7 +1860,8 @@ data-event-label="Change to indicator.sources tab"
     <div role="tabpanel" class="tab-pane " id="content">
       <article>
         
-        <table class="table">
+        
+<table class="table">
   
   
   
@@ -2715,7 +2720,8 @@ data-event-label="Change to indicator.sources tab"
         
         <div class="col-md-6">
           <!--  -->
-          <table class="table">
+          
+<table class="table">
   
   
   
@@ -4425,7 +4431,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Data source 1</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -5175,7 +5182,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -5253,9 +5260,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
+                
+                
+
+                
+                  
                   <a href="https://www.destatis.de/EN/Themes/Society-Environment/Income-Consumption-Living-Conditions/Living-Conditions-Risk-Poverty/Tables/income-distribution-mz-silc.html" target="_blank">
                     Income distribution (equivalised net income) <span class="visuallyhidden">opens in a new window</span>
                   </a>
+                  
                 
 
               
@@ -5376,7 +5389,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Data source 2</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -6138,7 +6152,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://ec.europa.eu/eurostat/home" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/eurostat.png" alt="Eurostat" title=" Click here to visit the homepage of the organizationEurostat" style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/eurostat.png" alt="Eurostat" title=" Click here to visit the homepage of the organizationEurostat" style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -6182,7 +6196,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left">Organisation </th>
             <td>
               
-                <p><a href="https://ec.europa.eu/eurostat/home" target="_blank">Eurostat</a></p>
+                <p><a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')">Eurostat</a></p>
 
               
             </td>
@@ -6216,9 +6230,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
-                  <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_DI12C/default/table?lang=en&category=livcon.ilc.ilc_ie.ilc_iei" target="_blank">
-                    Gini coefficient of equivalised disposable income before social transfers - <abbr title="European Statistical Office" tabindex="0">Eurostat</abbr> table  [ilc_di12c ] <span class="visuallyhidden">opens in a new window</span>
-                  </a>
+                
+                
+
+                
+                  
+                    <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_DI12C/default/table?lang=en&category=livcon.ilc.ilc_ie.ilc_iei" target="_blank" onclick="return confirm_alert('Eurostat', 'En');">
+                      Gini coefficient of equivalised disposable income before social transfers - <abbr title="European Statistical Office" tabindex="0">Eurostat</abbr> table  [ilc_di12c ] <span class="visuallyhidden">opens in a new window</span>
+                    </a>
+                  
                 
 
               
@@ -6269,9 +6289,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
-                  <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_DI12/default/table?lang=en&category=livcon.ilc.ilc_ie.ilc_iei" target="_blank">
-                    Gini coefficient of equivalised disposable income - <abbr title="European Statistical Office" tabindex="0">Eurostat</abbr> table  [ilc_di12c] <span class="visuallyhidden">opens in a new window</span>
-                  </a>
+                
+                
+
+                
+                  
+                    <a href="https://ec.europa.eu/eurostat/databrowser/view/ILC_DI12/default/table?lang=en&category=livcon.ilc.ilc_ie.ilc_iei" target="_blank" onclick="return confirm_alert('Eurostat', 'En');">
+                      Gini coefficient of equivalised disposable income - <abbr title="European Statistical Office" tabindex="0">Eurostat</abbr> table  [ilc_di12c] <span class="visuallyhidden">opens in a new window</span>
+                    </a>
+                  
                 
 
               
@@ -6374,7 +6400,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Data source 3</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -7148,7 +7175,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://www.bundesbank.de/en" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/bundesbank.png" alt="German Federal Bank" title=" Click here to visit the homepage of the organizationGerman Federal Bank" style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://www.bundesbank.de/en" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/bundesbank.png" alt="German Federal Bank" title=" Click here to visit the homepage of the organizationGerman Federal Bank" style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -7192,7 +7219,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left">Organisation </th>
             <td>
               
-                <p><a href="https://www.bundesbank.de/en" target="_blank">German Federal Bank</a></p>
+                <p><a href="https://www.bundesbank.de/en" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En')">German Federal Bank</a></p>
 
               
             </td>
@@ -7226,9 +7253,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
-                  <a href="https://www.bundesbank.de/en/bundesbank/research/panel-on-household-finances" target="_blank">
-                    Panel on household finances (PHF) <span class="visuallyhidden">opens in a new window</span>
-                  </a>
+                
+                
+
+                
+                  
+                    <a href="https://www.bundesbank.de/en/bundesbank/research/panel-on-household-finances" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En');">
+                      Panel on household finances (PHF) <span class="visuallyhidden">opens in a new window</span>
+                    </a>
+                  
                 
 
               
@@ -7321,7 +7354,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Data source 4</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -8105,7 +8139,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/ezb.png" alt="European Central Bank" title=" Click here to visit the homepage of the organizationEuropean Central Bank" style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/ezb.png" alt="European Central Bank" title=" Click here to visit the homepage of the organizationEuropean Central Bank" style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -8149,7 +8183,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left">Organisation </th>
             <td>
               
-                <p><a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank">European Central Bank</a></p>
+                <p><a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En')">European Central Bank</a></p>
 
               
             </td>
@@ -8183,9 +8217,15 @@ data-event-label="Change to indicator.sources tab"
                 
 
                 
-                  <a href="https://www.ecb.europa.eu/pub/economic-research/research-networks/html/researcher_hfcn.en.html" target="_blank">
-                    Household Finance and Consumption Network (HFCN) <span class="visuallyhidden">opens in a new window</span>
-                  </a>
+                
+                
+
+                
+                  
+                    <a href="https://www.ecb.europa.eu/pub/economic-research/research-networks/html/researcher_hfcn.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En');">
+                      Household Finance and Consumption Network (HFCN) <span class="visuallyhidden">opens in a new window</span>
+                    </a>
+                  
                 
 
               
@@ -8268,7 +8308,8 @@ data-event-label="Change to indicator.sources tab"
       
         <h4>Data source 5</h4>
       
-      <table class="table">
+      
+<table class="table">
   
   
   
@@ -9062,7 +9103,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left"> </th>
             <td>
               
-                <p><a href="https://www.diw.de/en" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/diw.png" alt="German Institute for Economic Research" title=" Click here to visit the homepage of the organizationGerman Institute for Economic Research" style="height:60px; width:148px; border: transparent" /></a></p>
+                <p><a href="https://www.diw.de/en" target="_blank" onclick="return confirm_alert('the German Institute for Economic Research', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/diw.png" alt="German Institute for Economic Research" title=" Click here to visit the homepage of the organizationGerman Institute for Economic Research" style="height:60px; width:148px; border:transparent" /></a></p>
 
               
             </td>
@@ -9106,7 +9147,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left">Organisation </th>
             <td>
               
-                <p><a href="https://www.diw.de/en" target="_blank">German Institute for Economic Research</a></p>
+                <p><a href="https://www.diw.de/en" target="_blank" onclick="return confirm_alert('the German Institute for Economic Research', 'En')">German Institute for Economic Research</a></p>
 
               
             </td>
@@ -9179,6 +9220,7 @@ data-event-label="Change to indicator.sources tab"
   <a href="#top"></a>
 </div>
 
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -9186,21 +9228,24 @@ data-event-label="Change to indicator.sources tab"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org">Built using Open SDG</a>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">Built using Open SDG</a>
+                        </li>
+                        
+                        
+                        <li>
+                            
+                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Contact us</a>
+                            
                         </li>
                         
                         <li>
                             
-                            <a href="mailto:dns-indikatoren@destatis.de" target="_blank">Contact us</a>
+                              <a href="https://twitter.com/destatis?lang=en" target="_blank"  onclick="return confirm_alert('twitter', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
                             
                         </li>
+                        
                         <li>
-                            
-                            <a href="https://twitter.com/destatis?lang=en" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        <li>
-                            <a href="/en/imprint/">Legal Notice</a>
+                            <a href="/en/imprint/ ">Legal Notice</a>
                             
                         </li>
                         
@@ -9241,12 +9286,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20230426123414'></script>
+<script src='/assets/js/sdg.js?v=20230517131714'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230426123414"></script><script>
+    <script src="/assets/js/custom.js?v=20230517131714"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -9254,3 +9299,4 @@ data-event-label="Change to indicator.sources tab"
 
 </body>
 </html>
+
