@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -43,6 +43,20 @@ var opensdg = {
   ignoredDisaggregations: null,
 
   language: 'en',
+
+  mapColors: {
+    "default": [
+        "#c4e1c6",
+        "#b0d1b3",
+        "#9bc2a1",
+        "#87b28f",
+        "#74a37c",
+        "#60946b",
+        "#4d8559",
+        "#3a7747",
+        "#276836"
+    ]
+},
 };
 
 </script>
@@ -112,10 +126,7 @@ var translations = {
 
 
 
-        <meta name="description" content="">
-        <meta property="og:description" content="">
         
-        <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
@@ -126,13 +137,16 @@ var translations = {
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
+        
+        <link rel="manifest" href="/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230621084838">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230622131653">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -142,6 +156,9 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
+
+        
+
 
         <!--[if IE]>
         <link rel="stylesheet" href="/assets/css/ie.css">
@@ -352,8 +369,9 @@ data-event-label="high"
     <fieldset>
       <legend class="sr-only">Time series</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
+        <% var isProxy = (proxySerieses.includes(seriesItem)) %>
         <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
-        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
+        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
   
@@ -369,7 +387,7 @@ data-event-label="high"
     <div class="row">
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-        <a href="/en/5" title="View this goal's indicator overview">
+        <a href="/en/5/" title="View this goal's indicator overview">
           <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/en/5.png"
               alt="Gender equality - Goal 5"
               id="goal-5"
@@ -403,7 +421,7 @@ data-event-label="high"
                 <a href="/en/">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="/en/5" title="Achieve gender equality and empower all women and girls">Goal 5</a>
+                <a href="/en/5/" title="Achieve gender equality and empower all women and girls">Goal 5</a>
             </li>
             <li class="breadcrumb-item active">Indicator 5.1.a</li>
         
@@ -421,7 +439,9 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-around">
     
-      <div class="col-sm-3 d-grid gap-2">
+      
+        <div class="col-sm-4 d-grid gap-2">
+      
     
       <a href="https://dns-indikatoren.de/en//4-2-ab" class="btn btn-primary btn-block goal-5 navigation-btn text-nowrap" role="button">
         <b class="d-sm-none d-lg-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous indicator</b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
@@ -430,7 +450,7 @@ data-event-label="high"
 
     
       
-        <div class="col-sm-6 d-grid gap-2">
+        <div class="col-sm-4 d-grid gap-2">
           <a href="https://sdg-indikatoren.de/en/8-5-1" class="btn btn-primary btn-block goal-5 navigation-btn" title="" role="button">
             <b class="btn-label d-sm-none d-lg-block">Corresponding global indicator 8.5.1</b><b class="btn-label d-none d-sm-block d-lg-none">SDG 8.5.1</b>
           </a>
@@ -439,7 +459,9 @@ data-event-label="high"
     
 
     
-      <div class="col-sm-3 d-grid gap-2">
+      
+        <div class="col-sm-4 d-grid gap-2">
+      
     
       <a href="https://dns-indikatoren.de/en/5-1-bc" class="btn btn-primary btn-block goal-5 navigation-btn text-nowrap" role="button">
         <b class="btn-label d-sm-none d-lg-block">Next indicator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
@@ -452,6 +474,8 @@ data-event-label="high"
 </div>
 
 <div id="main-content" class="container goal-5" role="main">
+  
+
   
 
   
@@ -483,6 +507,8 @@ data-event-label="high"
 
 
 
+
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_5-1-a'
@@ -495,6 +521,7 @@ data-event-label="high"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo="false"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -515,6 +542,8 @@ data-event-label="high"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:0.0}]"
   data-graphstepsize="null"
+  data-proxy=""
+  data-proxyseries="null"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -1086,8 +1115,6 @@ data-event-label="Change to embedded item tab"
 
 
 
-
-
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -1114,30 +1141,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -1174,8 +1201,6 @@ data-event-label="Change to embedded item tab"
 
 
 
-
-
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -1202,30 +1227,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -1244,8 +1269,6 @@ data-event-label="Change to embedded item tab"
 <div id="map" aria-describedby="table-alternative">
   <img class="map-loading-image" src="/assets/img/loading.gif" alt="Loading map" />
 </div>
-
-
 
 
 
@@ -1279,30 +1302,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -1441,7 +1464,7 @@ data-event-label="Change to indicator.sources tab"
         <p>This table includes additional information to the above visualized indicators, <abbr title="that is to say (id est)">i.e.</abbr> a short definition of this indicator and a description of the politically determined target values as well as explaining the political intention behind selecting this indicator.</p>
 
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -1486,7 +1509,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Definition </th>
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
             <td>
               
                 <p>The indicator shows the difference between the average gross hourly earnings of women and men expressed as a percentage of the average gross hourly earnings of men.</p>
@@ -1530,7 +1553,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Target and intention </th>
+            <th scope="row" style="text-align: left; width: 130px;">Target and intention </th>
             <td>
               
                 <p>Differences in pay between men and women in a modern business-oriented society are a sign of social inequality. A narrowing of pay disparities indicates progress on the road to equality. The Federal Government is therefore pursuing the goal of reducing the pay gap to 10 % by 2020 and to maintain the value until 2030.</p>
@@ -1558,7 +1581,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Data status </th>
+            <th scope="row" style="text-align: left; width: 130px;">Data status </th>
             <td>
               
                 <p>The data published in the indicator report 2022 is as of 31 October 2022. The data shown on this platform is updated regularly, so that more current data may be available online than published in the <a href="https://dns-indikatoren.de/en/publications_reports/">indicator report 2022</a>.</p>
@@ -2382,7 +2405,7 @@ data-event-label="Change to indicator.sources tab"
       <article>
         
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -3242,7 +3265,7 @@ data-event-label="Change to indicator.sources tab"
         <div class="col-md-6">
           <!--  -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -3285,8 +3308,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indicator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indicator </th>
+              <td colspan="4">
                 <p>5.1.a Gender pay gap</p>
 
               </td>
@@ -3313,8 +3336,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Target </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Target </th>
+              <td colspan="4">
                 <p>Reduce the gap to 10 % by 2020, maintained until 2030 subsequently</p>
 
               </td>
@@ -3352,7 +3375,7 @@ data-event-label="Change to indicator.sources tab"
         
         
         <tr id="years">
-          <th scope="row" style="padding-right: 10px; text-align: left"">Year </th>
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Year </th>
           
             <td align="left" style="margin-bottom: 15px;">
               <p><p>2018</p>
@@ -3818,29 +3841,43 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Evaluation </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Evaluation </th>
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2018 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="Wolke" class="responsiveWeather" style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2018 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2019 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="Wolke" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2019 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2020 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="Wolke" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="Although the indicator has in 2020 been moving in the desired direction toward the target, if the trend had to continued, the target would have been missed in the target year by more than 20% of the difference between the target value and the value at that time." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
-              
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="In 2021 the target value was not reached, but the average development pointed in the desired direction." alt="Wolke" class="responsiveWeather"  style="border: transparent"/></a>
-              
-            </td>
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="In 2021 the target value was not reached, but the average development pointed in the desired direction." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
           </tr>
+
+
+
         
       
     
@@ -5089,7 +5126,7 @@ data-event-label="Change to indicator.sources tab"
     <div class="col-md-6">
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -5836,7 +5873,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -5880,7 +5917,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -5908,7 +5945,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -5967,7 +6004,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 
@@ -6111,6 +6148,7 @@ data-event-label="Change to indicator.sources tab"
 </div>
 
 
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -6118,26 +6156,29 @@ data-event-label="Change to indicator.sources tab"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">Built using Open SDG</a>
-                        </li>
-                        
-                        
-                        <li>
-                            
-                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Contact us</a>
-                            
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
+                              Built using Open SDG
+                            </a>
                         </li>
                         
                         <li>
-                            
-                              <a href="https://twitter.com/destatis?lang=en" target="_blank"  onclick="return confirm_alert('twitter', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        
+                              
+                                
+                                  <a href="mailto:dns-indikatoren@destatis.de">Contact us</a>
+                                
+                              
+                          </li>
                         <li>
-                            <a href="/en/imprint/ ">Legal Notice</a>
-                            
-                        </li>
+                              
+                                
+                                  <a href="https://twitter.com/destatis?lang=en" target="_blank" onclick="return confirm_alert('', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                
+                              
+                          </li>
+                        <li>
+                              <a href="/en/imprint/ ">Legal Notice</a>
+                              
+                          </li>
                         
                         
                         </ul>
@@ -6185,12 +6226,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20230621084838'></script>
+<script src='/assets/js/sdg.js?v=20230622131653'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230621084838"></script><script>
+    <script src="/assets/js/custom.js?v=20230622131653"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

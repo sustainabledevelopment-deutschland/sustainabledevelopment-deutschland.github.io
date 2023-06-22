@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -43,6 +43,20 @@ var opensdg = {
   ignoredDisaggregations: null,
 
   language: 'en',
+
+  mapColors: {
+    "default": [
+        "#c4e1c6",
+        "#b0d1b3",
+        "#9bc2a1",
+        "#87b28f",
+        "#74a37c",
+        "#60946b",
+        "#4d8559",
+        "#3a7747",
+        "#276836"
+    ]
+},
 };
 
 </script>
@@ -112,10 +126,7 @@ var translations = {
 
 
 
-        <meta name="description" content="">
-        <meta property="og:description" content="">
         
-        <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
@@ -126,13 +137,16 @@ var translations = {
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
+        
+        <link rel="manifest" href="/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230621084838">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230622131653">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -142,6 +156,9 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
+
+        
+
 
         <!--[if IE]>
         <link rel="stylesheet" href="/assets/css/ie.css">
@@ -352,8 +369,9 @@ data-event-label="high"
     <fieldset>
       <legend class="sr-only">Time series</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
+        <% var isProxy = (proxySerieses.includes(seriesItem)) %>
         <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
-        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
+        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
   
@@ -369,7 +387,7 @@ data-event-label="high"
     <div class="row">
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-        <a href="/en/10" title="View this goal's indicator overview">
+        <a href="/en/10/" title="View this goal's indicator overview">
           <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/en/10.png"
               alt="Reduced inequalities - Goal 10"
               id="goal-10"
@@ -403,7 +421,7 @@ data-event-label="high"
                 <a href="/en/">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="/en/10" title="Reduce inequality within and among countries">Goal 10</a>
+                <a href="/en/10/" title="Reduce inequality within and among countries">Goal 10</a>
             </li>
             <li class="breadcrumb-item active">Indicator 10.2</li>
         
@@ -421,7 +439,9 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-around">
     
-      <div class="col-sm-3 d-grid gap-2">
+      
+        <div class="col-sm-3 d-grid gap-2">
+      
     
       <a href="https://dns-indikatoren.de/en//10-1" class="btn btn-primary btn-block goal-10 navigation-btn text-nowrap" role="button">
         <b class="d-sm-none d-lg-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous indicator</b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
@@ -444,7 +464,9 @@ data-event-label="high"
     
 
     
-      <div class="col-sm-3 d-grid gap-2">
+      
+        <div class="col-sm-3 d-grid gap-2">
+      
     
       <a href="https://dns-indikatoren.de/en/11-1-a" class="btn btn-primary btn-block goal-10 navigation-btn text-nowrap" role="button">
         <b class="btn-label d-sm-none d-lg-block">Next indicator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
@@ -457,6 +479,8 @@ data-event-label="high"
 </div>
 
 <div id="main-content" class="container goal-10" role="main">
+  
+
   
 
   
@@ -486,6 +510,8 @@ data-event-label="high"
 
 
 
+
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_10-2'
@@ -498,6 +524,7 @@ data-event-label="high"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo="false"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -518,6 +545,8 @@ data-event-label="high"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:3.0}]"
   data-graphstepsize="[{&quot;step&quot;:0.05}]"
+  data-proxy=""
+  data-proxyseries="null"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -659,8 +688,6 @@ data-event-label="Change to Table tab"
 
 
 
-
-
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -687,30 +714,30 @@ data-event-label="Change to Table tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -747,8 +774,6 @@ data-event-label="Change to Table tab"
 
 
 
-
-
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -775,30 +800,30 @@ data-event-label="Change to Table tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -920,7 +945,7 @@ data-event-label="Change to indicator.sources tab"
         <p>This table includes additional information to the above visualized indicators, <abbr title="that is to say (id est)">i.e.</abbr> a short definition of this indicator and a description of the politically determined target values as well as explaining the political intention behind selecting this indicator.</p>
 
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -965,7 +990,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Definition </th>
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
             <td>
               
                 <p>The indicator shows the distribution of equivalised disposable income per person using Gini coefficients.</p>
@@ -1009,7 +1034,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Target and intention </th>
+            <th scope="row" style="text-align: left; width: 130px;">Target and intention </th>
             <td>
               
                 <p>Inequality in income and wealth distribution is a generally accepted component of a dynamic market economy. However, the income and wealth gap must remain moderate and social inclusion be guaranteed for all. The goal is to keep the Gini coefficient of equivalised disposable income below the <abbr title="European Union" tabindex="0">EU</abbr> average until 2030 by means of suitable framework conditions as well as a targeted re-distribution of income through taxes and social benefits.</p>
@@ -1037,7 +1062,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Data status </th>
+            <th scope="row" style="text-align: left; width: 130px;">Data status </th>
             <td>
               
                 <p>The data published in the indicator report 2022 is as of 31 October 2022. The data shown on this platform is updated regularly, so that more current data may be available online than published in the <a href="https://dns-indikatoren.de/en/publications_reports/">indicator report 2022</a>.</p>
@@ -1861,7 +1886,7 @@ data-event-label="Change to indicator.sources tab"
       <article>
         
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -2721,7 +2746,7 @@ data-event-label="Change to indicator.sources tab"
         <div class="col-md-6">
           <!--  -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -2764,8 +2789,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indicator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indicator </th>
+              <td colspan="4">
                 <p>10.2 Gini coefficient of income after social transfers</p>
 
               </td>
@@ -2792,8 +2817,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Target </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Target </th>
+              <td colspan="4">
                 <p>Gini coefficient of income after social transfers to be below the <abbr title="European Union consisting of 27&nbsp;member states (without United Kingdom)" tabindex="0">EU-27</abbr> figure by 2030</p>
 
               </td>
@@ -2831,7 +2856,7 @@ data-event-label="Change to indicator.sources tab"
         
         
         <tr id="years">
-          <th scope="row" style="padding-right: 10px; text-align: left"">Year </th>
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Year </th>
           
             <td align="left" style="margin-bottom: 15px;">
               <p><p>2018</p>
@@ -3297,25 +3322,38 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Evaluation </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Evaluation </th>
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Blitz.png" title="In 2018 the target value was missed and the indicator had not moved towards the target on average over the previous changes." alt="Blitz" class="responsiveWeather" style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Blitz.png" title="In 2018 the target value was missed and the indicator had not moved towards the target on average over the previous changes." alt="<p>Blitz</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2019 the target value or a better value was achieved and the average change did not point in the direction of deterioration." alt="Sonne" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2019 the target value or a better value was achieved and the average change did not point in the direction of deterioration." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
+              <td colspan="2" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <p>  </p>
+              </td>
               
-                <p> No evaluation possible </p>
-              
-            </td>
+            
+
+            
           </tr>
+
+
+
         
       
     
@@ -4430,7 +4468,7 @@ data-event-label="Change to indicator.sources tab"
         <h4>Data source 1</h4>
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -5177,7 +5215,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -5221,7 +5259,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -5249,7 +5287,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -5388,7 +5426,7 @@ data-event-label="Change to indicator.sources tab"
         <h4>Data source 2</h4>
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -6147,7 +6185,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/eurostat.png" alt="Eurostat" title=" Click here to visit the homepage of the organizationEurostat" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -6191,7 +6229,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')">Eurostat</a></p>
@@ -6219,7 +6257,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -6278,7 +6316,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 
@@ -6399,7 +6437,7 @@ data-event-label="Change to indicator.sources tab"
         <h4>Data source 3</h4>
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -7170,7 +7208,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.bundesbank.de/en" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/bundesbank.png" alt="German Federal Bank" title=" Click here to visit the homepage of the organizationGerman Federal Bank" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -7214,7 +7252,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.bundesbank.de/en" target="_blank" onclick="return confirm_alert('the German Federal Bank', 'En')">German Federal Bank</a></p>
@@ -7242,7 +7280,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -7353,7 +7391,7 @@ data-event-label="Change to indicator.sources tab"
         <h4>Data source 4</h4>
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -8134,7 +8172,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/ezb.png" alt="European Central Bank" title=" Click here to visit the homepage of the organizationEuropean Central Bank" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -8178,7 +8216,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.ecb.europa.eu/home/languagepolicy/html/index.en.html" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En')">European Central Bank</a></p>
@@ -8206,7 +8244,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -8307,7 +8345,7 @@ data-event-label="Change to indicator.sources tab"
         <h4>Data source 5</h4>
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -9098,7 +9136,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.diw.de/en" target="_blank" onclick="return confirm_alert('the German Institute for Economic Research', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/diw.png" alt="German Institute for Economic Research" title=" Click here to visit the homepage of the organizationGerman Institute for Economic Research" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -9142,7 +9180,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.diw.de/en" target="_blank" onclick="return confirm_alert('the German Institute for Economic Research', 'En')">German Institute for Economic Research</a></p>
@@ -9219,6 +9257,7 @@ data-event-label="Change to indicator.sources tab"
 </div>
 
 
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -9226,26 +9265,29 @@ data-event-label="Change to indicator.sources tab"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">Built using Open SDG</a>
-                        </li>
-                        
-                        
-                        <li>
-                            
-                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Contact us</a>
-                            
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
+                              Built using Open SDG
+                            </a>
                         </li>
                         
                         <li>
-                            
-                              <a href="https://twitter.com/destatis?lang=en" target="_blank"  onclick="return confirm_alert('twitter', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        
+                              
+                                
+                                  <a href="mailto:dns-indikatoren@destatis.de">Contact us</a>
+                                
+                              
+                          </li>
                         <li>
-                            <a href="/en/imprint/ ">Legal Notice</a>
-                            
-                        </li>
+                              
+                                
+                                  <a href="https://twitter.com/destatis?lang=en" target="_blank" onclick="return confirm_alert('the European Central Bank', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                
+                              
+                          </li>
+                        <li>
+                              <a href="/en/imprint/ ">Legal Notice</a>
+                              
+                          </li>
                         
                         
                         </ul>
@@ -9284,12 +9326,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20230621084838'></script>
+<script src='/assets/js/sdg.js?v=20230622131653'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230621084838"></script><script>
+    <script src="/assets/js/custom.js?v=20230622131653"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

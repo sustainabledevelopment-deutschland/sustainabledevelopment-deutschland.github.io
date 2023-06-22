@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -43,6 +43,20 @@ var opensdg = {
   ignoredDisaggregations: null,
 
   language: 'de',
+
+  mapColors: {
+    "default": [
+        "#c4e1c6",
+        "#b0d1b3",
+        "#9bc2a1",
+        "#87b28f",
+        "#74a37c",
+        "#60946b",
+        "#4d8559",
+        "#3a7747",
+        "#276836"
+    ]
+},
 };
 
 </script>
@@ -112,10 +126,7 @@ var translations = {
 
 
 
-        <meta name="description" content="">
-        <meta property="og:description" content="">
         
-        <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
@@ -126,13 +137,16 @@ var translations = {
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
+        
+        <link rel="manifest" href="/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230621084838">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230622131653">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -142,6 +156,9 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
+
+        
+
 
         <!--[if IE]>
         <link rel="stylesheet" href="/assets/css/ie.css">
@@ -352,8 +369,9 @@ data-event-label="high"
     <fieldset>
       <legend class="sr-only">Zeitreihe</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
+        <% var isProxy = (proxySerieses.includes(seriesItem)) %>
         <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
-        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
+        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
   
@@ -369,7 +387,7 @@ data-event-label="high"
     <div class="row">
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-        <a href="/6" title="Zu den Indikatoren dieses Ziels">
+        <a href="/6/" title="Zu den Indikatoren dieses Ziels">
           <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/de/6.png"
               alt="Sauberes Wasser und Sanitäreinrichtungen - Ziel 6"
               id="goal-6"
@@ -403,7 +421,7 @@ data-event-label="high"
                 <a href="/">Start</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="/6" title="Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten">Ziel 6</a>
+                <a href="/6/" title="Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten">Ziel 6</a>
             </li>
             <li class="breadcrumb-item active">Indikator 6.2.a, b</li>
         
@@ -421,7 +439,9 @@ data-event-label="high"
 <div class="container">
   <div class="row justify-content-around">
     
-      <div class="col-sm-3 d-grid gap-2">
+      
+        <div class="col-sm-4 d-grid gap-2">
+      
     
       <a href="https://dns-indikatoren.de//6-1-b" class="btn btn-primary btn-block goal-6 navigation-btn text-nowrap" role="button">
         <b class="d-sm-none d-lg-block"><i class="fa fa-chevron-left" aria-hidden="true"></i> Vorheriger Indikator</b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-left" aria-hidden="true"></i></b>
@@ -430,7 +450,7 @@ data-event-label="high"
 
     
       
-        <div class="col-sm-6 d-grid gap-2">
+        <div class="col-sm-4 d-grid gap-2">
           <a href="https://sdg-indikatoren.de/6-a-1" class="btn btn-primary btn-block goal-6 navigation-btn" title="" role="button">
             <b class="btn-label d-sm-none d-lg-block">Verwandter globaler Indikator 6.a.1</b><b class="btn-label d-none d-sm-block d-lg-none">SDG 6.a.1</b>
           </a>
@@ -439,7 +459,9 @@ data-event-label="high"
     
 
     
-      <div class="col-sm-3 d-grid gap-2">
+      
+        <div class="col-sm-4 d-grid gap-2">
+      
     
       <a href="https://dns-indikatoren.de/7-1-ab" class="btn btn-primary btn-block goal-6 navigation-btn text-nowrap" role="button">
         <b class="btn-label d-sm-none d-lg-block">Nächster Indikator <i class="fa fa-chevron-right" aria-hidden="true"></i></b><b class="d-none d-sm-block d-lg-none"><i class="fa fa-chevron-right" aria-hidden="true"></i></b>
@@ -452,6 +474,8 @@ data-event-label="high"
 </div>
 
 <div id="main-content" class="container goal-6" role="main">
+  
+
   
 
   
@@ -487,6 +511,8 @@ data-event-label="high"
 
 
 
+
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_6-2-ab'
@@ -499,6 +525,7 @@ data-event-label="high"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo="false"
   data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -519,6 +546,8 @@ data-event-label="high"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;step&quot;:5.0}]"
+  data-proxy=""
+  data-proxyseries="null"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -686,8 +715,6 @@ data-event-label="Change to embedded item tab"
 
 
 
-
-
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -711,30 +738,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Anmerkung</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Letzte Änderung der Daten</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Anmerkung</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Letzte Änderung der Daten</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Statistisches Bundesamt (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -771,8 +798,6 @@ data-event-label="Change to embedded item tab"
 
 
 
-
-
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -796,30 +821,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Anmerkung</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Letzte Änderung der Daten</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Anmerkung</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Letzte Änderung der Daten</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Statistisches Bundesamt (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -959,7 +984,7 @@ data-event-label="Change to indicator.sources tab"
         <p>Diese Übersicht beinhaltet zusätzliche Informationen zu den oben dargestellten Indikatoren, wie eine kurze Definition des Indikators und eine Beschreibung des politisch festgelegten Zielwertes sowie die politische Intention für die Auswahl des Indikators.</p>
 
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -1004,7 +1029,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Definition </th>
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
             <td>
               
                 <p>Die Indikatoren stellen die Anzahl der Menschen dar, die im jeweiligen Berichtsjahr direkt durch deutsche Unterstützung Neuzugang oder verbesserten Zugang zu Trinkwasser- (Indikator 6.2.a) und/oder Sanitärversorgung (Indikator 6.2.b) erhalten haben.</p>
@@ -1035,7 +1060,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Ziel und Intention </th>
+            <th scope="row" style="text-align: left; width: 130px;">Ziel und Intention </th>
             <td>
               
                 <p>Eine unzureichende Versorgung mit Trinkwasser und sanitären Einrichtungen hat weitreichende Auswirkungen auf die Ernährung und die Gesundheit des Menschen. Das Ziel der Bundesregierung ist daher, dass bis zum Jahr 2030 jährlich zehn Millionen Menschen weltweit mit deutscher Unterstützung Zugang zu Trinkwasser- und Sanitärversorgung erhalten. Dieses Ziel wurde ab dem Berichtsjahr 2019 weiter ausdifferenziert: so sollen bis 2030 jährlich sechs Millionen Menschen weltweit mit deutscher Unterstützung direkten Zugang zur Trinkwasserversorgung <abbr title="beziehungsweise" tabindex="0">bzw.</abbr> vier Millionen Menschen weltweit mit deutscher Unterstützung direkten Zugang zur Sanitärversorgung erhalten.</p>
@@ -1063,7 +1088,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Datenstand </th>
+            <th scope="row" style="text-align: left; width: 130px;">Datenstand </th>
             <td>
               
                 <p>Der Indikatorenbericht 2022 hat den Datenstand 31.10.2022. Die Daten auf dieser Plattform werden regelmäßig aktualisiert, sodass online aktuellere Daten verfügbar sein können als im <a href="https://dns-indikatoren.de/publications_reports/">Indikatorenbericht 2022</a> veröffentlicht.</p>
@@ -1887,7 +1912,7 @@ data-event-label="Change to indicator.sources tab"
       <article>
         
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -2754,7 +2779,7 @@ data-event-label="Change to indicator.sources tab"
             <h4>Zeitreihe 2</h4>
            -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -2954,8 +2979,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indikator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indikator </th>
+              <td colspan="4">
                 <p>6.2.a Anzahl der Menschen, die einen neuen oder hochwertigeren Zugang zur Trinkwasserversorgung durch deutsche Unterstützung erhalten</p>
 
               </td>
@@ -2982,8 +3007,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Ziel </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Ziel </th>
+              <td colspan="4">
                 <p>6 Millionen Menschen pro Jahr bis 2030</p>
 
               </td>
@@ -3396,17 +3421,27 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Bewertung </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Bewertung </th>
             
+
             
+
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
-              
-                <p> Keine Bewertung möglich </p>
-              
-            </td>
+
+            
+              <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <p>  </p>
+              </td>
+            
           </tr>
+
+
+
         
       
     
@@ -4420,7 +4455,7 @@ data-event-label="Change to indicator.sources tab"
             <h4>Zeitreihe 3</h4>
            -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -4889,8 +4924,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indikator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indikator </th>
+              <td colspan="4">
                 <p>6.2.b Anzahl der Menschen, die einen neuen oder verbesserten Anschluss zur Sanitärversorgung durch deutsche Unterstützung erhalten</p>
 
               </td>
@@ -4917,8 +4952,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Ziel </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Ziel </th>
+              <td colspan="4">
                 <p>4 Millionen Menschen pro Jahr bis 2030</p>
 
               </td>
@@ -5331,17 +5366,27 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Bewertung </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Bewertung </th>
             
+
             
+
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
-              
-                <p> Keine Bewertung möglich </p>
-              
-            </td>
+
+            
+              <td colspan="4" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <p>  </p>
+              </td>
+            
           </tr>
+
+
+
         
       
     
@@ -6099,7 +6144,7 @@ data-event-label="Change to indicator.sources tab"
     <div class="col-md-6">
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -6846,7 +6891,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.kfw.de/kfw.de.html" target="_blank" onclick="return confirm_alert('der Kreditanstalt für Wiederaufbau', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/kfw.png" alt="Kreditanstalt für Wiederaufbau" title=" Klicken Sie hier um zur Homepage der Organisation Kreditanstalt für Wiederaufbau zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -6890,7 +6935,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.kfw.de/kfw.de.html" target="_blank" onclick="return confirm_alert('der Kreditanstalt für Wiederaufbau', 'De')">Kreditanstalt für Wiederaufbau</a></p>
@@ -7015,6 +7060,7 @@ data-event-label="Change to indicator.sources tab"
 </div>
 
 
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -7022,26 +7068,29 @@ data-event-label="Change to indicator.sources tab"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">Seite basiert auf Open SDG</a>
-                        </li>
-                        
-                        
-                        <li>
-                            
-                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Kontakt</a>
-                            
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">
+                              Seite basiert auf Open SDG
+                            </a>
                         </li>
                         
                         <li>
-                            
-                              <a href="https://twitter.com/destatis?lang=de" target="_blank"  onclick="return confirm_alert('twitter', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        
+                              
+                                
+                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
+                                
+                              
+                          </li>
                         <li>
-                            <a href="/imprint/ ">Im­pres­s­um</a>
-                            
-                        </li>
+                              
+                                
+                                  <a href="https://twitter.com/destatis?lang=de" target="_blank" onclick="return confirm_alert('', 'De');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                
+                              
+                          </li>
+                        <li>
+                              <a href="/imprint/ ">Im­pres­s­um</a>
+                              
+                          </li>
                         
                         
                         </ul>
@@ -7080,12 +7129,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20230621084838'></script>
+<script src='/assets/js/sdg.js?v=20230622131653'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230621084838"></script><script>
+    <script src="/assets/js/custom.js?v=20230622131653"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

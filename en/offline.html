@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" class="no-js">
+<html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -42,7 +42,7 @@ var opensdg = {
   // Disaggregations which should be ignored on indicator pages.
   ignoredDisaggregations: null,
 
-  language: 'de',
+  language: 'en',
 
   mapColors: {
     "default": [
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>404 - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Indicators of the German Sustainable Development Strategy</title>
 
 
 
@@ -162,23 +162,16 @@ var translations = {
         
 
     </head>
-<body class="language-de
-layout-page-not-found
+<body class="language-en
+layout-offline
 ">
 <!-- <div class="container"> -->
 
 <img class="page-not-found-image" src="/assets/img/SDG Wheel_Transparent-01.png" alt="Sustainable Development Goals logo" />
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>404</h1>
-        <p><strong>Die einzige Zahl, die Sie hier nicht finden wollen</strong></p>
-
-<p>Das bedeutet, dass der von Ihnen gesuchte Inhalt nicht mehr existiert oder umgezogen ist.</p>
-
-<p>Probieren Sie es am besten über die <span id="jump-to-search"><a> Suchfunktion </a></span> oder beginnen Sie auf der <a href="https://dns-indikatoren.de">Startseite</a>.</p>
-
-<p>Vielen Dank!</p>
-
+        <h1></h1>
+        <p>This page needs to be fetched from the internet. Please try again when you have a network connection.</p>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
@@ -205,7 +198,7 @@ layout-page-not-found
     translations['general']['hide'] = '';</script>
 
 <script>translations['search'] = translations['search'] || {};
-    translations['search']['search'] = 'Suche';</script>
+    translations['search']['search'] = 'Search';</script>
 
 <script src='/assets/js/sdg.js?v=20230622131653'></script>
 

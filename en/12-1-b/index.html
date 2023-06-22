@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
@@ -43,6 +43,20 @@ var opensdg = {
   ignoredDisaggregations: null,
 
   language: 'en',
+
+  mapColors: {
+    "default": [
+        "#c4e1c6",
+        "#b0d1b3",
+        "#9bc2a1",
+        "#87b28f",
+        "#74a37c",
+        "#60946b",
+        "#4d8559",
+        "#3a7747",
+        "#276836"
+    ]
+},
 };
 
 </script>
@@ -112,10 +126,7 @@ var translations = {
 
 
 
-        <meta name="description" content="">
-        <meta property="og:description" content="">
         
-        <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
@@ -126,13 +137,16 @@ var translations = {
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
+        
+        <link rel="manifest" href="/manifest.json">
+        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230621084838">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230622131653">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -142,6 +156,9 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
         
+
+        
+
 
         <!--[if IE]>
         <link rel="stylesheet" href="/assets/css/ie.css">
@@ -352,8 +369,9 @@ data-event-label="high"
     <fieldset>
       <legend class="sr-only">Time series</legend>
       <% _.each(serieses, function(seriesItem, index) { %>
+        <% var isProxy = (proxySerieses.includes(seriesItem)) %>
         <% var checked = (selectedSeries) ? (selectedSeries==seriesItem) : (index==0); %>
-        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%></label>
+        <label><input type="radio" name="series" value="<%=seriesItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(seriesItem)%> <%=isProxy ? proxyPill : ''%></label>
       <% }); %>
     </fieldset>
   
@@ -369,7 +387,7 @@ data-event-label="high"
     <div class="row">
       
       <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-        <a href="/en/12" title="View this goal's indicator overview">
+        <a href="/en/12/" title="View this goal's indicator overview">
           <img src="https://g205sdgs.github.io/sdg-indicators/assets/img/goals/dns/en/12.png"
               alt="Responsible consumption and production - Goal 12"
               id="goal-12"
@@ -403,7 +421,7 @@ data-event-label="high"
                 <a href="/en/">Home</a>
             </li>
             <li class="breadcrumb-item">
-                <a href="/en/12" title="Ensure sustainable consumption and production patterns">Goal 12</a>
+                <a href="/en/12/" title="Ensure sustainable consumption and production patterns">Goal 12</a>
             </li>
             <li class="breadcrumb-item active">Indicator 12.1.b</li>
         
@@ -452,6 +470,8 @@ data-event-label="high"
 
   
 
+  
+
 <div class="row" id="page-content">
   <div class="col-xs-12">
     <div>
@@ -491,6 +511,8 @@ data-event-label="high"
 
 
 
+
+
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_12-1-b'
@@ -503,6 +525,7 @@ data-event-label="high"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
+  data-showinfo="false"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -523,6 +546,8 @@ data-event-label="high"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;step&quot;:5.0}]"
+  data-proxy=""
+  data-proxyseries="null"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
@@ -690,8 +715,6 @@ data-event-label="Change to embedded item tab"
 
 
 
-
-
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -718,30 +741,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -778,8 +801,6 @@ data-event-label="Change to embedded item tab"
 
 
 
-
-
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
@@ -806,30 +827,30 @@ data-event-label="Change to embedded item tab"
         
 
         
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ><u>Note</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="COMMENT_TS"
-          ></dd>
-          
-          <dt
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ><u>Last modification of data</u>:</dt>
-          <dd
-            class="data-controlled-footer-field"
-            data-ts-attribute="DATA_LAST_UPDATE"
-          ></dd>
-          
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Last modification of data</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
         
 
         
-          <dt><u>Copyright</u>:</dt>
-          <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2023</dd>
         
     </dl>
 </div>
@@ -969,7 +990,7 @@ data-event-label="Change to indicator.sources tab"
         <p>This table includes additional information to the above visualized indicators, <abbr title="that is to say (id est)">i.e.</abbr> a short definition of this indicator and a description of the politically determined target values as well as explaining the political intention behind selecting this indicator.</p>
 
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -1014,7 +1035,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Definition </th>
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
             <td>
               
                 <p>The impact caused to the environment around the world by private household consumption is shown here by three indicators. They are domestic and foreign energy consumption, emissions of carbon dioxide (<abbr title="Carbon dioxide" tabindex="0">CO₂</abbr>) and the use of raw materials in connection with the production and use of all goods destined for the consumption of private households in Germany.</p>
@@ -1058,7 +1079,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Target and intention </th>
+            <th scope="row" style="text-align: left; width: 130px;">Target and intention </th>
             <td>
               
                 <p>Through their spending habits, private households are responsible for a significant proportion of an economy’s consumption of resources. That consumption occurs not only within the country in question but also indirectly includes the consumption which is involved in the production of imported goods. The indicator therefore provides information about the impact being done to the environment on a global scale as a result of private household consumption. Reducing energy consumption, for example, will conserve resources both domestically and abroad and prevent environmentally harmful carbon dioxide emissions. The intention of the Federal Government is to continuously cut the environmental impact that occurs in connection with private household consumption in all three areas.</p>
@@ -1086,7 +1107,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Data status </th>
+            <th scope="row" style="text-align: left; width: 130px;">Data status </th>
             <td>
               
                 <p>The data published in the indicator report 2022 is as of 31 October 2022. The data shown on this platform is updated regularly, so that more current data may be available online than published in the <a href="https://dns-indikatoren.de/en/publications_reports/">indicator report 2022</a>.</p>
@@ -1910,7 +1931,7 @@ data-event-label="Change to indicator.sources tab"
       <article>
         
         
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -2772,7 +2793,7 @@ data-event-label="Change to indicator.sources tab"
             <h4>Time series 1</h4>
            -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -2815,8 +2836,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indicator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indicator </th>
+              <td colspan="4">
                 <p>12.1.ba Global environmental impact by private household consumption – use of raw materials</p>
 
               </td>
@@ -2843,8 +2864,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Target </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Target </th>
+              <td colspan="4">
                 <p>Steady reduction</p>
 
               </td>
@@ -2882,7 +2903,7 @@ data-event-label="Change to indicator.sources tab"
         
         
         <tr id="years">
-          <th scope="row" style="padding-right: 10px; text-align: left"">Year </th>
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Year </th>
           
             <td align="left" style="margin-bottom: 15px;">
               <p><p>2015</p>
@@ -3348,29 +3369,43 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Evaluation </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Evaluation </th>
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2015 both the average value and the previous annual change pointed in the right direction." alt="Sonne" class="responsiveWeather" style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2015 both the average value and the previous annual change pointed in the right direction." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2016 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="Leicht bewölkt" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2016 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="<p>Leicht bewölkt</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="In 2017 the average value aimed in the wrong direction or indicates stagnation, but the previous year had shown a turn in the desired direction." alt="Wolke" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Wolke.png" title="In 2017 the average value aimed in the wrong direction or indicates stagnation, but the previous year had shown a turn in the desired direction." alt="<p>Wolke</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
-              
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Blitz.png" title="In 2018 neither the average value nor the last change pointed in the right direction." alt="Blitz" class="responsiveWeather"  style="border: transparent"/></a>
-              
-            </td>
+
+            
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Blitz.png" title="In 2018 neither the average value nor the last change pointed in the right direction." alt="<p>Blitz</p>
+" class="responsiveWeather" style="border: transparent"/></a>
+              </td>
+            
           </tr>
+
+
+
         
       
     
@@ -4436,7 +4471,7 @@ data-event-label="Change to indicator.sources tab"
             <h4>Time series 2</h4>
            -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -4636,8 +4671,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indicator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indicator </th>
+              <td colspan="4">
                 <p>12.1.bb Global environmental impact by private household consumption – energy consumption</p>
 
               </td>
@@ -4664,8 +4699,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Target </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Target </th>
+              <td colspan="4">
                 <p>Steady reduction</p>
 
               </td>
@@ -4703,7 +4738,7 @@ data-event-label="Change to indicator.sources tab"
         
         
         <tr id="years">
-          <th scope="row" style="padding-right: 10px; text-align: left"">Year </th>
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Year </th>
           
             <td align="left" style="margin-bottom: 15px;">
               <p><p>2015</p>
@@ -5220,29 +5255,43 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Evaluation </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Evaluation </th>
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2015 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="Leicht bewölkt" class="responsiveWeather" style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2015 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="<p>Leicht bewölkt</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2016 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="Leicht bewölkt" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2016 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="<p>Leicht bewölkt</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2017 both the average value and the previous annual change pointed in the right direction." alt="Sonne" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2017 both the average value and the previous annual change pointed in the right direction." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
+
+            
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <p>  </p>
+              </td>
               
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Später.png" title="The assessment will be carried out later." alt="Später" class="responsiveWeather"  style="border: transparent"/></a>
-              
-            </td>
+            
           </tr>
+
+
+
         
       
     
@@ -6341,7 +6390,7 @@ data-event-label="Change to indicator.sources tab"
             <h4>Time series 3</h4>
            -->
           
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -6810,8 +6859,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Indicator </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Indicator </th>
+              <td colspan="4">
                 <p>12.1.bc Global environmental impact by private household consumption – CO₂ emissions</p>
 
               </td>
@@ -6838,8 +6887,8 @@ data-event-label="Change to indicator.sources tab"
         
            <!-- leaves only weather_indicator_1_target-->
             <tr id="indAndtarg">
-              <th scope="row" style="padding-right: 10px; text-align: left"">Target </th>
-              <td colspan="9">
+              <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Target </th>
+              <td colspan="4">
                 <p>Steady reduction</p>
 
               </td>
@@ -6877,7 +6926,7 @@ data-event-label="Change to indicator.sources tab"
         
         
         <tr id="years">
-          <th scope="row" style="padding-right: 10px; text-align: left"">Year </th>
+          <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Year </th>
           
             <td align="left" style="margin-bottom: 15px;">
               <p><p>2015</p>
@@ -7394,29 +7443,43 @@ data-event-label="Change to indicator.sources tab"
               
             
           
+          
+
+
+
           <tr id="items">
-            <th scope="row" style="padding-right: 10px; text-align: left"">Evaluation </th>
+            <th scope="row" style="padding-right: 10px; text-align: left; width: 130px;">Evaluation </th>
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2015 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="Leicht bewölkt" class="responsiveWeather" style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2015 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="<p>Leicht bewölkt</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2016 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="Leicht bewölkt" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Leicht bewölkt.png" title="In 2016 the average development aimed in the right direction, but in the previous year there had been a development in the wrong direction or no change at all." alt="<p>Leicht bewölkt</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
+
             
-              <td align="left" style="padding-left: 0px;padding-right: 0px;">
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2017 both the average value and the previous annual change pointed in the right direction." alt="Sonne" class="responsiveWeather"  style="border: transparent"/></a>
+              <td align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Sonne.png" title="In 2017 both the average value and the previous annual change pointed in the right direction." alt="<p>Sonne</p>
+" class="responsiveWeather" style="border: transparent"/></a>
               </td>
             
-            <td align="left" style="padding-left: 0px;padding-right: 0px;">
+
+            
+              <td colspan="1" align="left" style="padding-left: 0px;padding-right: 0px; width: auto">
+                <p>  </p>
+              </td>
               
-                <a href=" /status/ "><img src="https://g205sdgs.github.io/sdg-indicators/public/Wettersymbole/left/Später.png" title="The assessment will be carried out later." alt="Später" class="responsiveWeather"  style="border: transparent"/></a>
-              
-            </td>
+            
           </tr>
+
+
+
         
       
     
@@ -8259,7 +8322,7 @@ data-event-label="Change to indicator.sources tab"
     <div class="col-md-6">
       
       
-<table class="table">
+<table class="table" style="width:100%; table-layout: fixed;">
   
   
   
@@ -9006,7 +9069,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left"> </th>
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -9050,7 +9113,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Organisation </th>
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -9078,7 +9141,7 @@ data-event-label="Change to indicator.sources tab"
       
         
           <tr id="everythingElse">
-            <th scope="row" style="text-align: left">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -9228,6 +9291,7 @@ data-event-label="Change to indicator.sources tab"
 </div>
 
 
+
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -9235,26 +9299,29 @@ data-event-label="Change to indicator.sources tab"
                 <div id="footerLinks">
                     <ul>
                         <li>
-                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">Built using Open SDG</a>
-                        </li>
-                        
-                        
-                        <li>
-                            
-                              <a href="mailto:dns-indikatoren@destatis.de" target="_blank" >Contact us</a>
-                            
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('open-sdg', 'En');">
+                              Built using Open SDG
+                            </a>
                         </li>
                         
                         <li>
-                            
-                              <a href="https://twitter.com/destatis?lang=en" target="_blank"  onclick="return confirm_alert('twitter', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
-                            
-                        </li>
-                        
+                              
+                                
+                                  <a href="mailto:dns-indikatoren@destatis.de">Contact us</a>
+                                
+                              
+                          </li>
                         <li>
-                            <a href="/en/imprint/ ">Legal Notice</a>
-                            
-                        </li>
+                              
+                                
+                                  <a href="https://twitter.com/destatis?lang=en" target="_blank" onclick="return confirm_alert('', 'En');"><i class="fa fa-twitter" aria-hidden="true"></i>@destatis</a></a>
+                                
+                              
+                          </li>
+                        <li>
+                              <a href="/en/imprint/ ">Legal Notice</a>
+                              
+                          </li>
                         
                         
                         </ul>
@@ -9293,12 +9360,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20230621084838'></script>
+<script src='/assets/js/sdg.js?v=20230622131653'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20230621084838"></script><script>
+    <script src="/assets/js/custom.js?v=20230622131653"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
