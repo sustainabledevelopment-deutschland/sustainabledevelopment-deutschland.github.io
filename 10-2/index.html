@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20231020092304">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20231124092855">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -528,7 +528,7 @@ data-event-label="high"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen&quot;},{&quot;field&quot;:&quot;Gebiet&quot;,&quot;value&quot;:&quot;Deutschland&quot;},{&quot;field&quot;:&quot;Gebiet&quot;,&quot;value&quot;:&quot;EU&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Gini-Koeffizient des verfügbaren Äquivalenzeinkommens&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
@@ -541,7 +541,7 @@ data-event-label="high"
   data-graphseriesbreaks="[{&quot;value&quot;:12.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Gini-Koeffizient&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;time series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen&quot;,&quot;Gini-Koeffizient des verfügbaren Äquivalenzeinkommens&quot;,&quot;Gini-Koeffizient des Markteinkommens&quot;,&quot;Gini-Koeffizient des Vermögens&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;area&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Deutschland&quot;,&quot;EU&quot;,&quot;Eurozone&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Gebiet&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Gini-Koeffizient&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;time series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen&quot;,&quot;Gini-Koeffizient des verfügbaren Äquivalenzeinkommens&quot;,&quot;Gini-Koeffizient des Markteinkommens&quot;,&quot;Gini-Koeffizient des Vermögens&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Zeitreihe&quot;},{&quot;name&quot;:&quot;area&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Deutschland&quot;,&quot;EU&quot;,&quot;Eurozone&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Gebiet&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:3.0}]"
   data-graphstepsize="[{&quot;step&quot;:0.05}]"
@@ -651,6 +651,32 @@ data-event-label="Change to Table tab"
     <span class="hidden-xs" style="color:black">Tabelle</span></button>
   </li>
   
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Karte</span></button>
+  </li>
+  
 </ul>
 
     <div class="tab-content data-view">
@@ -708,7 +734,7 @@ data-event-label="Change to Table tab"
 
         
           <dt><u>Anmerkungen</u>:</dt>
-          <dd><br>• Die bislang separat durchgeführte Erhebung „Leben in Europa“ (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren nicht möglich (Zeitreihenbruch).<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen: Renten von den Sozialleistungen ausgeschlossen.<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens (<abbr title="Europäische Union" tabindex="0">EU</abbr>): <br>&nbsp;&nbsp;- Für EU: 2019&nbsp;von <abbr title="European Statistical Office (Statistisches Amt der Europäischen Union)" tabindex="0">Eurostat</abbr> geschätzte Daten. <br>&nbsp;&nbsp;- Ab 2020: <abbr title="Europäische Union mit 27&nbsp;Mitgliedsstaaten (ohne das Vereinigte Königreich)" tabindex="0">EU-27</abbr>&nbsp;(ohne Vereinigtes Königreich).</dd>
+          <dd><br>• 2022&nbsp;vorläufige Daten.<br>• Die bislang separat durchgeführte Erhebung „Leben in Europa“ (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren nicht möglich (Zeitreihenbruch).<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen: Renten von den Sozialleistungen ausgeschlossen.<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens (<abbr title="Europäische Union" tabindex="0">EU</abbr>): <br>&nbsp;&nbsp;- Für EU: 2019&nbsp;von <abbr title="European Statistical Office (Statistisches Amt der Europäischen Union)" tabindex="0">Eurostat</abbr> geschätzte Daten. <br>&nbsp;&nbsp;- Ab 2020: <abbr title="Europäische Union mit 27&nbsp;Mitgliedsstaaten (ohne das Vereinigte Königreich)" tabindex="0">EU-27</abbr>&nbsp;(ohne Vereinigtes Königreich).</dd>
         
 
         
@@ -794,7 +820,7 @@ data-event-label="Change to Table tab"
 
         
           <dt><u>Anmerkungen</u>:</dt>
-          <dd><br>• Die bislang separat durchgeführte Erhebung „Leben in Europa“ (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren nicht möglich (Zeitreihenbruch).<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen: Renten von den Sozialleistungen ausgeschlossen.<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens (<abbr title="Europäische Union" tabindex="0">EU</abbr>): <br>&nbsp;&nbsp;- Für EU: 2019&nbsp;von <abbr title="European Statistical Office (Statistisches Amt der Europäischen Union)" tabindex="0">Eurostat</abbr> geschätzte Daten. <br>&nbsp;&nbsp;- Ab 2020: <abbr title="Europäische Union mit 27&nbsp;Mitgliedsstaaten (ohne das Vereinigte Königreich)" tabindex="0">EU-27</abbr>&nbsp;(ohne Vereinigtes Königreich).</dd>
+          <dd><br>• 2022&nbsp;vorläufige Daten.<br>• Die bislang separat durchgeführte Erhebung „Leben in Europa“ (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren nicht möglich (Zeitreihenbruch).<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen: Renten von den Sozialleistungen ausgeschlossen.<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens (<abbr title="Europäische Union" tabindex="0">EU</abbr>): <br>&nbsp;&nbsp;- Für EU: 2019&nbsp;von <abbr title="European Statistical Office (Statistisches Amt der Europäischen Union)" tabindex="0">Eurostat</abbr> geschätzte Daten. <br>&nbsp;&nbsp;- Ab 2020: <abbr title="Europäische Union mit 27&nbsp;Mitgliedsstaaten (ohne das Vereinigte Königreich)" tabindex="0">EU-27</abbr>&nbsp;(ohne Vereinigtes Königreich).</dd>
         
 
         
@@ -829,6 +855,80 @@ data-event-label="Change to Table tab"
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Gini-Koeffizient der Einkommens- und Vermögensverteilung</h4>
+<h6 id="map-subheading" class="chart-subtitle"></h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/assets/img/loading.gif" alt="Karte wird geladen" />
+</div>
+
+
+
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          <dt><u>Datenquellen</u>:</dt>
+          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a>, <a href="https://ec.europa.eu/eurostat/de/home" target="_blank" onclick="return confirm_alert('von Eurostat', 'De')">Eurostat</a>, <a href="https://www.bundesbank.de/de/" target="_blank" onclick="return confirm_alert('der Deutschen Bundesbank', 'De')">Deutsche Bundesbank</a>, <a href="https://www.ecb.europa.eu/home/html/index.de.html" target="_blank" onclick="return confirm_alert('der Europäischen Zentralbank', 'De')">Europäische Zentralbank</a>, <a href="https://www.diw.de/deutsch" target="_blank" onclick="return confirm_alert('des Deutschen Instituts für Wirtschaftsforschung', 'De')">Deutsches Institut für Wirtschaftsforschung</a></dd>
+        
+
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland/EU-28/Eurozone</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• 2022&nbsp;vorläufige Daten.<br>• Die bislang separat durchgeführte Erhebung „Leben in Europa“ (<abbr title="EU-Statistics on Income and Living Conditions (Statistik über Einkommen und Lebensbedingungen)" tabindex="0">EU-SILC</abbr>) wurde 2020&nbsp;in den Mikrozensus als Unterstichprobe integriert. Durch den Wechsel von einer freiwilligen zu einer in Teilen auskunftspflichtigen Befragung verbunden mit einer neuen Stichprobenzusammensetzung ist ein Vergleich der Daten des Erhebungsjahres 2020&nbsp;mit den Vorjahren nicht möglich (Zeitreihenbruch).<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens vor Sozialleistungen: Renten von den Sozialleistungen ausgeschlossen.<br>• Gini-Koeffizient des verfügbaren Äquivalenzeinkommens (<abbr title="Europäische Union" tabindex="0">EU</abbr>): <br>&nbsp;&nbsp;- Für EU: 2019&nbsp;von <abbr title="European Statistical Office (Statistisches Amt der Europäischen Union)" tabindex="0">Eurostat</abbr> geschätzte Daten. <br>&nbsp;&nbsp;- Ab 2020: <abbr title="Europäische Union mit 27&nbsp;Mitgliedsstaaten (ohne das Vereinigte Königreich)" tabindex="0">EU-27</abbr>&nbsp;(ohne Vereinigtes Königreich).</dd>
+        
+
+        
+
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Anmerkung</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ><u>Letzte Änderung der Daten</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="DATA_LAST_UPDATE"
+        ></dd>
+        
+        
+
+        
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2023</dd>
+        
+    </dl>
+</div>
+
 
         </div>
       
@@ -9309,6 +9409,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
@@ -9325,12 +9434,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20231020092304'></script>
+<script src='/assets/js/sdg.js?v=20231124092855'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20231020092304"></script><script>
+    <script src="/assets/js/custom.js?v=20231124092855"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
