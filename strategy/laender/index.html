@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240209125256">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240209135024">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -422,8 +422,11 @@ data-event-label="high"
           <a href="https://statistik.hessen.de/unsere-zahlen/umwelt" target="_blank" onclick="return confirm_alert('des hessischen Statistischen Landesamtes', 'De');">Fortschrittsberichten</a>
           sind die Ziele und Indikatoren nach den Bereichen "Ökonomie", "Ökologie" und "Soziales" gegliedert; die in den Jahren 2020 und 2022 erschienenen
           Fortschrittsberichte (13 Ziel- und 42 Reportingindikatoren) sind nach den 17 Nachhaltigkeitszielen (Sustainable Development Goals, SDG)
-          der Agenda 2030 strukturiert. Geplant ist für 2023 eine Ergänzungsausgabe, welche die Leitsätze des im Rahmen des Weiterentwicklungsprozesses
-          entwickelten Leitbilds zur "Nachhaltigkeitsstrategie Hessen" durch zusätzliche Indikatoren abbilden.
+          der Agenda 2030 strukturiert. <br>2023 wurde eine
+          <a href="https://www.hessen-nachhaltig.de/files/content/downloads/ziele_und_indikatoren/Hessen_nachhaltig_2022_Erg%C3%A4nzungsausgabe.pdf" target="_blank" onclick="return confirm_alert('des hessischen Statistischen Landesamtes', 'De');">Ergänzungsausgabe</a> 
+          des Fortschrittsbericht 2022 veröffentlicht. Dieser betrachtet 17 neue
+          Indikatoren welche die Leitsätze des im Rahmen des Weiterentwicklungsprozesses entwickelten Leitbilds zur "Nachhaltigkeitsstrategie Hessen" abbilden.
+          Der geplante Fortschrittsbericht 2024, soll die 68 alten und neuen Indikatoren darstellen.
         </p>
       </div>
       <button class="collapsible">Mecklenburg-Vorpommern</button>
@@ -463,7 +466,7 @@ data-event-label="high"
           für Rheinland-Pfalz. Diese wurde zunächst alle zwei Jahre überarbeitet. Ein erster indikatorengestützter Bericht wurde 2005 veröffentlicht.
           Seit 2009 erfolgt die Überarbeitung der Nachhaltigkeitsstrategie in einem vierjährigen Turnus. Der Daten- beziehungsweise
           <a href ="https://statistik.rlp.de/gesamtwirtschaft-umwelt/umwelt/nachhaltige-entwicklung/" target="_blank" onclick="return confirm_alert('des Statistischen Landesamtes Rheinland-Pfalz', 'De');">Indikatorenbericht</a>
-          (zuletzt 2021 mit 27 Indikatoren) erscheint jedoch weiterhin alle zwei Jahre. Das Statistische Landesamt hat 2011 die Erstellung des
+          (zuletzt 2023 mit 27 Indikatoren) erscheint jedoch weiterhin alle zwei Jahre. Das Statistische Landesamt hat 2011 die Erstellung des
           Indikatorenberichts übernommen.
         </p>
       </div>
@@ -633,12 +636,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240209125256'></script>
+<script src='/assets/js/sdg.js?v=20240209135024'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240209125256"></script><script>
+    <script src="/assets/js/custom.js?v=20240209135024"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
