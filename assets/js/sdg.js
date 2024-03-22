@@ -322,6 +322,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         value = callback(value);
       });
       if (this._precision || this._precision === 0) {
+        value = Number((+(Math.round(+(value + 'e' + this._precision)) + 'e' + -this._precision)).toFixed(this._precision));
         value = Number.parseFloat(value).toFixed(this._precision);
       }
       if (this._decimalSeparator) {
@@ -4689,7 +4690,9 @@ function alterDataDisplay(value, info, context) {
       var precision = VIEW._precision
     }
     if (precision || precision === 0) {
-        altered = Number.parseFloat(altered).toFixed(precision);
+      //altered = Number.parseFloat(altered).toFixed(precision);
+      altered = Number((+(Math.round(+(altered + 'e' + precision)) + 'e' + -precision)).toFixed(precision));
+      altered = Number.parseFloat(altered).toFixed(precision);
     }
     // Now apply our custom decimal separator if needed.
     if (OPTIONS.decimalSeparator) {
