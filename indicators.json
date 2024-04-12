@@ -1,0 +1,681 @@
+[
+  {
+    "goal": {
+      "id": "1",
+      "title": "Armut in allen ihren Formen und überall beenden",
+      "indicators": [
+        
+        {
+          "id": "1-1-ab",
+          "title": "Materielle und soziale Deprivation sowie erhebliche materielle und soziale Deprivation",
+          "description": "",
+          "keywords": "",
+          "href": "/1-1-ab/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "2",
+      "title": "Den Hunger beenden, Ernährungssicherheit und eine bessere Ernährung erreichen und eine nachhaltige Landwirtschaft fördern",
+      "indicators": [
+        
+        {
+          "id": "2-1-a",
+          "title": "Stickstoffüberschuss der Landwirtschaft",
+          "description": "",
+          "keywords": "",
+          "href": "/2-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "2-1-b",
+          "title": "Ökologischer Landbau",
+          "description": "",
+          "keywords": "",
+          "href": "/2-1-b/",
+          "status": "complete"
+        },
+        {
+          "id": "2-2",
+          "title": "Unterstützung guter Regierungsführung bei der Erreichung einer angemessenen Ernährung weltweit",
+          "description": "",
+          "keywords": "",
+          "href": "/2-2/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "3",
+      "title": "Ein gesundes Leben für alle Menschen jeden Alters gewährleisten und ihr Wohlergehen fördern",
+      "indicators": [
+        
+        {
+          "id": "3-1-ab",
+          "title": "Durch Prävention und Behandlung vermeidbare Sterblichkeit",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-ab/",
+          "status": "complete"
+        },
+        {
+          "id": "3-1-ab-x",
+          "title": "Vorzeitige Sterblichkeit",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-ab-x/",
+          "status": "complete"
+        },
+        {
+          "id": "3-1-cd",
+          "title": "Raucherquote von Jugendlichen und Erwachsenen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-cd/",
+          "status": "complete"
+        },
+        {
+          "id": "3-1-e",
+          "title": "Adipositasquote von Kindern und Jugendlichen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-e/",
+          "status": "complete"
+        },
+        {
+          "id": "3-1-f",
+          "title": "Adipositasquote von Erwachsenen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-1-f/",
+          "status": "complete"
+        },
+        {
+          "id": "3-2-a",
+          "title": "Emissionen von Luftschadstoffen",
+          "description": "",
+          "keywords": "",
+          "href": "/3-2-a/",
+          "status": "complete"
+        },
+        {
+          "id": "3-2-b",
+          "title": "Anteil der Bevölkerung mit erhöhter <abbr title='Feinstaub (Durchmesser kleiner 10&nbsp;Mikrometer)' tabindex='0'>PM<sub>10</sub></abbr>-Feinstaubexposition",
+          "description": "",
+          "keywords": "",
+          "href": "/3-2-b/",
+          "status": "complete"
+        },
+        {
+          "id": "3-3",
+          "title": "Beitrag Deutschlands zur globalen Pandemieprävention und -reaktion",
+          "description": "",
+          "keywords": "",
+          "href": "/3-3/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "4",
+      "title": "Inklusive, gleichberechtigte und hochwertige Bildung gewährleisten und Möglichkeiten lebenslangen Lernens für alle fördern",
+      "indicators": [
+        
+        {
+          "id": "4-1-a",
+          "title": "Frühe Schulabgängerinnen und Schulabgänger",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "4-1-b",
+          "title": "Akademisch Qualifizierte und beruflich Höherqualifizierte",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-b/",
+          "status": "complete"
+        },
+        {
+          "id": "4-1-c",
+          "title": "Weiterbildungsbeteiligung",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-c/",
+          "status": "complete"
+        },
+        {
+          "id": "4-1-d",
+          "title": "Schulen mit BNE-Label (Bildung für nachhaltige Entwicklung)",
+          "description": "",
+          "keywords": "",
+          "href": "/4-1-d/",
+          "status": "complete"
+        },
+        {
+          "id": "4-2-ab",
+          "title": "Ganztagsbetreuung für Kinder",
+          "description": "",
+          "keywords": "",
+          "href": "/4-2-ab/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "5",
+      "title": "Geschlechtergleichstellung erreichen und alle Frauen und Mädchen zur Selbstbestimmung befähigen",
+      "indicators": [
+        
+        {
+          "id": "5-1-a",
+          "title": "Verdienstabstand zwischen Frauen und Männern",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "5-1-bc",
+          "title": "Frauen in Führungspositionen in der Wirtschaft sowie im öffentlichen Dienst des Bundes",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-bc/",
+          "status": "complete"
+        },
+        {
+          "id": "5-1-d",
+          "title": "Väterbeteiligung beim Elterngeld und Väteranteil an den genommenen Elterngeldmonaten",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-d/",
+          "status": "complete"
+        },
+        {
+          "id": "5-1-e",
+          "title": "Durchschnittliche wöchentliche Erwerbsarbeitszeit bezogen auf alle Mütter und Väter",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-e/",
+          "status": "complete"
+        },
+        {
+          "id": "5-1-f",
+          "title": "Berufliche Qualifizierung von Frauen und Mädchen durch deutsche entwicklungspolitische Zusammenarbeit",
+          "description": "",
+          "keywords": "",
+          "href": "/5-1-f/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "6",
+      "title": "Verfügbarkeit und nachhaltige Bewirtschaftung von Wasser und Sanitärversorgung für alle gewährleisten",
+      "indicators": [
+        
+        {
+          "id": "6-1-a",
+          "title": "Phosphor in Fließgewässern",
+          "description": "",
+          "keywords": "",
+          "href": "/6-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "6-1-b",
+          "title": "Nitrat im Grundwasser",
+          "description": "",
+          "keywords": "",
+          "href": "/6-1-b/",
+          "status": "complete"
+        },
+        {
+          "id": "6-2-ab",
+          "title": "Entwicklungszusammenarbeit für Trinkwasser- und Sanitärversorgung",
+          "description": "",
+          "keywords": "",
+          "href": "/6-2-ab/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "7",
+      "title": "Zugang zu bezahlbarer, verlässlicher, nachhaltiger und moderner Energie für alle sichern",
+      "indicators": [
+        
+        {
+          "id": "7-1-ab",
+          "title": "Endenergieproduktivität und Primärenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-1-ab/",
+          "status": "complete"
+        },
+        {
+          "id": "7-2-a",
+          "title": "Anteil erneuerbarer Energien am Brutto-Endenergieverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-2-a/",
+          "status": "complete"
+        },
+        {
+          "id": "7-2-b",
+          "title": "Anteil des Stroms aus erneuerbaren Energiequellen am Bruttostromverbrauch",
+          "description": "",
+          "keywords": "",
+          "href": "/7-2-b/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "8",
+      "title": "Dauerhaftes, inklusives und nachhaltiges Wirtschaftswachstum, produktive Vollbeschäftigung und menschenwürdige Arbeit für alle fördern",
+      "indicators": [
+        
+        {
+          "id": "8-1",
+          "title": "Gesamtrohstoffproduktivität",
+          "description": "",
+          "keywords": "",
+          "href": "/8-1/",
+          "status": "complete"
+        },
+        {
+          "id": "8-2-ab",
+          "title": "Staatsdefizit und strukturelles Defizit",
+          "description": "",
+          "keywords": "",
+          "href": "/8-2-ab/",
+          "status": "complete"
+        },
+        {
+          "id": "8-2-c",
+          "title": "Schuldenstand",
+          "description": "",
+          "keywords": "",
+          "href": "/8-2-c/",
+          "status": "complete"
+        },
+        {
+          "id": "8-3",
+          "title": "Verhältnis der Bruttoanlageinvestitionen zum Bruttoinlandsprodukt",
+          "description": "",
+          "keywords": "",
+          "href": "/8-3/",
+          "status": "complete"
+        },
+        {
+          "id": "8-4",
+          "title": "Bruttoinlandsprodukt je Einwohnerin und Einwohner",
+          "description": "",
+          "keywords": "",
+          "href": "/8-4/",
+          "status": "complete"
+        },
+        {
+          "id": "8-5-ab",
+          "title": "Erwerbstätigenquote",
+          "description": "",
+          "keywords": "",
+          "href": "/8-5-ab/",
+          "status": "complete"
+        },
+        {
+          "id": "8-5-c",
+          "title": "Tarifvertragliche Abdeckung von Beschäftigten",
+          "description": "",
+          "keywords": "",
+          "href": "/8-5-c/",
+          "status": "complete"
+        },
+        {
+          "id": "8-6",
+          "title": "Mitglieder des Textilbündnisses",
+          "description": "",
+          "keywords": "",
+          "href": "/8-6/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "9",
+      "title": "Eine widerstandsfähige Infrastruktur aufbauen, inklusive und nachhaltige Industrialisierung fördern und Innovationen unterstützen",
+      "indicators": [
+        
+        {
+          "id": "9-1-a",
+          "title": "Private und öffentliche Ausgaben für Forschung und Entwicklung",
+          "description": "",
+          "keywords": "",
+          "href": "/9-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "9-1-b",
+          "title": "Breitbandausbau",
+          "description": "",
+          "keywords": "",
+          "href": "/9-1-b/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "10",
+      "title": "Ungleichheit in und zwischen Ländern verringern",
+      "indicators": [
+        
+        {
+          "id": "10-1",
+          "title": "Ausländische Schulabsolventinnen und Schulabsolventen",
+          "description": "",
+          "keywords": "",
+          "href": "/10-1/",
+          "status": "complete"
+        },
+        {
+          "id": "10-2",
+          "title": "Gini-Koeffizient des Einkommens nach Sozialtransfers",
+          "description": "",
+          "keywords": "",
+          "href": "/10-2/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "11",
+      "title": "Städte und Siedlungen inklusiv, sicher, widerstandsfähig und nachhaltig gestalten",
+      "indicators": [
+        
+        {
+          "id": "11-1-a",
+          "title": "Anstieg der Siedlungs- und Verkehrsfläche",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "11-1-b",
+          "title": "Freiraumverlust",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-b/",
+          "status": "complete"
+        },
+        {
+          "id": "11-1-c",
+          "title": "Siedlungsdichte",
+          "description": "",
+          "keywords": "",
+          "href": "/11-1-c/",
+          "status": "complete"
+        },
+        {
+          "id": "11-2-a",
+          "title": "Endenergieverbrauch im Güterverkehr",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-a/",
+          "status": "complete"
+        },
+        {
+          "id": "11-2-b",
+          "title": "Endenergieverbrauch im Personenverkehr",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-b/",
+          "status": "complete"
+        },
+        {
+          "id": "11-2-c",
+          "title": "Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln",
+          "description": "",
+          "keywords": "",
+          "href": "/11-2-c/",
+          "status": "complete"
+        },
+        {
+          "id": "11-3",
+          "title": "Überlastung durch Wohnkosten",
+          "description": "",
+          "keywords": "",
+          "href": "/11-3/",
+          "status": "complete"
+        },
+        {
+          "id": "11-4-x",
+          "title": "Zahl der Objekte in der Deutschen Digitalen Bibliothek",
+          "description": "",
+          "keywords": "",
+          "href": "/11-4-x/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "12",
+      "title": "Nachhaltige Konsum- und Produktionsmuster sicherstellen",
+      "indicators": [
+        
+        {
+          "id": "12-1-a",
+          "title": "Marktanteil von Produkten mit staatlichen Umweltzeichen",
+          "description": "",
+          "keywords": "",
+          "href": "/12-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "12-1-b",
+          "title": "Globale Umweltinanspruchnahme durch den Konsum privater Haushalte",
+          "description": "",
+          "keywords": "",
+          "href": "/12-1-b/",
+          "status": "complete"
+        },
+        {
+          "id": "12-2",
+          "title": "Umweltmanagementsystem (EMAS)",
+          "description": "",
+          "keywords": "",
+          "href": "/12-2/",
+          "status": "complete"
+        },
+        {
+          "id": "12-3-abc",
+          "title": "Nachhaltige Beschaffung",
+          "description": "",
+          "keywords": "",
+          "href": "/12-3-abc/",
+          "status": "complete"
+        },
+        {
+          "id": "12-4",
+          "title": "Quote der Verbraucherverschuldung",
+          "description": "",
+          "keywords": "",
+          "href": "/12-4/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "13",
+      "title": "Umgehend Maßnahmen zur Bekämpfung des Klimawandels und seiner Auswirkungen ergreifen",
+      "indicators": [
+        
+        {
+          "id": "13-1-a",
+          "title": "Treibhausgasemissionen",
+          "description": "",
+          "keywords": "",
+          "href": "/13-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "13-1-b",
+          "title": "Internationale Klimafinanzierung zur Reduktion von Treibhausgasen und zur Anpassung an den Klimawandel",
+          "description": "",
+          "keywords": "",
+          "href": "/13-1-b/",
+          "status": "complete"
+        },
+        {
+          "id": "13-2",
+          "title": "Baumkronendichte in städtischen Gebieten",
+          "description": "",
+          "keywords": "",
+          "href": "/13-2/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "14",
+      "title": "Ozeane, Meere und Meeresressourcen im Sinne nachhaltiger Entwicklung erhalten und nachhaltig nutzen",
+      "indicators": [
+        
+        {
+          "id": "14-1-a",
+          "title": "Stickstoffeintrag über die Zuflüsse in die Nord- und Ostsee",
+          "description": "",
+          "keywords": "",
+          "href": "/14-1-a/",
+          "status": "complete"
+        },
+        {
+          "id": "14-1-b",
+          "title": "Anteil der nachhaltig befischten Fischbestände in Nord- und Ostsee",
+          "description": "",
+          "keywords": "",
+          "href": "/14-1-b/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "15",
+      "title": "Landökosysteme schützen, wiederherstellen und ihre nachhaltige Nutzung fördern, Wälder nachhaltig bewirtschaften, Wüstenbildung bekämpfen, Bodendegradation beenden und umkehren und dem Verlust der biologischen Vielfalt ein Ende setzen",
+      "indicators": [
+        
+        {
+          "id": "15-1",
+          "title": "Artenvielfalt und Landschaftsqualität",
+          "description": "",
+          "keywords": "",
+          "href": "/15-1/",
+          "status": "complete"
+        },
+        {
+          "id": "15-2",
+          "title": "Eutrophierung der Ökosysteme",
+          "description": "",
+          "keywords": "",
+          "href": "/15-2/",
+          "status": "complete"
+        },
+        {
+          "id": "15-3-ab",
+          "title": "Erhalt bzw. Wiederaufbau von Wäldern unter REDD+ sowie internationaler Bodenschutz",
+          "description": "",
+          "keywords": "",
+          "href": "/15-3-ab/",
+          "status": "complete"
+        },
+        {
+          "id": "15-4",
+          "title": "Versiegelung des Bodens",
+          "description": "",
+          "keywords": "",
+          "href": "/15-4/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "16",
+      "title": "Friedliche und inklusive Gesellschaften für eine nachhaltige Entwicklung fördern, allen Menschen Zugang zur Justiz ermöglichen und leistungsfähige, rechenschaftspflichtige und inklusive Institutionen auf allen Ebenen aufbauen",
+      "indicators": [
+        
+        {
+          "id": "16-1",
+          "title": "Anzahl der durch Fachpersonal der Bundeswehr ausgebildeten Personen zur Stärkung der Kontrolle von Kleinwaffen und leichten Waffen sowie dazugehöriger Munition weltweit",
+          "description": "",
+          "keywords": "",
+          "href": "/16-1/",
+          "status": "complete"
+        },
+        {
+          "id": "16-1-x",
+          "title": "Straftaten",
+          "description": "",
+          "keywords": "",
+          "href": "/16-1-x/",
+          "status": "complete"
+        },
+        {
+          "id": "16-2-ab",
+          "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit",
+          "description": "",
+          "keywords": "",
+          "href": "/16-2-ab/",
+          "status": "complete"
+        }]
+    }
+  },
+  {
+    "goal": {
+      "id": "17",
+      "title": "Umsetzungsmittel stärken und die Globale Partnerschaft für nachhaltige Entwicklung mit neuem Leben erfüllen",
+      "indicators": [
+        
+        {
+          "id": "17-1",
+          "title": "Anteil öffentlicher Entwicklungsausgaben am Bruttonationaleinkommen",
+          "description": "",
+          "keywords": "",
+          "href": "/17-1/",
+          "status": "complete"
+        },
+        {
+          "id": "17-2",
+          "title": "Studierende und Forschende aus Entwicklungsländern sowie aus am wenigsten entwickelten Ländern pro Jahr",
+          "description": "",
+          "keywords": "",
+          "href": "/17-2/",
+          "status": "complete"
+        },
+        {
+          "id": "17-3",
+          "title": "Einfuhren aus am wenigsten entwickelten Ländern",
+          "description": "",
+          "keywords": "",
+          "href": "/17-3/",
+          "status": "complete"
+        }]
+    }
+  }]

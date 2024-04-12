@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="de" class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes%2CURLSearchParams%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.filter%2CArray.prototype.some%2CArray.prototype.find%2CArray.prototype.reduce%2CObject.assign%2CArray.isArray%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
+
+  chartConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Chart.js.
+  chartConfigAlter: function(callback) {
+    this.chartConfigAlterations.push(callback);
+  },
+
+  tableConfigAlterations: [],
+  // A hook which can be used to modify the configuration for Datatables.
+  tableConfigAlter: function(callback) {
+    this.tableConfigAlterations.push(callback);
+  },
+
+  // A hook which can be replaced to alter whether/how the values that are
+  // displayed on indicator tables/graphs get rounded. A "context" parameter
+  // is also passed which contains additional information.
+  dataRounding: function(value, context) {
+    // Alterations go here.
+    return value;
+  },
+
+  // A hook which can be used to alter the data before it is displayed on charts/tables.
+  dataDisplayAlterations: [],
+  dataDisplayAlter: function(callback) {
+    this.dataDisplayAlterations.push(callback);
+  },
+
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: null,
+
+  language: 'de',
+
+  mapColors: {
+    "default": [
+        "#c4e1c6",
+        "#b0d1b3",
+        "#9bc2a1",
+        "#87b28f",
+        "#74a37c",
+        "#60946b",
+        "#4d8559",
+        "#3a7747",
+        "#276836"
+    ]
+},
+};
+
+</script>
+
+        <script>
+// JavaScript container for translation data.
+var translations = {
+  //Javascript version of the "t" filter from jekyll-open-sdg-plugins.
+  t: function(key) {
+
+    if (!key || typeof key !== 'string') {
+      return '';
+    }
+
+    // The majority of uses of this function are to translate disaggregation
+    // data. To spare data providers of needing to enter "data." in front of
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data !== null && this.data[key]) {
+      return this.data[key];
+    }
+
+    var originalKey = key;
+    var drilled = this;
+    var levelsDrilled = 0;
+    var levels = key.split('.');
+
+    for (var level in levels) {
+      // If we have drilled down to soon, abort.
+      if (typeof drilled !== 'object') {
+        break;
+      }
+
+      if (levels[level] in drilled) {
+        drilled = drilled[levels[level]];
+        levelsDrilled += 1;
+      }
+    }
+
+    // If we didn't drill the right number of levels, return the original string.
+    if (levels.length != levelsDrilled) {
+      return originalKey;
+    }
+
+    // Otherwise we must have drilled all the way.
+    return drilled;
+  },
+};
+</script>
+
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
+        ================================================== -->
+
+        
+    <title>Nachhaltigkeitsstrategien der Bundesländer - Dialogfassung</title>
+
+
+
+        
+
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
+
+        
+        <link rel="manifest" href="/manifest.json">
+        
+
+        
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412073523">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
+        
+
+        
+
+
+        <!--[if IE]>
+        <link rel="stylesheet" href="/assets/css/ie.css">
+        <![endif]-->
+
+        
+
+        <!-- <style>
+          body {
+          background-color: #65add3;
+          }
+        </style> -->
+    </head>
+<body class="language-de
+layout-page
+">
+<!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Alpha-Version","beta":"Beta-Version","disclaimer":"Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href=\"mailto:%email_contacts.suggestions\">Kommentare</a>.","internet_explorer_message":"Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.","internet_explorer_message_title":"Dieser Internet-Browser wird nicht mehr unterstützt","skip_link":" Zum Hauptinhalt springen","tag_line":""};</script>
+
+<a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0"> Zum Hauptinhalt springen</a>
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title">Dieser Internet-Browser wird nicht mehr unterstützt</h2>
+    <p class="internet-explorer-message-body">Wir haben festgestellt, dass Sie den Internet Explorer verwenden, um diese Website zu besuchen. Der Internet Explorer wird von Microsoft nicht mehr unterstützt. Aus diesem Grund hat diese Website ebenfalls die Unterstützung für alle Versionen des Internet Explorers eingestellt, einige Bereiche auf dieser Website werden daher nicht oder nur eingeschränkt funktionieren. Bitte verwenden Sie einen modernen Browser wie Edge, Chrome, Firefox oder Safari.</p>
+</div>
+<!-- <div id="disclaimer">
+    
+<div class="container">
+  <div class="disclaimer-alert">
+    <strong class="phase-tag">beta</strong>
+    
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
+    
+  </div>
+</div>
+
+</div> -->
+
+<header role="banner" class="">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
+            <a class="navbar-brand" href="/" id="home" aria-label="" title="">
+    <img src="/assets/img/de/DNS_logo.png" alt="DESTATIS - Deutsche Nachhaltikeitsstrategie" />
+</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="d-flex flex-wrap w-100 justify-content-between">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
+
+
+<ul class="navbar-nav" id="menu"><li class="nav-item ">
+    <a class="nav-link" href="/">Start</a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Strategie
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
+    <a class="dropdown-item" href="/strategy/dns/">Deutsche Nachhaltigkeitsstrategie</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/strategy/monitoring/">Monitoring</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/strategy/publications/">Publikationen</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/strategy/links/">Links</a>
+</li>
+</ul>
+          </li><li class="nav-item active">
+    <a class="nav-link" href="/laender/">Bundesländer</a>
+</li>
+<li class="nav-item ">
+    <a class="nav-link" href="https://sdg-indikatoren.de">Globale Indikatoren <img class="link_btn" src="https://sdg-indikatoren.de/public/SDG Wheel_Transparent.png" title="Klicken Sie hier um zur Seite der SDG Indikatoren zu gelangen" alt="Link SDG" style="width:24px;height:24px;"/></a>
+</li>
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Hilfe
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-help"><li class=" ">
+    <a class="dropdown-item" href="/help/navigation/">Aufbau der Online Plattform</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/help/guidance/">Technische Hinweise</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/help/faq/">FAQ</a>
+</li>
+</ul>
+          </li></ul>
+
+                </div>
+                <div class="header-search-bar">
+                    <form class="align-self-lg-end" id="search" action="/search/">
+    <div class="input-group">
+        <label class="visually-hidden" for="indicator_search">Suche</label>
+        <input class="form-control" type="search" name="q" id="indicator_search" title="Suche">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary ms-n5" aria-label="" id="search-btn" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </span>
+    </div>
+</form>
+
+                </div>
+                <div class="header-toggles d-flex"><a title="" aria-label=""
+    data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+>A</a>
+
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<div id="top" tabindex=-1></div>
+
+
+<div class="container">
+    <nav>
+    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
+        <li class="breadcrumb-item" >
+            <a href="/">Start</a>
+        </li>
+        <li class="breadcrumb-item active">Nachhaltigkeitsstrategien der Bundesländer</li>
+    </ol>
+</nav>
+</div>
+<div id="main-content" class="container" role="main">
+    <div>
+        <h1>Nachhaltigkeitsstrategien der Bundesländer</h1>
+        
+
+
+    <div class="flex-container">
+  <div class="leftColumn" >
+    <p>Neben der Bundesregierung verfügt die Mehrzahl der Bundesländer über eigene Nachhaltigkeitsstrategien.
+      Einige Landesregierungen haben diese bereits an den globalen Nachhaltigkeitszielen der Agenda 2030 ausgerichtet;
+      in anderen Bundesländern gibt es Bestrebungen zur Anpassung oder Erarbeitung einer länderspezifischen Nachhaltigkeitsstrategie.
+    </p>
+    <div class=collapsibleElements>
+      <button class="collapsible">Baden-Württemberg</button>
+      <div class="content">
+        <p>Seit 2007 existiert eine <a href="https://www.nachhaltigkeitsstrategie.de/strategie" target="_blank" onclick="return confirm_alert('des Landes Baden-Württemberg', 'De');">Nachhaltigkeitsstrategie</a>
+          für das Bundesland Baden-Württemberg, welche 2011 neu aufgelegt wurde.
+          Der Indikatorenbericht - Statusindikatoren einer nachhaltigen Entwicklung in Baden-Württemberg erscheint seit 2014.
+          Für die vierte Auflage 2022 wurde der
+          <a href="https://www.nachhaltigkeitsstrategie.de/strategie/landesverwaltung/indikatoren" target="_blank" onclick="return confirm_alert('des Landes Baden-Württemberg', 'De');">Bericht</a> erstmals ausschließlich im interaktiven Online-Format erstellt.
+          Er wurde von der Geschäftsstelle Nachhaltigkeitsstrategie im Ministerium für Umwelt, Klima und Energiewirtschaft
+          Baden-Württemberg herausgegeben. 52 Statusindikatoren geben einen Überblick über eine nachhaltige Entwicklung mit Daten,
+          Hintergründen und Bewertung. 6 Indikatoren geben Einblicke in die persönliche Einstellung und Empfindungen der Menschen in
+          Baden-Württemberg. Um die Vergleichbarkeit der Indikatoren auf Bundes- und Landesebene weiter zu verbessern, wurde das
+          Indikatorenset soweit wie möglich mit dem bundesweiten Indikatorensatz der Deutschen Nachhaltigkeitsstrategie und den
+          Indikatoren des <a href="https://www.statistikportal.de/de/nachhaltigkeit" target="_blank" onclick="return confirm_alert('des gemeinsamen Statistikportals von Bund und Ländern', 'De');">AK Nachhaltige Entwicklung</a>
+          der Statistischen Landesämter harmonisiert.
+          Das <a href="http://www.statistik-bw.de/" target="_blank" onclick="return confirm_alert('des Statistischen Landesamts Baden-Württemberg', 'De');">Statistische Landesamt</a> Baden-Württemberg hat bei der Erstellung der Indikatorenberichte mitgewirkt.
+          Federführend ist die <a href="https://www.lubw.baden-wuerttemberg.de/" target="_blank" onclick="return confirm_alert('der Landesanstalt für Umwelt Baden-Württemberg', 'De');">Landesanstalt für Umwelt</a> Baden-Württemberg.</p>
+      </div>
+      <button class="collapsible">Bayern</button>
+      <div class="content">
+        <p>Der aktuelle Stand der Bayerischen <a href="https://www.nachhaltigkeit.bayern.de/" target="_blank" onclick="return confirm_alert('des Landes Bayern', 'De');">Nachhaltigkeitsstrategie</a>
+          wurde im März 2022 vom Ministerrat beschlossen. Sie ist das Ergebnis einer intensiven Zusammenarbeit aller Ressorts und der
+          Staatskanzlei. Mit der Nachhaltigkeitsstrategie legt die Staatsregierung dar, welche konkreten Ziele sie sich steckt und
+          welche Maßnahmen sie ergreift, um diese zu erreichen. Im August 2021 veröffentlichte das Bayerische Landesamt für Statistik
+          zudem den ersten <a href="https://www.statistik.bayern.de/mam/produkte/veroffentlichungen/2021_indikatorenbericht_nachhaltigkeit.pdf" target="_blank" onclick="return confirm_alert('des Statistischen Landesamts Bayern', 'De');">Indikatorenbericht</a>
+          zur nachhaltigen Entwicklung. Außerdem veröffentlicht das Bayerische Landesamt für Umwelt
+          <a href ="https://www.lfu.bayern.de/umweltdaten/indikatoren/index.htm" target="_blank" onclick="return confirm_alert('des Bayrischen Landesamtes für Umwelt', 'De');">Umweltindikatoren</a> für Bayern.</p>
+      </div>
+      <button class="collapsible">Berlin</button>
+      <div class="content">
+        <p>Die Bewertung nachhaltiger Entwicklung in Berlin beruht auf der Basis eines Indikatorensatzes bestehend aus 40
+          sogenannten Kernindikatoren, die jeweils einem der 17 globalen Nachhaltigkeitsziele zugeordnet sind. Der
+          <a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/indikatorenbericht/" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Kernindikatorenbericht</a>
+          zur nachhaltigen Entwicklung Berlins wurde zuletzt 2021 gemeinsam von der Senatsverwaltung für Umwelt, Mobilität, Verbraucher-
+          und Klimaschutz in Zusammenarbeit mit dem Amt für Statistik Berlin-Brandenburg aktualisiert.
+          Aktuell wird in Berlin eine landesweite Nachhaltigkeitsstrategie entwickelt, die auf der Broschüre
+          "<a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/nachhaltigkeitsziele-in-berlin/" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Die 17 Nachhaltigkeitsziele in Berlin</a>" aufbaut. </p>
+      </div>
+      <button class="collapsible">Brandenburg</button>
+      <div class="content">
+        <p>Die Landesregierung Brandenburg hatte 2010 beschlossen, eine Strategie für eine Nachhaltige Entwicklung des Landes Brandenburg aufzustellen.
+          Im April 2014 wurde die
+          <a href="https://mluk.brandenburg.de/mluk/de/ueber-uns/agrar-und-umweltpolitik/nachhaltigkeit/nachhaltigkeitsstrategie/fortschreibung-2019/" target="_blank" onclick="return confirm_alert('vom Ministerium für Landwirtschaft, Umwelt und Klimaschutz (MLUK) des Landes Brandenburg', 'De');">Nachhaltigkeitsstrategie</a>
+          für Brandenburg als Ergebnis verschiedener Dialogphasen verabschiedet, welche 2019 fortgeschrieben wurde.
+          Im Juli 2017 wurde ein erster Bericht mit 49 Nachhaltigkeitsindikatoren für Brandenburg vorgelegt.
+          Diese Bestandsaufnahme zu möglichen
+          <a href="https://www.statistik-berlin-brandenburg.de/publikationen" target="_blank" onclick="return confirm_alert('von Statistik Berlin Brandenburg', 'De');">Nachhaltigkeitsindikatoren</a> versteht sich als Diskussionsgrundlage zur Umsetzung und Fortschreibung der
+          Landesnachhaltigkeitsstrategie. Sie wurde im Auftrag des brandenburgischen Ministeriums für Ländliche Entwicklung, Umwelt und Landwirtschaft (MLUL) vom
+          Amt für Statistik Berlin-Brandenburg erarbeitet.
+        </p>
+      </div>
+      <button class="collapsible">Bremen</button>
+      <div class="content">
+        <p>Bremen erstellt seit 2021 alle zwei Jahre einen Bericht über den Stand der Umsetzung der Sustainable Development Goals (SDGs).
+          Dieser Bericht, sowie die künftig daraus abgeleiteten Ziele, ersetzen die Nachhaltigkeitsstrategie.
+          Die Koordinierung obliegt der Senatskanzlei Bremen. Die Ziele der Agenda 2030 und die 17 SDG Goals werden dezentral in den einzelnen Senatsressorts verfolgt.
+          Im <a href="https://www.rathaus.bremen.de/publikationen-65509" target="_blank" onclick="return confirm_alert('der Freien Hansestadt Bremen', 'De');"> Bremer SDG-Bericht</a> werden Indikatoren zu allen 17 UN-Nachhaltigkeitszielen und den zugehörigen Unterzielen erhoben.
+        </p>
+      </div>
+      <button class="collapsible">Hamburg</button>
+      <div class="content">
+        <p>Der Hamburger Senat hat im Juli 2017 die Drucksache
+          "<a href="http://www.hamburg.de/agenda2030/" target="_blank" onclick="return confirm_alert('von Hamburg', 'De');">Umsetzung der Nachhaltigkeitsziele der Vereinten Nationen in Hamburg</a>" beschlossen.
+          Neben einer Bestandsaufnahme - wo stimmt die Senatspolitik bereits mit den Zielsetzungen der Agenda 2030 überein - werden die Themen benannt,
+          an denen in den nächsten Jahren konkret weitergearbeitet werden soll. Unter Beteiligung des Statistikamtes Nord soll hierzu ein zweijährliches
+          Berichtssystem entwickelt werden. Federführend ist die Behörde für Umwelt, Klima, Energie und Agrarwirtschaft.
+        </p>
+      </div>
+      <button class="collapsible">Hessen</button>
+      <div class="content">
+        <p>2008 startete die Hessische Landesregierung die
+          "<a href="http://www.hessen-nachhaltig.de/de/" target="_blank" onclick="return confirm_alert('von hessen-nachhaltig', 'De');">Nachhaltigkeitsstrategie</a>
+          Hessen", für die Ziele und Indikatoren in einem partizipativen Prozess entwickelt wurden.
+          Im Rahmen eines Weiterentwicklungsprozesses in den Jahren 2017 und 2018 wurden die Indikatoren im Hinblick auf die im Jahr 2015 beschlossene
+          "Agenda 2030 für nachhaltige Entwicklung" der Vereinten Nationen grundlegend überarbeitet und neue Zielwerte für 2030 festgelegt.
+          In den zwischen 2010 und 2016 im zweijährigen Rhythmus erschienen
+          <a href="https://statistik.hessen.de/unsere-zahlen/umwelt" target="_blank" onclick="return confirm_alert('des hessischen Statistischen Landesamtes', 'De');">Fortschrittsberichten</a>
+          sind die Ziele und Indikatoren nach den Bereichen "Ökonomie", "Ökologie" und "Soziales" gegliedert; die in den Jahren 2020 und 2022 erschienenen
+          Fortschrittsberichte (13 Ziel- und 42 Reportingindikatoren) sind nach den 17 Nachhaltigkeitszielen (Sustainable Development Goals, SDG)
+          der Agenda 2030 strukturiert. <br>Mit einer
+          <a href="https://www.hessen-nachhaltig.de/files/content/downloads/ziele_und_indikatoren/Hessen_nachhaltig_2022_Erg%C3%A4nzungsausgabe.pdf" target="_blank" onclick="return confirm_alert('des hessischen Statistischen Landesamtes', 'De');">Ergänzungsausgabe</a>
+          des Fortschrittsberichts 2022 wurden im Jahr 2023 die 17 neuen Indikatoren in den Blick genommen. Für den Fortschrittsbericht 2024 ist die
+          integrierte Darstellung der 17 neuen und 68 bisherigen Indikatoren geplant.
+        </p>
+      </div>
+      <button class="collapsible">Mecklenburg-Vorpommern</button>
+      <div class="content">
+        <p>Für Mecklenburg-Vorpommern existiert bislang keine Nachhaltigkeitsstrategie.
+          Laut Koalitionsvereinbarung 2016 bis 2021 ist beabsichtigt, eine Strategie für eine nachhaltige Entwicklung des Landes Mecklenburg-Vorpommern
+          in Abstimmung zur nationalen Nachhaltigkeitsstrategie des Bundes zu erarbeiten.
+        </p>
+      </div>
+      <button class="collapsible">Niedersachsen</button>
+      <div class="content">
+        <p>Im Mai 2017 hat die Landesregierung die neue, indikatorengestützte
+          <a href="https://www.umwelt.niedersachsen.de/startseite/themen/nachhaltigkeit/nachhaltigkeit-199391.html" target="_blank" onclick="return confirm_alert('des niedersächsischen Ministeriums für Umwelt, Energie und Klimaschutz', 'De');">Nachhaltigkeitsstrategie</a>
+          für Niedersachsen beschlossen. Im September 2020 wurde der erste Fortschrittsbericht für die "Niedersächsische Nachhaltigkeitsstrategie"
+          vom Landesamt für Statistik im Auftrag der Landesregierung erstellt. Er konzentriert sich auf die Fortschreibung und Aktualisierung der
+          Nachhaltigkeitsindikatoren und vor allem auf eine noch stärkere und systematische Integration der 17 Nachhaltigkeitsziele der Vereinten Nationen
+          (Sustainable Development Goals, SDGs) in das Indikatorenset des Landes. Der Fortschrittsbericht folgt im Aufbau der Nachhaltigkeitsstrategie und in
+          der Auswahl der Indikatoren inhaltlich der Agenda 2030 und den zugehörigen Nachhaltigkeitszielen.
+        </p>
+      </div>
+      <button class="collapsible">Nordrhein-Westfalen</button>
+      <div class="content">
+        <p>Die Landesregierung hat 2016 die erste
+          <a href="https://nachhaltigkeit.nrw.de/themen/nachhaltigkeitsstrategie-fuer-nordrhein-westfalen/" target="_blank" onclick="return confirm_alert('des Ministeriums für Umwelt, Naturschutz und Verkehr des Landes Nordrhein-Westfalen', 'De');">Nachhaltigkeitsstrategie</a>
+          für Nordrhein-Westfalen verabschiedet, welche 2020 aktualisiert wurde. Der erste
+          <a href="https://nachhaltigkeit.nrw.de/fileadmin/Dokumente/NRW2030_Nachhaltigkeitsindikatorenbericht_2020.pdf" target="_blank" onclick="return confirm_alert('des Ministeriums für Umwelt, Naturschutz und Verkehr des Landes Nordrhein-Westfalen', 'De');">Nachhaltigkeitsbericht</a>
+          wurde 2016 im Auftrag der Landesregierung Nordrhein-Westfalen durch den Geschäftsbereich Statistik bei IT.NRW (Information und Technik
+          Nordrhein-Westfalen) erstellt und 2020 auf den aktuellsten Stand gebracht. Er umfasst knapp 70 Indikatoren.
+          Aktuelle Daten zu den Nachhaltigkeitsindikatoren sind online in einem
+          <a href="https://www.nachhaltigkeitsindikatoren.nrw.de/" target="_blank" onclick="return confirm_alert('von Information und Technik Nordrhein-Westfalen', 'De');">Internet-Portal</a> verfügbar.
+        </p>
+      </div>
+      <button class="collapsible">Rheinland-Pfalz</button>
+      <div class="content">
+        <p>Bereits seit 2001 existiert eine
+          <a href="https://www.rlp.de/themen/regierungsschwerpunkte/nachhaltigkeit/nachhaltigkeitsstrategie-rheinland-pfalz" target="_blank" onclick="return confirm_alert('der Landesregierung Rheinland-Pfalz', 'De');">Nachhaltigkeitsstrategie</a>
+          für Rheinland-Pfalz. Diese wurde zunächst alle zwei Jahre überarbeitet. Ein erster indikatorengestützter Bericht wurde 2005 veröffentlicht.
+          Seit 2009 erfolgt die Überarbeitung der Nachhaltigkeitsstrategie in einem vierjährigen Turnus. Der Daten- beziehungsweise
+          <a href ="https://www.statistik.rlp.de/themen/umwelt/nachhaltige-entwicklung" target="_blank" onclick="return confirm_alert('des Statistischen Landesamtes Rheinland-Pfalz', 'De');">Indikatorenbericht</a>
+          (zuletzt 2023 mit 27 Indikatoren) erscheint jedoch weiterhin alle zwei Jahre. Das Statistische Landesamt hat 2011 die Erstellung des
+          Indikatorenberichts übernommen.
+        </p>
+      </div>
+      <button class="collapsible">Saarland</button>
+      <div class="content">
+        <p>Die saarländische
+          <a href="https://www.saarland.de/mukmav/DE/portale/nachhaltigkeit/informationen/nachhaltigkeitsstrategie/nachhaltigkeitsstrategie2016/nachhaltigkeitsstrategie2016.html" target="_blank" onclick="return confirm_alert('des Ministeriums für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz Saarland', 'De');">Nachhaltigkeitsstrategie</a>
+          "Gemeinsam Verantwortung tragen für heute und morgen" wurde nach zweijähriger Erarbeitung unter Durchführung eines gesellschaftlichen Dialoges auf
+          Augenhöhe im Dezember 2016 verabschiedet. In sechs Handlungsfeldern mit 39 Indikatoren richtet die Nachhaltigkeitsstrategie ihr Augenmerk auf
+          zentrale nachhaltige Themen, die für das Saarland aus Landesperspektive von Bedeutung sind, aber auch im globalen Kontext eine wichtige Rolle
+          spielen. Als eines der ersten Bundesländer schaffte es das Saarland, mit der Strategie aufzuzeigen, welche globalen Nachhaltigkeitsziele, die im
+          Rahmen der Agenda 2030 verabschiedet wurden, für das Land besonders relevant sind und wo noch Akzente gesetzt werden müssen.
+          <br><br>
+          Von 2020 bis 2022 wurde die Nachhaltigkeitsstrategie unter Federführung des
+          <a href="https://www.saarland.de/mukmav/DE/home/home_node.html" target="_blank" onclick="return confirm_alert('des Ministeriums für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz Saarland', 'De');">Ministeriums</a>
+          für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz
+          <a href="https://www.saarland.de/mukmav/DE/portale/nachhaltigkeit/informationen/nachhaltigkeitsstrategie/fortschreibungnachhaltigkeitsstrategie/fortschreibungnachhaltigkeitsstrategie.html" target="_blank" onclick="return confirm_alert('des Ministeriums für Umwelt, Klima, Mobilität, Agrar und Verbraucherschutz Saarland', 'De');">fortgeschrieben</a>.
+          Der Fortschreibungsprozess war ein offener Beteiligungsprozess, der die Ideen und Projektansätze zur Umsetzung der
+          Nachhaltigkeitsstrategie in den Fokus gestellt hat. Dazu waren alle interessierten und engagierten Bürgerinnen und Bürger und gesellschaftlichen
+          Akteurinnen und Akteure unter dem Motto "Wir gestalten gemeinsam. Saarland nachhaltig" eingeladen, sich miteinander zu vernetzen, in Dialog zu
+          treten und den Fortschreibungsprozess aktiv mitzugestalten. In diesem Kontext wurden von einem Expertinnen- und Expertenteam Nachhaltigkeit aus
+          80 eingereichten Vorschlägen zehn Leuchtturmprojekte für ein nachhaltigeres Saarland identifiziert und der Weg zur erfolgreichen Umsetzung
+          gemeinsam angegangen. Die kontinuierliche Weiterentwicklung der Nachhaltigkeit ist Grundlage und Aufgabe der saarländischen Nachhaltigkeitspolitik -
+          zusammen mit den Bürgerinnen und Bürgern.
+        </p>
+      </div>
+      <button class="collapsible">Sachsen</button>
+      <div class="content">
+        <p>Die
+          <a href=" https://www.nachhaltigkeit.sachsen.de/nachhaltigkeitsstrategie-2018-4294.html" target="_blank" onclick="return confirm_alert('des sächsischen Staatsministeriums für Energie, Klimaschutz, Umwelt und Landwirtschaft', 'De');">Nachhaltigkeitsstrategie</a>
+          beschreibt Schwerpunktthemen, zentrale Ziele und Herausforderungen im Hinblick auf die Nachhaltige Entwicklung des Freistaates Sachsen.
+          Mit der Erstellung der Nachhaltigkeitsstrategie 2018 wurden die sächsischen Handlungsfelder mit den Nachhaltigkeitszielen der Agenda 2030
+          verknüpft.Diese Handlungsfelder werden im Nachhaltigkeitsbericht aufgegriffen und unter anderem durch Indikatorensets messbar gemacht.
+          Seit Ende 2022 steht der
+          <a href="https://www.nachhaltigkeit.sachsen.de/2022.html" target="_blank" onclick="return confirm_alert('des sächsischen Staatsministeriums für Energie, Klimaschutz, Umwelt und Landwirtschaft', 'De');">Nachhaltigkeitsbericht</a>
+          Sachsen 2022 zur Verfügung. Der Nachhaltigkeitsbericht wird einmal in der Legislaturperiode erstellt.
+        </p>
+      </div>
+      <button class="collapsible">Sachsen-Anhalt</button>
+      <div class="content">
+        <p>Unter Federführung des Ministeriums für Wissenschaft, Energie, Klimaschutz und Umwelt und in Zusammenarbeit mit anderen beteiligten Ressorts
+          wurde 2022 eine Neufassung der Nachhaltigkeitsstrategie des Landes Sachsen-Anhalt erarbeitet. Die Strategie orientiert sich an den 17 Globalen
+          Nachhaltigkeitszielen der Agenda 2030 der Vereinten Nationen und zeigt den aktuellen Stand, die vorhandenen Rahmenbedingungen in Sachsen-Anhalt
+          sowie die umzusetzenden Ziele und zugehörigen Maßnahmen zur Zielerreichung bis zum Jahr 2030. Die Strategie beinhaltet einen aktualisierten
+          Indikatorenbericht, der die Nachhaltigkeitsziele Sachsen-Anhalts abbildet und zeitlich überholte Zielsetzungen mit Perspektive auf das Jahr
+          2030 neu fasst.
+          <br><br>
+          Zentraler Bestandteil der Nachhaltigkeitsstrategie ist die Bildung. Sie wird als einer der Schlüsselfaktoren für ein nachhaltiges Leben in
+          Sachsen-Anhalt angesehen. Durch die Zuordnung eines eigenständigen Unterziels, welches die Herausbildung von Gestaltungskompetenz,
+          Partizipation und kritischem Denken fördern soll, wird ein wichtiger Beitrag zur Realisierung der Nachhaltigkeitsziele der Agenda 2030 geleistet.
+          Die Nachhaltigkeitsstrategie und weitere Informationen zur Nachhaltigen Entwicklung in Sachsen-Anhalt sind
+          <a href="https://mwu.sachsen-anhalt.de/umwelt/nachhaltigkeit#c324287" target="_blank" onclick="return confirm_alert('des Ministeriums für Wissenschaft, Energie, Klimaschutz und Umwelt des Landes Sachsen-Anhalt', 'De');">hier</a> zu finden.
+        </p>
+      </div>
+      <button class="collapsible">Schleswig-Holstein</button>
+      <div class="content">
+        <p>Die Landesregierung Schleswig-Holstein hat im Dezember 2018 insgesamt 75 Indikatoren als Grundlage für eine Bestandsaufnahme zur nachhaltigen
+          Entwicklung in Schleswig-Holstein festgelegt, anhand derer zukünftig die nachhaltige Entwicklung des Landes bis 2030 gemessen werden soll:
+          44 Ziel-Indikatoren, 27 Reporting-Indikatoren und 4 Orientierungsindikatoren. Im Juni 2020 erschien auf dieser Basis der "1.
+          Bericht Schleswig-Holsteins zu den UN-Nachhaltigkeitszielen". Der Bericht als PDF ist
+          <a href="https://www.schleswig-holstein.de/DE/landesregierung/themen/umwelt-naturschutz/nachhaltigkeit/Nachhaltigkeitsbericht/_documents/download_zusammenf_nachhaltigkeitsbericht_leichtesprache.pdf?__blob=publicationFile&v=1" target="_blank" onclick="return confirm_alert('des Landes Schleswig-Holstein', 'De');">hier</a> zu finden. Eine Aktualisierung des Berichts soll alle
+          fünf Jahre erfolgen. Der Link zur Schwerpunktseite ist
+          <a href="https://www.schleswig-holstein.de/DE/Landesregierung/Themen/UmweltNatur/Nachhaltigkeit/nachhaltigkeit_node.html" target="_blank" onclick="return confirm_alert('des Landes Schleswig-Holstein', 'De');">hier</a> zu finden.
+        </p>
+      </div>
+      <button class="collapsible">Thüringen</button>
+      <div class="content">
+        <p>Die Landesregierung hat 2011 eine Nachhaltigkeitsstrategie mit entsprechenden Indikatoren für Thüringen beschlossen. 2012 wurde ein erster
+          Indikatorenbericht mit 27 Indikatoren veröffentlicht. Mit der Verabschiedung der Agenda 2030 war eine Anpassung der Nachhaltigkeitsstrategie
+          notwendig. Die
+          <a href="https://umwelt.thueringen.de/fileadmin/001_TMUEN/Unsere_Themen/Nachhaltigkeit/Thuer._Nachhaltigkeitsstrategie_18_09_11_TNS.pdf" target="_blank" onclick="return confirm_alert('des thüringer Ministeriums für Umwelt, Energie und Naturschutz', 'De');">Strategie</a>
+          wurde 2018 mit fünf Schwerpunktfeldern und Bezug zu den Sustainable Development Goals verabschiedet. Ebenfalls im Jahr 2018 hat jedes Ressort einen
+          eigenen
+          <a href="https://umwelt.thueringen.de/themen/nachhaltigkeit/nachhaltigkeitsplaene/"target="_blank" onclick="return confirm_alert('Thüringer Ministerium für Umwelt, Energie und Naturschutz', 'De');">Nachhaltigkeitsplan</a>
+          aufgestellt, der das nachhaltige Handel im jeweiligen Politikfeld untersetzt. In 2019 wurde der Thüringer
+          <a href="https://umwelt.thueringen.de/fileadmin/001_TMUEN/Unsere_Themen/Nachhaltigkeit/2019-08-23_Indikatorensatz_NachhaltigeEntwicklung_TH2019.pdf"target="_blank" onclick="return confirm_alert('Thüringer Ministerium für Umwelt, Energie und Naturschutz', 'De');">Indikatorensatz zur Nachhaltigen Entwicklung</a>
+          grundlegend überarbeitet und 2020 der dritte
+          <a href="https://umwelt.thueringen.de/fileadmin/Publikationen/Publikationen_TMUEN/Indikatorenbericht_TMUEN_2020_01.pdf"target="_blank" onclick="return confirm_alert('Thüringer Ministerium für Umwelt, Energie und Naturschutz', 'De');">Indikatorenbericht</a>
+          herausgegeben. Die Erarbeitung der Vorhaben läuft über eine Staatssekretärs-Arbeitsgruppe "Nachhaltige Entwicklung" mit der dazugehörigen
+          Interministeriellen Arbeitsgruppe. Der Thüringer Nachhaltigkeitsbeirat ist bei den Vorhaben ebenfalls einbezogen. Die seit 2021 geschaltete
+          <a href="https://nachhaltigkeit.thueringen.de/"target="_blank" onclick="return confirm_alert('Thüringer Ministerium für Umwelt, Energie und Naturschutz', 'De');">Internetseite</a>
+          gibt einen guten Überblick zu den Nachhaltigkeitsaktivitäten in Thüringen.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = (content.scrollHeight + 10) + "px";
+    }
+  });
+}
+</script>
+
+
+
+    </div>
+</div>
+
+
+<footer role="contentinfo">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div id="footerLinks">
+                    <ul>
+                        <li>
+                            <a href="https://open-sdg.org" target="_blank" onclick="return confirm_alert('von open-sdg', 'De');">
+                              Seite basiert auf Open SDG
+                            </a>
+                        </li>
+                        
+                        <li>
+                              
+                                
+                                  <a href="mailto:dns-indikatoren@destatis.de">Kontakt</a>
+                                
+                              
+                          </li>
+                        <li>
+                              <a href="/imprint/ ">Im­pres­s­um</a>
+                              
+                          </li>
+                        
+                        
+                        </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+
+
+
+
+
+
+
+<script>translations['general'] = translations['general'] || {};
+    translations['general']['hide'] = '';</script>
+
+<script>translations['search'] = translations['search'] || {};
+    translations['search']['search'] = 'Suche';</script>
+
+<script src='/assets/js/sdg.js?v=20240412073523'></script>
+
+
+    
+    
+    <script src="/assets/js/custom.js?v=20240412073523"></script><script>
+    new indicatorInit();
+    new accessibilitySwitcher();
+</script>
+
+
+</body>
+</html>
+
