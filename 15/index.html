@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -118,7 +118,7 @@ var translations = {
 
         
     
-    <title>Ziel 15 - Leben an Land - Dialogfassung</title>
+    <title>Ziel 15 - Leben an Land - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
     
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240412072915">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412074506">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -163,11 +163,6 @@ var translations = {
 
         
 
-        <!-- <style>
-          body {
-          background-color: #65add3;
-          }
-        </style> -->
     </head>
 <body class="language-de
 layout-goal
@@ -211,7 +206,17 @@ layout-goal
 <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Status
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
+    <a class="dropdown-item" href="/status/">Methodik</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/status_summary/">Übersicht</a>
+</li>
+</ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
@@ -263,7 +268,38 @@ layout-goal
 </form>
 
                 </div>
-                <div class="header-toggles d-flex"><a title="" aria-label=""
+                <div class="header-toggles d-flex">
+
+
+
+
+
+  <div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/en/15/">
+                English
+            </a>
+        </li></ul>
+</div>
+
+
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/en/15/">
+                English
+            </a>
+        </li></ul>
+</div>
+</span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -334,8 +370,8 @@ data-event-label="high"
       </div>
 
       <div class="col-sm-4 d-grid gap-2">
-        <a href="https://dns-indikatoren.de/15" class="btn btn-primary btn-block goal-15 navigation-btn" title="DNS Seite" role="button">
-          <b class="btn-label d-sm-none d-lg-block">Zur aktuellen DNS</b><b class="btn-label d-none d-sm-block d-lg-none">Aktuelle DNS</b>
+        <a href="https://sustainabledevelopment-germany.github.io//15" class="btn btn-primary btn-block goal-15 navigation-btn" title="" role="button">
+          <b class="btn-label d-sm-none d-lg-block">Globale Indikatoren zu Ziel 15 </b><b class="btn-label d-none d-sm-block d-lg-none">Ziel 15 - Global</b>
         </a>
       </div>
 
@@ -363,16 +399,14 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              <p  style="margin-bottom: 0px;" >
-                Artenvielfalt
-              </p>
+              Artenvielfalt
             </span>
             <p class="postulate">
               Arten erhalten – Lebensräume schützen
             </p>
           </div>
         </div>
-        
+
         <div class="col indicator-cards no-gutters">
 
           
@@ -385,18 +419,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px;" >
-                  15.1
-                  
-                    <i class="fa fa-wrench" aria-hidden="true"></i> Überarbeiteter Indikator
-                  
-                </p>
+                15.1
               </span>
               <a class="indicator-link-goal-page" href="/15-1/" >
                 Artenvielfalt und Landschaftsqualität
               </a>
-
               
             </div>
           
@@ -407,16 +434,14 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              <p  style="margin-bottom: 0px;" >
-                Ökosysteme
-              </p>
+              Ökosysteme
             </span>
             <p class="postulate">
               Ökosysteme schützen, Ökosystemleistungen erhalten und Lebensräume bewahren
             </p>
           </div>
         </div>
-        
+
         <div class="col indicator-cards no-gutters">
 
           
@@ -429,20 +454,31 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  15.2
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                15.2
               </span>
               <a class="indicator-link-goal-page" href="/15-2/" >
                 Eutrophierung der Ökosysteme
               </a>
-
               
             </div>
+          
+          </div>
+        </div>
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row range-and-postulate">
+            <span class="indicator-card-number">
+              Ökosysteme
+            </span>
+            <p class="postulate">
+              Weltweit Entwaldung vermeiden und Böden schützen
+            </p>
+          </div>
+        </div>
+
+        <div class="col indicator-cards no-gutters">
+
           
 
             
@@ -453,42 +489,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  15.3.a, b
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                15.3.a, b
               </span>
               <a class="indicator-link-goal-page" href="/15-3-ab/" >
                 Erhalt bzw. Wiederaufbau von Wäldern unter REDD+ sowie internationaler Bodenschutz
               </a>
-
-              
-            </div>
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px;" >
-                  15.4
-                  
-                    <i class="fa fa-plus" aria-hidden="true"></i> Neuer Indikator
-                  
-                </p>
-              </span>
-              <a class="indicator-link-goal-page" href="/15-4/" >
-                Versiegelung des Bodens
-              </a>
-
               
             </div>
           
@@ -557,12 +562,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240412072915'></script>
+<script src='/assets/js/sdg.js?v=20240412074506'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240412072915"></script><script>
+    <script src="/assets/js/custom.js?v=20240412074506"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

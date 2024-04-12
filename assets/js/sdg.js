@@ -322,6 +322,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         value = callback(value);
       });
       if (this._precision || this._precision === 0) {
+        value = Number((+(Math.round(+(value + 'e' + this._precision)) + 'e' + -this._precision)).toFixed(this._precision));
         value = Number.parseFloat(value).toFixed(this._precision);
       }
       if (this._decimalSeparator) {

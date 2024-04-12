@@ -7,7 +7,7 @@
         
         {
           "id": "1-1-ab",
-          "title": "Materielle und soziale Deprivation sowie erhebliche materielle und soziale Deprivation",
+          "title": "Materielle Deprivation sowie erhebliche materielle Deprivation",
           "description": "",
           "keywords": "",
           "href": "/1-1-ab/",
@@ -55,18 +55,10 @@
         
         {
           "id": "3-1-ab",
-          "title": "Durch Prävention und Behandlung vermeidbare Sterblichkeit",
-          "description": "",
-          "keywords": "",
-          "href": "/3-1-ab/",
-          "status": "complete"
-        },
-        {
-          "id": "3-1-ab-x",
           "title": "Vorzeitige Sterblichkeit",
           "description": "",
           "keywords": "",
-          "href": "/3-1-ab-x/",
+          "href": "/3-1-ab/",
           "status": "complete"
         },
         {
@@ -103,7 +95,7 @@
         },
         {
           "id": "3-2-b",
-          "title": "Anteil der Bevölkerung mit erhöhter <abbr title='Feinstaub (Durchmesser kleiner 10&nbsp;Mikrometer)' tabindex='0'>PM<sub>10</sub></abbr>-Feinstaubexposition",
+          "title": "Anteil der Bevölkerung mit erhöhter PM₁₀-Feinstaubexposition",
           "description": "",
           "keywords": "",
           "href": "/3-2-b/",
@@ -142,22 +134,6 @@
           "status": "complete"
         },
         {
-          "id": "4-1-c",
-          "title": "Weiterbildungsbeteiligung",
-          "description": "",
-          "keywords": "",
-          "href": "/4-1-c/",
-          "status": "complete"
-        },
-        {
-          "id": "4-1-d",
-          "title": "Schulen mit BNE-Label (Bildung für nachhaltige Entwicklung)",
-          "description": "",
-          "keywords": "",
-          "href": "/4-1-d/",
-          "status": "complete"
-        },
-        {
           "id": "4-2-ab",
           "title": "Ganztagsbetreuung für Kinder",
           "description": "",
@@ -191,7 +167,7 @@
         },
         {
           "id": "5-1-d",
-          "title": "Väterbeteiligung beim Elterngeld und Väteranteil an den genommenen Elterngeldmonaten",
+          "title": "Väterbeteiligung beim Elterngeld",
           "description": "",
           "keywords": "",
           "href": "/5-1-d/",
@@ -199,18 +175,10 @@
         },
         {
           "id": "5-1-e",
-          "title": "Durchschnittliche wöchentliche Erwerbsarbeitszeit bezogen auf alle Mütter und Väter",
-          "description": "",
-          "keywords": "",
-          "href": "/5-1-e/",
-          "status": "complete"
-        },
-        {
-          "id": "5-1-f",
           "title": "Berufliche Qualifizierung von Frauen und Mädchen durch deutsche entwicklungspolitische Zusammenarbeit",
           "description": "",
           "keywords": "",
-          "href": "/5-1-f/",
+          "href": "/5-1-e/",
           "status": "complete"
         }]
     }
@@ -311,7 +279,7 @@
         },
         {
           "id": "8-3",
-          "title": "Verhältnis der Bruttoanlageinvestitionen zum Bruttoinlandsprodukt",
+          "title": "Verhältnis der Bruttoanlageinvestitionen zum BIP",
           "description": "",
           "keywords": "",
           "href": "/8-3/",
@@ -331,14 +299,6 @@
           "description": "",
           "keywords": "",
           "href": "/8-5-ab/",
-          "status": "complete"
-        },
-        {
-          "id": "8-5-c",
-          "title": "Tarifvertragliche Abdeckung von Beschäftigten",
-          "description": "",
-          "keywords": "",
-          "href": "/8-5-c/",
           "status": "complete"
         },
         {
@@ -462,11 +422,11 @@
           "status": "complete"
         },
         {
-          "id": "11-4-x",
+          "id": "11-4",
           "title": "Zahl der Objekte in der Deutschen Digitalen Bibliothek",
           "description": "",
           "keywords": "",
-          "href": "/11-4-x/",
+          "href": "/11-4/",
           "status": "complete"
         }]
     }
@@ -495,26 +455,18 @@
         },
         {
           "id": "12-2",
-          "title": "Umweltmanagementsystem (EMAS)",
+          "title": "Umweltmanagement EMAS",
           "description": "",
           "keywords": "",
           "href": "/12-2/",
           "status": "complete"
         },
         {
-          "id": "12-3-abc",
+          "id": "12-3-ab",
           "title": "Nachhaltige Beschaffung",
           "description": "",
           "keywords": "",
-          "href": "/12-3-abc/",
-          "status": "complete"
-        },
-        {
-          "id": "12-4",
-          "title": "Quote der Verbraucherverschuldung",
-          "description": "",
-          "keywords": "",
-          "href": "/12-4/",
+          "href": "/12-3-ab/",
           "status": "complete"
         }]
     }
@@ -539,14 +491,6 @@
           "description": "",
           "keywords": "",
           "href": "/13-1-b/",
-          "status": "complete"
-        },
-        {
-          "id": "13-2",
-          "title": "Baumkronendichte in städtischen Gebieten",
-          "description": "",
-          "keywords": "",
-          "href": "/13-2/",
           "status": "complete"
         }]
     }
@@ -604,14 +548,6 @@
           "keywords": "",
           "href": "/15-3-ab/",
           "status": "complete"
-        },
-        {
-          "id": "15-4",
-          "title": "Versiegelung des Bodens",
-          "description": "",
-          "keywords": "",
-          "href": "/15-4/",
-          "status": "complete"
         }]
     }
   },
@@ -623,26 +559,26 @@
         
         {
           "id": "16-1",
-          "title": "Anzahl der durch Fachpersonal der Bundeswehr ausgebildeten Personen zur Stärkung der Kontrolle von Kleinwaffen und leichten Waffen sowie dazugehöriger Munition weltweit",
+          "title": "Straftaten",
           "description": "",
           "keywords": "",
           "href": "/16-1/",
           "status": "complete"
         },
         {
-          "id": "16-1-x",
-          "title": "Straftaten",
+          "id": "16-2",
+          "title": "Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland",
           "description": "",
           "keywords": "",
-          "href": "/16-1-x/",
+          "href": "/16-2/",
           "status": "complete"
         },
         {
-          "id": "16-2-ab",
+          "id": "16-3-ab",
           "title": "Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit",
           "description": "",
           "keywords": "",
-          "href": "/16-2-ab/",
+          "href": "/16-3-ab/",
           "status": "complete"
         }]
     }
@@ -663,7 +599,7 @@
         },
         {
           "id": "17-2",
-          "title": "Studierende und Forschende aus Entwicklungsländern sowie aus am wenigsten entwickelten Ländern pro Jahr",
+          "title": "Anzahl der Studierenden und Forschenden aus Entwicklungsländern sowie aus am wenigsten entwickelten Ländern pro Jahr",
           "description": "",
           "keywords": "",
           "href": "/17-2/",

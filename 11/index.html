@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -118,7 +118,7 @@ var translations = {
 
         
     
-    <title>Ziel 11 - Nachhaltige Städte und Gemeinden - Dialogfassung</title>
+    <title>Ziel 11 - Nachhaltige Städte und Gemeinden - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
     
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240412072915">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412074506">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -163,11 +163,6 @@ var translations = {
 
         
 
-        <!-- <style>
-          body {
-          background-color: #65add3;
-          }
-        </style> -->
     </head>
 <body class="language-de
 layout-goal
@@ -211,7 +206,17 @@ layout-goal
 <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Status
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
+    <a class="dropdown-item" href="/status/">Methodik</a>
+</li>
+<li class=" ">
+    <a class="dropdown-item" href="/status_summary/">Übersicht</a>
+</li>
+</ul>
+          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
@@ -263,7 +268,38 @@ layout-goal
 </form>
 
                 </div>
-                <div class="header-toggles d-flex"><a title="" aria-label=""
+                <div class="header-toggles d-flex">
+
+
+
+
+
+  <div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/en/11/">
+                English
+            </a>
+        </li></ul>
+</div>
+
+
+
+                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
+    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
+            <span>
+                Deutsch
+            </span>
+        </li><li class="language-option-en list-inline-item">
+            <a class="language-toggle-link" href="/en/11/">
+                English
+            </a>
+        </li></ul>
+</div>
+</span><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -334,8 +370,8 @@ data-event-label="high"
       </div>
 
       <div class="col-sm-4 d-grid gap-2">
-        <a href="https://dns-indikatoren.de/11" class="btn btn-primary btn-block goal-11 navigation-btn" title="DNS Seite" role="button">
-          <b class="btn-label d-sm-none d-lg-block">Zur aktuellen DNS</b><b class="btn-label d-none d-sm-block d-lg-none">Aktuelle DNS</b>
+        <a href="https://sustainabledevelopment-germany.github.io//11" class="btn btn-primary btn-block goal-11 navigation-btn" title="" role="button">
+          <b class="btn-label d-sm-none d-lg-block">Globale Indikatoren zu Ziel 11 </b><b class="btn-label d-none d-sm-block d-lg-none">Ziel 11 - Global</b>
         </a>
       </div>
 
@@ -363,16 +399,14 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              <p  style="margin-bottom: 0px;" >
-                Flächeninanspruchnahme
-              </p>
+              Flächeninanspruchnahme
             </span>
             <p class="postulate">
               Flächen nachhaltig nutzen
             </p>
           </div>
         </div>
-        
+
         <div class="col indicator-cards no-gutters">
 
           
@@ -385,18 +419,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px;" >
-                  11.1.a
-                  
-                    <i class="fa fa-bullseye" aria-hidden="true"></i> Neues Ziel
-                  
-                </p>
+                11.1.a
               </span>
               <a class="indicator-link-goal-page" href="/11-1-a/" >
                 Anstieg der Siedlungs- und Verkehrsfläche
               </a>
-
               
             </div>
           
@@ -409,18 +436,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.1.b
-                  
-                    <i class="fa fa-trash" aria-hidden="true"></i> Nicht mehr im Set enthalten
-                  
-                </p>
+                11.1.b
               </span>
               <a class="indicator-link-goal-page" href="/11-1-b/" >
                 Freiraumverlust
               </a>
-
               
             </div>
           
@@ -433,18 +453,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.1.c
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                11.1.c
               </span>
               <a class="indicator-link-goal-page" href="/11-1-c/" >
                 Siedlungsdichte
               </a>
-
               
             </div>
           
@@ -455,16 +468,14 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              <p  style="margin-bottom: 0px;" >
-                Mobilität
-              </p>
+              Mobilität
             </span>
             <p class="postulate">
               Mobilität sichern – Umwelt schonen
             </p>
           </div>
         </div>
-        
+
         <div class="col indicator-cards no-gutters">
 
           
@@ -477,18 +488,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.2.a
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                11.2.a
               </span>
               <a class="indicator-link-goal-page" href="/11-2-a/" >
                 Endenergieverbrauch im Güterverkehr
               </a>
-
               
             </div>
           
@@ -501,18 +505,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.2.b
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                11.2.b
               </span>
               <a class="indicator-link-goal-page" href="/11-2-b/" >
                 Endenergieverbrauch im Personenverkehr
               </a>
-
               
             </div>
           
@@ -525,18 +522,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.2.c
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                11.2.c
               </span>
               <a class="indicator-link-goal-page" href="/11-2-c/" >
                 Erreichbarkeit von Mittel- und Oberzentren mit öffentlichen Verkehrsmitteln
               </a>
-
               
             </div>
           
@@ -547,16 +537,14 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              <p  style="margin-bottom: 0px;" >
-                Wohnen
-              </p>
+              Wohnen
             </span>
             <p class="postulate">
               Bezahlbarer Wohnraum für alle
             </p>
           </div>
         </div>
-        
+
         <div class="col indicator-cards no-gutters">
 
           
@@ -569,18 +557,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.3
-                  
-                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
-                  
-                </p>
+                11.3
               </span>
               <a class="indicator-link-goal-page" href="/11-3/" >
                 Überlastung durch Wohnkosten
               </a>
-
               
             </div>
           
@@ -591,16 +572,14 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              <p  style="margin-bottom: 0px;" >
-                Kulturerbe
-              </p>
+              Kulturerbe
             </span>
             <p class="postulate">
               Zugang zum Kulturerbe verbessern
             </p>
           </div>
         </div>
-        
+
         <div class="col indicator-cards no-gutters">
 
           
@@ -613,18 +592,11 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-
-                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
-                  11.4
-                  
-                    <i class="fa fa-trash" aria-hidden="true"></i> Nicht mehr im Set enthalten
-                  
-                </p>
+                11.4
               </span>
-              <a class="indicator-link-goal-page" href="/11-4-x/" >
+              <a class="indicator-link-goal-page" href="/11-4/" >
                 Zahl der Objekte in der Deutschen Digitalen Bibliothek
               </a>
-
               
             </div>
           
@@ -693,12 +665,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240412072915'></script>
+<script src='/assets/js/sdg.js?v=20240412074506'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240412072915"></script><script>
+    <script src="/assets/js/custom.js?v=20240412074506"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
