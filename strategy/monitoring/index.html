@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Deutsche Nachhaltigkeitsstrategie - Monitoring durch das Statistische Bundesamt - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Monitoring durch das Statistische Bundesamt - Dialogfassung</title>
 
 
 
@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240410095001">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412072915">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -161,6 +161,11 @@ var translations = {
 
         
 
+        <!-- <style>
+          body {
+          background-color: #65add3;
+          }
+        </style> -->
     </head>
 <body class="language-de
 layout-page
@@ -204,17 +209,7 @@ layout-page
 <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Status
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
-    <a class="dropdown-item" href="/status/">Methodik</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/status_summary/">Übersicht</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
@@ -266,38 +261,7 @@ layout-page
 </form>
 
                 </div>
-                <div class="header-toggles d-flex">
-
-
-
-
-
-  <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/strategy/monitoring/">
-                English
-            </a>
-        </li></ul>
-</div>
-
-
-
-                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/strategy/monitoring/">
-                English
-            </a>
-        </li></ul>
-</div>
-</span><a title="" aria-label=""
+                <div class="header-toggles d-flex"><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -318,26 +282,32 @@ data-event-label="high"
         <li class="breadcrumb-item" >
             <a href="/">Start</a>
         </li>
-        <li class="breadcrumb-item active">Deutsche Nachhaltigkeitsstrategie - Monitoring durch das Statistische Bundesamt</li>
+        <li class="breadcrumb-item active">Monitoring durch das Statistische Bundesamt</li>
     </ol>
 </nav>
 </div>
 <div id="main-content" class="container" role="main">
     <div>
-        <h1>Deutsche Nachhaltigkeitsstrategie - Monitoring durch das Statistische Bundesamt</h1>
+        <h1>Monitoring durch das Statistische Bundesamt</h1>
         
 
 
-    Im Rahmen der Umsetzung der Ziele der Agenda 2030 auf nationaler Ebene wurde die Nachhaltigkeitsstrategie durch
-die Bundesregierung im Jahr 2016 grundlegend überarbeitet und wird seitdem regelmäßig aktualisiert. Alle zwei
-Jahre berichtet das Statistische Bundesamt ausführlich über die Entwicklung der nationalen Nachhaltigkeitsindikatoren
-zur Messung der Zielerreichung der Deutschen Nachhaltigkeitsstrategie im Rahmen sogenannter Indikatorenberichte.
-Diese beinhalten detaillierte Beschreibungen aller Indikatoren, deren Entwicklung und ihren Status, sowie weiterführende Ananlysen.
+    Das Monitoring der nationalen Nachhaltigkeitsindikatoren und das Reporting über deren Aussagen und Entwicklungen
+obliegt dem Statistischen Bundesamt. Hierzu veröffentlicht das Statistische Bundesamt
+<a href="https://dns-indikatoren.de/strategy/publications/">Indikatorenberichte</a> und
+betreibt seit Februar 2020 eine
+<a href="https://dns-indikatoren.de/">Online Plattform</a> in eigener fachlicher Verantwortung.
 <br><br>
-Im Februar 2020 hat das Statistische Bundesamt auf dieser Online Plattform für nachhaltige Entwicklung auch die
-Indikatoren der Deutschen Nachhaltigkeitsstrategie freigeschaltet. Diese umfassen aktuelle statistische Daten und
-Metadaten für Deutschlands nachhaltige Entwicklung in aufbereiteter und interaktiver Form. Somit lässt sich die
-Entwicklung der Indikatoren sowie deren Grad der Zielerreichung im Zeitverlauf anschaulich verfolgen.
+Während die Online Plattform fortlaufend aktualisiert wird und so die neuesten Entwicklungen der
+Indikatoren abbildet, werden die Indikatoren alle zwei Jahre vom Statistischen Bundesamt in
+Indikatorenberichten auf den Stand der Zielerreichung überprüft. Dabei nimmt es eine Trendbewertung
+vor und formuliert eine Einschätzung, ob die Ziele nach derzeitigem Entwicklungsstand erreicht werden
+oder nicht. Das Statistische Bundesamt liefert damit auch zwischen den alle vier Jahre veröffentlichten
+Fortschrittsberichten der Bundesregierung Informationen über den Stand der nachhaltigen Entwicklung
+in Deutschland. Auch wenn die Ziele und zugehörigen Indikatoren der DNS politisch festgelegt worden sind,
+fußt ihre Darstellung in den Indikatorenberichten auf den statistischen Grundsätzen der fachlichen
+Unabhängigkeit, Objektivität und Neutralität. Die fachliche Unabhängigkeit ist auch der Bundesregierung
+wichtig und wird mit dem Kabinettsbeschluss zur DNS 2016 vom 11. Januar 2017 von der Bundesregierung garantiert.
 
 
 
@@ -404,12 +374,12 @@ Entwicklung der Indikatoren sowie deren Grad der Zielerreichung im Zeitverlauf a
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240410095001'></script>
+<script src='/assets/js/sdg.js?v=20240412072915'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240410095001"></script><script>
+    <script src="/assets/js/custom.js?v=20240412072915"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

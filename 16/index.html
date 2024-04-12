@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -118,7 +118,7 @@ var translations = {
 
         
     
-    <title>Ziel 16 - Frieden, Gerechtigkeit und starke Institutionen - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Ziel 16 - Frieden, Gerechtigkeit und starke Institutionen - Dialogfassung</title>
     
 
 
@@ -143,7 +143,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240410095001">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412072915">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -163,6 +163,11 @@ var translations = {
 
         
 
+        <!-- <style>
+          body {
+          background-color: #65add3;
+          }
+        </style> -->
     </head>
 <body class="language-de
 layout-goal
@@ -206,17 +211,7 @@ layout-goal
 <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Status
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
-    <a class="dropdown-item" href="/status/">Methodik</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/status_summary/">Übersicht</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
@@ -268,38 +263,7 @@ layout-goal
 </form>
 
                 </div>
-                <div class="header-toggles d-flex">
-
-
-
-
-
-  <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/16/">
-                English
-            </a>
-        </li></ul>
-</div>
-
-
-
-                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/16/">
-                English
-            </a>
-        </li></ul>
-</div>
-</span><a title="" aria-label=""
+                <div class="header-toggles d-flex"><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -370,8 +334,8 @@ data-event-label="high"
       </div>
 
       <div class="col-sm-4 d-grid gap-2">
-        <a href="https://sustainabledevelopment-germany.github.io//16" class="btn btn-primary btn-block goal-16 navigation-btn" title="" role="button">
-          <b class="btn-label d-sm-none d-lg-block">Globale Indikatoren zu Ziel 16 </b><b class="btn-label d-none d-sm-block d-lg-none">Ziel 16 - Global</b>
+        <a href="https://dns-indikatoren.de/16" class="btn btn-primary btn-block goal-16 navigation-btn" title="DNS Seite" role="button">
+          <b class="btn-label d-sm-none d-lg-block">Zur aktuellen DNS</b><b class="btn-label d-none d-sm-block d-lg-none">Aktuelle DNS</b>
         </a>
       </div>
 
@@ -399,49 +363,16 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              Kriminalität
-            </span>
-            <p class="postulate">
-              Persönliche Sicherheit weiter erhöhen
-            </p>
-          </div>
-        </div>
-
-        <div class="col indicator-cards no-gutters">
-
-          
-
-            
-            
-            
-            
-
-            <div class="row" style="margin-bottom: 25px;">
-              
-              <span class="indicator-card-number" >
-                16.1
-              </span>
-              <a class="indicator-link-goal-page" href="/16-1/" >
-                Straftaten
-              </a>
-              
-            </div>
-          
-          </div>
-        </div>
-      
-      <div class="row">
-        <div class="col indicator-cards target goal-target no-gutters">
-          <div class="row range-and-postulate">
-            <span class="indicator-card-number">
-              Frieden und Sicherheit
+              <p  style="margin-bottom: 0px;" >
+                Frieden und Sicherheit
+              </p>
             </span>
             <p class="postulate">
               Praktische Maßnahmen zur Bekämpfung der Proliferation, insbesondere von Kleinwaffen, ergreifen
             </p>
           </div>
         </div>
-
+        
         <div class="col indicator-cards no-gutters">
 
           
@@ -454,11 +385,18 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-                16.2
+
+                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px;" >
+                  16.1
+                  
+                    <i class="fa fa-plus" aria-hidden="true"></i> Neuer Indikator
+                  
+                </p>
               </span>
-              <a class="indicator-link-goal-page" href="/16-2/" >
-                Anzahl der in betroffenen Weltregionen durchgeführten Projekte zur Sicherung, Registrierung und Zerstörung von Kleinwaffen und leichten Waffen durch Deutschland
+              <a class="indicator-link-goal-page" href="/16-1/" >
+                Anzahl der durch Fachpersonal der Bundeswehr ausgebildeten Personen zur Stärkung der Kontrolle von Kleinwaffen und leichten Waffen sowie dazugehöriger Munition weltweit
               </a>
+
               
             </div>
           
@@ -469,14 +407,16 @@ data-event-label="high"
         <div class="col indicator-cards target goal-target no-gutters">
           <div class="row range-and-postulate">
             <span class="indicator-card-number">
-              Gute Regierungsführung
+              <p  style="margin-bottom: 0px;" >
+                Kriminalität
+              </p>
             </span>
             <p class="postulate">
-              Korruption bekämpfen
+              Persönliche Sicherheit weiter erhöhen
             </p>
           </div>
         </div>
-
+        
         <div class="col indicator-cards no-gutters">
 
           
@@ -489,11 +429,62 @@ data-event-label="high"
             <div class="row" style="margin-bottom: 25px;">
               
               <span class="indicator-card-number" >
-                16.3.a, b
+
+                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
+                  16.1
+                  
+                    <i class="fa fa-trash" aria-hidden="true"></i> Nicht mehr im Set enthalten
+                  
+                </p>
               </span>
-              <a class="indicator-link-goal-page" href="/16-3-ab/" >
+              <a class="indicator-link-goal-page" href="/16-1-x/" >
+                Straftaten
+              </a>
+
+              
+            </div>
+          
+          </div>
+        </div>
+      
+      <div class="row">
+        <div class="col indicator-cards target goal-target no-gutters">
+          <div class="row range-and-postulate">
+            <span class="indicator-card-number">
+              <p  style="margin-bottom: 0px;" >
+                Gute Regierungsführung
+              </p>
+            </span>
+            <p class="postulate">
+              Korruption bekämpfen
+            </p>
+          </div>
+        </div>
+        
+        <div class="col indicator-cards no-gutters">
+
+          
+
+            
+            
+            
+            
+
+            <div class="row" style="margin-bottom: 25px;">
+              
+              <span class="indicator-card-number" >
+
+                <p class="titles goal-"  style="margin-bottom: 0px; padding-left: 0px; color: grey" >
+                  16.2.a, b
+                  
+                    <i class="fa fa-times" aria-hidden="true"></i> Keine Änderungen
+                  
+                </p>
+              </span>
+              <a class="indicator-link-goal-page" href="/16-2-ab/" >
                 Corruption Perception Index in Deutschland sowie in den Partnerländern der deutschen Entwicklungszusammenarbeit
               </a>
+
               
             </div>
           
@@ -562,12 +553,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240410095001'></script>
+<script src='/assets/js/sdg.js?v=20240412072915'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240410095001"></script><script>
+    <script src="/assets/js/custom.js?v=20240412072915"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

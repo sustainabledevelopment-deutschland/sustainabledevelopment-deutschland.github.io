@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Berichtsstatus - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Berichtsstatus - Dialogfassung</title>
 
 
 
@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240410095001">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412072915">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -161,6 +161,11 @@ var translations = {
 
         
 
+        <!-- <style>
+          body {
+          background-color: #65add3;
+          }
+        </style> -->
     </head>
 <body class="language-de
 layout-reportingstatus
@@ -204,17 +209,7 @@ layout-reportingstatus
 <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Status
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
-    <a class="dropdown-item" href="/status/">Methodik</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/status_summary/">Übersicht</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
@@ -266,38 +261,7 @@ layout-reportingstatus
 </form>
 
                 </div>
-                <div class="header-toggles d-flex">
-
-
-
-
-
-  <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/reporting-status/">
-                English
-            </a>
-        </li></ul>
-</div>
-
-
-
-                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/reporting-status/">
-                English
-            </a>
-        </li></ul>
-</div>
-</span><a title="" aria-label=""
+                <div class="header-toggles d-flex"><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -342,36 +306,7 @@ data-event-label="high"
 
   <div>
   
-  <ul class="nav nav-tabs reporting-status-view" role="tablist">
-    <li role="presentation" class="nav-item active">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#goalsview" aria-controls="goalsview" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change reporting status view"
-data-event-label="Change reporting status view to goals"
->Berichtsstatus</button>
-    </li>
-    
-      
-      
-      
-      
-      <li role="presentation" class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#un_designated_tierview" aria-controls="un_designated_tierview" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change reporting status view"
-data-event-label="Change reporting status view to un_designated_tier"
-></button>
-      </li>
-      
-    
 
-    
-  </ul>
-  
-
-  
-  <div class="tab-content reporting-status-view">
-    <div role="tabpanel" class="tab-pane active" id="goalsview">
   
   <div class="goal goal-overall">
     
@@ -383,12 +318,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h2 class="status-goal">
             Übersicht zum Berichtsstatus der
         </h2>
-        <span class="total"><span>60</span> indikatoren</span>
+        <span class="total"><span>68</span> indikatoren</span>
         <div class="summary">
             <div class="statuses">
             
             <div>
-                <span class="status complete"><span class="status-inner">60</span></span><strong>complete</strong><span class="value">100%</span>
+                <span class="status complete"><span class="status-inner">68</span></span><strong>complete</strong><span class="value">100%</span>
             </div>
             
             
@@ -485,12 +420,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/3/">Gesundheit und Wohlergehen</a>
         </h3>
-        <span class="total">7 indikatoren</span>
+        <span class="total">8 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">7</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">8</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -519,12 +454,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/4/">Hochwertige Bildung</a>
         </h3>
-        <span class="total">3 indikatoren</span>
+        <span class="total">5 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">3</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">5</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -553,12 +488,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/5/">Geschlechtergleichheit</a>
         </h3>
-        <span class="total">4 indikatoren</span>
+        <span class="total">5 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">4</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">5</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -655,12 +590,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/8/">Menschenwürdige Arbeit und Wirtschaftswachstum</a>
         </h3>
-        <span class="total">7 indikatoren</span>
+        <span class="total">8 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">7</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">8</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -791,12 +726,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/12/">Nachhaltige/r Konsum und Produktion</a>
         </h3>
-        <span class="total">4 indikatoren</span>
+        <span class="total">5 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">4</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">5</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -825,12 +760,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/13/">Maßnahmen zum Klimaschutz</a>
         </h3>
-        <span class="total">2 indikatoren</span>
+        <span class="total">3 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">2</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">3</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -893,12 +828,12 @@ data-event-label="Change reporting status view to un_designated_tier"
         <h3 class="status-goal">
             <a href="/15/">Leben an Land</a>
         </h3>
-        <span class="total">3 indikatoren</span>
+        <span class="total">4 indikatoren</span>
         <div class="summary">
             <div class="statuses">
                 
                 <div>
-                    <span class="status complete"><span class="status-inner">3</span></span><strong>complete</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">4</span></span><strong>complete</strong><span class="value">100%</span>
                 </div>
                 
                 
@@ -987,80 +922,11 @@ data-event-label="Change reporting status view to un_designated_tier"
     <br style="clear:both;">
 </div>
   
-    </div>
-  
-
-  
-    <div role="tabpanel" class="tab-pane" id="un_designated_tierview" data-extra-field="true">
-      <div class="goal goal-overall">
-    
-    <div class="details">
-        <h2 class="status-goal">
-            Übersicht zum Berichtsstatus der
-        </h2>
-        <span class="total"><span>60</span> indikatoren</span>
-        <div class="summary">
-            <div class="statuses">
-            
-            <div>
-                <span class="status complete"><span class="status-inner">60</span></span><strong>complete</strong><span class="value">100%</span>
-            </div>
-            
-            
-            <br style="clear:both;">
-            </div>
-        </div>
-        <div class="goal-stats">
-            
-            
-            
-            
-            <span class="complete" style="width:100.0%" title="complete: 100%"></span>
-            
-            
-            </div>
-    </div>
-    <br style="clear:both;">
-</div>
-      
-<h2></h2><div class="goal details reporting-status-item">
-        <h3 class="status-goal">
-            <span class="status-field">status.not_specified</span>
-        </h3>
-        <span class="total">60
-            
-                indikatoren
-            
-        </span>
-        <div class="summary">
-            <div class="statuses">
-                    
-                    <div>
-                        <span class="status complete"><span class="status-inner">60</span></span><strong>complete</strong><span class="value">100%</span>
-                    </div>
-                    
-                    
-                    <br style="clear:both;">
-            </div>
-        </div>
-        <div class="goal-stats">
-                
-                
-                
-                
-                <span class="complete" style="width:100.0%" title="complete: 100%"></span>
-                
-                
-                </div>
-        <div class="divider"></div>
-    </div>
-    <br style="clear:both;">
-    </div>
 
   
 
   
-  </div>
+
   
 
   </div>
@@ -1126,12 +992,12 @@ data-event-label="Change reporting status view to un_designated_tier"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240410095001'></script>
+<script src='/assets/js/sdg.js?v=20240412072915'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240410095001"></script><script>
+    <script src="/assets/js/custom.js?v=20240412072915"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

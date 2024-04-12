@@ -20,7 +20,8 @@ opensdg.dataRoundingDp = function(value, dcmplc) {
     return value
   }
   else {
-    return (+(Math.round(+(num + 'e' + dcmplc)) + 'e' + -dcmplc)).toFixed(dcmplc);
+    return value.toFixed(dcmplc)
   }
 };
+
 //------------------------------------------------

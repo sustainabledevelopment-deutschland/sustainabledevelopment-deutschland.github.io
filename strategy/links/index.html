@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://dns-indikatoren.de/sdg-data-pub/de',
+  remoteDataBaseUrl: 'https://dns-indikatoren-dialogfassung.github.io/data-pub/de',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Links - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Links - Dialogfassung</title>
 
 
 
@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240410095001">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240412072915">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -161,6 +161,11 @@ var translations = {
 
         
 
+        <!-- <style>
+          body {
+          background-color: #65add3;
+          }
+        </style> -->
     </head>
 <body class="language-de
 layout-page
@@ -204,17 +209,7 @@ layout-page
 <ul class="navbar-nav" id="menu"><li class="nav-item ">
     <a class="nav-link" href="/">Start</a>
 </li>
-<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-status" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Status
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-status"><li class=" ">
-    <a class="dropdown-item" href="/status/">Methodik</a>
-</li>
-<li class=" ">
-    <a class="dropdown-item" href="/status_summary/">Übersicht</a>
-</li>
-</ul>
-          </li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="dropdown-menu-1-strategy" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Strategie
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdown-menu-1-strategy"><li class=" ">
@@ -266,38 +261,7 @@ layout-page
 </form>
 
                 </div>
-                <div class="header-toggles d-flex">
-
-
-
-
-
-  <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/strategy/links/">
-                English
-            </a>
-        </li></ul>
-</div>
-
-
-
-                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/strategy/links/">
-                English
-            </a>
-        </li></ul>
-</div>
-</span><a title="" aria-label=""
+                <div class="header-toggles d-flex"><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -338,7 +302,7 @@ data-event-label="high"
     <li><a href="https://www.bundesregierung.de/resource/blob/975274/370072/cfeea41c0667adad43a6f8eff96b6a33/2012-05-21-fortschrittsbericht-2012-barrierefrei-data.pdf?download=1" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');">Fortschrittsbericht 2012</a><br>
     <li><a href="https://www.bundesregierung.de/resource/blob/974430/418604/a58fc75380dc6afcfaa5a9f1b1e303bb/2008-11-17-fortschrittsbericht-2008-data.pdf?download=1" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');">Fortschrittsbericht 2008</a><br>
     <li><a href="https://www.bundesregierung.de/resource/blob/974430/418638/ee29deb737a6e10043c4b0478cbd6ccf/fortschrittsbericht-2004-data.pdf?download=1" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');">Fortschrittsbericht 2004</a><br>
-    <li><a href="https://www.bundesregierung.de/resource/blob/974430/418646/71921f0b8146cf110225124e9bff280f/perspektiven-fuer-deutschland-langfassung-data.pdf?download=1" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');">Fortschrittsbericht 2002</a><br>
+    <li><a href="https://www.bundesregierung.de/resource/blob/974430/418646/71921f0b8146cf110225124e9bff280f/perspektiven-fuer-deutschland-langfassung-data.pdf?download=1" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');">Deutsche Nachhaltigkeitsstrategie 2002</a><br>
   </ul>
   <h3 style="width: 80%;">Maßnahmenprogramm Nachhaltigkeit der Bundesregierung</h3>
   <ul style="line-height: 200%">
@@ -354,7 +318,8 @@ data-event-label="high"
   <h3 style="width: 80%;">Weitere Informationen</h3>
   <ul style="line-height: 200%">
     <li><a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');"><b></b>Nachhaltigkeitsseite der Bundesregierung</a></li>
-    <li><a href="https://www.bundesregierung.de/breg-de/themen/bund-laender-zusammenarbeit-427746" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');"><b></b>Bundesregierung – Nachhaltigkeit in den Bundesländern</a><br>
+    <li><a href="https://www.bundesregierung.de/breg-de/themen/bund-laender-zusammenarbeit-427746" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');"><b></b>Bundesregierung – Nachhaltigkeit in den Bundesländern</a></li>
+    <li><a href="https://www.bundesregierung.de/resource/blob/975274/2204198/85d918c4d1b9dfa445bf8e9f713df488/2023-07-24-off-track-indikatorenbericht-data.pdf?download=1" target="_blank" onclick="return confirm_alert('der Bundesregierung', 'De');">Weitere Maßnahmen zur Erreichung der Ziele der Deutschen Nachhaltigkeitsstrategie</a> (Off-track-Indikatoren, Stand: Indikatorenbericht 2022)</li>
   </ul>
 </div>
 
@@ -423,12 +388,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20240410095001'></script>
+<script src='/assets/js/sdg.js?v=20240412072915'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240410095001"></script><script>
+    <script src="/assets/js/custom.js?v=20240412072915"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
