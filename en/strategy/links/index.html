@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240426100216">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240507131328">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -328,36 +328,63 @@ data-event-label="high"
         
 
 
-    <div>
-  <h3 style="width: 80%;">German Sustainable Development Strategy</h3>
-  <ul style="line-height: 200%">
-    <li><a href="https://www.bundesregierung.de/resource/blob/998220/2156614/6fb87e0d48dc0dbd67c33fa290e3c8f5/2022-11-30-dns-grundsatzbeschluss-en-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Policy Decision 2022</a></li>
-    <li><a href="https://www.bundesregierung.de/resource/blob/998194/1942596/41a46a8f935a9b2945ee26d7593801ca/deutsche-nachhaltigkeitsstrategie-2021-kurzfassung-englisch-bf-download-bpa-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Update 2021</a></li>
-    <li><a href="https://www.bundesregierung.de/resource/blob/975274/1588964/465a4d7e35b3a14fe5e1df444de53185/2019-03-13-dns-aktualisierung-2018-englisch-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">2018 Update</a></li>
-    <li><a href="https://www.bundesregierung.de/resource/blob/975274/188836/3926a67a336e2a6d545beddc67d44c01/2017-06-20-nachhaltigkeit-neuauflage-engl-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">New Version 2016</a></li>
-    <li><a href="https://www.bundesregierung.de/resource/blob/975274/418584/042087e16e49dc9747af1c746f62b009/2012-06-07-fortschrittsbericht-2012-englisch-barrierefrei-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">2012 Progress Report</a></li>
-    <li><a href="https://www.bundesregierung.de/resource/blob/974430/418620/6570d3309de8b74e0d24ceecfffb25ab/2009-05-13-fortschrittsbericht-2008-englisch-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Progress Report 2008</a></li>
-    <li><a href="https://www.bundesregierung.de/resource/blob/974430/418638/ee29deb737a6e10043c4b0478cbd6ccf/fortschrittsbericht-2004-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Progress Report 2004 (only available in German)<br>
-    <li><a href="https://www.bundesregierung.de/resource/blob/974430/418646/71921f0b8146cf110225124e9bff280f/perspektiven-fuer-deutschland-langfassung-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Prospects for Germany (only available in German)</a></li>
-  </ul>
-  <h3 style="width: 80%;">Maßnahmenprogramm Nachhaltigkeit der Bundesregierung</h3>
-  <p>(only available in German)</p>
-  <ul style="line-height: 200%">
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2022</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2021</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2020</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2019</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2018</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2017</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2016</a></li>
-    <li><a href="" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2015</a></li>
-  </ul>
-  <h3 style="width: 80%;">More information</h3>
-  <ul style="line-height: 200%">
-    <li><a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns" target="_blank" onclick="return confirm_alert('Federal Government', 'En');"><b></b>Sustainable development page of the federal government</a></li>
-    <li><a href="https://www.bundesregierung.de/breg-de/themen/bund-laender-zusammenarbeit-427746" target="_blank" onclick="return confirm_alert('Federal Government', 'En');"><b></b>Federal Government - Sustainable development in the federal states</a></li>
-  </ul>
+    <div class="flex-container">
+  <div class="leftColumn" >
+    <div class=collapsibleElements>
+      <button class="collapsible">>German Sustainable Development Strategy</button>
+      <div class="content">
+        <p></p>
+        <ul style="line-height: 200%">
+          <li><a href="https://www.bundesregierung.de/resource/blob/998220/2156614/6fb87e0d48dc0dbd67c33fa290e3c8f5/2022-11-30-dns-grundsatzbeschluss-en-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Policy Decision 2022</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/998194/1942596/41a46a8f935a9b2945ee26d7593801ca/deutsche-nachhaltigkeitsstrategie-2021-kurzfassung-englisch-bf-download-bpa-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Update 2021</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/1588964/465a4d7e35b3a14fe5e1df444de53185/2019-03-13-dns-aktualisierung-2018-englisch-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">2018 Update</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/188836/3926a67a336e2a6d545beddc67d44c01/2017-06-20-nachhaltigkeit-neuauflage-engl-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">New Version 2016</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/418584/042087e16e49dc9747af1c746f62b009/2012-06-07-fortschrittsbericht-2012-englisch-barrierefrei-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">2012 Progress Report</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/974430/418620/6570d3309de8b74e0d24ceecfffb25ab/2009-05-13-fortschrittsbericht-2008-englisch-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Progress Report 2008</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/974430/418638/ee29deb737a6e10043c4b0478cbd6ccf/fortschrittsbericht-2004-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Progress Report 2004 (only available in German)<br>
+          <li><a href="https://www.bundesregierung.de/resource/blob/974430/418646/71921f0b8146cf110225124e9bff280f/perspektiven-fuer-deutschland-langfassung-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Prospects for Germany (only available in German)</a></li>
+        </ul>
+      </div>
+      <button class="collapsible">Sustainability action programme of the German government</button>
+      <div class="content">
+        <p>(only available in German)</p>
+        <ul style="line-height: 200%">
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/2258114/68d6e4a82ef54e56697daa01d6634a2e/2024-02-06-monitoringbericht-2022-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2022</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/2192466/2593432b1a28800afc4cd66ddc2df940/2023-05-23-monitoringbericht-2021-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2021</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/1929120/289970858983e6ae34a7762bf7b34b76/2021-06-14-monitoringbericht-2020-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2020</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/1768512/f4e5190c690dd7df4ab4b5a38578d716/2020-07-14-monitoringbericht-2019-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2019</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/974430/1631064/e746dabbd85a63228bdc85fd98997120/2019-05-28-monitoringbericht-2018-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2018</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/974430/1142096/e6d3a38c99bfdc49a3bc76938ad9c3d6/monitoringbericht-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2017</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/974430/426488/724d565a6211fffe47561cf16f3fac34/2017-04-24-sts-ausschuss-nachhaltigkeit-monitoring-2016-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2016</a></li>
+          <li><a href="https://www.bundesregierung.de/resource/blob/975274/427922/914f8ee794e97b779190a77f1a24efb4/monitoringbericht-2015-data.pdf?download=1" target="_blank" onclick="return confirm_alert('Federal Government', 'En');">Monitoring report 2015</a></li>
+        </ul>
+      </div>
+      <button class="collapsible">More information</button>
+      <div class="content">
+        <ul style="line-height: 200%">
+          <li><a href="https://www.bundesregierung.de/breg-de/themen/nachhaltigkeitspolitik/eine-strategie-begleitet-uns" target="_blank" onclick="return confirm_alert('Federal Government', 'En');"><b></b>Sustainable development page of the federal government</a></li>
+          <li><a href="https://www.bundesregierung.de/breg-de/themen/bund-laender-zusammenarbeit-427746" target="_blank" onclick="return confirm_alert('Federal Government', 'En');"><b></b>Federal Government - Sustainable development in the federal states</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = (content.scrollHeight + 10) + "px";
+    }
+  });
+}
+</script>
 
 
 
@@ -424,12 +451,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20240426100216'></script>
+<script src='/assets/js/sdg.js?v=20240507131328'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240426100216"></script><script>
+    <script src="/assets/js/custom.js?v=20240507131328"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
