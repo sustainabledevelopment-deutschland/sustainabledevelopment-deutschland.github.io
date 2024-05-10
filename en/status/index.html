@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240507131328">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240510085748">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -330,7 +330,7 @@ data-event-label="high"
 
     <p>As means of providing at-a-glance information on the status of the sustainability indicators, every indicator is assigned, if calculable, one of four “weather symbols” in the report. This symbol is neither a political appraisal nor a forecast. Instead, the symbols provide a first impression of developments but do not replace a study of the explanatory texts, further analyses and background information. The manner in which the symbols are assigned to the individual indicators depends on the formulation of the respective target.</p>
 
-<h3>Indicators with absolute or relative target values</h3>
+<h3 class="h3bold">Indicators with absolute or relative target values</h3>
 
 <p>In most of the cases an indicator is supposed to reach a concrete absolute or relative target value by a target year (for example <a href="https://dns-indikatoren.de/en/3-1-ab/">indicator 3.1.a</a>). In the case of such a target formulation, first the average annual change over the last five years is calculated by means of the last six data points. This value is imputed for all years up to the target year. Building on this development, a hypothetical target value is calculated and compared to the predefined target value of the indicator. Based on the resulting difference between these two values, the indicators are assigned one of the following symbols:</p>
 
@@ -344,11 +344,11 @@ data-event-label="high"
 
 <p>In exceptional cases where there are not enough data for the above mentioned calculation to be carried out, the last four consecutive points of time for which data are available will, as a minimum, be used to calculate the average change. In the case of less than four suitable annual values, there will be no calculation.</p>
 
-<h3>Indicators with target intervals</h3>
+<h3 class="h3bold">Indicators with target intervals</h3>
 
 <p>If the target is not an exact value but a specific interval (for example <a href="https://dns-indikatoren.de/en/11-1-a/">indicator 11.1.a</a>), the weakest of the targets in the target interval will be used to determine the status. If several target values have been specified for one indicator that are to be reached in different years (for example <a href="https://dns-indikatoren.de/en/7-2-a/">indicator 7.2.a</a>), the next target year will be used to determine the status.</p>
 
-<h3>Indicators with a constant target for each year</h3>
+<h3 class="h3bold">Indicators with a constant target for each year</h3>
 
 <p>If a target value or a threshold is not to be reached at some time in the future but to be maintained in every single year (for example <a href="https://dns-indikatoren.de/en/6-2-ab/">indicator 6.2.a, b</a>), two pieces of information are combined for evaluation: primarily, the value last achieved and, subordinately, the average change over the last five years.</p>
 
@@ -361,7 +361,7 @@ data-event-label="high"
 
 <p>This procedure is used also when an indicator is supposed to reach a concrete target value by an exact target year and has reached the goal already. In such cases the standard procedure cannot provide reliable information on the direction in which the indicator is moving.</p>
 
-<h3>Indicators with directional targets without specific target values</h3>
+<h3 class="h3bold">Indicators with directional targets without specific target values</h3>
 
 <p>In cases where only the targeted direction of the indicator trend is given but no concrete target value (for example <a href="https://dns-indikatoren.de/en/15-3-ab/">indicator 15.3.a</a>), two pieces of information are combined for evaluation: primarily, the average change over the last five years and, subordinately, the last annual change.</p>
 
@@ -372,11 +372,11 @@ data-event-label="high"
   <li>If neither the average value nor the last change point in the right direction, the symbol shown is a thunderstorm.</li>
 </ul>
 
-<h3>Indicators with several target values</h3>
+<h3 class="h3bold">Indicators with several target values</h3>
 
 <p>If several targets are defined for one indicator that are to be reached at the same time (for example  <a href="https://dns-indikatoren.de/en/10-1/">indicator 10.1</a>), the development is evaluated individually for each target. The most negative evaluation determines the weather symbol to be assigned to the indicator.</p>
 
-<h3>Comparison of evaluations over time</h3>
+<h3 class="h3bold">Comparison of evaluations over time</h3>
 
 <p>The synoptic table provides information also about the evaluation of an indicator in previous years. It shows if the weather symbol assigned to an indicator was rather stable or volatile in the past years.</p>
 
@@ -445,12 +445,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20240507131328'></script>
+<script src='/assets/js/sdg.js?v=20240510085748'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240507131328"></script><script>
+    <script src="/assets/js/custom.js?v=20240510085748"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
