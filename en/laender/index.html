@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20240515084429">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20240517112330">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -469,14 +469,17 @@ data-event-label="high"
       </div>
       <button class="collapsible">Saarland</button>
       <div class="content">
-        <p>The Sustainable Development Strategy for the Saarland entitled "Gemeinsam Verantwortung tragen für heute und morgen" (Sharing responsibility for today and
+        <p>The <a href="https://www.saarland.de/mukmav/DE/portale/nachhaltigkeit/informationen/nachhaltigkeitsstrategie/nachhaltigkeitsstrategie2016/nachhaltigkeitsstrategie2016.html" target="_blank" onclick="return confirm_alert('the Saarland', 'En');">Sustainable Development Strategy</a>
+          for the Saarland entitled "Gemeinsam Verantwortung tragen für heute und morgen" (Sharing responsibility for today and
           tomorrow) was adopted in December 2016 after a two-year preparation phase based on a dialogue within society at eye level. With its six areas of action and
           39 indicators, the Sustainable development Strategy focuses on central sustainabillity topics which are relevant for the Saarland from its perspective as a
           federal state but also in the global context. The Saarland was one of the first Länder to show in its strategy which of the global sustainability goals adopted
           under the 2030 Agenda are particularly relevant for the Land and what aspects require more attention.
           <br><br>
-          From 2020 to 2022, the Sustainable Development Strategy was updated under the aegis of the
-          <a href="https://www.saarland.de/EN/home/home_node.html" target="_blank" onclick="return confirm_alert('the Saarland', 'En');">Ministry</a>
+          From 2020 to 2022, the Sustainable Development Strategy was
+          <a href="https://www.saarland.de/mukmav/DE/portale/nachhaltigkeit/informationen/nachhaltigkeitsstrategie/fortschreibungnachhaltigkeitsstrategie/fortschreibungnachhaltigkeitsstrategie.html" target="_blank" onclick="return confirm_alert('the Saarland Ministry for the Environment', 'En');">updated</a>
+          under the aegis of the
+          <a href="https://www.saarland.de/mukmav/DE/home/home_node.html" target="_blank" onclick="return confirm_alert('the Saarland', 'En');">Ministry</a>
           for the Environment, Climate, Mobility, Agriculture and Consumer Protection. The updating process was open for participation and focused on the ideas and
           project approaches for implementing the Sustainable Development Strategy. Under the motto "Wir gestalten gemeinsam. Saarland nachhaltig" (Jointly shaping a
           sustainable Saarland), all interested an committed citizens and stakeholders in society were invited to network and get into dialogue and thus play an active
@@ -622,12 +625,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20240515084429'></script>
+<script src='/assets/js/sdg.js?v=20240517112330'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20240515084429"></script><script>
+    <script src="/assets/js/custom.js?v=20240517112330"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
