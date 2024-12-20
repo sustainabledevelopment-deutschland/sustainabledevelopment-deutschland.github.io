@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20241218085337">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20241220101342">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -548,7 +548,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphtargetpoints="null"
   data-graphtargetlabels="null"
-  data-graphseriesbreaks="null"
+  data-graphseriesbreaks="[{&quot;value&quot;:3.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
   data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
@@ -619,7 +619,7 @@ data-event-label="high"
           
           
           
-          <td>16.71</td>
+          <td>16.678</td>
           
           
           
@@ -635,7 +635,87 @@ data-event-label="high"
           
           
           
-          <td>18.32</td>
+          <td>18.348</td>
+          
+          
+          
+          <td class="table-value">Percentage</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>12.249</td>
+          
+          
+          
+          <td class="table-value">Percentage</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>8.411</td>
+          
+          
+          
+          <td class="table-value">Percentage</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Percentage</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">Percentage</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -656,8 +736,6 @@ data-event-label="high"
     
     
     
-    
-    <p>Note: The data is based on a special evaluation and is not publicly available.</p>
     
   </div>
   
@@ -804,10 +882,10 @@ data-event-label="Change to embedded item tab"
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-          <dt><u>Note</u>:</dt>
-          <dd>The data is based on a special evaluation and is not publicly available.</dd>
-        
 
+        
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• The data is based on a special evaluation and is not publicly available.<br>• Due to methodological changes, the results from 2020&nbsp;are only comparable with previous years to a limited extent.</dd>
         
 
         
@@ -887,10 +965,10 @@ data-event-label="Change to embedded item tab"
         <dd class="data-controlled-footer-field unit-from-data"></dd>
 
         
-          <dt><u>Note</u>:</dt>
-          <dd>The data is based on a special evaluation and is not publicly available.</dd>
-        
 
+        
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• The data is based on a special evaluation and is not publicly available.<br>• Due to methodological changes, the results from 2020&nbsp;are only comparable with previous years to a limited extent.</dd>
         
 
         
@@ -1166,7 +1244,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left; width: 130px;">Data status </th>
             <td>
               
-                <p>The data published in the indicator report 2022 is as of 31 October 2022. The data shown on this platform is updated regularly, so that more current data may be available online than published in the <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf">indicator report 2022</a>.</p>
+                <p>The data published in the <a href="https://dns-indikatoren.de/assets/Publikationen/Indikatorenberichte/2022.pdf">indicator report 2022</a> is as of 31 October 2022. The data shown on this platform was last updated in December 2024.</p>
 
               
             </td>
@@ -6186,6 +6264,8 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
@@ -6203,12 +6283,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20241218085337'></script>
+<script src='/assets/js/sdg.js?v=20241220101342'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20241218085337"></script><script>
+    <script src="/assets/js/custom.js?v=20241220101342"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
