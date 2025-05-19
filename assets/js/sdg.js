@@ -1,8 +1,3 @@
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js');
-    });
-}
 /**
  * This function returns a javascript object containing autotrack.js properties.
  *
@@ -720,6 +715,7 @@ opensdg.autotrack = function(preset, category, action, label) {
         // Update the series/unit stuff in case it changed
         // while on the chart/table.
         plugin.updateTitle();
+        plugin.updateFooterFields();
         plugin.updatePrecision();
         // The year slider does not seem to be correct unless we refresh it here.
         plugin.yearSlider._timeDimension.setCurrentTimeIndex(plugin.yearSlider._timeDimension.getCurrentTimeIndex());
@@ -1247,7 +1243,7 @@ $(document).ready(function() {
 opensdg.chartColors = function(indicatorId) {
   var colorSet = "goal";
   var numberOfColors = 9;
-  var customColorList = null;
+  var customColorList = [];
 
   this.goalNumber = parseInt(indicatorId.slice(indicatorId.indexOf('_')+1,indicatorId.indexOf('-')));
   this.goalColors = [['891523', 'ef7b89', '2d070b', 'f4a7b0', 'b71c2f', 'ea4f62', '5b0e17', 'fce9eb'],
@@ -1365,7 +1361,7 @@ function nonFieldColumns() {
     'Unit multiplier',
     'Unit measure',
   ];
-  var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
+  var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"}];
   if (timeSeriesAttributes && timeSeriesAttributes.length > 0) {
     timeSeriesAttributes.forEach(function(tsAttribute) {
       columns.push(tsAttribute.field);
@@ -2316,11 +2312,11 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes, mixedTypes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps, mixedTypes;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
-
+  console.log("mixeTypes in getDatasets: ", mixedTypes);
   prepareColorAssignments(colorAssignments, maxColorAssignments);
   setAllColorAssignmentsReadyForEviction(colorAssignments);
 
@@ -2356,14 +2352,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes, mixedTypes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, allObservationAttributes, mixedTypes);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -2413,6 +2409,7 @@ function getDataMatchingCombination(data, combination, selectableFields) {
  * @return {Object|undefined} Color assignment object if found.
  */
 function getColorAssignmentByCombination(colorAssignments, combination) {
+  console.log("colorAssignement: ", colorAssignments);
   return colorAssignments.find(function(assignment) {
     return assignment.combination === combination;
   });
@@ -2547,7 +2544,7 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes, mixedTypes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
@@ -2555,7 +2552,8 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
   return Object.assign(dataset, {
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
-    //type: getCombinationType(combination, labelFallback, mixedTypes),
+    type: getCombinationType(combination, labelFallback, mixedTypes),
+    order: getCombinationType(combination, labelFallback, mixedTypes) == undefined ? 0 : 1,
     disaggregation: combination,
     borderColor: color,
     backgroundColor: background,
@@ -2589,22 +2587,28 @@ function getBaseDataset() {
   });
 }
 
-// /**
-//  * @param {Object} combination Key/value representation of a field combo
-//  * @param {string} fallback
-//  * @param {Object} mixedTypes combinations and the respective charttype
-//  * @return {string} type of chart for the given combination
-//  */
-// function getCombinationType(combination, fallback, mixedTypes) {
-//   var combi = getCombinationDescription(combination, fallback);
-//   if (mixedTypes.length === 0) {
-//     return 'line';
-//   }
-//   else {
-//     console.log("MT", typeof mixedTypes);
-//     return 'bar';//mixedTypes.find(item => item.combination === combi).chartType;
-//   }
-// }
+/**
+ * @param {Object} combination Key/value representation of a field combo
+ * @param {string} fallback
+ * @param {Array} mixedTypes objects containing field, value, type
+ * @return {string} type of chart for the given combination
+ */
+function getCombinationType(combination, fallback, mixedTypes) {
+
+  var combi = getCombinationDescription(combination, fallback);
+  if (mixedTypes !== undefined && mixedTypes !== null){
+    var values = mixedTypes.map(a => a.value);
+    if (values.indexOf(combi) != -1) {
+      return mixedTypes.find(function(item) {
+        return getCombinationDescription([item.value],'') === combi;
+      }).type;
+    }
+  }
+  else {
+    return '';
+  }
+
+}
 
 /**
  * @param {Object} combination Key/value representation of a field combo
@@ -2612,6 +2616,7 @@ function getBaseDataset() {
  * @return {string} Human-readable description of combo
  */
 function getCombinationDescription(combination, fallback) {
+  //console.log("what does getCombinationDescp recive?", combination);
   var keys = Object.keys(combination);
   if (keys.length === 0) {
     return fallback;
@@ -2675,7 +2680,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, allObservationAttributes) {
+function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, allObservationAttributes, mixedTypes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
@@ -2694,7 +2699,8 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     observationAttributes: obsAttributes,
     showLine: showLine,
     spanGaps: spanGaps,
-    //type: getCombinationType([], '', mixedTypes),
+    type: getCombinationType([], '', mixedTypes),
+    order: getCombinationType([], '', mixedTypes) == '' ? 0 : 1,
   });
 }
 
@@ -2896,7 +2902,7 @@ function getTimeSeriesAttributes(rows) {
     return [];
   }
   var timeSeriesAttributes = [],
-      possibleAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}],
+      possibleAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"}],
       firstRow = rows[0],
       firstRowKeys = Object.keys(firstRow);
   possibleAttributes.forEach(function(possibleAttribute) {
@@ -3053,7 +3059,8 @@ function getAllObservationAttributes(rows) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
-  this.showLine = options.showLine; // ? options.showLine : true;
+  this.showLine = options.showLine;
+  this.mixedTypes = options.mixedTypes; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
   this.graphAnnotations = options.graphAnnotations;
   this.graphTargetLines = options.graphTargetLines;
@@ -3335,7 +3342,7 @@ function getAllObservationAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
@@ -3400,8 +3407,8 @@ var mapView = function () {
     $('.map').show();
     $('#map').sdgMap({
       indicatorId: indicatorId,
-      mapOptions: {"disaggregation_controls":true,"minZoom":0,"maxZoom":11,"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2024</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2024</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"rgba(255,255,255,0.2)","styleNormal":{"weight":1,"opacity":1,"color":"#888","fillOpacity":0.7},"styleHighlighted":{"weight":1,"opacity":1,"color":"#111","fillOpacity":0.7},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":55}},
-      mapLayers: [{"serviceUrl":"https:///dns-indikatoren.de/assets/maps/boundariesKrs.geojson","min_zoom":8,"max_zoom":11,"staticBorders":true,"subfolder":"kreise","label":"indicator.counties"},{"serviceUrl":"https:///dns-indikatoren.de/assets/maps/boundaries.geojson","min_zoom":0,"max_zoom":7,"staticBorders":true,"subfolder":"laender","label":"indicator.laender"}],
+      mapOptions: {"disaggregation_controls":true,"minZoom":0,"maxZoom":11,"tileURL":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png","tileOptions":{"id":"mapbox.light","accessToken":"pk.eyJ1IjoibW9ib3NzZSIsImEiOiJjazU1M2trazQwYnFwM2trYmdwNm9rOWxkIn0.u36w-RJPqoTGmivl_zED1w","attribution":"<a href=\"https://www.openstreetmap.org/copyright\">&copy; OpenStreetMap</a> contributors |<br class=\"visible-xs\"> <a href=\"https://www.bkg.bund.de\">&copy; GeoBasis-De / BKG 2024</a> |<br class=\"hidden-lg\"> <a href=\"https://www.destatis.de/DE/Home/_inhalt.html\">&copy; Statistisches Bundesamt (Destatis), 2024</a>"},"colorRange":[["#FCE9EB","#F7BDC4","#F2929D","#ED6676","#E83A4F","#E5243B","#B71D2F","#891623","#5C0E18","#2E070C"],["#FCF8EB","#F7E9C2","#F2DB9A","#EDCD72","#E8BE49","#E5B735","#CEA530","#A08025","#735C1B","#453710"],["#EDF5EB","#C9E2C3","#A6CF9C","#82BC74","#5EA94C","#4C9F38","#3D7F2D","#2E5F22","#1E4016","#0F200B"],["#F9E8EA","#EEBAC0","#E28C96","#D65E6C","#CB3042","#C5192D","#9E1424","#760F1B","#4F0A12","#270509"],["#FFEBE9","#FFC4BC","#FF9D90","#FF7564","#FF4E37","#FF3A21","#CC2E1A","#992314","#66170D","#330C07"],["#E9F8FB","#BEEBF6","#93DEF0","#67D1EA","#3CC4E5","#26BDE2","#1E97B5","#177188","#0F4C5A","#08262D"],["#FFF9E7","#FEEDB6","#FEE185","#FDD554","#FCC923","#FCC30B","#CA9C09","#977507","#654E04","#322702"],["#F6E8EC","#E3BAC6","#D18CA1","#BE5E7B","#AB3055","#A21942","#821435","#610F28","#410A1A","#20050D"],["#FFF0E9","#FED2BE","#FEB492","#FE9666","#FD783B","#FD6925","#CA541E","#983F16","#652A0F","#331507"],["#FCE7F0","#F5B8D1","#EE89B3","#E75A95","#E02B76","#DD1367","#B10F52","#850B3E","#580829","#2C0415"],["#FFF5E6","#FEE2B3","#FECE80","#FEBA4D","#FDA71A","#FD9D00","#CA7E00","#985E00","#653F00","#331F00"],["#FAF5EA","#EFE0C0","#E4CC96","#D9B86C","#CEA342","#C9992D","#A17A24","#795C1B","#503D12","#281F09"],["#ECF2EC","#C5D8C7","#9FBFA2","#79A57C","#528B57","#3F7E44","#326536","#264C29","#19321B","#0D190E"],["#E7F5FB","#B6E0F4","#85CBEC","#54B6E4","#23A1DD","#0A97D9","#0879AE","#065B82","#043C57","#021E2B"],["#EEF9EA","#CCECBF","#ABE095","#89D36B","#67C640","#56C02B","#459A22","#34731A","#224D11","#112609"],["#E6F0F5","#B3D2E2","#80B4CE","#4D95BA","#1A77A7","#00689D","#00537E","#003E5E","#002A3F","#00151F"],["#E8EDF0","#BAC8D2","#8CA4B5","#5E7F97","#305A79","#19486A","#143A55","#0F2B40","#0A1D2A","#050E15"]],"noValueColor":"#f0f0f0","styleNormal":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#888888","dashArray":""},"styleHighlighted":{"weight":1,"opacity":1,"fillOpacity":0.7,"color":"#111111","dashArray":""},"styleStatic":{"weight":2,"opacity":1,"fillOpacity":0,"color":"#172d44","dashArray":""}},
+      mapLayers: [{"serviceUrl":"https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundariesKrs.geojson","min_zoom":8,"max_zoom":11,"staticBorders":true,"subfolder":"kreise","label":"indicator.counties"},{"serviceUrl":"https://Nachhaltige-Entwicklung-Deutschland.github.io/open-sdg-site-starter/assets/maps/boundaries.geojson","min_zoom":0,"max_zoom":7,"staticBorders":true,"subfolder":"laender","label":"indicator.laender"}],
       precision: precision,
       precisionItems: precisionItems,
       decimalSeparator: decimalSeparator,
@@ -3429,7 +3436,7 @@ var indicatorView = function (model, options) {
     var helpers = 
 (function() {
 
-  var HIDE_SINGLE_SERIES = false;
+  var HIDE_SINGLE_SERIES = true;
 var HIDE_SINGLE_UNIT = true;
 var PROXY_PILL = '<span aria-describedby="proxy-description" class="proxy-pill">' + translations.t("indicator.proxy") + '</span>';
 
@@ -3503,7 +3510,7 @@ function sortFieldGroup(fieldGroupElement) {
  * @return null
  */
 function updateTimeSeriesAttributes(tsAttributeValues) {
-    var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"},{"field":"DATA_LAST_UPDATE","label":"metadata_fields.national_data_update_url"}];
+    var timeSeriesAttributes = [{"field":"COMMENT_TS","label":"indicator.footnote"}];
     timeSeriesAttributes.forEach(function(tsAttribute) {
         var field = tsAttribute.field,
             valueMatch = tsAttributeValues.find(function(tsAttributeValue) {
@@ -3774,14 +3781,14 @@ function updateIndicatorDataSeriesStatus(series) {
  */
 //Override: No Headline Color
 //function getHeadlineColor(contrast) {
-    //return isHighContrast(contrast) ? '#FFDD00' : '#e5243b#dda63a#4c9f38#c5192d#ff3a21#26bde2#fcc30b#a21942#fd6925#dd1367#fd9d24#bf8b2e#3f7e44#0a97d9#56c02b#00689d#19486a';
+    //return isHighContrast(contrast) ? '#55a6e5' : '#e5243b#dda63a#4c9f38#c5192d#ff3a21#26bde2#fcc30b#a21942#fd6925#dd1367#fd9d24#bf8b2e#3f7e44#0a97d9#56c02b#00689d#19486a';
 function getHeadlineColor(contrast, goalNumber) {
 
   var headlineColors = ["#e5243b", "#dda63a", "#4c9f38", "#c5192d", "#ff3a21", "#26bde2", "#fcc30b", "#a21942", "#fd6925", "#dd1367", "#fd9d24", "#bf8b2e", "#3f7e44", "#0a97d9", "#56c02b", "#00689d", "#19486a"];
   var headlineColor = headlineColors[goalNumber-1];
   var htmlString = '' + headlineColor + '';
   console.log("goalNumber: ", htmlString);
-    return isHighContrast(contrast) ? '#FFDD00' : htmlString;
+    return isHighContrast(contrast) ? '#55a6e5' : htmlString;
 }
 
 /**
@@ -3830,7 +3837,7 @@ function setPlotEvents(chartInfo) {
         $(VIEW._legendElement).html(generateChartLegend(VIEW._chartInstance));
     });
 
-    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
+    createDownloadButton(chartInfo.selectionsTable, 'Chart', chartInfo.indicatorId, '#chartSelectionDownload');
     createSourceButton(chartInfo.shortIndicatorId, '#chartSelectionDownload');
     createIndicatorDownloadButtons(chartInfo.indicatorDownloads, chartInfo.shortIndicatorId, '#chartSelectionDownload');
 
@@ -4248,7 +4255,7 @@ opensdg.chartTypes.base = function(info) {
                                 line = line.concat(label[i] + ' ');
                               }
                             };
-                            re.push(line.slice(0, -1) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip'));
+                            re.push(line.slice(0, -1) + ': ' + alterDataDisplay(tooltipItem.raw, tooltipItem.dataset, 'chart tooltip', tooltipItem));
                             re.shift();
                           }
                           return re;
@@ -4938,8 +4945,15 @@ function alterDataDisplay(value, info, context, additionalInfo) {
     // Before passing to user-defined dataDisplayAlterations, let's
     // do our best to ensure that it starts out as a number.
     var altered = value;
+    var obsText = '';
     if (typeof altered !== 'number') {
-        altered = Number(value);
+        if (typeof altered == 'string' && context === 'table cell' && altered.indexOf(' ') > 0) {
+            obsText = altered.substring(altered.indexOf(' ') + 1);
+            altered = Number(altered.substring(0, altered.indexOf(' ')));
+        }
+        else {
+            altered = Number(value);
+        }
     }
     // If that gave us a non-number, return original.
     if (isNaN(altered)) {
@@ -4990,7 +5004,7 @@ function alterDataDisplay(value, info, context, additionalInfo) {
         altered = altered.toLocaleString(opensdg.language, localeOpts);
         // Apply thousands seperator if needed
         if (OPTIONS.thousandsSeparator && precision <=3 && opensdg.language == 'de'){
-            altered = altered.replace('.', OPTIONS.thousandsSeparator);
+            altered = altered.replaceAll('.', OPTIONS.thousandsSeparator);
         }
     }
     // Now let's add any footnotes from observation attributes.
@@ -5004,13 +5018,39 @@ function alterDataDisplay(value, info, context, additionalInfo) {
             col = additionalInfo.col,
             obsAttributesTable = additionalInfo.observationAttributesTable;
         obsAttributes = obsAttributesTable.data[row][col];
+        //altered += ' ' + obsText;
     }
     if (obsAttributes.length > 0) {
         var obsAttributeFootnoteNumbers = obsAttributes.map(function(obsAttribute) {
-            return getObservationAttributeFootnoteSymbol(obsAttribute.footnoteNumber);
+          return getObservationAttributeFootnoteSymbol(obsAttribute);
         });
-        altered += ' ' + obsAttributeFootnoteNumbers.join(' ');
+        // if (context == 'table cell'){
+        //   obsAttributeFootnoteNumbers.splice(obsAttributeFootnoteNumbers.indexOf('0'),1);
+        // }
+        var attributes = ' [' + obsAttributeFootnoteNumbers.join(', ') + ']';
     }
+    else {
+      var attributes = '';
+    }
+
+    // for table: we do not want "0 [-]" but "-"; and not "0,00 [0]" but "0,00"
+    if (context == 'table cell'){
+      if (parseFloat(altered) == 0){
+        // case: "0"
+        if (attributes.indexOf('0') > -1) {
+          var deci = ['0', '0.0', '0.00', '0.000']
+          for (var i = 0; i < deci.length; i++) {
+            attributes = attributes.replace('[' + deci[i] + ']','').replace('' + deci[i] + ', ','').replace(', ' + deci[i] + '','');
+          }
+        }
+        else if (attributes.indexOf('‒') > -1){
+          altered = '‒';
+          attributes = attributes.replace('[‒]','').replace('‒, ','').replace(', ‒','');
+        }
+      }
+    }
+    altered += attributes;
+
     return altered;
 }
 
@@ -5020,8 +5060,16 @@ function alterDataDisplay(value, info, context, additionalInfo) {
  * @param {int} num
  * @returns {string} Number converted into unicode character for footnotes.
  */
-function getObservationAttributeFootnoteSymbol(num) {
-    return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
+function getObservationAttributeFootnoteSymbol(obsAttribute) {
+    // make sure we do not get 0.000 for obsValue
+    if (isNaN(parseInt(obsAttribute.value))) {
+        return '' + obsAttribute.value + '';
+    }
+    else{
+        return '' + String(parseInt(obsAttribute.value)) + '';
+    }
+
+    //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
 }
 
   /**
@@ -5347,7 +5395,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
             helpers.updateIndicatorDataSeriesStatus(args);
         });
     }
-    
+
     MODEL.onFieldsCleared.attach(function (sender, args) {
 
         $(OPTIONS.rootElement).find(':checkbox').prop('checked', false);
@@ -5538,6 +5586,7 @@ var indicatorInit = function () {
                         graphLimits: domData.graphlimits,
                         stackedDisaggregation: domData.stackeddisaggregation,
                         showLine: domData.showline,
+                        mixedTypes: domData.mixedtypes,
                         spanGaps: domData.spangaps,
                         graphAnnotations: domData.graphannotations,
                         graphTargetLines: domData.graphtargetlines,

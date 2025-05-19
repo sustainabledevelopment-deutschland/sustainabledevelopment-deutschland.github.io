@@ -117,7 +117,7 @@ var translations = {
         ================================================== -->
 
         
-    <title>Nachhaltigkeitsstrategien der Bundesländer - Indikatoren der Deutschen Nachhaltigkeitsstrategie</title>
+    <title>Nachhaltigkeitsstrategien der Bundesländer - Deutsche Nachhaltigkeitsstrategie</title>
 
 
 
@@ -133,14 +133,13 @@ var translations = {
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
         
-        <link rel="manifest" href="/manifest.json">
-        
 
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250217154843">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250519073543">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -177,9 +176,9 @@ layout-page
     
 <div class="container">
   <div class="disclaimer-alert">
-    <strong class="phase-tag">beta</strong>
+    <strong class="phase-tag">Alpha-Version</strong>
     
-    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:dns-indikatoren@destatis.de">Kommentare</a>.
+    Diese Seite befindet sich im Entwicklungsstadium. Wir freuen uns über Ihre <a href="mailto:test@example.com">Kommentare</a>.
     
   </div>
 </div>
@@ -265,38 +264,7 @@ layout-page
 </form>
 
                 </div>
-                <div class="header-toggles d-flex">
-
-
-
-
-
-  <div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/laender/">
-                English
-            </a>
-        </li></ul>
-</div>
-
-
-
-                    <span class="no-js-language-toggle"><div class="language-toggle-container d-flex">
-    <ul class="language-toggle-links list-unstyled list-inline"><li class="language-option-de list-inline-item" style="opacity:0.3">
-            <span>
-                Deutsch
-            </span>
-        </li><li class="language-option-en list-inline-item">
-            <a class="language-toggle-link" href="/en/laender/">
-                English
-            </a>
-        </li></ul>
-</div>
-</span><a title="" aria-label=""
+                <div class="header-toggles d-flex"><a title="" aria-label=""
     data-contrast-switch-to="" href="javascript:void(0)" data-on="click"
 data-event-category="Accessibility"
 data-event-action="Change contrast setting"
@@ -372,7 +340,7 @@ data-event-label="high"
           zur nachhaltigen Entwicklung Berlins wurde zuletzt 2021 gemeinsam von der Senatsverwaltung für Umwelt, Mobilität, Verbraucher-
           und Klimaschutz in Zusammenarbeit mit dem Amt für Statistik Berlin-Brandenburg aktualisiert.
           Aktuell wird in Berlin eine landesweite Nachhaltigkeitsstrategie entwickelt, die auf der Broschüre
-          "<a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/nachhaltigkeitsziele-in-berlin/" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Die 17 Nachhaltigkeitsziele in Berlin</a>" aufbaut. </p>
+          "<a href="https://www.berlin.de/sen/uvk/umwelt/nachhaltigkeit/projektbeispiele/#17Nachhaltigkeitsziele" target="_blank" onclick="return confirm_alert('von Berlin', 'De');">Die 17 Nachhaltigkeitsziele in Berlin</a>" aufbaut. </p>
       </div>
       <button class="collapsible">Brandenburg</button>
       <div class="content">
@@ -401,7 +369,7 @@ data-event-label="high"
       <button class="collapsible">Hamburg</button>
       <div class="content">
         <p>Der Hamburger Senat hat im Juli 2017 die Drucksache
-          "<a href="http://www.hamburg.de/agenda2030/" target="_blank" onclick="return confirm_alert('von Hamburg', 'De');">Umsetzung der Nachhaltigkeitsziele der Vereinten Nationen in Hamburg</a>" beschlossen.
+          "<a href="https://www.hamburg.de/politik-und-verwaltung/behoerden/bukea/themen/nachhaltigkeit/sdgs-in-hamburg-170244" target="_blank" onclick="return confirm_alert('von Hamburg', 'De');">Umsetzung der Nachhaltigkeitsziele der Vereinten Nationen in Hamburg</a>" beschlossen.
           Neben einer Bestandsaufnahme - wo stimmt die Senatspolitik bereits mit den Zielsetzungen der Agenda 2030 überein - werden die Themen benannt,
           an denen in den nächsten Jahren konkret weitergearbeitet werden soll. Unter Beteiligung des Statistikamtes Nord soll hierzu ein zweijährliches
           Berichtssystem entwickelt werden. Federführend ist die Behörde für Umwelt, Klima, Energie und Agrarwirtschaft.
@@ -630,12 +598,12 @@ for (i = 0; i < coll.length; i++) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20250217154843'></script>
+<script src='/assets/js/sdg.js?v=20250519073543'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250217154843"></script><script>
+    <script src="/assets/js/custom.js?v=20250519073543"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
