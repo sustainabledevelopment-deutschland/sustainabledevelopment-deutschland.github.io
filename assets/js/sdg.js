@@ -4219,7 +4219,7 @@ opensdg.chartTypes.base = function(info) {
                         label: function (tooltipItem) {
 
                           var label =  translations.t(tooltipItem.dataset.label);
-                          label = label.replace('<sub>','').replace('</sub>','');
+                          label = label.replace('<sub>','').replace('</sub>','').replace("<u>","").replace("</u>","");
                           if (label.length > 45){
 
                             label = label.split(' ');
@@ -4241,7 +4241,7 @@ opensdg.chartTypes.base = function(info) {
                         afterLabel: function(tooltipItem) {
 
                           var label =  tooltipItem.dataset.label;
-                          label = label.replace('<sub>','').replace('</sub>','');
+                          label = label.replace('<sub>','').replace('</sub>','').replace("<u>","").replace("</u>","");
                           if (label.length > 45){
                             label = label.split(' ');
                             var re = [];
