@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250820111937">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250820122647">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -652,7 +652,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('political_target', "Differenz zwischen den Gruppen <i>Keine Risikolage</i> und <i>Mindestens eine Risikolage</i> verringern <abbr title=\"beziehungsweise\" tabindex=\"0\">bzw.</abbr> angleichen");
+        var currentValue = normalizeCurrentValue('political_target', "Differenz zwischen den Gruppen <i>Keine Risikolage</i> und <i>Mindestens eine Risikolage</i> verringern bzw. angleichen");
         var propertyEditor = editor.getEditor('root.political_target');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -680,7 +680,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Die Differenz der Anteile der 17- und 18-Jährigen mit (angestrebter) Studienberechtigung zwischen Personen <i>ohne Risikolage</i> und Personen mit <i>mindestens einer Risikolage</i> soll verringert werden.<br><br>• Ausgehend von der Zielformulierung zeigt die durchschnittliche Entwicklung der letzten sechs Jahre&nbsp;–&nbsp;trotz einer leichten Verbesserung im Jahr 2023&nbsp;–&nbsp;einen Anstieg. Der Indikator 4.3.b wird für das Jahr 2023&nbsp;mit <b>Wolke</b> bewertet.");
+        var currentValue = normalizeCurrentValue('target_description', "Die Differenz der Anteile der 17- und 18-Jährigen mit (angestrebter) Studienberechtigung zwischen Personen <i>ohne Risikolage</i> und Personen mit <i>mindestens einer Risikolage</i> soll verringert werden.<br><br>• Ausgehend von der Zielformulierung zeigt die durchschnittliche Entwicklung der letzten sechs Jahre – trotz einer leichten Verbesserung im Jahr 2023 – einen Anstieg. Der Indikator 4.3.b wird für das Jahr 2023 mit <b>Wolke</b> bewertet.");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -848,12 +848,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20250820111937'></script>
+<script src='/assets/js/sdg.js?v=20250820122647'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250820111937"></script><script>
+    <script src="/assets/js/custom.js?v=20250820122647"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
