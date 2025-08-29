@@ -139,7 +139,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250825074954">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250829123615">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -331,7 +331,7 @@ data-event-label="high"
             Status der Indikatoren - Übersicht
         </h1>
         <div class="container">
-          In der Übersichtstabelle sind die Bewertungen der Indikatoren nach Stand der vorhergehenden Jahre angegeben. Daran lässt sich ablesen, ob das Wettersymbol für einen Indikator in den vergangenen Jahren stabil oder eher volatil war.<br> Grundlage der dargestellten Bewertungen ist der Datenstand vom 15.05.2025. Auf der Online-Plattform können aktuellere Daten verfügbar sein, da die Daten regelmäßig aktualisiert werden.<br><br> <h3 class="h3bold">Indikatoren mit mehreren Zielen</h3><br> Für Indikatoren mit mehreren Zielen, die im Zeitverlauf erfüllt werden sollen (zum Beispiel Indikator <a href="https://dns-indikatoren.de/status_summary/#7.1.b Primärenergieverbrauch">7.1.b</a>), sind die Bewertungen zur Erfüllung jedes einzelnen Ziels angegeben. Gleiches gilt für Indikatoren mit mehreren Zielen, die zugleich erfüllt werden sollen (zum Beispiel Indikator <a href="https://dns-indikatoren.de/status_summary/#10.1 Ausländische Schulabsolventinnen und Schulabsolventen">10.1</a>).<br><br> <h3 class="h3bold">Indikatoren mit Zielanpassungen</h3><br> Neben den aktuell gültigen Zielen der Bundesregierung werden die Ziele dargestellt, die in der Vergangenheit galten, in der Zwischenzeit jedoch angepasst worden sind.<br><br> In ausgegrauter Form werden alle Wettersymbole für Ziele dargestellt, die aktuell keine Gültigkeit haben, weil <br> • das Ziel in der Vergangenheit geändert wurde,<br> • zunächst ein zeitlich näher gelegenes Ziel erfüllt werden muss, oder<br> • das Ziel nur eines von mehreren, zeitgleich zu erfüllenden Zielen ist.
+          In der Übersichtstabelle sind die Bewertungen der Indikatoren aus den vorangegangenen Jahren aufgeführt. Daraus lässt sich ablesen, ob das Wettersymbol eines Indikators in der Vergangenheit stabil oder eher volatil war.<br> Grundlage der dargestellten Bewertungen ist der Datenstand Juli 2025. Auf der Online-Plattform können aktuellere Daten verfügbar sein, da diese regelmäßig aktualisiert werden.<br> <br>Die Druckversion der Statusübersicht der Indikatoren finden Sie <a href="https://dns-indikatoren.de/public/Statusübersicht_2025_DE.pdf" target="_blank">hier</a>.<br><br> <h3 class="h3bold">Indikatoren mit mehreren Zielen</h3><br> Für Indikatoren mit mehreren Zielen, die nacheinander erreicht werden sollen (zum Beispiel Indikator <a href="https://dns-indikatoren.de/status_summary/#7.1.b Primärenergieverbrauch">7.1.b</a>), sind die Bewertungen zur Erfüllung jedes einzelnen Ziels angegeben. Gleiches gilt für Indikatoren mit mehreren Zielen, die gleichzeitig erfüllt werden sollen (zum Beispiel Indikator <a href="https://dns-indikatoren.de/status_summary/#10.1 Ausländische Schulabsolvierende">10.1</a>).<br><br> <h3 class="h3bold">Indikatoren mit Zielanpassungen</h3><br> Neben den aktuell gültigen Zielen der Bundesregierung werden auch solche Ziele dargestellt, die in der Vergangenheit galten, inzwischen jedoch angepasst wurden.<br><br> Ausgegraut dargestellt werden alle Wettersymbole für Ziele, die aktuell keine Gültigkeit haben, weil: <ul> <li>das Ziel in der Vergangenheit geändert wurde,</li> <li>zunächst ein zeitlich näher liegendes Ziel erreicht werden muss, oder</li> <li>das Ziel nur eines von mehreren gleichzeitig zu erfüllenden Zielen ist.</li></ul>
         </div>
     </div>
     <br style="clear:both;">
@@ -17246,6 +17246,8 @@ data-event-label="high"
                     
                       <!--weather_indicator_2_target_2-->
                     
+                      <tr height="20px;"></tr>
+                    
                     <!-- !!!!!!!!!!!!!!!!-->
                   
                 
@@ -17258,6 +17260,147 @@ data-event-label="high"
                     <!--weather_indicator_2_target_1_targetYear-->
                     <!--weather_indicator_2_target_1_targetYear-->
 
+                  
+                  
+                    <tr>
+                      <th>
+                      </th>
+                      <td colspan="7" style="padding-left: 4%"> <div class=responsiveText></div> </td>
+                    </tr>
+                  
+
+                    <tr>
+                      <th>
+                        
+                          <div class=responsiveText style="opacity: 0.5">Ziel
+                          
+                          <br><span class="smaller">(gültig bis 2025)</span>
+                        
+                        
+                        </div>
+                      </th>
+                      
+                        <td colspan="7" style="padding-left: 4%; opacity: 0.5""> <div class=responsiveText>Erhöhung auf <b>60 %</b> bis <b>2030</b></div> </td>
+                      
+                    </tr>
+
+                    <!-- ITEM !!!!!!!!!!!!!!!!-->
+                    <tr>
+                      
+                        <th> <div class=responsiveText style="opacity: 0.5">Bewertung</div> </th>
+                      
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-g"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2018 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2018 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-f"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2019 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2019 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-e"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2020 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2020 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-d"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2021 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-c"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2022 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2022 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-b"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2023 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2023 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+                         <!--weather_indicator_2_target_1_item_a-->
+                        
+                        
+                         <!--weather_indicator_1_yaer_a-->
+                        <!--check if year is valid or not-->
+                        
+
+                        
+                          
+
+                          <td width="10%" align="center" class="prio-a"> <a href=" /status/ "><img src="https://sdg-indikatoren.de/public/Wettersymbole//Sonne.png" alt="Sonne" class="responsiveWeather hidden-xs" title="Bei Fortsetzung der Entwicklung aus 2024 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2024 verfehlt worden."  style="opacity: 0.2"/></a> </td>
+                          
+                        
+                      
+
+                      <!--add empty cells-->
+                      
+                        
+                      
+                    </tr>
+
+                    
+
+                    
+                      <!--weather_indicator_2_target_2-->
+                    
+                    <!-- !!!!!!!!!!!!!!!!-->
                   
                 
                     <!--weather_indicator_2_target_1-->
@@ -23947,16 +24090,19 @@ data-event-label="high"
                   
                      <!--weather_indicator_1_yaer_a-->
                     
-                  
-                     <!--weather_indicator_1_yaer_a-->
-                    
-                      <td width="10%" align="center" class="prio-b"> <p><span class="responsiveText hidden-xs">2021</span></p> </td>
+                      <td width="10%" align="center" class="prio-c"> <p><span class="responsiveText hidden-xs">2021</span></p> </td>
                       
                     
                   
                      <!--weather_indicator_1_yaer_a-->
                     
-                      <td width="10%" align="center" class="prio-a"> <p><span class="responsiveText hidden-xs">2022</span></p> </td>
+                      <td width="10%" align="center" class="prio-b"> <p><span class="responsiveText hidden-xs">2022</span></p> </td>
+                      
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                      <td width="10%" align="center" class="prio-a"> <p><span class="responsiveText hidden-xs">2023</span></p> </td>
                       
                     
                   
@@ -23971,8 +24117,6 @@ data-event-label="high"
                     <td width="10%" align="center" class="prio-e"></td>
                   
                     <td width="10%" align="center" class="prio-d"></td>
-                  
-                    <td width="10%" align="center" class="prio-c"></td>
                   
                   </tr>
                 
@@ -24053,6 +24197,11 @@ data-event-label="high"
                         <!--check if year is valid or not-->
                         
 
+                        
+
+                          <td width="10%" align="center" class="prio-c"></td>
+
+                          
                         
                       
                          <!--weather_indicator_2_target_1_item_a-->
@@ -28940,13 +29089,59 @@ data-event-label="high"
                 <!-- INDICATOR !!!!!!!!!!!!!!!!-->
                 <tr id="15.4 Bilaterale Beiträge der deutschen internationalen Kooperation zum Schutz, nachhaltiger Nutzung und Wiederherstellung von Land (inkl. Wald)">
                   
-                    <th width="14.68%"> <h3 class=responsiveText>Indikator</h3> </th>
+                    <th width="12%"> <h3 class=responsiveText>Indikator</h3> </th>
                   
                   <th colspan="7" style="padding-left: 4%"> <a href="/15-4/"><h3 class=responsiveText>15.4 Bilaterale Beiträge der deutschen internationalen Kooperation zum Schutz, nachhaltiger Nutzung und Wiederherstellung von Land (inkl. Wald)</h3></a> </th>
                 </tr>
                 <!-- !!!!!!!!!!!!!!!!-->
                 <!-- YEAR !!!!!!!!!!!!!!!!-->
 
+                
+                  <tr>
+                  
+                    <th> <div class=responsiveText>Jahr</div> </th>
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                  
+                     <!--weather_indicator_1_yaer_a-->
+                    
+                      <td width="10%" align="center" class="prio-a"> <p><span class="responsiveText hidden-xs">2023</span></p> </td>
+                      
+                    
+                  
+
+
+                  <!--add empty cells-->
+                  
+                    <td width="10%" align="center" class="prio-g"></td>
+                  
+                    <td width="10%" align="center" class="prio-f"></td>
+                  
+                    <td width="10%" align="center" class="prio-e"></td>
+                  
+                    <td width="10%" align="center" class="prio-d"></td>
+                  
+                    <td width="10%" align="center" class="prio-c"></td>
+                  
+                    <td width="10%" align="center" class="prio-b"></td>
+                  
+                  </tr>
                 
                 <!-- !!!!!!!!!!!!!!!!-->
 
@@ -31557,12 +31752,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20250825074954'></script>
+<script src='/assets/js/sdg.js?v=20250829123615'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250825074954"></script><script>
+    <script src="/assets/js/custom.js?v=20250829123615"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
