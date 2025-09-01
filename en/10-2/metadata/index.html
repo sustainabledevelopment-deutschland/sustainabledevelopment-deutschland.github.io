@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250901063259">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250901140627">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -680,7 +680,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Der Gini-Koeffizinet des Einkommens nach Sozialtransfers soll jedes Jahr unterhalb des entsprechenden Wertes der EU liegen.<br>• Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem EU-Wert und dem Wert für Deutschland berechnet. Für den Indikator 10.2&nbsp;werden aufgrund methodischer Änderungen am Erhebungskonzept die Indikatorwerte von 2020&nbsp;bis 2024&nbsp;betrachtet. Die Differenz für das Jahr 2024&nbsp;ist negativ, das heißt, der Koeffizient in Deutschland liegt über dem EU-Koeffizienten. Das Ziel ist damit nicht erfüllt. Da sich auch die Differenz in den letzten fünf Jahren im Durchschnitt verkleinert hat, wird der Indikator 10.2&nbsp;für das Jahr 2024&nbsp;mit <b>Gewitter</b> bewertet.<br><br><u>Hinweis:</u> Der Bezug auf den EU-Koeffizienten als Zielgröße bedeutet, dass Indikatoren positiv bewertet werden können, selbst wenn sich der Gini-Koeffizient in Deutschland negativ entwickelt. Zudem zeigt der Indikator, dass durch die Verläufe der beiden Koeffizienten auf ähnlich hohem Niveau und ohne deutliche steigende oder sinkende Tendenz sowohl die Differenz zwischen deutschem und europäischem Wert als auch die Richtung der durchschnittlichen Entwicklung des deutschen Koeffizienten starken Schwankungen unterliegt. Deshalb können bereits geringfügige Änderungen des Indikators die Bewertung deutlich beeinflussen.<br><br><a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Blitz.png\" title=\"Der Zielwert wurde in 2024&nbsp;verfehlt und der Indikator hat sich im Durchschnitt der vorangegangenen Veränderungen nicht in Richtung des Ziels bewegt.\" alt=\"Wettersymbol Blitz\"/></a>");
+        var currentValue = normalizeCurrentValue('target_description', "<u>Zielformulierung:</u><br>Der Gini-Koeffizinet des Einkommens nach Sozialtransfers soll jedes Jahr unterhalb des entsprechenden Wertes der EU liegen.<br><br><u>Bewertung:</u><br>• Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem EU-Wert und dem Wert für Deutschland berechnet. Für den Indikator 10.2&nbsp;werden aufgrund methodischer Änderungen am Erhebungskonzept die Indikatorwerte von 2020&nbsp;bis 2024&nbsp;betrachtet. Die Differenz für das Jahr 2024&nbsp;ist negativ, das heißt, der Koeffizient in Deutschland liegt über dem EU-Koeffizienten. Das Ziel ist damit nicht erfüllt. Da sich auch die Differenz in den letzten fünf Jahren im Durchschnitt verkleinert hat, wird der Indikator 10.2&nbsp;für das Jahr 2024&nbsp;mit <b>Gewitter</b> bewertet.<br><br><u>Anmerkung:</u><br>Der Bezug auf den EU-Koeffizienten als Zielgröße bedeutet, dass Indikatoren positiv bewertet werden können, selbst wenn sich der Gini-Koeffizient in Deutschland negativ entwickelt. Zudem zeigt der Indikator, dass durch die Verläufe der beiden Koeffizienten auf ähnlich hohem Niveau und ohne deutliche steigende oder sinkende Tendenz sowohl die Differenz zwischen deutschem und europäischem Wert als auch die Richtung der durchschnittlichen Entwicklung des deutschen Koeffizienten starken Schwankungen unterliegt. Deshalb können bereits geringfügige Änderungen des Indikators die Bewertung deutlich beeinflussen.<br><br><a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Blitz.png\" title=\"Der Zielwert wurde in 2024&nbsp;verfehlt und der Indikator hat sich im Durchschnitt der vorangegangenen Veränderungen nicht in Richtung des Ziels bewegt.\" alt=\"Wettersymbol Blitz\"/></a>");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -822,12 +822,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250901063259'></script>
+<script src='/assets/js/sdg.js?v=20250901140627'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250901063259"></script><script>
+    <script src="/assets/js/custom.js?v=20250901140627"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

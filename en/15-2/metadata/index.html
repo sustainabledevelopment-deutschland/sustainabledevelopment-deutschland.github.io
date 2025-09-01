@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250901063259">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250901140627">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -680,7 +680,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "Der Flächenanteil empfindlicher Land-Ökosysteme mit Überschreitung der Belastungsgrenzen für Eutrophierung soll bis 2030&nbsp;auf höchstens 52&nbsp;% verringert werden.<br>• Ausgehend von der Zielformulierung liegt der Indikator 15.2&nbsp;bei Fortsetzung der Entwicklung der letzten sechs Jahre im Jahr 2030&nbsp;bei etwa 60&nbsp;%. Aufgrund des großen Abstands zum politisch festgelegten Zielwert wird der Indikator 15.2&nbsp;für das Jahr 2019&nbsp;mit <b>Wolke</b> bewertet.<br><br><a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Wolke.png\" title=\"Der Indikator entwickelte sich in 2019&nbsp;zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2019&nbsp;verfehlt worden.\" alt=\"Wettersymbol Wolke\"/></a>");
+        var currentValue = normalizeCurrentValue('target_description', "<u>Zielformulierung:</u><br>Der Flächenanteil empfindlicher Land-Ökosysteme mit Überschreitung der Belastungsgrenzen für Eutrophierung soll bis 2030&nbsp;auf höchstens 52&nbsp;% verringert werden.<br><br><u>Bewertung:</u><br>• Ausgehend von der Zielformulierung liegt der Indikator 15.2&nbsp;bei Fortsetzung der Entwicklung der letzten sechs Jahre im Jahr 2030&nbsp;bei etwa 60&nbsp;%. Aufgrund des großen Abstands zum politisch festgelegten Zielwert wird der Indikator 15.2&nbsp;für das Jahr 2019&nbsp;mit <b>Wolke</b> bewertet.<br><br><a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Wolke.png\" title=\"Der Indikator entwickelte sich in 2019&nbsp;zwar in die gewünschte Richtung auf das Ziel zu, bei Fortsetzung der Entwicklung wäre das Ziel im Zieljahr aber um mehr als 20&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2019&nbsp;verfehlt worden.\" alt=\"Wettersymbol Wolke\"/></a>");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -822,12 +822,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250901063259'></script>
+<script src='/assets/js/sdg.js?v=20250901140627'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250901063259"></script><script>
+    <script src="/assets/js/custom.js?v=20250901140627"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
