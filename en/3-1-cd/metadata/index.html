@@ -140,7 +140,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250908070343">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250912080956">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -679,7 +679,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('target_description', "<u>Zielformulierung:</u><br>Bis 2030&nbsp;soll die Raucherquote von Jugendlichen (3.1.c) auf höchstens 7&nbsp;% und die Raucherquote von Erwachsenen (3.1.d) auf höchstens 19&nbsp;% gesenkt werden.<br><br><u>Bewertung:</u><br>• Ausgehend von der Zielformulierung wurde das politisch festgelegte Ziel beim Indikator 3.1.c bereits für die Jahre 2021&nbsp;und 2023&nbsp;vorzeitig erreicht. Entsprechend der zugrunde liegenden Bewertungsmethodik wird zusätzlich geprüft, ob die durchschnittliche Entwicklung der letzten sechs Jahre keine Verschlechterung aufweist. Dies war für den Indikator 3.1.c für das Jahr 2023&nbsp;erfüllt, sodass er mit <b>Sonne</b> bewertet wird. Gleiches gilt für den Indikator 3.1.d für das Jahr 2021.<br><br>3.1.c: <a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png\" title=\"Bei Fortsetzung der Entwicklung aus 2023&nbsp;wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2023&nbsp;verfehlt worden.\" alt=\"Wettersymbol Sonne\"/></a><br>3.1.d: <a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png\" title=\"Bei Fortsetzung der Entwicklung aus 2021&nbsp;wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2021&nbsp;verfehlt worden.\" alt=\"Wettersymbol Sonne\"/></a>");
+        var currentValue = normalizeCurrentValue('target_description', "<u>Zielformulierung:</u><br>Bis 2030&nbsp;soll die Raucherquote von Jugendlichen (3.1.c) auf höchstens 7&nbsp;% und die Raucherquote von Erwachsenen (3.1.d) auf höchstens 19&nbsp;% gesenkt werden.<br><br><u>Bewertung:</u><br>Ausgehend von der Zielformulierung wurde das politisch festgelegte Ziel beim Indikator 3.1.c bereits für die Jahre 2021&nbsp;und 2023&nbsp;vorzeitig erreicht. Entsprechend der zugrunde liegenden Bewertungsmethodik wird zusätzlich geprüft, ob die durchschnittliche Entwicklung der letzten sechs Jahre keine Verschlechterung aufweist. Dies war für den Indikator 3.1.c für das Jahr 2023&nbsp;erfüllt, sodass er mit <b>Sonne</b> bewertet wird. Gleiches gilt für den Indikator 3.1.d für das Jahr 2021.<br><br><u>Datenstand zum Zeitpunkt der Bewertung:</u><br>3.1.c: 27.05.2024<br>3.1.d: 29.03.2023");
         var propertyEditor = editor.getEditor('root.target_description');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -691,6 +691,18 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.target_description'));
 
+    
+      try {
+        var currentValue = normalizeCurrentValue('rating', "3.1.c: <a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png\" title=\"Bei Fortsetzung der Entwicklung aus 2023 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2023 verfehlt worden.\" alt=\"Wettersymbol Sonne\"/></a><br>3.1.d: <a href=\"https://dns-indikatoren.de/status\"><img src=\"https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png\" title=\"Bei Fortsetzung der Entwicklung aus 2021 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden.\" alt=\"Wettersymbol Sonne\"/></a>");
+        var propertyEditor = editor.getEditor('root.rating');
+        propertyEditor.setValue(null);
+        propertyEditor.setValue(currentValue);
+        
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log('Unable to set config key: rating');
+      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.rating'));
 
     
@@ -820,12 +832,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250908070343'></script>
+<script src='/assets/js/sdg.js?v=20250912080956'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250908070343"></script><script>
+    <script src="/assets/js/custom.js?v=20250912080956"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
