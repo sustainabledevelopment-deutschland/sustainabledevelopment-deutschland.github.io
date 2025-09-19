@@ -143,7 +143,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250912120138">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250919082418">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -523,7 +523,7 @@ data-event-label="high"
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;}]"
   data-graphlimits="[{&quot;maximum&quot;:35.0}]"
   data-stackeddisaggregation=""
@@ -532,12 +532,12 @@ data-event-label="high"
   data-mixedtypes="null"
   data-graphannotations="[{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;value&quot;:30,&quot;label&quot;:{&quot;content&quot;:&quot;Target 2030&quot;,&quot;position&quot;:&quot;left&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;color&quot;:&quot;transparent&quot;},&quot;preset&quot;:&quot;target_line&quot;,&quot;borderColor&quot;:&quot;transparent&quot;}]"
   data-graphtargetlines="null"
-  data-graphtargetpoints="[{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;xValue&quot;:25,&quot;yValue&quot;:30,&quot;pointStyle&quot;:&quot;triangle&quot;,&quot;borderColor&quot;:&quot;#dda63a&quot;,&quot;preset&quot;:&quot;target_points&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;type&quot;:&quot;label&quot;,&quot;xValue&quot;:24.9,&quot;yValue&quot;:33.0,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;content&quot;:[&quot;Target:&quot;,&quot;30&quot;],&quot;font&quot;:{&quot;size&quot;:14},&quot;borderColor&quot;:&quot;transparent&quot;}]"
+  data-graphtargetpoints="[{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;xValue&quot;:26,&quot;yValue&quot;:30,&quot;pointStyle&quot;:&quot;triangle&quot;,&quot;borderColor&quot;:&quot;#dda63a&quot;,&quot;preset&quot;:&quot;target_points&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;type&quot;:&quot;label&quot;,&quot;xValue&quot;:25.9,&quot;yValue&quot;:33.0,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;content&quot;:[&quot;Target:&quot;,&quot;30&quot;],&quot;font&quot;:{&quot;size&quot;:14},&quot;borderColor&quot;:&quot;transparent&quot;}]"
   data-graphtargetlabels="null"
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Data from the BMLEH&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Data from the Federal Statistical Office&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Data from the BMLEH&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Federal state&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;step&quot;:5.0}]"
@@ -596,7 +596,11 @@ data-event-label="high"
         
         
         
-        <th scope="col" class="table-value">Series</th>
+        <th scope="col">Series</th>
+        
+        
+        
+        <th scope="col" class="table-value">GeoCode</th>
         
         
       </thead>
@@ -617,7 +621,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -637,7 +645,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -657,7 +669,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -677,7 +693,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -697,7 +717,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -717,7 +741,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -737,7 +765,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -757,7 +789,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -777,7 +813,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -797,7 +837,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -817,7 +861,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -837,7 +885,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -857,7 +909,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -877,7 +933,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -897,7 +957,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -917,7 +981,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -937,7 +1005,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -957,7 +1029,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -977,7 +1053,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -997,7 +1077,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1017,7 +1101,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1037,7 +1125,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1057,7 +1149,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1077,7 +1173,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1097,7 +1197,35 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Percentage</td>
+          
+          
+          
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1117,7 +1245,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          <td><u>Time series of the indicator:</u> Data from the Federal Statistical Office</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1137,7 +1269,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1157,7 +1293,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1177,7 +1317,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1197,7 +1341,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1217,7 +1365,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1237,7 +1389,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1257,7 +1413,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1277,7 +1437,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1297,7 +1461,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1317,7 +1485,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1337,7 +1509,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1357,7 +1533,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1377,7 +1557,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1397,7 +1581,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1417,7 +1605,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1437,7 +1629,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1457,7 +1653,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1477,7 +1677,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1497,7 +1701,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1517,7 +1725,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1537,7 +1749,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1557,7 +1773,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1577,7 +1797,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1597,7 +1821,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1617,7 +1845,35 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>11.5</td>
+          
+          
+          
+          <td>Percentage</td>
+          
+          
+          
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1637,7 +1893,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value"><u>Additional time series:</u> Data from the BMLEH</td>
+          <td><u>Additional time series:</u> Data from the BMLEH</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1723,6 +1983,32 @@ data-event-label="Change to Table tab"
         ><i class="fa fa-table" aria-hidden="true"></i>
       
     <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Map</span></button>
   </li>
   
 </ul>
@@ -1899,6 +2185,76 @@ data-event-label="Change to Table tab"
         </div>
       
     
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Organically farmed agricultural area</h4>
+<h6 id="map-subheading" class="chart-subtitle">Proportion of total utilised agricultural area</h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/assets/img/loading.gif" alt="Loading map" />
+</div>
+
+
+
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          <dt><u>Data sources</u>:</dt>
+          <dd><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a>, <a href="https://ec.europa.eu/eurostat/home" target="_blank" onclick="return confirm_alert('Eurostat', 'En')">Statistical Office of the European Union</a>, <a href="https://www.bmel.de/EN/Home/home_node.html" target="_blank" onclick="return confirm_alert('the Federal Ministry of Agriculture, Food and Regional Identity', 'En')">Federal Ministry of Agriculture, Food and Regional Identity</a></dd>
+        
+
+        
+          <dt><u>Data state</u>:</dt>
+          <dd>03/04/2024</dd>
+        
+
+        
+          <dt><u>Geographical Area</u>:</dt>
+          <dd>Germany</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+          <dt><u>Notes</u>:</dt>
+          <dd><br>• Data from the Federal Statistical Office: Data collected in 1999, 2001, 2003, 2005, 2007, 2010, 2013, 2016, 2020 and 2023 (Agricultural Structure Survey). <br>• Estimated data in intermediate years and from 2021 and 2022.</dd>
+        
+
+        
+        
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        
+
+        
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+        
+    </dl>
+</div>
+
+
+        </div>
+      
+    
   </div>
   
 
@@ -2026,7 +2382,32 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <td>
+              
+                <p>The indicator shows the organically farmed area of agricultural holdings subject to the control procedure of EU legislation on organic farming (Regulation [EC] No. 848/2018 and implementing provisions) as a proportion of the total farmed area in Germany (in %). This includes both areas that have been fully converted to organic farming and those that are still in the process of conversion.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
       
         
           
@@ -6752,6 +7133,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
 
@@ -6767,12 +7157,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250912120138'></script>
+<script src='/assets/js/sdg.js?v=20250919082418'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250912120138"></script><script>
+    <script src="/assets/js/custom.js?v=20250919082418"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

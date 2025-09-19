@@ -143,7 +143,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250912120138">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250919082418">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -318,7 +318,7 @@ layout-indicator-iframe
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Siedlungsdichte&quot;},{&quot;field&quot;:&quot;Verstädterungsgrad&quot;,&quot;value&quot;:&quot;Nicht-ländliche Gebiete&quot;},{&quot;field&quot;:&quot;Verstädterungsgrad&quot;,&quot;value&quot;:&quot;Ländliche Gebiete&quot;}]"
   data-graphlimits="[{&quot;unit&quot;:&quot;2000 = 100&quot;,&quot;minimum&quot;:70.0,&quot;maximum&quot;:110.0}]"
   data-stackeddisaggregation=""
@@ -332,7 +332,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="[{&quot;value&quot;:15.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2000 = 100&quot;,&quot;Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;degree of urbanisation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Nicht-ländliche Gebiete&quot;,&quot;Ländliche Gebiete&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Verstädterungsgrad&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2000 = 100&quot;,&quot;Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;degree of urbanisation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Nicht-ländliche Gebiete&quot;,&quot;Ländliche Gebiete&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Verstädterungsgrad&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;unit&quot;:&quot;2000 = 100&quot;,&quot;step&quot;:5.0},{&quot;unit&quot;:&quot;Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche&quot;,&quot;step&quot;:500.0}]"
@@ -387,7 +387,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">Units</th>
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">GeoCode</th>
         
         
       </thead>
@@ -404,7 +408,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -420,7 +428,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -436,7 +448,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -452,7 +468,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -468,7 +488,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -484,7 +508,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -500,7 +528,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -516,7 +548,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -532,7 +568,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -548,7 +588,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -564,7 +608,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -580,7 +628,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -596,7 +648,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -612,7 +668,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -628,7 +688,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -644,7 +708,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -660,7 +728,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -676,7 +748,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -692,7 +768,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -708,7 +788,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -724,7 +808,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -740,7 +828,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -756,7 +848,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -772,7 +868,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">2000 = 100</td>
+          <td>2000 = 100</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -788,7 +888,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -804,7 +908,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -820,7 +928,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -836,7 +948,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -852,7 +968,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -868,7 +988,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -884,7 +1008,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -900,7 +1028,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -916,7 +1048,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -932,7 +1068,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -948,7 +1088,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -964,7 +1108,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -980,7 +1128,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -996,7 +1148,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1012,7 +1168,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1028,7 +1188,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1044,7 +1208,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1060,7 +1228,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1076,7 +1248,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1092,7 +1268,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1108,7 +1288,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1124,7 +1308,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1140,7 +1328,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1156,7 +1348,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          <td>Einwohner/-innen pro km² Siedlungs- und Verkehrsfläche</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1242,6 +1438,32 @@ data-event-label="Change to Table tab"
         ><i class="fa fa-table" aria-hidden="true"></i>
       
     <span class="hidden-xs" style="color:black">Tabelle</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Karte</span></button>
   </li>
   
 </ul>
@@ -1414,6 +1636,76 @@ data-event-label="Change to Table tab"
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Einwohnerinnen und Einwohner pro Quadratkilometer Siedlungs- und Verkehrsfläche</h4>
+<h6 id="map-subheading" class="chart-subtitle"></h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/assets/img/loading.gif" alt="Karte wird geladen" />
+</div>
+
+
+
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          <dt><u>Datenquelle</u>:</dt>
+          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
+        
+
+        
+          <dt><u>Datenstand</u>:</dt>
+          <dd>10.03.2025</dd>
+        
+
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          <dd><br>• Ab dem Berichtsjahr 2016 basiert die amtliche Flächenerhebung auf dem Amtlichen Liegenschaftskataster-Informationssystem (ALKIS).<br>• Mit der Umstellung der Dokumentation zur Modellierung der Geoinformationen des amtlichen Vermessungswesens von Version 6.0.1 auf 7.1.2 im Jahr 2023 wurde das Nutzungsartenverzeichnis nochmals erweitert. Dadurch ist der Vergleich zu den Vorjahren beeinträchtigt und die Berechnung von Veränderungen erschwert. Die nach der Umstellung ermittelte Siedlungs- und Verkehrsfläche enthält weitgehend dieselben Nutzungsarten wie zuvor. <br>• Die Daten basieren auf einer Sonderauswertung und sind nicht öffentlich zugänglich.<br>• Die Angaben zu den Jahreswerten und dem geleitenden Durchschnitt für die Jahre 2020 bis 2022 sind korrigiert worden. Für den genannten Zeitraum wurden im größeren Umfang von der Vermessungsverwaltung Umklassifizierungen von Vegetations- zu Verkehrsflächen vorgenommen, die keiner Veränderung der Flächennutzung  in der Realität entsprechen. Die vorliegenden Ergebnisse sind um diese Umklassifizierungen bereinigt.</dd>
+        
+
+        
+        
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Anmerkung</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        
+
+        
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Statistisches Bundesamt (Destatis), 2025</dd>
+        
+    </dl>
+</div>
+
 
         </div>
       
@@ -4452,6 +4744,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
 
@@ -4467,12 +4768,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20250912120138'></script>
+<script src='/assets/js/sdg.js?v=20250919082418'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250912120138"></script><script>
+    <script src="/assets/js/custom.js?v=20250919082418"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -143,7 +143,7 @@ var translations = {
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250912120138">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20250919082418">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -318,7 +318,7 @@ layout-indicator-iframe
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;Foreigns&quot;},{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;Germans&quot;}]"
   data-graphlimits="[{&quot;series&quot;:&quot;Germans&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0},{&quot;series&quot;:&quot;Foreigns&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0},{&quot;series&quot;:&quot;Difference&quot;,&quot;minimum&quot;:-10.0,&quot;maximum&quot;:50.0}]"
   data-stackeddisaggregation=""
@@ -332,7 +332,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;Percentage points&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Foreigns&quot;,&quot;Germans&quot;,&quot;Difference&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;Percentage points&quot;,&quot;Gini coefficient&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Foreigns&quot;,&quot;Germans&quot;,&quot;Difference&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Gini coefficient of equivalised disposable income before social transfers&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Federal state&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;series&quot;:&quot;Germans&quot;,&quot;step&quot;:10.0},{&quot;series&quot;:&quot;Foreigns&quot;,&quot;step&quot;:10.0},{&quot;series&quot;:&quot;Difference&quot;,&quot;step&quot;:2.0}]"
@@ -391,7 +391,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">Series</th>
+        <th scope="col">Series</th>
+        
+        
+        
+        <th scope="col" class="table-value">GeoCode</th>
         
         
       </thead>
@@ -412,7 +416,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -432,7 +440,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -452,7 +464,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -472,7 +488,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -492,7 +512,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -512,7 +536,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -532,7 +560,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -552,7 +584,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -572,7 +608,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -592,7 +632,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -612,7 +656,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -632,7 +680,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -652,7 +704,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -672,7 +728,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -692,7 +752,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -712,7 +776,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -732,7 +800,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -752,7 +824,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -772,7 +848,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -792,7 +872,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -812,7 +896,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -832,7 +920,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -852,7 +944,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -872,7 +968,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -892,7 +992,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -912,7 +1016,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -932,7 +1040,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -952,7 +1064,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -972,7 +1088,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Foreigns</td>
+          <td>Foreigns</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -992,7 +1112,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1012,7 +1136,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1032,7 +1160,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1052,7 +1184,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1072,7 +1208,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1092,7 +1232,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1112,7 +1256,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1132,7 +1280,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1152,7 +1304,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1172,7 +1328,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1192,7 +1352,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1212,7 +1376,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1232,7 +1400,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1252,7 +1424,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1272,7 +1448,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1292,7 +1472,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1312,7 +1496,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1332,7 +1520,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1352,7 +1544,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1372,7 +1568,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1392,7 +1592,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1412,7 +1616,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1432,7 +1640,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1452,7 +1664,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1472,7 +1688,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1492,7 +1712,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1512,7 +1736,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1532,7 +1760,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1552,7 +1784,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Germans</td>
+          <td>Germans</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1572,7 +1808,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1592,7 +1832,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1612,7 +1856,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1632,7 +1880,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1652,7 +1904,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1672,7 +1928,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1692,7 +1952,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1712,7 +1976,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1732,7 +2000,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1752,7 +2024,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1772,7 +2048,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1792,7 +2072,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1812,7 +2096,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1832,7 +2120,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1852,7 +2144,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1872,7 +2168,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1892,7 +2192,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1912,7 +2216,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1932,7 +2240,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1952,7 +2264,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1972,7 +2288,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -1992,7 +2312,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2012,7 +2336,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2032,7 +2360,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2052,7 +2384,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2072,7 +2408,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2092,7 +2432,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2112,7 +2456,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2132,7 +2480,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Difference</td>
+          <td>Difference</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -2218,6 +2570,32 @@ data-event-label="Change to Table tab"
         ><i class="fa fa-table" aria-hidden="true"></i>
       
     <span class="hidden-xs" style="color:black">Table</span></button>
+  </li>
+  
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Map</span></button>
   </li>
   
 </ul>
@@ -2388,6 +2766,73 @@ data-event-label="Change to Table tab"
         </div>
       
     
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">German school graduates</h4>
+<h6 id="map-subheading" class="chart-subtitle">Share of all German school-leavers</h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/assets/img/loading.gif" alt="Loading map" />
+</div>
+
+
+
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          <dt><u>Data source</u>:</dt>
+          <dd><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></dd>
+        
+
+        
+          <dt><u>Data state</u>:</dt>
+          <dd>05/11/2024</dd>
+        
+
+        
+          <dt><u>Geographical Area</u>:</dt>
+          <dd>Germany</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Unit of measurement</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+
+        
+        
+        
+        
+        <dt
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ><u>Note</u>:</dt>
+        <dd
+          class="data-controlled-footer-field"
+          data-ts-attribute="COMMENT_TS"
+        ></dd>
+        
+        
+
+        
+        <dt><u>Copyright</u>:</dt>
+        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+        
+    </dl>
+</div>
+
+
+        </div>
+      
+    
   </div>
   
 
@@ -2515,7 +2960,32 @@ data-event-label="Change to indicator.sources tab"
   
       
         
-          
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <td>
+              
+                <p>The indicator shows the proportion of foreign school leavers among all foreign school leavers in a year group (in %). School leavers are those who leave general education schools with at least a lower secondary school leaving certificate, while school leavers are those who leave school without a school leaving certificate.</p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
       
         
           
@@ -5344,6 +5814,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
 
@@ -5359,12 +5838,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250912120138'></script>
+<script src='/assets/js/sdg.js?v=20250919082418'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250912120138"></script><script>
+    <script src="/assets/js/custom.js?v=20250919082418"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
