@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=Promise%2CString.prototype.includes%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.find%2CObject.assign%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
@@ -142,8 +142,9 @@ var translations = {
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250926111706">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20251001101735">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -506,7 +507,6 @@ data-event-label="high"
 
 
 
-
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_6-1-b'
@@ -519,7 +519,7 @@ data-event-label="high"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
-  data-showinfo="false"
+  data-showinfo=""
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -546,6 +546,8 @@ data-event-label="high"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-unit-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-series-status"></span>
   <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
     <div id="serieses"></div>
 <div id="units"></div>
@@ -1065,20 +1067,14 @@ data-event-label="Change to Map tab"
 
 
 
-
-
-
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          <dt><u>Data source</u>:</dt>
-          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a></dd>
-        
-
-        
-          <dt><u>Data state</u>:</dt>
-          <dd>30/01/2025</dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a>, <a href="https://www.lanuv.nrw.de/liki/index.php" target="_blank" onclick="return confirm_alert('the Federal States Initiative on Core Indicators', 'En')">Federal States Initiative on Core Indicators</a></dd>
         
 
         
@@ -1093,29 +1089,33 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Notes</u>:</dt>
-          <dd><br>• Sourcedata based on data from the German Working Group on Water Issues of the Länder and the Federal Government.<br>• Basis EEA monitoring network: the threshold is an annual average of 50 mg nitrate per litre of groundwater.</dd>
+          
+          
+          <dd ><br>• Sourcedata based on data from the German Working Group on Water Issues of the Länder and the Federal Government.<br>• Basis EEA monitoring network: the threshold is an annual average of 50 mg nitrate per litre of groundwater.</dd>
         
 
         
+
         
-          <dl class="observation-attribute-list"></dl>
-        
-        
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
         
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
         
     </dl>
 </div>
@@ -1149,20 +1149,14 @@ data-event-label="Change to Map tab"
 
 
 
-
-
-
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          <dt><u>Data source</u>:</dt>
-          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a></dd>
-        
-
-        
-          <dt><u>Data state</u>:</dt>
-          <dd>30/01/2025</dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a>, <a href="https://www.lanuv.nrw.de/liki/index.php" target="_blank" onclick="return confirm_alert('the Federal States Initiative on Core Indicators', 'En')">Federal States Initiative on Core Indicators</a></dd>
         
 
         
@@ -1177,29 +1171,33 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Notes</u>:</dt>
-          <dd><br>• Sourcedata based on data from the German Working Group on Water Issues of the Länder and the Federal Government.<br>• Basis EEA monitoring network: the threshold is an annual average of 50 mg nitrate per litre of groundwater.</dd>
+          
+          
+          <dd ><br>• Sourcedata based on data from the German Working Group on Water Issues of the Länder and the Federal Government.<br>• Basis EEA monitoring network: the threshold is an annual average of 50 mg nitrate per litre of groundwater.</dd>
         
 
         
+
         
-          <dl class="observation-attribute-list"></dl>
-        
-        
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
         
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
         
     </dl>
 </div>
@@ -1222,20 +1220,14 @@ data-event-label="Change to Map tab"
 
 
 
-
-
-
 <div id="mapFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          <dt><u>Data source</u>:</dt>
-          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a></dd>
-        
-
-        
-          <dt><u>Data state</u>:</dt>
-          <dd>30/01/2025</dd>
+          
+            <dt><u>Data sources</u>:</dt>
+          
+          <dd><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a>, <a href="https://www.lanuv.nrw.de/liki/index.php" target="_blank" onclick="return confirm_alert('the Federal States Initiative on Core Indicators', 'En')">Federal States Initiative on Core Indicators</a></dd>
         
 
         
@@ -1250,29 +1242,33 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Notes</u>:</dt>
-          <dd><br>• Sourcedata based on data from the German Working Group on Water Issues of the Länder and the Federal Government.<br>• Basis EEA monitoring network: the threshold is an annual average of 50 mg nitrate per litre of groundwater.</dd>
+          
+          
+          <dd ><br>• Sourcedata based on data from the German Working Group on Water Issues of the Länder and the Federal Government.<br>• Basis EEA monitoring network: the threshold is an annual average of 50 mg nitrate per litre of groundwater.</dd>
         
 
         
+
         
-          <dl class="observation-attribute-list"></dl>
-        
-        
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
         
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
         
     </dl>
 </div>
@@ -3227,8 +3223,8 @@ data-event-label="Change to indicator.sources tab"
     
     <div class="col-md-6">
       
-        <h4 class="sr-only">Data source 1</h4>
       
+        <h4>Data source 1</h4>
       
       
 <table class="table" style="width:100%; table-layout: fixed;">
@@ -4182,6 +4178,965 @@ data-event-label="Change to indicator.sources tab"
 
     </div>
     
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Data source 2</h4>
+      
+      
+<table class="table" style="width:100%; table-layout: fixed;">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <td>
+              
+                <p><a href="https://www.lanuv.nrw.de/liki/index.php" target="_blank" onclick="return confirm_alert('the Federal States Initiative on Core Indicators', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/liki.png" alt="Federal States Initiative on Core Indicators" title=" Click here to visit the homepage of the organizationFederal States Initiative on Core Indicators" style="height:60px; width:148px; border:transparent" /></a></p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <td>
+              
+                <p><a href="https://www.lanuv.nrw.de/liki/index.php" target="_blank" onclick="return confirm_alert('the Federal States Initiative on Core Indicators', 'En')">Federal States Initiative on Core Indicators</a></p>
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <td>
+              
+                
+                
+                
+                
+
+                
+                
+                
+
+                
+                  
+                    <a href="https://www.liki.nrw.de/umwelt-und-gesundheit/c5-nitrat-im-grundwasser" target="_blank" onclick="return confirm_alert('the Federal States Initiative on Core Indicators', 'En');">
+                      Nitrate in groundwater (only available in German) <span class="visuallyhidden">opens in a new window</span>
+                    </a>
+                  
+                
+
+              
+            </td>
+          </tr>
+        
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+
+      <!-- weather -->
+      
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
   </div>
 
 
@@ -4269,12 +5224,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250926111706'></script>
+<script src='/assets/js/sdg.js?v=20251001101735'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250926111706"></script><script>
+    <script src="/assets/js/custom.js?v=20251001101735"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

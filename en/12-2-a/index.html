@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
     <head>
         <meta charset="utf-8">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha384-bPV3mA2eo3edoq56VzcPBmG1N1QVUfjYMxVIJPPzyFJyFZ8GFfN7Npt06Zr23qts" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?version=4.8.0&features=Promise%2CString.prototype.includes%2CCustomEvent%2CArray.prototype.includes%2CArray.prototype.find%2CObject.assign%2CObject.values%2CObject.entries%2CArray.from%2CSet%2CArray.prototype.findIndex%2Cfetch"></script>
 <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
@@ -142,8 +142,9 @@ var translations = {
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20250926111706">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20251001101735">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -506,20 +507,19 @@ data-event-label="high"
 
 
 
-
 <div class="row"
   id="indicatorData"
   data-indicatorid='indicator_12-2-a'
   data-id="12-2-a"
   data-country="Germany"
   data-charttitle="Umweltmanagementsystem (EMAS)"
-  data-charttitles="[{&quot;series&quot;:&quot;&lt;u&gt;Additional time series:&lt;/u&gt; EMAS organisations&quot;,&quot;title&quot;:&quot;Eco-Management and Audit Scheme (EMAS)&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Locations of organisation registered with EMAS&quot;,&quot;title&quot;:&quot;Eco-Management and Audit Scheme (EMAS)&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Employees in EMAS organisations&quot;,&quot;title&quot;:&quot;Eco-Management and Audit Scheme (EMAS)&quot;}]"
+  data-charttitles="[{&quot;series&quot;:&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Employees in EMAS organisations&quot;,&quot;title&quot;:&quot;Eco-Management and Audit Scheme (EMAS)&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Locations of organisation registered with EMAS&quot;,&quot;title&quot;:&quot;Eco-Management and Audit Scheme (EMAS)&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Additional time series:&lt;/u&gt; EMAS organisations&quot;,&quot;title&quot;:&quot;Eco-Management and Audit Scheme (EMAS)&quot;}]"
   data-chartsubtitle=""
   data-chartsubtitles="[{&quot;series&quot;:&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Employees in EMAS organisations&quot;,&quot;title&quot;:&quot;Employees in EMAS organisations&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Locations of organisation registered with EMAS&quot;,&quot;title&quot;:&quot;Locations of organisation registered in Germany&quot;},{&quot;series&quot;:&quot;&lt;u&gt;Additional time series:&lt;/u&gt; EMAS organisations&quot;,&quot;title&quot;:&quot;EMAS organisations&quot;}]"
   data-measurementunit=""
   data-xaxislabel=""
   data-showdata="true"
-  data-showinfo="false"
+  data-showinfo=""
   data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
@@ -537,7 +537,7 @@ data-event-label="high"
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Number&quot;,&quot;1,000&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Locations of organisation registered with EMAS&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Employees in EMAS organisations&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; EMAS organisations&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Federal state&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Number&quot;,&quot;1,000&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&lt;u&gt;Time series of the indicator:&lt;/u&gt; Locations of organisation registered with EMAS&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; Employees in EMAS organisations&quot;,&quot;&lt;u&gt;Additional time series:&lt;/u&gt; EMAS organisations&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;p&quot;,&quot;…&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;federal state&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Wuerttemberg&quot;,&quot;Bavaria&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hesse&quot;,&quot;Mecklenburg Western Pomerania&quot;,&quot;Lower Saxony&quot;,&quot;North Rhine-Westphalia&quot;,&quot;Rhineland Palatinate&quot;,&quot;Saarland&quot;,&quot;Saxony&quot;,&quot;Saxony-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thuringia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Federal state&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:0.0}]"
   data-graphstepsize="null"
@@ -546,6 +546,8 @@ data-event-label="high"
 >
   
   <span role="status" class="visually-hidden" id="indicator-data-view-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-unit-status"></span>
+  <span role="status" class="visually-hidden" id="indicator-data-series-status"></span>
   <div id="indicator-sidebar" class="indicator-sidebar col-md-3">
     <div id="serieses"></div>
 <div id="units"></div>
@@ -1065,54 +1067,6 @@ data-event-label="high"
         <tr>
           
           
-          <td>2024</td>
-          
-          
-          
-          <td>4533.0</td>
-          
-          
-          
-          <td>Number</td>
-          
-          
-          
-          <td><u>Time series of the indicator:</u> Locations of organisation registered with EMAS</td>
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2030</td>
-          
-          
-          
-          <td></td>
-          
-          
-          
-          <td>Number</td>
-          
-          
-          
-          <td><u>Time series of the indicator:</u> Locations of organisation registered with EMAS</td>
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
           <td>2005</td>
           
           
@@ -1574,30 +1528,6 @@ data-event-label="high"
           
           
           <td>1258.0</td>
-          
-          
-          
-          <td>1,000</td>
-          
-          
-          
-          <td><u>Additional time series:</u> Employees in EMAS organisations</td>
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2030</td>
-          
-          
-          
-          <td></td>
           
           
           
@@ -2094,30 +2024,6 @@ data-event-label="high"
           
         </tr>
         
-        <tr>
-          
-          
-          <td>2030</td>
-          
-          
-          
-          <td></td>
-          
-          
-          
-          <td>Number</td>
-          
-          
-          
-          <td><u>Additional time series:</u> EMAS organisations</td>
-          
-          
-          
-          <td class="table-value"></td>
-          
-          
-        </tr>
-        
       </tbody>
     </table>
     
@@ -2259,20 +2165,14 @@ data-event-label="Change to Map tab"
 
 
 
-
-
-
 <div id="selectionChartFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          <dt><u>Data source</u>:</dt>
+          
+            <dt><u>Data source</u>:</dt>
+          
           <dd><a href="https://www.dihk.de/de" target="_blank" onclick="return confirm_alert('the German EMAS Advisory Board', 'En')">German EMAS Advisory Board based on data from the Association of German Chambers of Commerce and Industry</a></dd>
-        
-
-        
-          <dt><u>Data state</u>:</dt>
-          <dd>01/01/2025</dd>
         
 
         
@@ -2284,29 +2184,33 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Notes</u>:</dt>
-          <dd><br>• EMAS: Eco-Management and Audit Scheme.<br>• 2024 preliminary data.</dd>
+          
+          
+          <dd ><br>• EMAS: Eco-Management and Audit Scheme.<br>• 2024 preliminary data.</dd>
         
 
         
+
         
-          <dl class="observation-attribute-list"></dl>
-        
-        
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
         
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
         
     </dl>
 </div>
@@ -2340,20 +2244,14 @@ data-event-label="Change to Map tab"
 
 
 
-
-
-
 <div id="selectionTableFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          <dt><u>Data source</u>:</dt>
+          
+            <dt><u>Data source</u>:</dt>
+          
           <dd><a href="https://www.dihk.de/de" target="_blank" onclick="return confirm_alert('the German EMAS Advisory Board', 'En')">German EMAS Advisory Board based on data from the Association of German Chambers of Commerce and Industry</a></dd>
-        
-
-        
-          <dt><u>Data state</u>:</dt>
-          <dd>01/01/2025</dd>
         
 
         
@@ -2365,29 +2263,33 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Notes</u>:</dt>
-          <dd><br>• EMAS: Eco-Management and Audit Scheme.<br>• 2024 preliminary data.</dd>
+          
+          
+          <dd ><br>• EMAS: Eco-Management and Audit Scheme.<br>• 2024 preliminary data.</dd>
         
 
         
+
         
-          <dl class="observation-attribute-list"></dl>
-        
-        
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
         
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
         
     </dl>
 </div>
@@ -2410,20 +2312,14 @@ data-event-label="Change to Map tab"
 
 
 
-
-
-
 <div id="mapFooter" class="table-footer-text">
   <h5 class="sr-only">Chart details</h5>
     <dl>
         
-          <dt><u>Data source</u>:</dt>
+          
+            <dt><u>Data source</u>:</dt>
+          
           <dd><a href="https://www.dihk.de/de" target="_blank" onclick="return confirm_alert('the German EMAS Advisory Board', 'En')">German EMAS Advisory Board based on data from the Association of German Chambers of Commerce and Industry</a></dd>
-        
-
-        
-          <dt><u>Data state</u>:</dt>
-          <dd>01/01/2025</dd>
         
 
         
@@ -2435,29 +2331,33 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Notes</u>:</dt>
-          <dd><br>• EMAS: Eco-Management and Audit Scheme.<br>• 2024 preliminary data.</dd>
+          
+          
+          <dd ><br>• EMAS: Eco-Management and Audit Scheme.<br>• 2024 preliminary data.</dd>
         
 
         
+
         
-          <dl class="observation-attribute-list"></dl>
-        
-        
-        
-        <dt
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ><u>Note</u>:</dt>
-        <dd
-          class="data-controlled-footer-field"
-          data-ts-attribute="COMMENT_TS"
-        ></dd>
-        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Note</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
         
 
         
-        <dt><u>Copyright</u>:</dt>
-        <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Federal Statistical Office (Destatis), 2025</dd>
         
     </dl>
 </div>
@@ -5454,12 +5354,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20250926111706'></script>
+<script src='/assets/js/sdg.js?v=20251001101735'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20250926111706"></script><script>
+    <script src="/assets/js/custom.js?v=20251001101735"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
