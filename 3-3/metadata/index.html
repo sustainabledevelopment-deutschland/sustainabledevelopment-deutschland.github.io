@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20251001101735">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20251008175810">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -395,7 +395,7 @@ data-event-label="high"
 
     
     
-    var schema = {"type":"object","title":"Metadaten bearbeiten","properties":{"goal":{"type":"string","format":"markdown","title":"Goal number","description":"Scope: global, Field: goal"},"indicator_name":{"type":"string","format":"markdown","title":"Indikatorenbezeichnung","description":"Scope: global, Field: indicator_name"},"indicator":{"type":"string","format":"markdown","title":"Indikatorennummerierung","description":"Scope: global, Field: indicator"},"target_name":{"type":"string","format":"markdown","title":"Target name","description":"Scope: global, Field: target_name"},"target_id":{"type":"string","format":"markdown","title":"Unterzielnummerierung","description":"Scope: global, Field: target_id"},"indicator_definition":{"type":"string","format":"markdown","title":"Globale Indikatorenbeschreibung","description":"Scope: global, Field: indicator_definition"},"un_designated_tier":{"type":"string","format":"markdown","title":"<a href=\"https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/\" title=\"Klicken Sie hier um weitere Informationen zur UN-Tier-Klassifikation zu erhalten.\"> Tier Klassifikation</a>","description":"Scope: global, Field: un_designated_tier"},"un_custodian_agency":{"type":"string","format":"markdown","title":"Custodian Agency","description":"Scope: global, Field: un_custodian_agency"},"goal_meta_link":{"type":"string","format":"markdown","title":"Link to UN metadata","description":"Scope: global, Field: goal_meta_link"},"goal_meta_link_text":{"type":"string","format":"markdown","title":"Link to UN metadata text","description":"Scope: global, Field: goal_meta_link_text"},"national_indicator_available":{"type":"string","format":"markdown","title":"Verfügbare Zeitreihenbezeichnung","description":"Scope: national, Field: national_indicator_available"},"dns_indicator_definition":{"type":"string","format":"markdown","title":"Definition","description":"Scope: national, Field: dns_indicator_definition"},"dns_indicator_intention":{"type":"string","format":"markdown","title":"Intention","description":"Scope: national, Field: dns_indicator_intention"},"dns_indicator_definition_new":{"type":"string","format":"markdown","title":"Definition","description":"Scope: national, Field: dns_indicator_definition_new"},"dns_political_intention":{"type":"string","format":"markdown","title":"Intention","description":"Scope: national, Field: dns_political_intention"},"political_target":{"type":"string","format":"markdown","title":"Ziel","description":"Scope: national, Field: political_target"},"type_target":{"type":"string","format":"markdown","title":"Art des Ziels","description":"Scope: national, Field: type_target"},"target_description":{"type":"string","format":"markdown","title":"Bewertung","description":"Scope: national, Field: target_description"},"rating":{"type":"string","format":"markdown","title":"Bewertung","description":"Scope: national, Field: rating"}},"additionalProperties":true};
+    var schema = {"type":"object","title":"Metadaten bearbeiten","properties":{"goal":{"type":"string","format":"markdown","title":"Goal number","description":"Scope: global, Field: goal"},"indicator_name":{"type":"string","format":"markdown","title":"Indikatorenbezeichnung","description":"Scope: global, Field: indicator_name"},"indicator":{"type":"string","format":"markdown","title":"Indikatorennummerierung","description":"Scope: global, Field: indicator"},"target_name":{"type":"string","format":"markdown","title":"Target name","description":"Scope: global, Field: target_name"},"target_id":{"type":"string","format":"markdown","title":"Unterzielnummerierung","description":"Scope: global, Field: target_id"},"indicator_definition":{"type":"string","format":"markdown","title":"Globale Indikatorenbeschreibung","description":"Scope: global, Field: indicator_definition"},"un_designated_tier":{"type":"string","format":"markdown","title":"<a href=\"https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/\" title=\"Klicken Sie hier um weitere Informationen zur UN-Tier-Klassifikation zu erhalten.\"> Tier Klassifikation</a>","description":"Scope: global, Field: un_designated_tier"},"un_custodian_agency":{"type":"string","format":"markdown","title":"Custodian Agency","description":"Scope: global, Field: un_custodian_agency"},"goal_meta_link":{"type":"string","format":"markdown","title":"Link to UN metadata","description":"Scope: global, Field: goal_meta_link"},"goal_meta_link_text":{"type":"string","format":"markdown","title":"Link to UN metadata text","description":"Scope: global, Field: goal_meta_link_text"},"national_indicator_available":{"type":"string","format":"markdown","title":"Verfügbare Zeitreihenbezeichnung","description":"Scope: national, Field: national_indicator_available"},"dns_indicator_definition":{"type":"string","format":"markdown","title":"Definition","description":"Scope: national, Field: dns_indicator_definition"},"dns_indicator_intention":{"type":"string","format":"markdown","title":"Intention","description":"Scope: national, Field: dns_indicator_intention"},"dns_indicator_definition_new":{"type":"string","format":"markdown","title":"Definition","description":"Scope: national, Field: dns_indicator_definition_new"},"dns_political_intention":{"type":"string","format":"markdown","title":"Intention","description":"Scope: national, Field: dns_political_intention"},"political_target":{"type":"string","format":"markdown","title":"Ziel","description":"Scope: national, Field: political_target"},"type_target":{"type":"string","format":"markdown","title":"Art des Ziels","description":"Scope: national, Field: type_target"},"target_description":{"type":"string","format":"markdown","title":"Bewertung","description":"Scope: national, Field: target_description"},"rating":{"type":"string","format":"markdown","title":"Bewertung","description":"Scope: national, Field: rating"},"indicator_pdf":{"type":"string","format":"markdown","title":"PDF zum Indikator","description":"Scope: national, Field: indicator_pdf"}},"additionalProperties":true};
     
       
         
@@ -646,6 +646,8 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.rating'));
 
+    propertyEditorAccessibilityFixes(editor.getEditor('root.indicator_pdf'));
+
     
 
     function isTranslationKey(text) {
@@ -773,12 +775,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20251001101735'></script>
+<script src='/assets/js/sdg.js?v=20251008175810'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20251001101735"></script><script>
+    <script src="/assets/js/custom.js?v=20251008175810"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
