@@ -141,7 +141,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260330111921">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260427101625">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -556,7 +556,7 @@ data-event-label="high"
 
     
       try {
-        var currentValue = normalizeCurrentValue('data_footnote', "Rohstoffeinsatz: Aufgrund methodischer Änderungen sind die Ergebnisse ab 2016 nur eingeschränkt mit den Vorjahren vergleichbar.");
+        var currentValue = normalizeCurrentValue('data_footnote', "Die Werte für die Jahre 2010 bis 2014 basieren auf der VGR-Generalrevision 2014 und die Jahre 2015 bis 2020 basieren auf der VGR-Generalrevision 2019. Das Jahr 2021 wurde doppelt, also nach VGR-Generalrevision 2019 und wie alle darauf folgenden Jahre nach der VGR-Generalrevision 2024 berechnet. Um bei der Darstellung als Indizes eine konsistente Zeitreihe ab dem Basisjahr 2010 zu erzielen, wurde eine Verkettung der Ergebnisse basierend auf den VGR-Generalrevisionen von 2019 und 2024 durchgeführt.");
         var propertyEditor = editor.getEditor('root.data_footnote');
         propertyEditor.setValue(null);
         propertyEditor.setValue(currentValue);
@@ -622,18 +622,6 @@ data-event-label="high"
       }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_limits'));
 
-    
-      try {
-        var currentValue = normalizeCurrentValue('graph_series_breaks', [{"value":5.5}]);
-        var propertyEditor = editor.getEditor('root.graph_series_breaks');
-        propertyEditor.setValue(null);
-        propertyEditor.setValue(currentValue);
-        
-      }
-      catch (e) {
-        console.log(e.message);
-        console.log('Unable to set config key: graph_series_breaks');
-      }
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_series_breaks'));
 
     propertyEditorAccessibilityFixes(editor.getEditor('root.graph_stacked_disaggregation'));
@@ -922,12 +910,12 @@ data-event-label="high"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260330111921'></script>
+<script src='/assets/js/sdg.js?v=20260427101625'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260330111921"></script><script>
+    <script src="/assets/js/custom.js?v=20260427101625"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
