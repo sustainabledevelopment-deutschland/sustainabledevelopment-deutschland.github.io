@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'de',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -322,6 +324,9 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;&lt;u&gt;Zeitreihe des Indikators:&lt;/u&gt; Nachhaltigkeitszertifizierte Kultur- und Medieneinrichtungen&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="false"
   data-mixedtypes="null"
@@ -879,7 +884,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>Der Indikator stellt die Anzahl der nachhaltigkeitszertifizierten Kultur- und Medieneinrichtungen dar.</p>
@@ -908,7 +913,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>Kultur- und Medieneinrichtungen mit einem nachweisbaren Beitrag zur Nachhaltigkeit haben einen erfolgreichen internen Transformationsprozess durchgeführt und tragen darüber hinaus angesichts ihrer besonderen kommunikativen Funktion mit ihren Narrativen auch zur gesellschaftlichen Sensibilisierung in verschiedenen soziokulturellen Milieus bei.</p>
@@ -931,7 +936,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Ziel </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Ziel </th>
             <td>
               
                 <p>Erhöhung der Anzahl der Kultureinrichtungen mit entsprechenden Zertifikaten bis 2030</p>
@@ -954,7 +959,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Art des Ziels </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Art des Ziels </th>
             <td>
               
                 <p>Zielrichtungsvorgabe</p>
@@ -977,7 +982,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
             <td>
               
                 <p><u>Zielformulierung:</u><br />Die Anzahl nachhaltigkeitszertifizierter Kultur- und Medieneinrichtungen soll erhöht werden.<br /><br /><u>Bewertung:</u><br />Eine Bewertung des Indikators 12.2.b ist nicht möglich. Zu wenig Datenpunkte.</p>
@@ -3491,7 +3496,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.deutscher-nachhaltigkeitskodex.de/" target="_blank" onclick="return confirm_alert('des DNK', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/dnk.png" alt="Deutscher Nachhaltigkeitskodex" title=" Klicken Sie hier um zur Homepage der Organisation Deutscher Nachhaltigkeitskodex zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3525,7 +3530,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.deutscher-nachhaltigkeitskodex.de/" target="_blank" onclick="return confirm_alert('des DNK', 'De')">Deutscher Nachhaltigkeitskodex</a></p>
@@ -4395,7 +4400,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.oekoprofit.info/" target="_blank" onclick="return confirm_alert('von Ökoprofit', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/oeko.png" alt="Ökoprofit" title=" Klicken Sie hier um zur Homepage der Organisation Ökoprofit zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -4429,7 +4434,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.oekoprofit.info/" target="_blank" onclick="return confirm_alert('von Ökoprofit', 'De')">Ökoprofit</a></p>
@@ -5299,7 +5304,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://germany.econgood.org/" target="_blank" onclick="return confirm_alert('der Gemeinwohl-Ökonomie', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/gwoe.png" alt="Gemeinwohl-Ökonomie" title=" Klicken Sie hier um zur Homepage der Organisation Gemeinwohl-Ökonomie zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -5333,7 +5338,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://germany.econgood.org/" target="_blank" onclick="return confirm_alert('der Gemeinwohl-Ökonomie', 'De')">Gemeinwohl-Ökonomie</a></p>
@@ -6197,7 +6202,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.greenculture.info/" target="_blank" onclick="return confirm_alert('der Green Culture Anlaufstelle', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/gc.png" alt="Green Culture Anlaufstelle" title=" Klicken Sie hier um zur Homepage der Organisation Green Culture Anlaufstelle zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -6231,7 +6236,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.greenculture.info/" target="_blank" onclick="return confirm_alert('der Green Culture Anlaufstelle', 'De')">Green Culture Anlaufstelle</a></p>
@@ -6254,7 +6259,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -7138,7 +7143,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.dihk.de/de" target="_blank" onclick="return confirm_alert('des DIHK', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/dihk.png" alt="Geschäftsstelle des Umweltgutachterausschusses auf Basis von Daten des Deutschen Industrie- und Handelskammertages e. V." title=" Klicken Sie hier um zur Homepage der Organisation Geschäftsstelle des Umweltgutachterausschusses auf Basis von Daten des Deutschen Industrie- und Handelskammertages e. V. zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -7172,7 +7177,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.dihk.de/de" target="_blank" onclick="return confirm_alert('des DIHK', 'De')">Geschäftsstelle des Umweltgutachterausschusses auf Basis von Daten des Deutschen Industrie- und Handelskammertages e. V.</a></p>
@@ -7195,7 +7200,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -8079,7 +8084,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.green-motion.org/" target="_blank" onclick="return confirm_alert('des Green Shooting', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/gs.png" alt="Green Shooting" title=" Klicken Sie hier um zur Homepage der Organisation Green Shooting zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -8113,7 +8118,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.green-motion.org/" target="_blank" onclick="return confirm_alert('des Green Shooting', 'De')">Green Shooting</a></p>
@@ -8136,7 +8141,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -8217,16 +8222,16 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -8240,12 +8245,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

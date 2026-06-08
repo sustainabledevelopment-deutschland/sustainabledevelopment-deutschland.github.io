@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'en',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -322,6 +324,9 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Raw material input productivity&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Raw material input for consumption, investment and exports&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Value of consumption, investment and exports (price-adjusted)&quot;}]"
   data-graphlimits="[{&quot;maximum&quot;:200.0}]"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="true"
   data-mixedtypes="null"
@@ -779,7 +784,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>The indicator shows total raw material productivity compared to the base year 2010. The indicator compares the value of all goods sold for final use (in euros, price-adjusted) with the mass of raw materials used for their production at home and abroad (in tonnes). The final use includes both domestic consumption and domestic investment as well as exports. The denominator of the indicator includes both abiotic and biotic raw materials extracted from the environment as well as plant material produced by agriculture and forestry. The graph shows the indicator itself as well as the numerator and denominator separately.</p>
@@ -808,7 +813,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>The extraction of raw materials is always associated with a negative impact on nature. Due to the growing demand for raw materials, raw material deposits are increasingly being tapped worldwide in areas that are particularly sensitive to human impact. For this reason, the German government set itself the goal of further increasing overall raw material productivity in the German Resource Efficiency Programme (ProgRess) II in 2016.</p>
@@ -831,7 +836,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Target </th>
             <td>
               
                 <p>Trend of the years 2000 to 2010 to be maintained until 2030</p>
@@ -854,7 +859,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Type of target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Type of target </th>
             <td>
               
                 <p>Target with specific target value</p>
@@ -877,7 +882,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p><u>Target formulation:</u><br />The target allows for various interpretations. For the assessment of indicator 8.1, the geometric mean of the indicator’s increase between 2000 and 2010 is calculated and used as the basis for the desired development up to 2030. Standardised to the 2010 value, this results in a target of 136.8 for 2030. Accordingly, total raw material input productivity should reach at least 136.8% of the 2010 value by 2030.<br /><br /><u>Assessment:</u><br />If the trend from 2017 to 2022 continues, this target will be achieved in 2030. Accordingly, indicator 8.1 is assessed as <b>sun</b> for 2022.<br /><br /><u>Data status at time of assessment:</u><br />05/05/2025</p>
@@ -900,7 +905,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p><a href="https://dns-indikatoren.de/en/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" title="If the trend from 2022 had continued, the target value would have been reached or missed by less than 5% of the difference between the target value and the value at that time." alt="Weathersymbol: Sun" /></a></p>
@@ -3411,7 +3416,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3445,7 +3450,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -3468,7 +3473,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -3517,7 +3522,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 
@@ -3650,18 +3655,18 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -3675,12 +3680,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

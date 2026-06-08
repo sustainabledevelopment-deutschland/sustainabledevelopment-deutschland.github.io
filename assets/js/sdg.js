@@ -132,6 +132,7 @@ opensdg.autotrack = function(preset, category, action, label) {
     this.startValues = options.startValues;
     this.configObsAttributes = [{"field":"COMMENT_OBS_0","label":""},{"field":"COMMENT_OBS_1","label":""},{"field":"COMMENT_OBS_2","label":""}];
     this.allObservationAttributes = options.allObservationAttributes;
+    this._browserDecimalSeparator = this.viewHelpers.getBrowserDecimalSeparator();
 
     // Require at least one geoLayer.
     if (!options.mapLayers || !options.mapLayers.length) {
@@ -338,23 +339,24 @@ opensdg.autotrack = function(preset, category, action, label) {
       opensdg.dataDisplayAlterations.forEach(function(callback) {
         value = callback(value);
       });
-      if (this._precision || this._precision === 0) {
-        value = Number.parseFloat(value).toFixed(this._precision);
-      }
-      if (this._decimalSeparator) {
-        if(opensdg.language == 'de') {
+      if (typeof value !== 'number') {
+        if (this._precision || this._precision === 0) {
+          value = Number.parseFloat(value).toFixed(this._precision);
+        }
+        if (this._decimalSeparator) {
           value = value.toString().replace('.', this._decimalSeparator);
         }
-        else {
-          value = value.toString();
-        }
       }
-      if (this._thousandsSeparator) {
-        if(opensdg.language == 'de') {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, this._thousandsSeparator);
+      else {
+        var localeOpts = {};
+        if (this._precision || this._precision === 0) {
+            localeOpts.minimumFractionDigits = this._precision;
+            localeOpts.maximumFractionDigits = this._precision;
         }
-        else {
-          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        value = value.toLocaleString(opensdg.language, localeOpts);
+        // Still use the custom decimal separator if it is there.
+        if (this._decimalSeparator) {
+          value = value.toString().replace(this._browserDecimalSeparator, this._decimalSeparator);
         }
       }
       return value;
@@ -2131,6 +2133,19 @@ function getDataBySelectedFields(rows, selectedFields) {
 }
 
 /**
+ * @param {Array} rows
+ * @param {Array} selectedFields Field items
+ * @return {Array} Rows
+ */
+function hasDataBySelectedFields(rows, selectedFields) {
+  return rows.some(function(row) {
+    return selectedFields.some(function(field) {
+      return field.values.includes(row[field.field]);
+    });
+  });
+}
+
+/**
  * @param {Array} fieldNames
  * @param {Object} dataSchema
  */
@@ -2323,8 +2338,8 @@ function getGraphSeriesBreaks(graphSeriesBreaks, selectedUnit, selectedSeries) {
  * @param {Array} colorAssignments Color/striping assignments for disaggregation combinations
  * @return {Array} Datasets suitable for Chart.js
  */
-function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, showLine, spanGaps, allObservationAttributes, mixedTypes) {
-  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, showLine, spanGaps, mixedTypes;
+function getDatasets(headline, data, combinations, years, defaultLabel, colors, selectableFields, colorAssignments, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes, mixedTypes) {
+  var datasets = [], index = 0, dataset, colorIndex, color, background, border, striped, excess, combinationKey, colorAssignment, fill, fillAbove, fillBelow, showLine, spanGaps, mixedTypes;
   var numColors = colors.length,
       maxColorAssignments = numColors * 2;
   console.log("allObservationAttributes in getDatasets: ", allObservationAttributes);
@@ -2363,14 +2378,14 @@ function getDatasets(headline, data, combinations, years, defaultLabel, colors, 
       color = getColor(colorIndex, colors);
       background = getBackground(color, striped);
       border = getBorderDash(striped);
-      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, showLine, spanGaps, allObservationAttributes, mixedTypes);
+      dataset = makeDataset(years, filteredData, combination, defaultLabel, color, background, border, excess, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes, mixedTypes);
       datasets.push(dataset);
       index++;
     }
   }, this);
 
   if (headline.length > 0) {
-    dataset = makeHeadlineDataset(years, headline, defaultLabel, showLine, spanGaps, colors, allObservationAttributes, mixedTypes);
+    dataset = makeHeadlineDataset(years, headline, defaultLabel, fill, fillAbove, fillBelow, showLine, spanGaps, colors, allObservationAttributes, mixedTypes);
     datasets.unshift(dataset);
   }
   return datasets;
@@ -2555,13 +2570,13 @@ function getBorderDash(striped) {
  * @param {Array} excess
  * @return {Object} Dataset object for Chart.js
  */
-function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, showLine, spanGaps, allObservationAttributes, mixedTypes) {
+function makeDataset(years, rows, combination, labelFallback, color, background, border, excess, fill, fillAbove, fillBelow, showLine, spanGaps, allObservationAttributes, mixedTypes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
        obsAttributes = prepared.observationAttributes;
-  console.log("getCOmType:", getCombinationType(combination, labelFallback, mixedTypes) );
   return Object.assign(dataset, {
+
     label: getCombinationDescription(combination, labelFallback),
     combination: combination,
     type: getCombinationType(combination, labelFallback, mixedTypes),
@@ -2577,6 +2592,11 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
     pointStyle: 'circle',
     data: data,
     excess: excess,
+    fill: {
+      target: fill,
+      above: fillAbove,
+      below: fillBelow
+    },
     spanGaps: spanGaps,
     showLine: showLine,
     observationAttributes: obsAttributes,
@@ -2588,10 +2608,10 @@ function makeDataset(years, rows, combination, labelFallback, color, background,
  */
 function getBaseDataset() {
   return Object.assign({}, {
-    fill: false,
     pointHoverRadius: 5,
     pointHoverBorderWidth: 1,
     tension: 0,
+    fill: false,
     spanGaps: true,
     showLine: true,
     maxBarThickness: 150,
@@ -2677,6 +2697,8 @@ function getCombinationDescription(combination, fallback) {
   return ret;
 }
 
+
+
 /**
  * @return {string} Hex number of headline color
  *
@@ -2692,7 +2714,7 @@ function getHeadlineColor() {
  * @param {string} label
  * @return {Object} Dataset object for Chart.js
  */
-function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, allObservationAttributes, mixedTypes) {
+function makeHeadlineDataset(years, rows, label, fill, fillAbove, fillBelow, showLine, spanGaps, colors, allObservationAttributes, mixedTypes) {
    var dataset = getBaseDataset(),
        prepared = prepareDataForDataset(years, rows, allObservationAttributes),
        data = prepared.data,
@@ -2709,6 +2731,11 @@ function makeHeadlineDataset(years, rows, label, showLine, spanGaps, colors, all
     pointStyle: 'circle',
     data: data,
     observationAttributes: obsAttributes,
+    fill: {
+      target: fill,
+      above: fillAbove,
+      below: fillBelow
+    },
     showLine: showLine,
     spanGaps: spanGaps,
     type: getCombinationType([], '', mixedTypes),
@@ -2986,6 +3013,7 @@ function getAllObservationAttributes(rows) {
     getDataByUnit: getDataByUnit,
     getDataBySeries: getDataBySeries,
     getDataBySelectedFields: getDataBySelectedFields,
+    hasDataBySelectedFields: hasDataBySelectedFields,
     getUnitFromStartValues: getUnitFromStartValues,
     getSeriesFromStartValues: getSeriesFromStartValues,
     selectFieldsFromStartValues: selectFieldsFromStartValues,
@@ -3072,6 +3100,9 @@ function getAllObservationAttributes(rows) {
   this.showMap = options.showMap;
   this.graphLimits = options.graphLimits;
   this.stackedDisaggregation = options.stackedDisaggregation;
+  this.fill = options.fill;
+  this.fillAbove = options.fillAbove;
+  this.fillBelow = options.fillBelow;
   this.showLine = options.showLine;
   this.mixedTypes = options.mixedTypes; // ? options.showLine : true;
   this.spanGaps = options.spanGaps;
@@ -3274,12 +3305,19 @@ function getAllObservationAttributes(rows) {
         this.selectedSeries = startingSeries;
       }
 
-      // Decide on starting field values if not changing series.
+      // Decide on starting field values.
       var startingFields = this.selectedFields;
-      if (this.hasStartValues && !options.changingSeries) {
+      var useMinimumStartingFields = false;
+      if (this.hasStartValues) {
         startingFields = helpers.selectFieldsFromStartValues(this.startValues, this.selectableFields);
+        // Quick test to see if this would result in zero matches, in cases where
+        // the series is being changed and the new series would not show data.
+        if (options.changingSeries && !helpers.hasDataBySelectedFields(this.data, startingFields)) {
+          useMinimumStartingFields = true;
+          startingFields = this.selectedFields;
+        }
       }
-      else {
+      if (!this.hasStartValues || useMinimumStartingFields) {
         if (headline.length === 0) {
           startingFields = helpers.selectMinimumStartingFields(this.data, this.selectableFields, this.selectedUnit);
         }
@@ -3355,7 +3393,7 @@ function getAllObservationAttributes(rows) {
     }
 
     var combinations = helpers.getCombinationData(this.selectedFields, this.dataSchema);
-    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
+    var datasets = helpers.getDatasets(headline, filteredData, combinations, this.years, translations.data.total, this.colors, this.selectableFields, this.colorAssignments, this.fill, this.fillAbove, this.fillBelow, this.showLine, this.spanGaps, this.allObservationAttributes, this.mixedTypes);
     var selectionsTable = helpers.tableDataFromDatasets(datasets, this.years);
     var observationAttributesTable = helpers.observationAttributesTableFromDatasets(datasets, this.years);
 
@@ -4188,6 +4226,7 @@ opensdg.chartTypes.base = function(info) {
             responsive: true,
             maintainAspectRatio: false,
             spanGaps: true,
+            fill: false,
             scrollX: true,
             scrollCollapse: true,
             sScrollXInner: '150%',
@@ -4605,10 +4644,10 @@ opensdg.chartTypes.base = function(info) {
         value = parseInt(value, 10);
     }
     if (value === 1) {
-        return 'Yes';
+        return translations.indicator.affirmative;
     }
     else if (value === -1) {
-        return 'No';
+        return translations.indicator.negative;
     }
     return '';
 }
@@ -4742,6 +4781,15 @@ function initialiseDataTable(el, info) {
                     var additionalInfo = Object.assign({}, info);
                     additionalInfo.row = row;
                     additionalInfo.col = col;
+                    if (info.chartType === 'binary') {
+                        var cellDataInt = Number(cellData);
+                        if (cellDataInt === 1) {
+                            cellData = translations.indicator.affirmative;
+                        }
+                        else if (cellDataInt === 0 || cellDataInt === -1) {
+                            cellData = translations.indicator.negative;
+                        }
+                    }
                     $(td).text(alterDataDisplay(cellData, rowData, 'table cell', additionalInfo));
                 },
             },
@@ -4762,7 +4810,7 @@ function initialiseDataTable(el, info) {
  * @return null
  */
 function createSelectionsTable(chartInfo) {
-    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', chartInfo.isProxy, chartInfo.observationAttributesTable);
+    createTable(chartInfo.selectionsTable, chartInfo.indicatorId, '#selectionsTable', chartInfo.isProxy, chartInfo.observationAttributesTable, chartInfo.chartType);
     $('#tableSelectionDownload').empty();
     createTableTargetLines(chartInfo.graphAnnotations);
     createDownloadButton(chartInfo.selectionsTable, 'Table', chartInfo.indicatorId, '#tableSelectionDownload', chartInfo.selectedSeries, chartInfo.selectedUnit);
@@ -4812,9 +4860,10 @@ function tableHasData(table) {
  * @param {Element} el
  * @param {bool} isProxy
  * @param {Object} observationAttributesTable
+ * @param {String} chartType
  * @return null
  */
-function createTable(table, indicatorId, el, isProxy, observationAttributesTable) {
+function createTable(table, indicatorId, el, isProxy, observationAttributesTable, chartType) {
 
     var table_class = OPTIONS.table_class || 'table table-hover';
 
@@ -4925,6 +4974,7 @@ function createTable(table, indicatorId, el, isProxy, observationAttributesTable
             table: table,
             indicatorId: indicatorId,
             observationAttributesTable: observationAttributesTable,
+            chartType: chartType,
         };
         initialiseDataTable(el, alterationInfo);
 
@@ -5001,7 +5051,7 @@ function setDataTableWidth(table) {
     // ascertain whether the table should be width 100% or explicit width:
     // var containerWidth = table.closest('.dataTables_wrapper').width();
     // console.log('Table: ', totalWidth, 'Container: ', containerWidth);
-    // if (totalWidth > containerWidth) {
+    // if (totalWidth > containerWidth && containerWidth > 0) {
     //     table.css('width', totalWidth + 'px');
     // } else {
     //     table.css('width', '100%');
@@ -5174,6 +5224,17 @@ function getObservationAttributeFootnoteSymbol(obsAttribute) {
     }
 
     //return '[' + translations.indicator.note + ' ' + (num + 1) + ']';
+}
+
+/**
+ * Figure out what the browser will be using for the decimal separator.
+ *
+ * @returns {string} The decimal separator the browser will use.
+ */
+function getBrowserDecimalSeparator() {
+    var browserDecimal = 1.1;
+    browserDecimal = browserDecimal.toLocaleString(opensdg.language).substring(1, 2);
+    return browserDecimal;
 }
 
   /**
@@ -5366,6 +5427,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     sortFieldGroup: sortFieldGroup,
     getObservationAttributeFootnoteSymbol: getObservationAttributeFootnoteSymbol,
     getObservationAttributeText: getObservationAttributeText,
+    getBrowserDecimalSeparator: getBrowserDecimalSeparator, 
   }
 })();
 
@@ -5377,6 +5439,7 @@ function createIndicatorDownloadButtons(indicatorDownloads, indicatorId, el) {
     VIEW._legendElement = OPTIONS.legendElement;
     VIEW._precision = undefined;
     VIEW._chartInstances = {};
+    VIEW._browserDecimalSeparator = helpers.getBrowserDecimalSeparator();
     VIEW._graphStepsize = undefined;
 
     var chartHeight = screen.height < OPTIONS.maxChartHeight ? screen.height : OPTIONS.maxChartHeight;
@@ -5690,6 +5753,9 @@ var indicatorInit = function () {
                         startValues: domData.startvalues,
                         graphLimits: domData.graphlimits,
                         stackedDisaggregation: domData.stackeddisaggregation,
+                        fill: domData.fill,
+                        fillAbove: domData.fillabove,
+                        fillBelow: domData.fillbelow,
                         showLine: domData.showline,
                         mixedTypes: domData.mixedtypes,
                         spanGaps: domData.spangaps,

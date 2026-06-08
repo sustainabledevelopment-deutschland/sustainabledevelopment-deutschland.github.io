@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'de',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -322,6 +324,9 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Anteil der Bevölkerung mit erhöhter PM₂.₅-Feinstaubexposition&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="true"
   data-mixedtypes="null"
@@ -1023,7 +1028,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>Der Indikator stellt den Anteil der Personen (in %) dar, der an seinem Wohnort im Jahresmittel einer Exposition von mehr als 10 Mikrogramm (µg) Feinstaub PM₂,₅ (Staubteilchen mit einem Durchmesser kleiner 2,5 Mikrometer) pro Kubikmeter (m³) Luft ausgesetzt war (nur Hintergrundbelastungen, ohne lokale Quellen).</p>
@@ -1052,7 +1057,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>Die langfristige Belastung des Menschen mit Feinstaub kann unter anderem zu Erkrankungen der Atemwege und des Herz-Kreislauf-Systems sowie zu einem erhöhten Risiko für Diabetes Mellitus Typ 2 und neurodegenerativen Erkrankungen führen. Zum besseren Schutz der Gesundheit soll daher bis zum Jahr 2030 erreicht werden, dass kein Mensch in Deutschland an seinem Wohnort einer Feinstaubkonzentration (PM₂,₅) von mehr als 10 Mikrogramm (µg) pro Kubikmeter (m³) Luft im Jahresmittel ausgesetzt ist. Der Zielwert von 10 µg/m³ entspricht dem Zwischenziel 4 aus den Empfehlungen der Weltgesundheitsorganisation (WHO) in den Air Quality Guidelines. Zudem wurde dieser Wert in der aktualisierten Luftqualitätsrichtlinie der Europäischen Union als gesetzlich einzuhaltender Grenzwert ab dem Jahr 2030 festgelegt. Der Indikator ermöglicht die kontinuierliche Überwachung der Trends bei der Entwicklung im Hinblick auf die Zielerreichung.</p>
@@ -1075,7 +1080,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Ziel </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Ziel </th>
             <td>
               
                 <p>Rückgang des Anteils der Bevölkerung mit einer PM₂,₅-Feinstaubexposition von mehr als 10 Mikrogramm pro Kubikmeter im Jahresmittel (entspricht der Höhe des neuen ab 2030 einzuhaltenden EU-Grenzwertes für PM₂,₅) bis 2030 auf dann 0 %</p>
@@ -1098,7 +1103,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Art des Ziels </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Art des Ziels </th>
             <td>
               
                 <p>Ziel mit konkretem Zielwert</p>
@@ -1121,7 +1126,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
             <td>
               
                 <p><u>Zielformulierung:</u><br />Der Anteil der Bevölkerung mit einer PM₂,₅-Feinstaubexposition von mehr als 10 Mikrogramm pro Kubikmeter im Jahresmittel soll bis 2030 auf 0 % gesenkt werden.<br /><br /><u>Bewertung:</u><br />Ausgehend von der Zielformulierung deutet die durchschnittliche Entwicklung seit 2016 – trotz des Anstiegs im Jahr 2021 – darauf hin, dass das politisch festgelegte Ziel bereits deutlich vor 2030 erreicht werden kann. Der Indikator 3.2.b wird für das Jahr 2021 mit <b>Sonne</b> bewertet.<br /><br /><u>Datenstand zum Zeitpunkt der Bewertung:</u><br />27.02.2024</p>
@@ -1144,7 +1149,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
             <td>
               
                 <p><a href="https://dns-indikatoren.de/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" title="Bei Fortsetzung der Entwicklung aus 2021 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2021 verfehlt worden." alt="Wettersymbol Sonne" /></a></p>
@@ -3655,7 +3660,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.umweltbundesamt.de/" target="_blank" onclick="return confirm_alert('des UBA', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/uba.png" alt="Umweltbundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Umweltbundesamt zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3689,7 +3694,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.umweltbundesamt.de/" target="_blank" onclick="return confirm_alert('des UBA', 'De')">Umweltbundesamt</a></p>
@@ -3712,7 +3717,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -4602,7 +4607,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="http://www.euro.who.int/de/home" target="_blank" onclick="return confirm_alert('der WHO', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/who.png" alt="Weltgesundheitsorganisation" title=" Klicken Sie hier um zur Homepage der Organisation Weltgesundheitsorganisation zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -4636,7 +4641,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="http://www.euro.who.int/de/home" target="_blank" onclick="return confirm_alert('der WHO', 'De')">Weltgesundheitsorganisation</a></p>
@@ -4743,18 +4748,18 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -4768,12 +4773,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

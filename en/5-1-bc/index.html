@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'en',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -527,6 +529,9 @@ data-event-label="high"
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;b) On supervisory boards of listed and fully co-determined companies&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;c) In the federal civil service&quot;}]"
   data-graphlimits="[{&quot;maximum&quot;:60.0}]"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="true"
   data-mixedtypes="null"
@@ -984,7 +989,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>Indicator 5.1.b shows the proportion of women on the supervisory boards of listed companies and companies with parity co-determination (in %). Indicator 5.1.c shows the proportion of women in management positions in the federal public sector.</p>
@@ -1013,7 +1018,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>Women are just as qualified as men and yet are underrepresented in management positions in the German economy, especially in top management. The same applies to the proportion of women in management positions in the federal civil service. The increase in the proportion of women in management positions is an indicator of progress towards equality.</p>
@@ -1036,7 +1041,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Target </th>
             <td>
               
                 <p>5.1.b: 40% women on supervisory boards of listed and fully co-determined companies by 2030<br />5.1.c: Equal-opportunity participation of women and men in civil service management positions by 2025</p>
@@ -1059,7 +1064,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Type of target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Type of target </th>
             <td>
               
                 <p>5.1.b: Target with specific target value<br />5.1.c: Target with specific target value</p>
@@ -1082,7 +1087,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p><u>Target formulation:</u><br />5.1.b: The proportion of women on supervisory boards of listed companies and companies with parity co-determination should be increased to at least 40% by 2030.<br /><br /><u>Assessment:</u><br />According to the target formulation, if the trend of the past six years continues, the politically defined target would already be achieved by 2028. Indicator 5.1.b is therefore assessed as <b>sun</b> for 2025.<br /><br /><u>Data status at time of assessment:</u><br />15/01/2025<br /><br /><u>Target formulation:</u><br />5.1.c: The proportion of women in management positions in the federal public sector should be increased to at least 45% by 2025.<br /><br /><u>Assessment:</u><br />For indicator 5.1.c, no specific numerical value can be directly derived from the politically defined target. Therefore, the target is interpreted as an interval of ±5 percentage points around the parity level of 50%. The minimum target value of 45% was already reached ahead of schedule in 2023. Indicator 5.1.c is therefore assessed as <b>sun</b> for 2024.<br /><br /><u>Data status at time of assessment:</u><br />30/06/2024</p>
@@ -1105,7 +1110,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p>5.1.b: <a href="https://dns-indikatoren.de/en/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" title="If the trend from 2025 had continued, the target value would have been reached or missed by less than 5% of the difference between the target value and the value at that time." alt="Weathersymbol: Sun" /></a><br />5.1.c: <a href="https://dns-indikatoren.de/en/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" title="If the trend from 2024 had continued, the target value would have been reached or missed by less than 5% of the difference between the target value and the value at that time." alt="Weathersymbol: Sun" /></a></p>
@@ -3616,7 +3621,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.fidar.de/" target="_blank" onclick="return confirm_alert('the Frauen in die Aufsichtsräte e.V.', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/fidar.png" alt="Frauen in die Aufsichtsräte e.V." title=" Click here to visit the homepage of the organizationFrauen in die Aufsichtsräte e.V." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3650,7 +3655,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.fidar.de/" target="_blank" onclick="return confirm_alert('the Frauen in die Aufsichtsräte e.V.', 'En')">Frauen in die Aufsichtsräte e.V.</a></p>
@@ -3673,7 +3678,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -4563,7 +4568,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -4597,7 +4602,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -5467,7 +5472,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.bmfsfj.de/en" target="_blank" onclick="return confirm_alert('the Federal Ministry of Education, Family Affairs, Senior Citizens, Women and Youth', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/bmbfsfj.png" alt="Federal Ministry of Education, Family Affairs, Senior Citizens, Women and Youth" title=" Click here to visit the homepage of the organizationFederal Ministry of Education, Family Affairs, Senior Citizens, Women and Youth" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -5501,7 +5506,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.bmfsfj.de/en" target="_blank" onclick="return confirm_alert('the Federal Ministry of Education, Family Affairs, Senior Citizens, Women and Youth', 'En')">Federal Ministry of Education, Family Affairs, Senior Citizens, Women and Youth</a></p>
@@ -5524,7 +5529,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -5573,7 +5578,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 
@@ -5714,18 +5719,18 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -5739,12 +5744,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

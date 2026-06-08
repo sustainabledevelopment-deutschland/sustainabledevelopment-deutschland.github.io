@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'de',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -322,6 +324,9 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;a) Materielle und soziale Deprivation&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;b) Erhebliche materielle und soziale Deprivation&quot;},{&quot;field&quot;:&quot;Gebiet&quot;,&quot;value&quot;:&quot;Europäische Union&quot;},{&quot;field&quot;:&quot;Gebiet&quot;,&quot;value&quot;:&quot;Deutschland&quot;}]"
   data-graphlimits="[{&quot;minimum&quot;:0.0,&quot;maximum&quot;:25.0}]"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="true"
   data-mixedtypes="null"
@@ -880,7 +885,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>Die Indikatoren stellen den Anteil der Personen an der Gesamtbevölkerung (in %) dar, der als materiell und sozial depriviert (1.1.a) bzw. als erheblich materiell und sozial depriviert (1.1.b) gilt. Materielle und soziale Deprivation (Entbehrung) beschreibt den unfreiwilligen Verzicht und Mangel an notwendigen und wünschenswerten Gegenständen und Tätigkeiten aus finanziellen Gründen.</p>
@@ -909,7 +914,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>Der Indikator (erhebliche) materielle und soziale Deprivation (auch: (erhebliche) materielle und soziale Entbehrung) soll durch die Identifikation individueller Mangelsituationen zur Abbildung armutsgefährdeter Lebenslagen dienen. Er ist auch Teil der ausführlichen Armuts- und Reichtumsberichterstattung der Bundesregierung.</p>
@@ -932,7 +937,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Ziel </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Ziel </th>
             <td>
               
                 <p>1.1.a: Anteil der Personen, die materiell und sozial depriviert sind, bis 2030 unter dem EU-Durchschnitt halten<br />1.1.b: Anteil der Personen, die erheblich materiell und sozial depriviert sind, bis 2030 unter dem EU-Durchschnitt halten</p>
@@ -955,7 +960,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Art des Ziels </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Art des Ziels </th>
             <td>
               
                 <p>1.1.a: Gleichbleibende Zielvorgabe in jedem Jahr<br />1.1.b: Gleichbleibende Zielvorgabe in jedem Jahr</p>
@@ -978,7 +983,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
             <td>
               
                 <p><u>Zielformulierung:</u><br />Sowohl der Anteil der Personen, die materiell und sozial depriviert sind (1.1.a), als auch der Anteil der Personen, die erheblich materiell und sozial depriviert sind (1.1.b), soll jedes Jahr unter dem entsprechenden EU-Durchschnitt liegen.<br /><br /><u>Bewertung:</u><br />• Ausgehend von der Zielformulierung wird für jedes Jahr die Differenz zwischen dem EU-Wert und dem Wert für Deutschland berechnet. Aufgrund methodischer Änderungen im Erhebungskonzept werden für beide Indikatoren die Indikatorwerte ab 2020 betrachtet.<br />• Für beide Indikatoren ist die Differenz im Jahr 2024 positiv, das heißt, der Anteil in Deutschland liegt jeweils unter dem EU-Durchschnitt. Die politisch festgelegten Ziele sind somit für 2024 erreicht. Gleichzeitig haben sich die Differenzen in den letzten fünf Jahren kontinuierlich verringert. Beide Indikatoren (1.1.a und 1.1.b) werden daher für das Jahr 2024 mit <b>leicht bewölkt</b> bewertet.<br /><br /><u>Datenstand zum Zeitpunkt der Bewertung:</u><br />30.04.2025<br /><br /><u>Anmerkung:</u><br />Der Bezug auf die Anteile in der EU als Zielgröße bedeutet, dass die Indikatoren positiv bewertet werden können, selbst wenn der Anteil der (erheblich) materiell und sozial deprivierten Bevölkerung in Deutschland gestiegen ist.</p>
@@ -1001,7 +1006,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
             <td>
               
                 <p>1.1.a: <a href="https://dns-indikatoren.de/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Leicht bewölkt.png" title="Der Zielwert oder ein besserer Wert wurde in 2024 erreicht, aber die durchschnittliche Veränderung deutete in Richtung einer Verschlechterung." alt="Wettersymbol Leicht bewölkt" /></a><br />1.1.b: <a href="https://dns-indikatoren.de/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Leicht bewölkt.png" title="Der Zielwert oder ein besserer Wert wurde in 2024 erreicht, aber die durchschnittliche Veränderung deutete in Richtung einer Verschlechterung." alt="Wettersymbol Leicht bewölkt" /></a></p>
@@ -3512,7 +3517,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://ec.europa.eu/eurostat/de/home" target="_blank" onclick="return confirm_alert('von Eurostat', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/eurostat.png" alt="Statistisches Amt der Europäischen Union" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Amt der Europäischen Union zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3546,7 +3551,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://ec.europa.eu/eurostat/de/home" target="_blank" onclick="return confirm_alert('von Eurostat', 'De')">Statistisches Amt der Europäischen Union</a></p>
@@ -3569,7 +3574,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -3618,7 +3623,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 
@@ -3667,7 +3672,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 
@@ -4545,7 +4550,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
@@ -4579,7 +4584,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></p>
@@ -4686,27 +4691,27 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
-<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.js" integrity="sha384-+Ae+bvCvR9gwQHFyh60GUfdqhUAL+S/O5mLeAkmkv2yBQxeLxm3gvLEzYPoXBwbT" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js" integrity="sha384-cU7kVmimPTBpe76764qMxEdujXzlgSm15cCQe6FXFud5DiV4vrJQHUK9S0Lo2cqT" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.js" integrity="sha384-vOZkQA9epgnqbXkNdVSlxfyhrOSzYBsL3s3b2CQYn05H6lzrbrb368uBSRSUTAiv" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/socib/Leaflet.TimeDimension@fa36ffee7f6390aadce8c055ca7c60ede7c2134c/dist/leaflet.timedimension.min.js" integrity="sha384-xQ62+wlP0nHf7UhZ81djmqLn+7arwKiMk/dJk+smi+rJhaXPZAeFPX4bEiD9twIy" crossorigin="anonymous"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js" integrity="sha384-btJhAWztz7ttA6ibFC5ppM39nkCPK6CWzRVmsaLcDn37mA3x1TzF1DbFwa6tJpTN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@84a0291e80244ed9301cbc09d55850f0af53e602/dist/leaflet.zoomhome.min.js" integrity="sha384-UH2Ux7vOhzo5dH5kWWPmpvCCRCiS0hQ12YQN6qTUJXOpx+HpKePItLNSSm2AxKjF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js" integrity="sha384-C/UzSz5aXmLxJwe/b9I0CIv+cfLcGIXmfl40m9+kyJhlgNxvWT6+WRjCbA8Eflf/" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -4720,12 +4725,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

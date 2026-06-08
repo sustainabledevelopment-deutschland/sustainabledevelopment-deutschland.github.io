@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'en',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -322,6 +324,9 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;a) Sustainability in procurement procedures&quot;},{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;b) CO₂ emissions of commercially available vehicles in the public sector&quot;},{&quot;field&quot;:&quot;Series&quot;,&quot;value&quot;:&quot;c) Sustainable textile procurement&quot;}]"
   data-graphlimits="[{&quot;series&quot;:&quot;a) Sustainability in procurement procedures&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:20.0},{&quot;series&quot;:&quot;b) CO₂ emissions of commercially available vehicles in the public sector&quot;,&quot;minimum&quot;:90.0,&quot;maximum&quot;:110.0},{&quot;series&quot;:&quot;c) Sustainable textile procurement&quot;,&quot;minimum&quot;:0.0,&quot;maximum&quot;:100.0}]"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="true"
   data-mixedtypes="null"
@@ -961,7 +966,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>The indicators illustrate sustainability in public procurement using examples of award procedures overall (12.3.a), CO₂ emissions from motor vehicles (12.3.b) and sustainable textile procurement (12.3.c). The indicator 12.3.a <i>Award procedures in public procurement in which at least one sustainability criterion was taken into account</i> shows the proportion of the total number of procedures for awarding public contracts/concessions with consideration of sustainability criteria that were reported to the procurement statistics for the respective reporting year (in %). Indicator 12.3.b <i>CO₂ emissions per kilometres travelled by public sector vehicles</i> compares CO₂ emissions with the base year 2015 in relation to the corresponding kilometres travelled. Indicator 12.3.c shows the sustainable textile procurement of the Federal Administration (excluding special textiles) (in %).</p>
@@ -990,7 +995,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>The public sector has a significant share in the demand for products and services. Aligning public procurement with the guiding principle of sustainability and strengthening sustainability criteria in public procurement should therefore act as a lever for increasing the supply of sustainable products.</p>
@@ -1013,7 +1018,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Target </th>
             <td>
               
                 <p>12.3.a: Significant increase in the share of public procurement contracts in which sustainability criteria are taken into account, ensuring that this will be the norm by 2030. It should be noted that procurement to meet the needs of the Bundeswehr, the Federal Police as well as civil protection and disaster prevention does not contribute towards an increase<br />12.3.b: Significant reduction<br />12.3.c: Increase to 50% by 2026</p>
@@ -1036,7 +1041,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Type of target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Type of target </th>
             <td>
               
                 <p>12.3.a: Directional target<br />12.3.b: Directional target<br />12.3.c: Target with specific target value</p>
@@ -1059,7 +1064,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p><u>Target formulation:</u><br />12.3.a: The proportion of award procedures in public procurement in which at least one sustainability criterion is taken into account should be increased.<br /><br /><u>Assessment:</u><br />The current trend is moving in the desired direction. A conclusive assessment of indicator 12.3.a is not possible. Too few data points.<br /><br /><u>Target formulation:</u><br />12.3.b: CO₂ emissions per kilometre travelled by public sector vehicles should be reduced.<br /><br /><u>Assessment:</u><br />According to the target formulation, indicator 12.3.b developed in the desired direction in 2022. However, the six-year average shows that the indicator did not move consistently in the desired direction. Indicator 12.3.b is therefore assessed as <b>cloud</b> for 2022.<br /><br /><u>Data status at time of assessment:</u><br />05/07/2024<br /><br /><u>Target formulation:</u><br />12.3.c: The proportion of sustainable textile procurement by the Federal Administration should be increased to at least 50% by 2026.<br /><br /><u>Assessment:</u><br />An assessment of indicator 12.3.c is not possible. No data points.</p>
@@ -1082,7 +1087,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p>12.3.b: <a href="https://dns-indikatoren.de/en/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Wolke.png" title="In 2022 the average value aimed in the wrong direction or indicates stagnation, but the previous year had shown a turn in the desired direction." alt="Weathersymbol: cloud" /></a></p>
@@ -3593,7 +3598,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.bundeswirtschaftsministerium.de/Navigation/EN/Home/home.html" target="_blank" onclick="return confirm_alert('the Federal Ministry for Economic Affairs and Energy', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/bmwe.png" alt="Federal Ministry for Economic Affairs and Energy" title=" Click here to visit the homepage of the organizationFederal Ministry for Economic Affairs and Energy" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3627,7 +3632,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.bundeswirtschaftsministerium.de/Navigation/EN/Home/home.html" target="_blank" onclick="return confirm_alert('the Federal Ministry for Economic Affairs and Energy', 'En')">Federal Ministry for Economic Affairs and Energy</a></p>
@@ -3650,7 +3655,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -4540,7 +4545,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -4574,7 +4579,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -4597,7 +4602,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -5487,7 +5492,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.ifeu.de/en/" target="_blank" onclick="return confirm_alert('the Institute for Energy and Environmental Research Heidelberg', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/ifeu.png" alt="Institute for Energy and Environmental Research Heidelberg" title=" Click here to visit the homepage of the organizationInstitute for Energy and Environmental Research Heidelberg" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -5521,7 +5526,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.ifeu.de/en/" target="_blank" onclick="return confirm_alert('the Institute for Energy and Environmental Research Heidelberg', 'En')">Institute for Energy and Environmental Research Heidelberg</a></p>
@@ -5544,7 +5549,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -6428,7 +6433,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/uba.png" alt="German Environment Agency" title=" Click here to visit the homepage of the organizationGerman Environment Agency" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -6462,7 +6467,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.umweltbundesamt.de/en" target="_blank" onclick="return confirm_alert('the German Environment Agency', 'En')">German Environment Agency</a></p>
@@ -6543,18 +6548,18 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -6568,12 +6573,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

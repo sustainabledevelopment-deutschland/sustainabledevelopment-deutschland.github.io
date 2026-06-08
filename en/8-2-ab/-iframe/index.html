@@ -44,6 +44,8 @@ var opensdg = {
 
   language: 'en',
 
+  language_numbers: '',
+
   mapColors: {
     "default": [
         "#c4e1c6",
@@ -144,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260508063017">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -322,6 +324,9 @@ layout-indicator-iframe
   data-startvalues="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;a) Government deficit&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;b) Structural deficit&quot;},{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Gross domestic product (price-adjusted)&quot;}]"
   data-graphlimits="[{&quot;minimum&quot;:-6.0,&quot;maximum&quot;:6.0}]"
   data-stackeddisaggregation=""
+  data-fill="false"
+  data-fillabove=""
+  data-fillbelow=""
   data-showline="true"
   data-spangaps="true"
   data-mixedtypes="[{&quot;field&quot;:&quot;Time series&quot;,&quot;value&quot;:&quot;Gross domestic product (price-adjusted)&quot;,&quot;type&quot;:&quot;line&quot;}]"
@@ -880,7 +885,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
             <td>
               
                 <p>The indicators shows the government net lending/borrowing (8.2.a) and the structural net lending/borrowing (8.2.b) in relation to gross domestic product (GDP) at current prices (in %). The government’s net lending/net borrowing is calculated from government revenue less government expenditure as defined in the national accounts. The annual structural net lending/borrowing is the part of the net lending/borrowing that is not attributable to cyclical fluctuations and temporary effects. A negative net lending/borrowing balance is referred to as a deficit, a positive net lending/borrowing balance as a surplus.</p>
@@ -909,7 +914,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
             <td>
               
                 <p>Sound public finances are an important contribution to a sustainable financial policy. A policy that would finance current government spending excessively through new debt and leave the repayment of this debt to future generations alone would not be sustainable.</p>
@@ -932,7 +937,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Target </th>
             <td>
               
                 <p>8.2.a: Annual government deficit less than 3% of gross domestic product (GDP); To be maintained until 2030<br />8.2.b: Structurally balanced government budget, general structural deficit must not exceed 0.5% of gross domestic product (GDP); To be maintained until 2030</p>
@@ -955,7 +960,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Type of target </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Type of target </th>
             <td>
               
                 <p>8.2.a: Constant target for each year<br />8.2.b: Constant target for each year</p>
@@ -978,7 +983,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p><u>Target formulation:</u><br />8.2.a: Each year, the net lending/borrowing ratio should be at least –3% of gross domestic product.<br /><br /><u>Assessment:</u><br />According to the target formulation, both politically defined target values should be met each year. While indicator 8.2.a fell below the target in 2024, the six-year average trend indicates an increase. Indicator 8.2.a is therefore assessed as <b>slightly cloudy</b> for 2024.<br /><br /><u>Data status at time of assessment:</u><br />23/05/2025<br /><br /><u>Target formulation:</u><br />8.2.b: Each year, the structural net lending/borrowing ratio should be at least –0.5% of gross domestic product.<br /><br /><u>Assessment:</u><br />Indicator 8.2.b was significantly above the target in 2024, and the six-year average trend indicates further deterioration. Accordingly, indicator 8.2.b is assessed as <b>thunderstorm</b> for 2024.<br /><br /><u>Data status at time of assessment:</u><br />25/02/2025</p>
@@ -1001,7 +1006,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
             <td>
               
                 <p>8.2.a: <a href="https://dns-indikatoren.de/en/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Leicht bewölkt.png" title="In 2024 the target value or a better value was achieved, but the average change pointed in the direction of deterioration." alt="Weathersymbol: Clouded sun" /></a><br />8.2.b: <a href="https://dns-indikatoren.de/en/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Blitz.png" title="In 2024 the target value was missed and the indicator had not moved towards the target on average over the previous changes." alt="Weathersymbol: Thuder strom" /></a></p>
@@ -3512,7 +3517,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgEn/destatis.png" alt="Federal Statistical Office" title=" Click here to visit the homepage of the organizationFederal Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -3546,7 +3551,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/EN/Home/_node.html" target="_blank">Federal Statistical Office</a></p>
@@ -3569,7 +3574,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Link to <br>data source </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Link to <br>data source </th>
             <td>
               
                 
@@ -3618,7 +3623,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 
@@ -4502,7 +4507,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;"> </th>
+            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
             <td>
               
                 <p><a href="https://www.bundesfinanzministerium.de/Web/EN/Home/home.html" target="_blank" onclick="return confirm_alert('the Federal Ministry of Finance', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/bmf.png" alt="Federal Ministry of Finance" title=" Click here to visit the homepage of the organizationFederal Ministry of Finance" style="height:60px; width:148px; border:transparent" /></a></p>
@@ -4536,7 +4541,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
             <td>
               
                 <p><a href="https://www.bundesfinanzministerium.de/Web/EN/Home/home.html" target="_blank" onclick="return confirm_alert('the Federal Ministry of Finance', 'En')">Federal Ministry of Finance</a></p>
@@ -4643,27 +4648,27 @@ data-event-label="Change to indicator.sources tab"
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js" integrity="sha384-ficRBwtap/VLzILv81vIvgp30PoJYnlCm96tPpNYHXAf+h9SIThOZxxIzRUzbpAh" crossorigin="anonymous"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js" integrity="sha384-jIAE3P7Re8BgMkT0XOtfQ6lzZgbDw/02WeRMJvXK3WMHBNynEx5xofqia1OHuGh0" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js" integrity="sha384-kdgUFNEbslNOEAQ/zFH9wjDORAbvN0KUYOpfJIJYPdjtzLXkZsMJAXU9HPpi5B5c" crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
-<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@master/dist/leaflet.zoomhome.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.js" integrity="sha384-+Ae+bvCvR9gwQHFyh60GUfdqhUAL+S/O5mLeAkmkv2yBQxeLxm3gvLEzYPoXBwbT" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js" integrity="sha384-cU7kVmimPTBpe76764qMxEdujXzlgSm15cCQe6FXFud5DiV4vrJQHUK9S0Lo2cqT" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.js" integrity="sha384-vOZkQA9epgnqbXkNdVSlxfyhrOSzYBsL3s3b2CQYn05H6lzrbrb368uBSRSUTAiv" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/socib/Leaflet.TimeDimension@fa36ffee7f6390aadce8c055ca7c60ede7c2134c/dist/leaflet.timedimension.min.js" integrity="sha384-xQ62+wlP0nHf7UhZ81djmqLn+7arwKiMk/dJk+smi+rJhaXPZAeFPX4bEiD9twIy" crossorigin="anonymous"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js" integrity="sha384-btJhAWztz7ttA6ibFC5ppM39nkCPK6CWzRVmsaLcDn37mA3x1TzF1DbFwa6tJpTN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@84a0291e80244ed9301cbc09d55850f0af53e602/dist/leaflet.zoomhome.min.js" integrity="sha384-UH2Ux7vOhzo5dH5kWWPmpvCCRCiS0hQ12YQN6qTUJXOpx+HpKePItLNSSm2AxKjF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js" integrity="sha384-C/UzSz5aXmLxJwe/b9I0CIv+cfLcGIXmfl40m9+kyJhlgNxvWT6+WRjCbA8Eflf/" crossorigin="anonymous"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
 
 
 
@@ -4677,12 +4682,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260508063017'></script>
+<script src='/assets/js/sdg.js?v=20260608131249'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260508063017"></script><script>
+    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
