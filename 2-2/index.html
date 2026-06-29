@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260629080711">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -542,7 +542,7 @@ data-event-label="high"
   data-graphseriesbreaks="[{&quot;value&quot;:3.0}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;|&quot;,&quot;.&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;step&quot;:5.0}]"
@@ -598,7 +598,11 @@ data-event-label="high"
         
         
         
-        <th scope="col" class="table-value">Units</th>
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">COMMENT_OBS_0</th>
         
         
       </thead>
@@ -615,7 +619,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value">Prozent</td>
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -631,7 +639,31 @@ data-event-label="high"
           
           
           
-          <td class="table-value">Prozent</td>
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>12.249</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value">|</td>
           
           
         </tr>
@@ -647,7 +679,11 @@ data-event-label="high"
           
           
           
-          <td class="table-value">Prozent</td>
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -663,7 +699,71 @@ data-event-label="high"
           
           
           
-          <td class="table-value">Prozent</td>
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value">.</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value">.</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td class="table-value">.</td>
           
           
         </tr>
@@ -1079,7 +1179,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; width: 20%;">Definition </th>
             <td>
               
                 <p>Der Indikator stellt die ausgezahlten Mittel (in %) dar, mit denen gute Regierungsführung im Hinblick auf die relevanten internationalen Normen und Empfehlungen zur Verwirklichung des Rechts auf Nahrung (definiert nach dem Global Strategic Framework (GSF) des Welternährungsausschusses (CFS)) unterstützt wird, als Anteil an den Gesamtausgaben für Ernährungssicherung. Gute Regierungsführung beinhaltet einen nachvollziehbar handelnden, effizienten und wirksamen öffentlichen Sektor, eine unabhängige Justiz sowie eine wirksam, verantwortlich und ausgewogen handelnde Verwaltung auf allen staatlichen Ebenen.</p>
@@ -1108,7 +1208,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; width: 20%;">Intention </th>
             <td>
               
                 <p>Dem Indikator liegt die Annahme zugrunde, dass durch die Förderung der Anwendung internationaler Leitlinien und Empfehlungen im Bereich Ernährungssicherung die Ernährungssituation verbessert und somit ein wichtiger Beitrag zur Erfüllung von SDG 2 und zur Verwirklichung des Rechts auf Nahrung geleistet werden kann.</p>
@@ -1131,7 +1231,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Ziel </th>
+            <th scope="row" style="text-align: left; width: 20%;">Ziel </th>
             <td>
               
                 <p>Angemessene Steigerung des Anteils der ausgezahlten Mittel für die Anwendung von Leitlinien und Empfehlungen des VN-Welternährungsausschusses (CFS) an den Gesamtausgaben für Ernährungssicherung in % bis 2030</p>
@@ -1154,7 +1254,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Art des Ziels </th>
+            <th scope="row" style="text-align: left; width: 20%;">Art des Ziels </th>
             <td>
               
                 <p>Zielrichtungsvorgabe</p>
@@ -1177,7 +1277,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; width: 20%;">Bewertung </th>
             <td>
               
                 <p><u>Zielformulierung:</u><br />Der Anteil der ausgezahlten Mittel zur Unterstützung guter Regierungsführung in der Ernährungssicherung an den Gesamtausgaben für Ernährungssicherung soll gesteigert werden.<br /><br /><u>Bewertung:</u><br />Die aktuelle Entwicklung verläuft entgegen der Zielvorgabe. Eine abschließende Bewertung des Indikators 2.2 ist nicht möglich. Zu wenig Datenpunkte.</p>
@@ -3691,10 +3791,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.bmz.de/de" target="_blank" onclick="return confirm_alert('des BMZ', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/bmz.png" alt="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung" title=" Klicken Sie hier um zur Homepage der Organisation Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.bmz.de/de" target="_blank" onclick="return confirm_alert('des BMZ', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/bmz.png" alt="Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung" title=" Klicken Sie hier um zur Homepage der Organisation Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -3725,7 +3825,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://www.bmz.de/de" target="_blank" onclick="return confirm_alert('des BMZ', 'De')">Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung</a></p>
@@ -4595,10 +4695,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.bmel.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('des BMLEH', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/bmleh.png" alt="Bundesministerium für Landwirtschaft, Ernährung und Heimat" title=" Klicken Sie hier um zur Homepage der Organisation Bundesministerium für Landwirtschaft, Ernährung und Heimat zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.bmel.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('des BMLEH', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/bmleh.png" alt="Bundesministerium für Landwirtschaft, Ernährung und Heimat" title=" Klicken Sie hier um zur Homepage der Organisation Bundesministerium für Landwirtschaft, Ernährung und Heimat zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -4629,7 +4729,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://www.bmel.de/DE/Startseite/startseite_node.html" target="_blank" onclick="return confirm_alert('des BMLEH', 'De')">Bundesministerium für Landwirtschaft, Ernährung und Heimat</a></p>
@@ -4797,12 +4897,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260608131249'></script>
+<script src='/assets/js/sdg.js?v=20260629080711'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
+    <script src="/assets/js/custom.js?v=20260629080711"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260629080711">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -337,7 +337,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;.&quot;,&quot;…&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
   data-graphstepsize="null"
@@ -393,7 +393,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">Units</th>
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">COMMENT_OBS_0</th>
         
         
       </thead>
@@ -410,7 +414,51 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">Percentage</td>
+          <td>Percentage</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Percentage</td>
+          
+          
+          
+          <td class="table-value">.</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Percentage</td>
+          
+          
+          
+          <td class="table-value">…</td>
           
           
         </tr>
@@ -828,7 +876,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; width: 20%;">Definition </th>
             <td>
               
                 <p>The indicator shows the proportion of general education and vocational schools (in %) that have at least one certification in the area of Education for Sustainable Development (from a set of ESD labels defined by the Länder Ministries of Education and Cultural Affairs). The ESD labels are intended to characterise a school’s special commitment to anchoring Education for Sustainable Development (ESD) in lessons and school development.</p>
@@ -857,7 +905,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; width: 20%;">Intention </th>
             <td>
               
                 <p>The concept of Education for Sustainable Development (ESD) aims to enable pupils to actively shape an ecologically compatible, economically efficient and socially just environment, taking into account global aspects, basic democratic principles and cultural diversity.</p>
@@ -880,7 +928,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Target </th>
+            <th scope="row" style="text-align: left; width: 20%;">Target </th>
             <td>
               
                 <p>Steady increase</p>
@@ -903,7 +951,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Type of target </th>
+            <th scope="row" style="text-align: left; width: 20%;">Type of target </th>
             <td>
               
                 <p>Directional target</p>
@@ -926,7 +974,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Assessment </th>
+            <th scope="row" style="text-align: left; width: 20%;">Assessment </th>
             <td>
               
                 <p><u>Target formulation:</u><br />The proportion of schools with the ESD label (Education for Sustainable Development) should be increased.<br /><br /><u>Assessment:</u><br />An assessment of indicator 4.1.c is not possible. Too few data points.</p>
@@ -3440,10 +3488,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.kmk.org/kmk/information-in-english.html" target="_blank" onclick="return confirm_alert('the Ministries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/kmk.png" alt="Ministries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office" title=" Click here to visit the homepage of the organizationMinistries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office" style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.kmk.org/kmk/information-in-english.html" target="_blank" onclick="return confirm_alert('the Ministries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office', 'En')"><img src="https://dns-indikatoren.de/public/OrgImgEn/kmk.png" alt="Ministries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office" title=" Click here to visit the homepage of the organizationMinistries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office" style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -3474,7 +3522,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://www.kmk.org/kmk/information-in-english.html" target="_blank" onclick="return confirm_alert('the Ministries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office', 'En')">Ministries of Education and Cultural Affairs of the federal states in cooperation with the Hessian State Statistical Office</a></p>
@@ -3616,12 +3664,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260608131249'></script>
+<script src='/assets/js/sdg.js?v=20260629080711'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
+    <script src="/assets/js/custom.js?v=20260629080711"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

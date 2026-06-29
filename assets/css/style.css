@@ -2731,6 +2731,9 @@ body.contrast-high.layout-search form input, body.contrast-high.layout-search fo
 #sources {
   hyphens: auto; }
 
+table, th {
+  hyphens: auto; }
+
 .layout-status_summary .reporting-status-description {
   margin-bottom: 25px; }
 .layout-status_summary #main-content .statuses strong {

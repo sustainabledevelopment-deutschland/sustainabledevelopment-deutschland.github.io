@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260629080711">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -337,7 +337,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="[{&quot;value&quot;:10.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;r&quot;,&quot;|&quot;,&quot;.&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;r&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Prozent&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;step&quot;:1.0}]"
@@ -397,11 +397,159 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">GeoCode</th>
+        <th scope="col">GeoCode</th>
+        
+        
+        
+        <th scope="col">COMMENT_OBS_0</th>
+        
+        
+        
+        <th scope="col" class="table-value">COMMENT_OBS_1</th>
         
         
       </thead>
       <tbody>
+        
+        <tr>
+          
+          
+          <td>2006</td>
+          
+          
+          
+          <td>4.187</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>
+          
+          
+          
+          <td>4.24</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>4.299</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>4.327</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>5.175</td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>|</td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
         
         <tr>
           
@@ -415,6 +563,294 @@ layout-indicator-iframe
           
           
           <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Prozent</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>.</td>
           
           
           
@@ -943,7 +1379,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; width: 20%;">Definition </th>
             <td>
               
                 <p>Der Bodenversiegelungsgrad stellt die Bedeckung der Bodenoberfläche mit wasserundurchlässigem Material (in %) aufgrund von Stadtentwicklung und Infrastrukturausbau dar. Der Indikator wird auf Basis von Fernerkundungsdaten berechnet.</p>
@@ -972,7 +1408,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; width: 20%;">Intention </th>
             <td>
               
                 <p>Boden ist eine wichtige natürliche Ressource. Seine Versiegelung ist eine der gravierendsten Formen der Bodendegradation. Versiegelte Böden wirken sich negativ auf die biologische Vielfalt, die Kohlenstoffspeicherung, die hydrologischen Eigenschaften des Bodens, die Ökosystemleistungen und den Ressourcenschutz aus. Es ist ein elementarer Baustein einer nachhaltigen Bodenbewirtschaftung, die Bodendegradation zu reduzieren.</p>
@@ -995,7 +1431,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Ziel </th>
+            <th scope="row" style="text-align: left; width: 20%;">Ziel </th>
             <td>
               
                 <p>Sinkende Zunahme der Bodenversiegelung</p>
@@ -1018,7 +1454,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Art des Ziels </th>
+            <th scope="row" style="text-align: left; width: 20%;">Art des Ziels </th>
             <td>
               
                 <p>Zielrichtungsvorgabe</p>
@@ -1041,7 +1477,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; width: 20%;">Bewertung </th>
             <td>
               
                 <p><u>Zielformulierung:</u><br />Die Zunahme des Bodenversiegelungsgrads soll gesenkt werden.<br /><br /><u>Bewertung:</u><br />Eine Bewertung des Indikators 15.3 ist nicht möglich. Zu wenig Datenpunkte.</p>
@@ -3555,10 +3991,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.copernicus.eu/de/ueber-copernicus" target="_blank" onclick="return confirm_alert('des Europäischen Copernikus-Programms', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/cop.png" alt="Europäisches Copernikus-Programm" title=" Klicken Sie hier um zur Homepage der Organisation Europäisches Copernikus-Programm zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.copernicus.eu/de/ueber-copernicus" target="_blank" onclick="return confirm_alert('des Europäischen Copernikus-Programms', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/cop.png" alt="Europäisches Copernikus-Programm" title=" Klicken Sie hier um zur Homepage der Organisation Europäisches Copernikus-Programm zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -3589,7 +4025,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://www.copernicus.eu/de/ueber-copernicus" target="_blank" onclick="return confirm_alert('des Europäischen Copernikus-Programms', 'De')">Europäisches Copernikus-Programm</a></p>
@@ -4459,10 +4895,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -4493,7 +4929,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></p>
@@ -4516,7 +4952,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; width: 20%;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -4677,12 +5113,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260608131249'></script>
+<script src='/assets/js/sdg.js?v=20260629080711'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
+    <script src="/assets/js/custom.js?v=20260629080711"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

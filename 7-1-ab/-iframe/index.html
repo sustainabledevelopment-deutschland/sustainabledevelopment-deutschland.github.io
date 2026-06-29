@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260608131249">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260629080711">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -337,7 +337,7 @@ layout-indicator-iframe
   data-graphseriesbreaks="null"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2008 = 100&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;a) Endenergieproduktivität&quot;,&quot;b) Primärenergieverbrauch&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;r&quot;,&quot;p&quot;,&quot;…&quot;,&quot;.&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;p&quot;,&quot;&quot;]},&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Jahr&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;2008 = 100&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;a) Endenergieproduktivität&quot;,&quot;b) Primärenergieverbrauch&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;länder&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Baden-Württemberg&quot;,&quot;Bayern&quot;,&quot;Berlin&quot;,&quot;Brandenburg&quot;,&quot;Bremen&quot;,&quot;Hamburg&quot;,&quot;Hessen&quot;,&quot;Mecklenburg-Vorpommern&quot;,&quot;Niedersachsen&quot;,&quot;Nordrhein-Westfalen&quot;,&quot;Rheinland-Pfalz&quot;,&quot;Saarland&quot;,&quot;Sachsen&quot;,&quot;Sachsen-Anhalt&quot;,&quot;Schleswig-Holstein&quot;,&quot;Thüringen&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Bundesland&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;series&quot;:&quot;a) Endenergieproduktivität&quot;,&quot;step&quot;:40.0},{&quot;series&quot;:&quot;b) Primärenergieverbrauch&quot;,&quot;step&quot;:20.0}]"
@@ -401,7 +401,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">GeoCode</th>
+        <th scope="col">GeoCode</th>
+        
+        
+        
+        <th scope="col" class="table-value">COMMENT_OBS_0</th>
         
         
       </thead>
@@ -426,7 +430,403 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>
+          
+          
+          
+          <td>99.937</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>97.043</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>105.1</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>104.754</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>102.688</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>110.874</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>110.119</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>110.865</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>112.75</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>116.233</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>117.193</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>120.359</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>119.991</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>125.827</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
           
           
         </tr>
@@ -450,7 +850,95 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>130.55</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2025</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">…</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2030</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>a) Endenergieproduktivität</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">…</td>
           
           
         </tr>
@@ -474,7 +962,515 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>
+          
+          
+          
+          <td>93.97</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>98.302</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>94.054</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>94.8</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>96.783</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>92.136</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>93.101</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>93.976</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>94.105</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>91.774</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>89.208</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>82.753</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>86.732</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2022</td>
+          
+          
+          
+          <td>81.405</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td>74.088</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>73.482</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">r</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2025</td>
+          
+          
+          
+          <td>73.358</td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">p</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2030</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>2008 = 100</td>
+          
+          
+          
+          <td>b) Primärenergieverbrauch</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value">…</td>
           
           
         </tr>
@@ -634,7 +1630,7 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Datenstand</u>:</dt>
-          <dd>Zuletzt aktualisiert am 17.01.2025 (7.1.a) und am 12.05.2025 (7.1.b). Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
+          <dd>Zuletzt aktualisiert am 29.04.2026 (7.1.a) und (7.1.b). Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
         
 
         
@@ -716,7 +1712,7 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Datenstand</u>:</dt>
-          <dd>Zuletzt aktualisiert am 17.01.2025 (7.1.a) und am 12.05.2025 (7.1.b). Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
+          <dd>Zuletzt aktualisiert am 29.04.2026 (7.1.a) und (7.1.b). Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
         
 
         
@@ -787,7 +1783,7 @@ data-event-label="Change to Map tab"
 
         
           <dt><u>Datenstand</u>:</dt>
-          <dd>Zuletzt aktualisiert am 17.01.2025 (7.1.a) und am 12.05.2025 (7.1.b). Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
+          <dd>Zuletzt aktualisiert am 29.04.2026 (7.1.a) und (7.1.b). Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
         
 
         
@@ -984,7 +1980,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Definition </th>
+            <th scope="row" style="text-align: left; width: 20%;">Definition </th>
             <td>
               
                 <p>Der Indikator Endenergieproduktivität (7.1.a) stellt die Entwicklung der Wertschöpfung je eingesetzte Einheit Endenergie im Vergleich zum Basisjahr 2008 dar. Der Begriff <i>Endenergie</i> bezieht sich dabei auf den Teil der Energie, der energetisch als thermische oder elektrische Energie zur Herstellung von Gütern oder zur Nutzung in den privaten Haushalten zur Verfügung steht. Der Indikator 7.1.b stellt die Entwicklung des Primärenergieverbrauchs im Vergleich zum Basisjahr 2008 dar. Der Primärenergieverbrauch errechnet sich als Summe aus dem Endenergieverbrauch, dem nichtenergetischen Verbrauch sowie dem Saldo in der Umwandlungsbilanz. In der Umwandlungsbilanz wird die Umwandlung von Energieträgern jeweils als Einsatz und Ausstoß dargestellt. In der Umwandlungsbilanz werden ebenfalls der Eigenverbrauch in den Umwandlungsbereichen sowie die Fackel- und Leitungsverluste verbucht.</p>
@@ -1013,7 +2009,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Intention </th>
+            <th scope="row" style="text-align: left; width: 20%;">Intention </th>
             <td>
               
                 <p>Die Senkung des Energieverbrauchs durch eine Steigerung der Energieeffizienz ist neben dem Ausbau erneuerbarer Energien die zweite tragende Säule der Energiewende. Ziel ist es, mit möglichst wenig Energie viel wirtschaftliche Leistung zu erreichen. Energieeinsparung schont Klima und Umwelt, trägt zur Verbesserung der Versorgungssicherheit und zur Wettbewerbsfähigkeit der Industrie bei.</p>
@@ -1036,7 +2032,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Ziel </th>
+            <th scope="row" style="text-align: left; width: 20%;">Ziel </th>
             <td>
               
                 <p>7.1.a: Deutliche Steigerung<br />7.1.b: Senkung um mindestens 39,3 % bis 2030 im Vergleich zu 2008</p>
@@ -1059,7 +2055,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Art des Ziels </th>
+            <th scope="row" style="text-align: left; width: 20%;">Art des Ziels </th>
             <td>
               
                 <p>7.1.a: Zielrichtungsvorgabe<br />7.1.b: Ziel mit konkretem Zielwert</p>
@@ -1082,7 +2078,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; width: 20%;">Bewertung </th>
             <td>
               
                 <p><u>Zielformulierung:</u><br />7.1.a: Die Endenergieproduktivität soll gesteigert werden.<br /><br /><u>Bewertung:</u><br />Ausgehend von der Zielformulierung wird der Indikator 7.1.a für das Jahr 2023 mit <b>Sonne</b> bewertet, da der Wert des Indikators sowohl im letzten Jahr als auch im Durchschnitt der letzten sechs Jahre eine Steigerung verzeichnete.<br /><br /><u>Datenstand zum Zeitpunkt der Bewertung:</u><br />17.01.2025<br /><br /><u>Zielformulierung:</u><br />7.1.b: Der Primärenergieverbrauch soll bis 2030 auf höchstens 60,7 % des Wertes von 2008 gesenkt werden.<br /><br /><u>Bewertung:</u><br />Für Indikator 7.1.b ist ein konkreter Zielwert für 2030 festgelegt, der bei Beibehaltung der durchschnittlichen Entwicklung der letzten sechs Jahre bereits 2028 unterschritten wird. Der Indikator 7.1.b wird für das Jahr 2024 mit <b>Sonne</b> bewertet.<br /><br /><u>Datenstand zum Zeitpunkt der Bewertung:</u><br />12.05.2025</p>
@@ -1105,7 +2101,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Bewertung </th>
+            <th scope="row" style="text-align: left; width: 20%;">Bewertung </th>
             <td>
               
                 <p>7.1.a: <a href="https://dns-indikatoren.de/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" title="Sowohl der Durchschnittswert als auch die vorangegangene jährliche Veränderung deuteten in 2023 in die richtige Richtung." alt="Wettersymbol Sonne" /></a><br />7.1.b: <a href="https://dns-indikatoren.de/status"><img src="https://sdg-indikatoren.de/public/Wettersymbole/Sonne.png" title="Bei Fortsetzung der Entwicklung aus 2024 wäre der Zielwert erreicht oder um weniger als 5&nbsp;% der Differenz zwischen Zielwert und dem Wert aus 2024 verfehlt worden." alt="Wettersymbol Sonne" /></a></p>
@@ -3616,10 +4612,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://ag-energiebilanzen.de/" target="_blank" onclick="return confirm_alert('der AG Energiebilanzen e.V.', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/ageb.png" alt="AG Energiebilanzen e.V." title=" Klicken Sie hier um zur Homepage der Organisation AG Energiebilanzen e.V. zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://ag-energiebilanzen.de/" target="_blank" onclick="return confirm_alert('der AG Energiebilanzen e.V.', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/ageb.png" alt="AG Energiebilanzen e.V." title=" Klicken Sie hier um zur Homepage der Organisation AG Energiebilanzen e.V. zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -3650,7 +4646,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://ag-energiebilanzen.de/" target="_blank" onclick="return confirm_alert('der AG Energiebilanzen e.V.', 'De')">AG Energiebilanzen e.V.</a></p>
@@ -3673,7 +4669,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; width: 20%;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -3722,7 +4718,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
                 
@@ -4606,10 +5602,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -4640,7 +5636,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></p>
@@ -4663,7 +5659,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; width: 20%;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -5553,10 +6549,10 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;"> </th>
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="http://www.lak-energiebilanzen.de/" target="_blank" onclick="return confirm_alert('des LAK Energiebilanzen', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/lakeb.png" alt="Länderarbeitskreis Energiebilanzen" title=" Klicken Sie hier um zur Homepage der Organisation Länderarbeitskreis Energiebilanzen zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="http://www.lak-energiebilanzen.de/" target="_blank" onclick="return confirm_alert('des LAK Energiebilanzen', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/lakeb.png" alt="Länderarbeitskreis Energiebilanzen" title=" Klicken Sie hier um zur Homepage der Organisation Länderarbeitskreis Energiebilanzen zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -5587,7 +6583,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Organisation </th>
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
             <td>
               
                 <p><a href="http://www.lak-energiebilanzen.de/" target="_blank" onclick="return confirm_alert('des LAK Energiebilanzen', 'De')">Länderarbeitskreis Energiebilanzen</a></p>
@@ -5610,7 +6606,7 @@ data-event-label="Change to indicator.sources tab"
       
         
            <tr id="everythingElse">
-            <th scope="row" style="text-align: left; min-width: 130px;">Link zur <br>Datenquelle </th>
+            <th scope="row" style="text-align: left; width: 20%;">Link zur <br>Datenquelle </th>
             <td>
               
                 
@@ -5755,12 +6751,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260608131249'></script>
+<script src='/assets/js/sdg.js?v=20260629080711'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260608131249"></script><script>
+    <script src="/assets/js/custom.js?v=20260629080711"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
