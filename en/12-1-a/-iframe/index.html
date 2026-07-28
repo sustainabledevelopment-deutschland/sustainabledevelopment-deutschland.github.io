@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260707052426">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260728122504">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -332,12 +332,12 @@ layout-indicator-iframe
   data-mixedtypes="null"
   data-graphannotations="[{&quot;value&quot;:34,&quot;label&quot;:{&quot;content&quot;:&quot;Target 2030&quot;,&quot;position&quot;:&quot;left&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;color&quot;:&quot;transparent&quot;},&quot;preset&quot;:&quot;target_line&quot;,&quot;borderColor&quot;:&quot;transparent&quot;}]"
   data-graphtargetlines="null"
-  data-graphtargetpoints="[{&quot;type&quot;:&quot;box&quot;,&quot;xMin&quot;:10.682,&quot;xMax&quot;:11.318,&quot;yMin&quot;:0,&quot;yMax&quot;:34,&quot;borderColor&quot;:&quot;#bf8b2e&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;borderDash&quot;:[1,0],&quot;borderWidth&quot;:2,&quot;preset&quot;:&quot;target_points&quot;},{&quot;type&quot;:&quot;label&quot;,&quot;xValue&quot;:11,&quot;yValue&quot;:37.0,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;content&quot;:[&quot;Target:&quot;,&quot;34&quot;],&quot;font&quot;:{&quot;size&quot;:14},&quot;borderColor&quot;:&quot;transparent&quot;}]"
+  data-graphtargetpoints="[{&quot;type&quot;:&quot;box&quot;,&quot;xMin&quot;:12.679,&quot;xMax&quot;:13.321,&quot;yMin&quot;:0,&quot;yMax&quot;:34,&quot;borderColor&quot;:&quot;#bf8b2e&quot;,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;borderDash&quot;:[1,0],&quot;borderWidth&quot;:2,&quot;preset&quot;:&quot;target_points&quot;},{&quot;type&quot;:&quot;label&quot;,&quot;xValue&quot;:13,&quot;yValue&quot;:37.0,&quot;backgroundColor&quot;:&quot;transparent&quot;,&quot;content&quot;:[&quot;Target:&quot;,&quot;34&quot;],&quot;font&quot;:{&quot;size&quot;:14},&quot;borderColor&quot;:&quot;transparent&quot;}]"
   data-graphtargetlabels="null"
-  data-graphseriesbreaks="[{&quot;value&quot;:7.5},{&quot;value&quot;:8.5}]"
+  data-graphseriesbreaks="[{&quot;value&quot;:7.5},{&quot;value&quot;:8.5},{&quot;value&quot;:11.5}]"
   data-grapherrorbars="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_0&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_0&quot;},{&quot;name&quot;:&quot;COMMENT_OBS_1&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;COMMENT_OBS_1&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="[{&quot;decimals&quot;:1.0}]"
   data-graphstepsize="[{&quot;step&quot;:5.0}]"
@@ -397,7 +397,11 @@ layout-indicator-iframe
         
         
         
-        <th scope="col" class="table-value">COMMENT_OBS_0</th>
+        <th scope="col">COMMENT_OBS_0</th>
+        
+        
+        
+        <th scope="col" class="table-value">COMMENT_OBS_1</th>
         
         
       </thead>
@@ -415,6 +419,10 @@ layout-indicator-iframe
           
           
           <td>Percentage</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -438,6 +446,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -455,6 +467,10 @@ layout-indicator-iframe
           
           
           <td>Percentage</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -478,6 +494,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -498,7 +518,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">r</td>
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -518,7 +542,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">r</td>
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -535,6 +563,10 @@ layout-indicator-iframe
           
           
           <td>Percentage</td>
+          
+          
+          
+          <td></td>
           
           
           
@@ -558,6 +590,10 @@ layout-indicator-iframe
           
           
           
+          <td></td>
+          
+          
+          
           <td class="table-value"></td>
           
           
@@ -570,7 +606,7 @@ layout-indicator-iframe
           
           
           
-          <td>12.0</td>
+          <td>11.9</td>
           
           
           
@@ -578,7 +614,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">|</td>
+          <td>|</td>
+          
+          
+          
+          <td class="table-value">r</td>
           
           
         </tr>
@@ -590,7 +630,7 @@ layout-indicator-iframe
           
           
           
-          <td>13.3</td>
+          <td>13.1</td>
           
           
           
@@ -598,7 +638,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">|</td>
+          <td>|</td>
+          
+          
+          
+          <td class="table-value">r</td>
           
           
         </tr>
@@ -610,11 +654,63 @@ layout-indicator-iframe
           
           
           
-          <td>12.2</td>
+          <td>12.0</td>
           
           
           
           <td>Percentage</td>
+          
+          
+          
+          <td>r</td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2023</td>
+          
+          
+          
+          <td>10.2</td>
+          
+          
+          
+          <td>Percentage</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td class="table-value"></td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2024</td>
+          
+          
+          
+          <td>8.9</td>
+          
+          
+          
+          <td>Percentage</td>
+          
+          
+          
+          <td>|</td>
           
           
           
@@ -638,7 +734,11 @@ layout-indicator-iframe
           
           
           
-          <td class="table-value">…</td>
+          <td>…</td>
+          
+          
+          
+          <td class="table-value"></td>
           
           
         </tr>
@@ -789,7 +889,7 @@ data-event-label="Change to Table tab"
           <dt><u>Notes</u>:</dt>
           
           
-          <dd ><br>• From 2020, also with the clothing category. The results from 2020 onwards are therefore only comparable with previous years to a limited extent.<br>• From 2021, revised EU energy  labelling for various product groups. The results from 2021 are therefore only comparable with previous years to a limited extent.</dd>
+          <dd ><br>• From 2020, also with the clothing category. The results from 2020 onwards are therefore only comparable with previous years to a limited extent.<br>• From 2021, revised EU energy  labelling for various product groups. The results from 2021 are therefore only comparable with previous years to a limited extent.<br>• A revised CO₂ label for cars from 2024. The results from 2024 are therefore only comparable with previous years to a limited extent.</dd>
         
 
         
@@ -876,7 +976,7 @@ data-event-label="Change to Table tab"
           <dt><u>Notes</u>:</dt>
           
           
-          <dd ><br>• From 2020, also with the clothing category. The results from 2020 onwards are therefore only comparable with previous years to a limited extent.<br>• From 2021, revised EU energy  labelling for various product groups. The results from 2021 are therefore only comparable with previous years to a limited extent.</dd>
+          <dd ><br>• From 2020, also with the clothing category. The results from 2020 onwards are therefore only comparable with previous years to a limited extent.<br>• From 2021, revised EU energy  labelling for various product groups. The results from 2021 are therefore only comparable with previous years to a limited extent.<br>• A revised CO₂ label for cars from 2024. The results from 2024 are therefore only comparable with previous years to a limited extent.</dd>
         
 
         
@@ -3915,12 +4015,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20260707052426'></script>
+<script src='/assets/js/sdg.js?v=20260728122504'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260707052426"></script><script>
+    <script src="/assets/js/custom.js?v=20260728122504"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

@@ -146,7 +146,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20260707052426">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20260728122504">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -525,7 +525,7 @@ data-event-label="high"
   data-graphtype="bar"
   data-graphtypes="null"
   data-geocoderegex=""
-  data-showmap="false"
+  data-showmap="true"
   data-startvalues="[{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Gleitender Vierjahresdurchschnitt&quot;},{&quot;field&quot;:&quot;Zeitreihe&quot;,&quot;value&quot;:&quot;Berechnete jährliche Werte&quot;}]"
   data-graphlimits="null"
   data-stackeddisaggregation="Art der Fläche"
@@ -653,6 +653,32 @@ data-event-label="Change to Table tab"
     <span class="hidden-xs" style="color:black">Tabelle</span></button>
   </li>
   
+  <li role="presentation"
+    class="
+      nav-item
+      map
+      
+    ">
+    <button
+      class="nav-link "
+      data-bs-toggle="tab"
+      role="tab"
+      type="button"
+      
+        id="tab-mapview"
+        data-bs-target="#mapview"
+        aria-controls="mapview"
+        data-no-disagg="true"
+        data-on="click"
+data-event-category="Tab change"
+data-event-action="Change data view"
+data-event-label="Change to Map tab"
+
+        ><i class="fa fa-map" aria-hidden="true"></i>
+      
+    <span class="hidden-xs" style="color:black">Karte</span></button>
+  </li>
+  
 </ul>
 
     <div class="tab-content data-view">
@@ -692,9 +718,9 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-            <dt><u>Datenquelle</u>:</dt>
+            <dt><u>Datenquellen</u>:</dt>
           
-          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
+          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a>, <a href="http://www.statistikportal.de/de/veroeffentlichungen/volkswirtschaftliche-gesamtrechnungen-der-laender" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De')">Statistische Ämter des Bundes und der Länder</a></dd>
         
 
         
@@ -779,9 +805,9 @@ data-event-label="Change to Table tab"
     <dl>
         
           
-            <dt><u>Datenquelle</u>:</dt>
+            <dt><u>Datenquellen</u>:</dt>
           
-          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a></dd>
+          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a>, <a href="http://www.statistikportal.de/de/veroeffentlichungen/volkswirtschaftliche-gesamtrechnungen-der-laender" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De')">Statistische Ämter des Bundes und der Länder</a></dd>
         
 
         
@@ -833,6 +859,81 @@ data-event-label="Change to Table tab"
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
+
+        </div>
+      
+    
+      
+        <div role="tabpanel" class="tab-pane " id="mapview" class="map">
+          
+
+<h4 id="map-heading" class="chart-title">Anstieg der Siedlungs- und Verkehrsfläche</h4>
+<h6 id="map-subheading" class="chart-subtitle"></h6>
+<div id="map" aria-describedby="table-alternative">
+  <img class="map-loading-image" src="/assets/img/loading.gif" alt="Karte wird geladen" />
+</div>
+
+
+
+
+<div id="mapFooter" class="table-footer-text">
+  <h5 class="sr-only">Chart details</h5>
+    <dl>
+        
+          
+            <dt><u>Datenquellen</u>:</dt>
+          
+          <dd><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank">Statistisches Bundesamt</a>, <a href="http://www.statistikportal.de/de/veroeffentlichungen/volkswirtschaftliche-gesamtrechnungen-der-laender" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De')">Statistische Ämter des Bundes und der Länder</a></dd>
+        
+
+        
+          <dt><u>Datenstand</u>:</dt>
+          <dd>Zuletzt aktualisiert am 13.01.2026. Sobald Daten für weitere Berichtszeiträume vorliegen, werden diese zeitnah hinzugefügt.</dd>
+        
+
+        
+          <dt><u>Geographische Abdeckung</u>:</dt>
+          <dd>Deutschland</dd>
+        
+
+        <dt class="data-controlled-footer-field unit-from-data"><u>Einheit</u>:</dt>
+        <dd class="data-controlled-footer-field unit-from-data"></dd>
+
+        
+
+        
+          <dt><u>Anmerkungen</u>:</dt>
+          
+          
+          <dd ><br>• Ab dem Berichtsjahr 2016 basiert die amtliche Flächenerhebung auf dem Amtlichen Liegenschaftskataster-Informationssystem (ALKIS).<br>• Mit der Umstellung der Dokumentation zur Modellierung der Geoinformationen des amtlichen Vermessungswesens von Version 6.0.1 auf 7.1.2 im Jahr 2023 wurde das Nutzungsartenverzeichnis nochmals erweitert. Dadurch ist der Vergleich zu den Vorjahren beeinträchtigt und die Berechnung von Veränderungen erschwert. Die nach der Umstellung ermittelte Siedlungs- und Verkehrsfläche enthält weitgehend dieselben Nutzungsarten wie zuvor. <br>• Siedlungsfläche (bebaut): Wohnbau, Industrie und Gewerbe (ohne Abbauland), öffentliche Einrichtungen.<br>• Erholungsfläche, Friedhof: Sport-, Freizeit- und Erholungsfläche, Friedhof.<br>• Die Angaben zu den Jahreswerten und dem geleitenden Durchschnitt für die Jahre 2020 bis 2022 sind korrigiert worden. Für den genannten Zeitraum wurden im größeren Umfang von der Vermessungsverwaltung Umklassifizierungen von Vegetations- zu Verkehrsflächen vorgenommen, die keiner Veränderung der Flächennutzung  in der Realität entsprechen. Die vorliegenden Ergebnisse sind um diese Umklassifizierungen bereinigt.</dd>
+        
+
+        
+
+        
+          
+            <dt
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ><u>Anmerkung</u>:</dt>
+            <dd
+              class="data-controlled-footer-field"
+              data-ts-attribute="COMMENT_TS"
+            ></dd>
+          
+        
+
+        
+          <dl class="observation-attribute-list" style= "margin-bottom: 10px;"></dl>
+        
+
+        
+          <dt><u>Copyright</u>:</dt>
+          <dd>&copy; Statistisches Bundesamt (Destatis), 2026</dd>
+        
+    </dl>
+</div>
+
 
         </div>
       
@@ -2869,8 +2970,8 @@ data-event-label="Change to indicator.sources tab"
     
     <div class="col-md-6">
       
-        <h4 class="sr-only">Datenquelle 1</h4>
       
+        <h4>Datenquelle 1</h4>
       
       
 <table class="table" style="width:100%; table-layout: fixed;">
@@ -3624,7 +3725,7 @@ data-event-label="Change to indicator.sources tab"
             <th scope="row" style="text-align: left; width: 20%;"> </th>
             <td>
               
-                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:60px; width:148px; border:transparent" /></a></p>
+                <p><a href="https://www.destatis.de/DE/Home/_inhalt.html" target="_blank"><img src="https://dns-indikatoren.de/public/OrgImgDe/destatis.png" alt="Statistisches Bundesamt" title=" Klicken Sie hier um zur Homepage der Organisation Statistisches Bundesamt zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
 
               
             </td>
@@ -3800,6 +3901,984 @@ data-event-label="Change to indicator.sources tab"
 
     </div>
     
+    
+    
+    <div class="col-md-6">
+      
+      
+        <h4>Datenquelle 2</h4>
+      
+      
+<table class="table" style="width:100%; table-layout: fixed;">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
+            <td>
+              
+                <p><a href="http://www.statistikportal.de/de/veroeffentlichungen/volkswirtschaftliche-gesamtrechnungen-der-laender" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De')"><img src="https://dns-indikatoren.de/public/OrgImgDe/vwgdl.png" alt="Statistische Ämter des Bundes und der Länder" title=" Klicken Sie hier um zur Homepage der Organisation Statistische Ämter des Bundes und der Länder zu gelangen." style="height:80px; width:auto; max-width:100%; object-fit:contain; border:transparent" /></a></p>
+
+              
+            </td>
+          </tr>
+        
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 20%;">Organisation </th>
+            <td>
+              
+                <p><a href="http://www.statistikportal.de/de/veroeffentlichungen/volkswirtschaftliche-gesamtrechnungen-der-laender" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De')">Statistische Ämter des Bundes und der Länder</a></p>
+
+              
+            </td>
+          </tr>
+        
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 20%;">Link zur <br>Datenquelle </th>
+            <td>
+              
+                
+                
+                
+                
+
+                
+                
+                
+
+                
+                  
+                    <a href="https://www.regionalstatistik.de/genesis/online?operation=table&code=86321-Z-08&bypass=true&levelindex=1&levelid=1783600398654#abreadcrumb" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De');">
+                      Durchschnittliche tägliche Veränderung der Siedlungs- und Verkehrsfläche (gleitender Durchschnitt) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                    </a>
+                  
+                
+
+              
+            </td>
+          </tr>
+        
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+        
+           <tr id="everythingElse">
+            <th scope="row" style="text-align: left; width: 20%;"> </th>
+            <td>
+              
+                
+                
+                
+                
+
+                
+                
+                
+
+                
+                  
+                    <a href="https://www.regionalstatistik.de/genesis/online?operation=table&code=86321-Z-09&bypass=true&levelindex=1&levelid=1783600533113#abreadcrumb" target="_blank" onclick="return confirm_alert('der Statistischen Ämter der Länder', 'De');">
+                      Durchschnittliche tägliche Veränderung der Siedlungs- und Verkehrsfläche (Jahreswerte) <span class="visuallyhidden">in neuem Fenster öffnen</span>
+                    </a>
+                  
+                
+
+              
+            </td>
+          </tr>
+        
+      
+    
+  
+      
+        
+      
+
+      
+      
+
+
+      
+    
+  
+      
+        
+          
+      
+        
+          
+      
+        
+          
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
   </div>
 
 
@@ -3862,6 +4941,15 @@ data-event-label="Change to indicator.sources tab"
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.2.2/dist/chartjs-plugin-annotation.min.js" integrity="sha256-XuHhf6q+GD7fscc96mTm/228GXf1Nn9wOYOE0EgeFzY=" crossorigin="anonymous"></script>
 
 
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.js" integrity="sha384-+Ae+bvCvR9gwQHFyh60GUfdqhUAL+S/O5mLeAkmkv2yBQxeLxm3gvLEzYPoXBwbT" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js" integrity="sha384-cU7kVmimPTBpe76764qMxEdujXzlgSm15cCQe6FXFud5DiV4vrJQHUK9S0Lo2cqT" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.js" integrity="sha384-vOZkQA9epgnqbXkNdVSlxfyhrOSzYBsL3s3b2CQYn05H6lzrbrb368uBSRSUTAiv" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/socib/Leaflet.TimeDimension@fa36ffee7f6390aadce8c055ca7c60ede7c2134c/dist/leaflet.timedimension.min.js" integrity="sha384-xQ62+wlP0nHf7UhZ81djmqLn+7arwKiMk/dJk+smi+rJhaXPZAeFPX4bEiD9twIy" crossorigin="anonymous"></script>
+<script src="https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js" integrity="sha384-btJhAWztz7ttA6ibFC5ppM39nkCPK6CWzRVmsaLcDn37mA3x1TzF1DbFwa6tJpTN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/torfsen/leaflet.zoomhome@84a0291e80244ed9301cbc09d55850f0af53e602/dist/leaflet.zoomhome.min.js" integrity="sha384-UH2Ux7vOhzo5dH5kWWPmpvCCRCiS0hQ12YQN6qTUJXOpx+HpKePItLNSSm2AxKjF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js" integrity="sha384-C/UzSz5aXmLxJwe/b9I0CIv+cfLcGIXmfl40m9+kyJhlgNxvWT6+WRjCbA8Eflf/" crossorigin="anonymous"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js" integrity="sha384-eEX5kO4tdQpY+eTjDbZNPlMm4QhsK+kosSZtkzp+uZk0L5g0lSzmWXWHzKDoOzA7" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js" integrity="sha384-3qyhlVVDXXiWhzgKIoL/aw+uaXN5kyAFE0Jv2LGoV+nnQnum4ebt1QAtRbjnz9pL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" integrity="sha384-KQ8aykg/lc6595wSrMplFVs4kRS66x+EdkX7EQsJ2Pe6FX7l3tMqyD1Am0c2dKBG" crossorigin="anonymous"></script>
@@ -3878,12 +4966,12 @@ data-event-label="Change to indicator.sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Suche';</script>
 
-<script src='/assets/js/sdg.js?v=20260707052426'></script>
+<script src='/assets/js/sdg.js?v=20260728122504'></script>
 
 
     
     
-    <script src="/assets/js/custom.js?v=20260707052426"></script><script>
+    <script src="/assets/js/custom.js?v=20260728122504"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
